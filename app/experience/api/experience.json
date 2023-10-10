@@ -1,0 +1,31 @@
+[
+    {
+        "start": "2022-07-01T08:00:00+08:00",
+        "title": "Software Engineer",
+        "company": "Visa",
+        "url": "https://www.visa.com.sg/",
+        "shortDescription": "Enhance the availability of Visa products for both businesses and customers worldwide through developing applications and implementing process improvements.",
+        "longDescription": "Longer hello world",
+        "tags": ["Angular", "JavaScript", "React"]
+    },
+    {
+        "start": "2021-05-01T08:00:00+08:00",
+        "end": "2021-08-01T08:00:00+08:00",
+        "title": "Software Engineer Intern",
+        "company": "HP",
+        "url": "https://www.hp.com/sg-en",
+        "shortDescription": "Designed and implemented a Java application to collect and process printer data for analysis and software improvements.",
+        "longDescription": "Longer hello world",
+        "tags": ["Java", "JavaFX", "Gradle"]
+    },
+    {
+        "start": "2020-05-01T08:00:00+08:00",
+        "end": "2020-08-01T08:00:00+08:00",
+        "title": "Frontend Engineer Intern",
+        "company": "MAF Intelligence",
+        "url": "https://www.mafint.com/",
+        "shortDescription": "Implemented front-facing features and bug fixes to enhance user experience on the MAF Cloud application.",
+        "longDescription": "Longer hello world",
+        "tags": ["Angular", "HTML", "CSS"]
+    }
+]

@@ -1,28 +1,69 @@
+"use client";
+
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import dayjs from "dayjs";
 
-function HomeExperienceComponent() {
+import experienceJson from "./experience/api/experience.json";
+import Experience from "./types/experience";
+import { faSquareCaretRight } from "@fortawesome/free-solid-svg-icons";
+
+interface HomeExperienceComponentProps {
+  experience: Experience;
+}
+
+function HomeExperienceComponent(props: HomeExperienceComponentProps) {
+  const { start, end, title, company, url, shortDescription, tags } =
+    props.experience;
+
+  const startFormatted = dayjs(start).format("MMM YYYY").toUpperCase();
+  const endFormatted = end
+    ? dayjs(end).format("MMM YYYY").toUpperCase()
+    : undefined;
+
+  const onClickComponent = () => {
+    open(url, "_blank");
+  };
+
   return (
-    <div className="flex flex-row outline-1 hover:outline hover:outline-offset-16 hover:cursor-pointer">
-      <p className="opacity-75 text-xs min-w-[20%]">2022 - PRESENT</p>
-      <div className="flex flex-col min-w-[80%] opacity-90">
-        <h6 className="font-medium text-xl -mt-1 mb-2">
-          Software Engineer · Visa
-        </h6>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis
-          imperdiet velit, a sagittis neque ullamcorper ut. Suspendisse varius,
-          purus id vestibulum suscipit, nibh nibh volutpat nisl, sed congue elit
-          risus quis ante. Vivamus commodo, massa at fermentum elementum, nulla
-          nisl viverra nisl, ac consequat lectus lorem ut orci. Integer aliquet
-          pulvinar eros eget euismod.
-        </p>
+    <div
+      className="flex flex-row outline-1 hover:outline hover:outline-offset-16 hover:cursor-pointer group"
+      onClick={onClickComponent}
+    >
+      <p className="opacity-75 text-xs min-w-[30%]">
+        {startFormatted} {endFormatted ? `- ${endFormatted}` : "- PRESENT"}
+      </p>
+      <div className="flex flex-col min-w-[70%] space-y-4 -mt-1">
+        <div className="flex flex-row">
+          <h6 className="font-medium text-xl group-hover:text-blue-400">
+            {title} · {company}
+          </h6>
+          <div className="flex flex-grow justify-end my-auto">
+            <FontAwesomeIcon
+              icon={faSquareCaretRight}
+              className="group-hover:text-blue-400"
+            />
+          </div>
+        </div>
+
+        <p className="opacity-80 group-hover:opacity-90">{shortDescription}</p>
+        <div className="flex flex-row space-x-4">
+          {tags.map((tag) => {
+            return (
+              <button className="bg-blue-600/70 py-1 px-2 text-sm text-blue-100">
+                {tag}
+              </button>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
 }
 
 export default function Home() {
+  const experience = experienceJson as Experience[];
+
   return (
     <main className="flex justify-between gap-4 px-96">
       <div className="flex flex-col min-w-[40%] max-w-[40%] py-32 sticky top-0 h-fit">
@@ -79,9 +120,9 @@ export default function Home() {
         <section className="flex flex-col">
           <p className="text-sm font-semibold opacity-50 mb-8">EXPERIENCE</p>
           <div className="flex flex-col space-y-16">
-            <HomeExperienceComponent />
-            <HomeExperienceComponent />
-            <HomeExperienceComponent />
+            {experience.map((exp) => {
+              return <HomeExperienceComponent experience={exp} />;
+            })}
           </div>
         </section>
 
