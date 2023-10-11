@@ -5,8 +5,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import dayjs from "dayjs";
 
 import experienceJson from "./experience/api/experience.json";
+import projectsJson from "./projects/api/projects.json";
 import Experience from "./types/experience";
 import { faSquareCaretRight } from "@fortawesome/free-solid-svg-icons";
+import Project from "./types/project";
 
 interface HomeExperienceComponentProps {
   experience: Experience;
@@ -61,8 +63,49 @@ function HomeExperienceComponent(props: HomeExperienceComponentProps) {
   );
 }
 
+interface HomeProjectComponentProps {
+  project: Project;
+}
+
+function HomeProjectComponent(props: HomeProjectComponentProps) {
+  const { title, shortDescription, tags, image } = props.project;
+
+  return (
+    <div className="flex flex-row hover:cursor-pointer group p-6 ms-6 hover:bg-white/5">
+      <div className="min-w-[30%] pe-12">
+        <img src={image} alt={`${title} thumbnail`} className="object-cover" />
+      </div>
+      <div className="flex flex-col min-w-[70%] space-y-4 -mt-1">
+        <div className="flex flex-row">
+          <h6 className="font-medium text-xl group-hover:text-blue-400">
+            {title}
+          </h6>
+          <div className="flex flex-grow justify-end my-auto">
+            <FontAwesomeIcon
+              icon={faSquareCaretRight}
+              className="group-hover:text-blue-400"
+            />
+          </div>
+        </div>
+
+        <p className="opacity-80 group-hover:opacity-90">{shortDescription}</p>
+        <div className="flex flex-row space-x-4">
+          {tags.map((tag) => {
+            return (
+              <button className="bg-blue-600/70 py-1 px-2 text-sm text-blue-100">
+                {tag}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const experience = experienceJson as Experience[];
+  const projects = projectsJson as Project[];
 
   return (
     <main className="flex justify-between space-x-4 ps-72 pe-64">
@@ -130,7 +173,12 @@ export default function Home() {
         </section>
 
         <section className="flex flex-col">
-          <p className="text-sm font-semibold opacity-50 mb-8">PROJECTS</p>
+          <p className="text-sm font-semibold opacity-50 px-12">PROJECTS</p>
+          <div className="flex flex-col">
+            {projects.map((proj) => {
+              return <HomeProjectComponent project={proj} />;
+            })}
+          </div>
         </section>
       </div>
     </main>

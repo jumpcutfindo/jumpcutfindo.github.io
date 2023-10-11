@@ -1,0 +1,30 @@
+[
+    {
+        "title": "La Biblioteca",
+        "shortDescription": "This is a short description",
+        "longDescription": "This is a long description",
+        "image": "",
+        "tags": []
+    },
+    {
+        "title": "Happy Holidays",
+        "shortDescription": "Introduces Christmas related gameplay, interactions, characters, items and music to Minecraft.",
+        "longDescription": "Long description",
+        "image": "/projects/happy-holidays/main.png",
+        "tags": ["Java", "Gradle", "Minecraft", "Forge", "3D Modelling"]
+    },
+    {
+        "title": "Microchip",
+        "shortDescription": "A quality of life upgrade to Minecraft that allows players to track their pets and other entities throughout the world.",
+        "longDescription": "Long description",
+        "image": "/projects/microchip/main.png",
+        "tags": ["Java", "Gradle", "Minecraft", "Fabric"]
+    },
+    {
+        "title": "VJChoir Archives",
+        "shortDescription": "An archival website for the Victoria Junior College Choir, with an integrated music player and playlist curation system.",
+        "longDescription": "Long description",
+        "image": "/projects/vjchoir-archives/logo.svg",
+        "tags": ["HTML", "SCSS", "Angular"]
+    }
+]
