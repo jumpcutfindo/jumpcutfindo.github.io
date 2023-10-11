@@ -27,7 +27,7 @@ function HomeExperienceComponent(props: HomeExperienceComponentProps) {
 
   return (
     <div
-      className="flex flex-row outline-1 hover:outline hover:outline-offset-16 hover:cursor-pointer group"
+      className="flex flex-row hover:cursor-pointer group p-6 ms-6 hover:bg-white/5"
       onClick={onClickComponent}
     >
       <p className="opacity-75 text-xs min-w-[30%]">
@@ -65,19 +65,22 @@ export default function Home() {
   const experience = experienceJson as Experience[];
 
   return (
-    <main className="flex justify-between gap-4 px-96">
-      <div className="flex flex-col min-w-[40%] max-w-[40%] py-32 sticky top-0 h-fit">
-        <div className="flex flex-col">
+    <main className="flex justify-between space-x-4 ps-72 pe-64">
+      <div className="flex flex-col min-w-[40%] max-w-[40%] py-32 sticky top-0 h-fit space-y-6">
+        <div className="flex flex-col space-y-1">
           <h1 className="text-5xl font-semibold text-blue-500">Daniel Hoe</h1>
-          <p className="text-lg my-2 font-medium opacity-90">
+          <p>@jumpcutfindo</p>
+          <p className="text-lg font-medium opacity-90">
             Software Engineer at Visa
           </p>
-          <p className="text-lg my-4 me-32 opacity-70 font-light">
+        </div>
+        <div className="flex flex-col space-y-4">
+          <p className="text-lg me-32 opacity-70 font-light">
             I develop applications and other interactive experiences for users
             worldwide.
           </p>
         </div>
-        <div className="flex flex-row space-x-6 my-4">
+        <div className="flex flex-row space-x-6">
           <a
             href="https://github.com/jumpcutfindo/"
             target="_blank"
@@ -95,8 +98,8 @@ export default function Home() {
         </div>
       </div>
       <div className="flex flex-col min-w-[60%] space-y-12 py-32">
-        <section className="flex flex-col">
-          <p className="text-sm font-semibold opacity-50 mb-8">ABOUT ME</p>
+        <section className="flex flex-col px-12">
+          <p className="text-sm font-semibold opacity-50 mb-4">ABOUT ME</p>
           <div className="text-lg space-y-4 opacity-90">
             <p>
               Hi there! Welcome to my portfolio site, which documents my various
@@ -118,8 +121,8 @@ export default function Home() {
         </section>
 
         <section className="flex flex-col">
-          <p className="text-sm font-semibold opacity-50 mb-8">EXPERIENCE</p>
-          <div className="flex flex-col space-y-16">
+          <p className="text-sm font-semibold opacity-50 px-12">EXPERIENCE</p>
+          <div className="flex flex-col">
             {experience.map((exp) => {
               return <HomeExperienceComponent experience={exp} />;
             })}
