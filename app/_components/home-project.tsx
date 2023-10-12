@@ -23,7 +23,9 @@ export default function HomeProjectComponent(props: HomeProjectComponentProps) {
           </h6>
         </div>
 
-        <p className="opacity-80 group-hover:opacity-90">{shortDescription}</p>
+        <p className="text-gray-300 group-hover:text-white transition-all">
+          {shortDescription}
+        </p>
         <div className="flex flex-row space-x-4">
           {tags.map((tag) => {
             return (

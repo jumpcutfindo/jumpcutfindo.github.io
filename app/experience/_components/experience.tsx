@@ -1,5 +1,8 @@
 import Experience from "@/app/types/experience";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import dayjs from "dayjs";
+import Markdown from "react-markdown";
 
 interface ExperienceComponentProps {
   experience: Experience;
@@ -15,21 +18,48 @@ export default function ExperienceComponent(props: ExperienceComponentProps) {
     : undefined;
 
   return (
-    <section className="flex flex-row hover:bg-opacity-5 p-8 mx-4">
+    <section className="flex flex-row p-8 mx-4">
       <div className="flex flex-col min-w-[25%]">
-        <p className="opacity-75 text-sm">
+        <p className="text-gray-400 text-sm">
           {startFormatted} {endFormatted ? `- ${endFormatted}` : "- PRESENT"}
         </p>
       </div>
       <div className="flex flex-col min-w-[75%] -mt-1">
-        <div className="flex flex-col opacity-90 space-y-6">
+        <div className="flex flex-col space-y-6">
           <div className="space-y-2">
             <h6 className="font-medium text-2xl">
               {title} · {company}
             </h6>
-            <p className="opacity-90">{longDescription}</p>
+            <Markdown
+              components={{
+                a(props) {
+                  const { children, className, node, href, ...rest } = props;
+                  return (
+                    <a
+                      href={href}
+                      target="_blank"
+                      className="text-blue-300 group hover:cursor-pointer"
+                    >
+                      <span className="group-hover:text-blue-400 transition-all">
+                        {children}
+                      </span>
+                      <span className="text-xs my-auto mx-1">
+                        <FontAwesomeIcon
+                          icon={faArrowUpRightFromSquare}
+                          size="sm"
+                          className="group-hover:text-blue-400 transition-all"
+                        />
+                      </span>
+                    </a>
+                  );
+                },
+              }}
+              className="text-gray-300"
+            >
+              {longDescription}
+            </Markdown>
           </div>
-          <ul className="space-y-2">
+          <ul className="space-y-2 text-gray-300">
             {pointers.map((pointer) => {
               return (
                 <li>

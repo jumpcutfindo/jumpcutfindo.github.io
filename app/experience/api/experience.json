@@ -5,7 +5,7 @@
     "company": "Visa",
     "url": "https://www.visa.com.sg/",
     "shortDescription": "Enhancing the availability of Visa products for both businesses and customers worldwide through developing applications and implementing process improvements.",
-    "longDescription": "I am part of the Production Engineering team at Visa, which aims to ensure the efficient and reliable operation of Visa's applications in the production environment. As part of the team, I am responsible for the maintenance and improvements of widely used, global applications such as Visa Installments and Visa Click to Pay.",
+    "longDescription": "I am part of the Production Engineering team at [Visa](https://www.visa.com.sg/), which aims to ensure the efficient and reliable operation of Visa's applications in the production environment. As part of the team, I am responsible for the maintenance and improvements of widely used, global applications such as [Visa Installments](https://usa.visa.com/products/consumer-installments.html) and [Visa Click to Pay](https://secure.checkout.visa.com/).",
     "pointers": [
       "Spearheaded the development of a fullstack internal analytic tool for tickets that helped to identify process inefficiencies, reducing toil.",
       "Implemented a Node-based report generation system that automates data collection, slashing engineers' report creation time by 80%.",
@@ -24,7 +24,7 @@
     "company": "HP",
     "url": "https://www.hp.com/sg-en",
     "shortDescription": "Designed and implemented a Java application to collect and process printer data for analysis and software improvements.",
-    "longDescription": "I was part of the Firmware Development team at HP, which worked on improving printer behaviour and optimising the performance of certain families of printers. As part of my internship project, I was tasked to work on a tool that would collect, consume and provide analytics on certain data that the printer output while printing.",
+    "longDescription": "I was part of the Firmware Development team at [HP](https://www.hp.com/sg-en), which worked on improving printer behaviour and optimising the performance of certain families of printers. As part of my internship project, I was tasked to work on a tool that would collect, consume and provide analytics on certain data that the printer output while printing.",
     "pointers": [
       "Developed a cross-platform Java application for efficient retrieval, storage, and analysis of data from printing devices, streamlining firmware development processes.",
       "Designed and implemented a data collection framework for printer sensors, significantly reducing the manual effort required from developers and testers.",
@@ -41,7 +41,7 @@
     "company": "MAF Intelligence",
     "url": "https://www.mafint.com/",
     "shortDescription": "Implemented front-facing features and bug fixes to enhance user experience on the MAF Cloud application.",
-    "longDescription": "As part of the frontend engineering team, I worked on MAF Cloud, implementing features and fixing bugs in the various complex interactive components on the application. I also contributed feedback to the application's design to the senior engineers, as well as worked on prototypes for new features that were implemented later on.",
+    "longDescription": "As part of the frontend engineering team, I worked on [MAF Cloud](https://www.mafint.com/), implementing features and fixing bugs in the various complex interactive components on the application. I also contributed feedback to the application's design to the senior engineers, as well as worked on prototypes for new features that were implemented later on.",
     "pointers": [
       "Enhanced the company's Angular-based web app by adding 3 major features: date standardisation, data synchronisation, and user groups.",
       "Introduced personalisation options (e.g., date formats, layout preferences) for consistent data representation throughout the application.",

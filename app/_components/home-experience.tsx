@@ -27,7 +27,7 @@ export default function HomeExperienceComponent(
       className="flex flex-row hover:cursor-pointer group p-6 ms-6 hover:bg-white/5 transition-all"
       onClick={onClickComponent}
     >
-      <p className="opacity-75 text-xs min-w-[30%]">
+      <p className="text-gray-400 text-xs min-w-[30%]">
         {startFormatted} {endFormatted ? `- ${endFormatted}` : "- PRESENT"}
       </p>
       <div className="flex flex-col min-w-[70%] space-y-4 -mt-1">
@@ -40,7 +40,9 @@ export default function HomeExperienceComponent(
           </span>
         </div>
 
-        <p className="opacity-80 group-hover:opacity-90">{shortDescription}</p>
+        <p className="text-gray-300 group-hover:text-white transition-all">
+          {shortDescription}
+        </p>
         <div className="flex flex-row space-x-4">
           {tags.map((tag) => {
             return (
