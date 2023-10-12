@@ -1,30 +1,61 @@
 [
     {
+        "id": "la-biblioteca",
         "title": "La Biblioteca",
-        "shortDescription": "This is a short description",
+        "shortDescription": "La Biblioteca (\"The Library\" in English) is a backend server that exposes APIs simulating a typical library.",
         "longDescription": "This is a long description",
-        "image": "",
-        "tags": []
+        "image": "/projects/la-biblioteca/main.jpg",
+        "featured": 2,
+        "tags": ["Rust", "API Design", "Integration Testing"]
     },
     {
+        "id": "happy-holidays",
         "title": "Happy Holidays",
         "shortDescription": "Introduces Christmas related gameplay, interactions, characters, items and music to Minecraft.",
         "longDescription": "Long description",
         "image": "/projects/happy-holidays/main.png",
+        "featured": 1,
         "tags": ["Java", "Gradle", "Minecraft", "Forge", "3D Modelling"]
     },
     {
+        "id": "microchip",
         "title": "Microchip",
         "shortDescription": "A quality of life upgrade to Minecraft that allows players to track their pets and other entities throughout the world.",
         "longDescription": "Long description",
         "image": "/projects/microchip/main.png",
+        "featured": 3,
         "tags": ["Java", "Gradle", "Minecraft", "Fabric"]
     },
     {
+        "id": "vjchoir-archives",
         "title": "VJChoir Archives",
         "shortDescription": "An archival website for the Victoria Junior College Choir, with an integrated music player and playlist curation system.",
         "longDescription": "Long description",
         "image": "/projects/vjchoir-archives/logo.svg",
-        "tags": ["HTML", "SCSS", "Angular"]
+        "tags": ["HTML", "SCSS", "Angular", "UI/UX Design"]
+    },
+    {
+        "id": "sync-along",
+        "title": "Sync Along",
+        "shortDescription": "A room-based, music syncing application that allows friends to listen to music together from anywhere.",
+        "longDescription": "Long description",
+        "image": "/projects/sync-along/main.png",
+        "tags": ["React", "Node", "TypeScript", "Redis", "MongoDB"]
+    },
+    {
+        "id": "lumbridge-guide",
+        "title": "Lumbridge Guide",
+        "shortDescription": "An Android application, made to look up information and high scores for the game Old School RuneScape.",
+        "longDescription": "Long description",
+        "image": "/projects/lumbridge-guide/main.png",
+        "tags": ["Android", "Java", "Gradle"]
+    },
+    {
+        "id": "jordan",
+        "title": "joRdan",
+        "shortDescription": "An implementation of the R programming language, written in TypeScript.",
+        "longDescription": "Long description",
+        "image": "/projects/jordan/main.png",
+        "tags": ["R", "TypeScript"]
     }
 ]

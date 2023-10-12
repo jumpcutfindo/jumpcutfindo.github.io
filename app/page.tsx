@@ -73,7 +73,11 @@ function HomeProjectComponent(props: HomeProjectComponentProps) {
   return (
     <div className="flex flex-row hover:cursor-pointer group p-6 ms-6 hover:bg-white/5">
       <div className="min-w-[30%] pe-12">
-        <img src={image} alt={`${title} thumbnail`} className="object-cover" />
+        <img
+          src={image}
+          alt={`${title} thumbnail`}
+          className="object-cover mx-auto"
+        />
       </div>
       <div className="flex flex-col min-w-[70%] space-y-4 -mt-1">
         <div className="flex flex-row">
@@ -175,9 +179,12 @@ export default function Home() {
         <section className="flex flex-col">
           <p className="text-sm font-semibold opacity-50 px-12">PROJECTS</p>
           <div className="flex flex-col">
-            {projects.map((proj) => {
-              return <HomeProjectComponent project={proj} />;
-            })}
+            {projects
+              .filter((proj) => proj.featured)
+              .sort((a, b) => (a.featured as number) - (b.featured as number))
+              .map((proj) => {
+                return <HomeProjectComponent project={proj} />;
+              })}
           </div>
         </section>
       </div>
