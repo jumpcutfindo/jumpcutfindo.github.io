@@ -7,7 +7,7 @@ import dayjs from "dayjs";
 import experienceJson from "./experience/api/experience.json";
 import projectsJson from "./projects/api/projects.json";
 import Experience from "./types/experience";
-import { faSquareCaretRight } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Project from "./types/project";
 
 interface HomeExperienceComponentProps {
@@ -40,12 +40,6 @@ function HomeExperienceComponent(props: HomeExperienceComponentProps) {
           <h6 className="font-medium text-xl group-hover:text-blue-400">
             {title} · {company}
           </h6>
-          <div className="flex flex-grow justify-end my-auto">
-            <FontAwesomeIcon
-              icon={faSquareCaretRight}
-              className="group-hover:text-blue-400"
-            />
-          </div>
         </div>
 
         <p className="opacity-80 group-hover:opacity-90">{shortDescription}</p>
@@ -84,12 +78,6 @@ function HomeProjectComponent(props: HomeProjectComponentProps) {
           <h6 className="font-medium text-xl group-hover:text-blue-400">
             {title}
           </h6>
-          <div className="flex flex-grow justify-end my-auto">
-            <FontAwesomeIcon
-              icon={faSquareCaretRight}
-              className="group-hover:text-blue-400"
-            />
-          </div>
         </div>
 
         <p className="opacity-80 group-hover:opacity-90">{shortDescription}</p>
@@ -168,16 +156,27 @@ export default function Home() {
         </section>
 
         <section className="flex flex-col">
-          <p className="text-sm font-semibold opacity-50 px-12">EXPERIENCE</p>
+          <p className="text-sm font-semibold opacity-60 px-12">EXPERIENCE</p>
           <div className="flex flex-col">
             {experience.map((exp) => {
               return <HomeExperienceComponent experience={exp} />;
             })}
           </div>
+          <div className="flex mx-12">
+            <a
+              className="text-sm font-semibold hover:text-blue-400 hover:cursor-pointer"
+              href="/experience"
+            >
+              See more
+              <span className="mx-2">
+                <FontAwesomeIcon icon={faArrowRight} />
+              </span>
+            </a>
+          </div>
         </section>
 
         <section className="flex flex-col">
-          <p className="text-sm font-semibold opacity-50 px-12">PROJECTS</p>
+          <p className="text-sm font-semibold opacity-60 px-12">PROJECTS</p>
           <div className="flex flex-col">
             {projects
               .filter((proj) => proj.featured)
@@ -185,6 +184,17 @@ export default function Home() {
               .map((proj) => {
                 return <HomeProjectComponent project={proj} />;
               })}
+          </div>
+          <div className="flex mx-12">
+            <a
+              className="text-sm font-semibold hover:text-blue-400 hover:cursor-pointer"
+              href="/projects"
+            >
+              See more
+              <span className="mx-2">
+                <FontAwesomeIcon icon={faArrowRight} />
+              </span>
+            </a>
           </div>
         </section>
       </div>
