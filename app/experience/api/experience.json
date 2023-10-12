@@ -1,31 +1,53 @@
 [
-    {
-        "start": "2022-07-01T08:00:00+08:00",
-        "title": "Software Engineer",
-        "company": "Visa",
-        "url": "https://www.visa.com.sg/",
-        "shortDescription": "Enhancing the availability of Visa products for both businesses and customers worldwide through developing applications and implementing process improvements.",
-        "longDescription": "Longer hello world",
-        "tags": ["Angular", "JavaScript", "React"]
-    },
-    {
-        "start": "2021-05-01T08:00:00+08:00",
-        "end": "2021-08-01T08:00:00+08:00",
-        "title": "Software Engineer Intern",
-        "company": "HP",
-        "url": "https://www.hp.com/sg-en",
-        "shortDescription": "Designed and implemented a Java application to collect and process printer data for analysis and software improvements.",
-        "longDescription": "Longer hello world",
-        "tags": ["Java", "JavaFX", "Gradle"]
-    },
-    {
-        "start": "2020-05-01T08:00:00+08:00",
-        "end": "2020-08-01T08:00:00+08:00",
-        "title": "Frontend Engineer Intern",
-        "company": "MAF Intelligence",
-        "url": "https://www.mafint.com/",
-        "shortDescription": "Implemented front-facing features and bug fixes to enhance user experience on the MAF Cloud application.",
-        "longDescription": "Longer hello world",
-        "tags": ["Angular", "HTML", "CSS"]
-    }
+  {
+    "start": "2022-07-01T08:00:00+08:00",
+    "title": "Software Engineer",
+    "company": "Visa",
+    "url": "https://www.visa.com.sg/",
+    "shortDescription": "Enhancing the availability of Visa products for both businesses and customers worldwide through developing applications and implementing process improvements.",
+    "longDescription": "I am part of the Production Engineering team at Visa, which aims to ensure the efficient and reliable operation of Visa's applications in the production environment. As part of the team, I am responsible for the maintenance and improvements of widely used, global applications such as Visa Installments and Visa Click to Pay.",
+    "pointers": [
+      "Spearheaded the development of a fullstack internal analytic tool for tickets that helped to identify process inefficiencies, reducing toil.",
+      "Implemented a Node-based report generation system that automates data collection, slashing engineers' report creation time by 80%.",
+      "Led documentation efforts for new joiner onboarding and application onboarding, accelerating engineers' initial understanding of our products and responsibilities.",
+      "Enhanced efficiency by designing and deploying alerts for key API endpoints, freeing up 10% of engineers' time previously spent on manual monitoring.",
+      "Proactively identified and addressed production environment issues, significantly boosting application performance through multiple bug fixes.",
+      "Streamlined engineering processes and issue handling (e.g. standardised issue management procedures), cutting down repetitive tasks by 10%.",
+      "Facilitated cross-team collaboration, providing insights and driving discussions that accelerated business-critical issue resolution by an average of 10%."
+    ],
+    "tags": ["Angular", "JavaScript", "React", "MySQL", "Java", "Spring"]
+  },
+  {
+    "start": "2021-05-01T08:00:00+08:00",
+    "end": "2021-08-01T08:00:00+08:00",
+    "title": "Software Engineer Intern",
+    "company": "HP",
+    "url": "https://www.hp.com/sg-en",
+    "shortDescription": "Designed and implemented a Java application to collect and process printer data for analysis and software improvements.",
+    "longDescription": "I was part of the Firmware Development team at HP, which worked on improving printer behaviour and optimising the performance of certain families of printers. As part of my internship project, I was tasked to work on a tool that would collect, consume and provide analytics on certain data that the printer output while printing.",
+    "pointers": [
+      "Developed a cross-platform Java application for efficient retrieval, storage, and analysis of data from printing devices, streamlining firmware development processes.",
+      "Designed and implemented a data collection framework for printer sensors, significantly reducing the manual effort required from developers and testers.",
+      "Enriched the application user experience by introducing user-friendly features such as user preferences and connection caches, enhancing the reusability of the application.",
+      "Documented the application's implementation, including detailed Javadocs, to improve code readability and usability for future development efforts.",
+      "Collaborated with managers and firmware developers to brainstorm innovative solutions and ideas for project improvement."
+    ],
+    "tags": ["Java", "JavaFX", "Gradle"]
+  },
+  {
+    "start": "2020-05-01T08:00:00+08:00",
+    "end": "2020-08-01T08:00:00+08:00",
+    "title": "Frontend Engineer Intern",
+    "company": "MAF Intelligence",
+    "url": "https://www.mafint.com/",
+    "shortDescription": "Implemented front-facing features and bug fixes to enhance user experience on the MAF Cloud application.",
+    "longDescription": "As part of the frontend engineering team, I worked on MAF Cloud, implementing features and fixing bugs in the various complex interactive components on the application. I also contributed feedback to the application's design to the senior engineers, as well as worked on prototypes for new features that were implemented later on.",
+    "pointers": [
+      "Enhanced the company's Angular-based web app by adding 3 major features: date standardisation, data synchronisation, and user groups.",
+      "Introduced personalisation options (e.g., date formats, layout preferences) for consistent data representation throughout the application.",
+      "Implemented cross-component communication, reducing user interaction steps by 10% and enhancing overall application cohesion.",
+      "Contributed design enhancements using HTML, CSS (including SCSS), and JavaScript (e.g., button styles, layouts) to improve the application's aesthetics and user experience."
+    ],
+    "tags": ["Angular", "HTML", "CSS"]
+  }
 ]

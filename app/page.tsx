@@ -100,7 +100,7 @@ export default function Home() {
   const projects = projectsJson as Project[];
 
   return (
-    <main className="flex justify-between space-x-4 ps-72 pe-64">
+    <main className="flex justify-between space-x-4 ps-96 pe-80">
       <div className="flex flex-col min-w-[40%] max-w-[40%] py-32 sticky top-0 h-fit space-y-6">
         <div className="flex flex-col space-y-1">
           <h1 className="text-5xl font-semibold text-blue-500">Daniel Hoe</h1>

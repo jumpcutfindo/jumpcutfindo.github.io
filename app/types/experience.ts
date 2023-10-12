@@ -9,5 +9,7 @@ export default interface Experience {
     shortDescription: string;
     longDescription: string;
 
+    pointers: string[];
+
     tags: string[];
 }

@@ -3,6 +3,7 @@ export default interface Project {
     title: string;
     shortDescription: string;
     longDescription: string;
+    pointers: string;
     featured?: number;
     image: string;
     tags: string[];
