@@ -19,7 +19,7 @@ function ExperienceComponent(props: ExperienceComponentProps) {
     : undefined;
 
   return (
-    <section className="flex flex-row hover:cursor-pointer hover:bg-white hover:bg-opacity-5 p-8 mx-4">
+    <section className="flex flex-row hover:bg-opacity-5 p-8 mx-4">
       <div className="flex flex-col min-w-[25%]">
         <p className="opacity-75 text-sm">
           {startFormatted} {endFormatted ? `- ${endFormatted}` : "- PRESENT"}
@@ -28,7 +28,7 @@ function ExperienceComponent(props: ExperienceComponentProps) {
       <div className="flex flex-col min-w-[75%] -mt-1">
         <div className="flex flex-col opacity-90 space-y-6">
           <div className="space-y-2">
-            <h6 className="font-medium text-2xl group-hover:text-blue-400">
+            <h6 className="font-medium text-2xl">
               {title} · {company}
             </h6>
             <p className="opacity-90">{longDescription}</p>
@@ -69,13 +69,17 @@ export default function Experience() {
       <div className="flex flex-col flex-grow py-32 space-y-4">
         <div className="flex mx-12">
           <a
-            className="text-sm font-semibold hover:text-blue-400 hover:cursor-pointer"
+            className="text-sm font-semibold hover:cursor-pointer group transition-all"
             href="/"
           >
-            <span className="mx-2">
-              <FontAwesomeIcon icon={faArrowLeft} />
+            <FontAwesomeIcon
+              icon={faArrowLeft}
+              className="mx-2 group-hover:-translate-x-1/2 group-hover:text-blue-400 transition-all"
+            />
+
+            <span className="group-hover:text-blue-400 transition-all">
+              Daniel Hoe
             </span>
-            Daniel Hoe
           </a>
         </div>
 

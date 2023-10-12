@@ -7,7 +7,10 @@ import dayjs from "dayjs";
 import experienceJson from "./experience/api/experience.json";
 import projectsJson from "./projects/api/projects.json";
 import Experience from "./types/experience";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowRight,
+  faArrowUpRightFromSquare,
+} from "@fortawesome/free-solid-svg-icons";
 import Project from "./types/project";
 
 interface HomeExperienceComponentProps {
@@ -29,7 +32,7 @@ function HomeExperienceComponent(props: HomeExperienceComponentProps) {
 
   return (
     <div
-      className="flex flex-row hover:cursor-pointer group p-6 ms-6 hover:bg-white/5"
+      className="flex flex-row hover:cursor-pointer group p-6 ms-6 hover:bg-white/5 transition-all"
       onClick={onClickComponent}
     >
       <p className="opacity-75 text-xs min-w-[30%]">
@@ -37,9 +40,12 @@ function HomeExperienceComponent(props: HomeExperienceComponentProps) {
       </p>
       <div className="flex flex-col min-w-[70%] space-y-4 -mt-1">
         <div className="flex flex-row">
-          <h6 className="font-medium text-xl group-hover:text-blue-400">
+          <h6 className="font-medium text-xl group-hover:text-blue-400 transition-all">
             {title} · {company}
           </h6>
+          <span className="text-sm mx-2 my-auto group-hover:text-blue-400 group-hover:text-lg transition-all">
+            <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="xs" />
+          </span>
         </div>
 
         <p className="opacity-80 group-hover:opacity-90">{shortDescription}</p>
@@ -65,7 +71,7 @@ function HomeProjectComponent(props: HomeProjectComponentProps) {
   const { title, shortDescription, tags, image } = props.project;
 
   return (
-    <div className="flex flex-row hover:cursor-pointer group p-6 ms-6 hover:bg-white/5">
+    <div className="flex flex-row hover:cursor-pointer group p-6 ms-6 hover:bg-white/5 transition-all">
       <div className="min-w-[30%] pe-12">
         <img
           src={image}
@@ -75,7 +81,7 @@ function HomeProjectComponent(props: HomeProjectComponentProps) {
       </div>
       <div className="flex flex-col min-w-[70%] space-y-4 -mt-1">
         <div className="flex flex-row">
-          <h6 className="font-medium text-xl group-hover:text-blue-400">
+          <h6 className="font-medium text-xl group-hover:text-blue-400 transition-all">
             {title}
           </h6>
         </div>
@@ -164,13 +170,16 @@ export default function Home() {
           </div>
           <div className="flex mx-12">
             <a
-              className="text-sm font-semibold hover:text-blue-400 hover:cursor-pointer"
+              className="text-sm font-semibold hover:cursor-pointer group"
               href="/experience"
             >
-              See more
-              <span className="mx-2">
-                <FontAwesomeIcon icon={faArrowRight} />
+              <span className="group-hover:text-blue-400 transition-all">
+                See more
               </span>
+              <FontAwesomeIcon
+                icon={faArrowRight}
+                className="mx-2 group-hover:translate-x-1/2 group-hover:text-blue-400 transition-all"
+              />
             </a>
           </div>
         </section>
@@ -187,13 +196,16 @@ export default function Home() {
           </div>
           <div className="flex mx-12">
             <a
-              className="text-sm font-semibold hover:text-blue-400 hover:cursor-pointer"
+              className="text-sm font-semibold hover:cursor-pointer group"
               href="/projects"
             >
-              See more
-              <span className="mx-2">
-                <FontAwesomeIcon icon={faArrowRight} />
+              <span className="group-hover:text-blue-400 transition-all">
+                See more
               </span>
+              <FontAwesomeIcon
+                icon={faArrowRight}
+                className="mx-2 group-hover:translate-x-1/2 group-hover:text-blue-400 transition-all"
+              />
             </a>
           </div>
         </section>
