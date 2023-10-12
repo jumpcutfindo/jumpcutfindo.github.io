@@ -2,104 +2,14 @@
 
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import dayjs from "dayjs";
 
 import experienceJson from "./experience/api/experience.json";
 import projectsJson from "./projects/api/projects.json";
 import Experience from "./types/experience";
-import {
-  faArrowRight,
-  faArrowUpRightFromSquare,
-} from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Project from "./types/project";
-
-interface HomeExperienceComponentProps {
-  experience: Experience;
-}
-
-function HomeExperienceComponent(props: HomeExperienceComponentProps) {
-  const { start, end, title, company, url, shortDescription, tags } =
-    props.experience;
-
-  const startFormatted = dayjs(start).format("MMM YYYY").toUpperCase();
-  const endFormatted = end
-    ? dayjs(end).format("MMM YYYY").toUpperCase()
-    : undefined;
-
-  const onClickComponent = () => {
-    open(url, "_blank");
-  };
-
-  return (
-    <div
-      className="flex flex-row hover:cursor-pointer group p-6 ms-6 hover:bg-white/5 transition-all"
-      onClick={onClickComponent}
-    >
-      <p className="opacity-75 text-xs min-w-[30%]">
-        {startFormatted} {endFormatted ? `- ${endFormatted}` : "- PRESENT"}
-      </p>
-      <div className="flex flex-col min-w-[70%] space-y-4 -mt-1">
-        <div className="flex flex-row">
-          <h6 className="font-medium text-xl group-hover:text-blue-400 transition-all">
-            {title} · {company}
-          </h6>
-          <span className="text-sm mx-2 my-auto group-hover:text-blue-400 group-hover:text-lg transition-all">
-            <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="xs" />
-          </span>
-        </div>
-
-        <p className="opacity-80 group-hover:opacity-90">{shortDescription}</p>
-        <div className="flex flex-row space-x-4">
-          {tags.map((tag) => {
-            return (
-              <button className="bg-blue-600/70 py-1 px-2 text-sm text-blue-100">
-                {tag}
-              </button>
-            );
-          })}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-interface HomeProjectComponentProps {
-  project: Project;
-}
-
-function HomeProjectComponent(props: HomeProjectComponentProps) {
-  const { title, shortDescription, tags, image } = props.project;
-
-  return (
-    <div className="flex flex-row hover:cursor-pointer group p-6 ms-6 hover:bg-white/5 transition-all">
-      <div className="min-w-[30%] pe-12">
-        <img
-          src={image}
-          alt={`${title} thumbnail`}
-          className="object-cover mx-auto"
-        />
-      </div>
-      <div className="flex flex-col min-w-[70%] space-y-4 -mt-1">
-        <div className="flex flex-row">
-          <h6 className="font-medium text-xl group-hover:text-blue-400 transition-all">
-            {title}
-          </h6>
-        </div>
-
-        <p className="opacity-80 group-hover:opacity-90">{shortDescription}</p>
-        <div className="flex flex-row space-x-4">
-          {tags.map((tag) => {
-            return (
-              <button className="bg-blue-600/70 py-1 px-2 text-sm text-blue-100">
-                {tag}
-              </button>
-            );
-          })}
-        </div>
-      </div>
-    </div>
-  );
-}
+import HomeExperienceComponent from "./_components/home-experience";
+import HomeProjectComponent from "./_components/home-project";
 
 export default function Home() {
   const experience = experienceJson as Experience[];
