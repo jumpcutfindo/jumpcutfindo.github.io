@@ -1,3 +1,4 @@
+import StyledMarkdown from "@/app/shared-components/styled-markdown";
 import Experience from "@/app/types/experience";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -30,39 +31,12 @@ export default function ExperienceComponent(props: ExperienceComponentProps) {
             <h6 className="font-medium text-2xl">
               {title} · {company}
             </h6>
-            <Markdown
-              components={{
-                a(props) {
-                  const { children, className, node, href, ...rest } = props;
-                  return (
-                    <a
-                      href={href}
-                      target="_blank"
-                      className="text-blue-300 group hover:cursor-pointer"
-                    >
-                      <span className="group-hover:text-blue-400 transition-all">
-                        {children}
-                      </span>
-                      <span className="text-xs my-auto mx-1">
-                        <FontAwesomeIcon
-                          icon={faArrowUpRightFromSquare}
-                          size="sm"
-                          className="group-hover:text-blue-400 transition-all"
-                        />
-                      </span>
-                    </a>
-                  );
-                },
-              }}
-              className="text-gray-300"
-            >
-              {longDescription}
-            </Markdown>
+            <StyledMarkdown>{longDescription}</StyledMarkdown>
           </div>
           <ul className="space-y-2 text-gray-300">
-            {pointers.map((pointer) => {
+            {pointers.map((pointer, index) => {
               return (
-                <li>
+                <li key={index}>
                   <div className="flex flex-row">
                     <span className="ms-2 me-3">·</span>
                     <p>{pointer}</p>
@@ -73,9 +47,12 @@ export default function ExperienceComponent(props: ExperienceComponentProps) {
           </ul>
 
           <div className="flex flex-row space-x-4">
-            {tags.map((tag) => {
+            {tags.map((tag, index) => {
               return (
-                <button className="bg-blue-600/70 py-1 px-2 text-sm text-blue-100">
+                <button
+                  key={index}
+                  className="bg-blue-600/70 py-1 px-2 text-sm text-blue-100"
+                >
                   {tag}
                 </button>
               );
