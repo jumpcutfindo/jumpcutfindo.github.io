@@ -49,12 +49,12 @@ export default function ExperienceComponent(props: ExperienceComponentProps) {
           <div className="flex flex-row space-x-4">
             {tags.map((tag, index) => {
               return (
-                <button
+                <span
                   key={index}
                   className="bg-blue-600/70 py-1 px-2 text-sm text-blue-100"
                 >
                   {tag}
-                </button>
+                </span>
               );
             })}
           </div>

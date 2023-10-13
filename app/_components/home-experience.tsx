@@ -43,12 +43,12 @@ export default function HomeExperienceComponent(
         <p className="text-gray-300 group-hover:text-white transition-all">
           {shortDescription}
         </p>
-        <div className="flex flex-row space-x-4">
+        <div className="flex flex-wrap">
           {tags.map((tag) => {
             return (
-              <button className="bg-blue-600/70 py-1 px-2 text-sm text-blue-100">
+              <span className="bg-blue-600/70 py-1 px-2 text-sm text-blue-100 me-3 mb-3">
                 {tag}
-              </button>
+              </span>
             );
           })}
         </div>
