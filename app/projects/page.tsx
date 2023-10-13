@@ -48,11 +48,15 @@ export default function Projects() {
                     <p className="md:px-12 px-6 py-4 text-gray-400 text-sm font-medium lg:relative sticky top-0 bg-[#24272e]">
                       {year}
                     </p>
-                    {projectsByYear[year].map(
-                      (proj: Project, index: number) => {
-                        return <ProjectComponent key={index} project={proj} />;
-                      }
-                    )}
+                    <div className="space-y-4">
+                      {projectsByYear[year].map(
+                        (proj: Project, index: number) => {
+                          return (
+                            <ProjectComponent key={index} project={proj} />
+                          );
+                        }
+                      )}
+                    </div>
                   </div>
                 );
               })}
