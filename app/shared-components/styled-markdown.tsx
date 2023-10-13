@@ -1,5 +1,3 @@
-import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Markdown, { Options } from "react-markdown";
 
 export default function StyledMarkdown(props: Readonly<Options>) {
@@ -15,15 +13,8 @@ export default function StyledMarkdown(props: Readonly<Options>) {
               target="_blank"
               className="text-blue-300 group hover:cursor-pointer"
             >
-              <span className="group-hover:text-blue-400 transition-all">
+              <span className="group-hover:text-blue-400 transition-all underline underline-offset-4">
                 {children}
-              </span>
-              <span className="text-xs my-auto ms-1">
-                <FontAwesomeIcon
-                  icon={faArrowUpRightFromSquare}
-                  size="sm"
-                  className="group-hover:text-blue-400 transition-all"
-                />
               </span>
             </a>
           );
