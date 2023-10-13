@@ -39,7 +39,6 @@ export default function ProjectComponent(props: ProjectComponentProps) {
                     >
                       <FontAwesomeIcon
                         icon={link.icon.split(" ") as [IconPrefix, IconName]}
-                        size="lg"
                       />
                     </a>
                   );
