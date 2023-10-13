@@ -41,7 +41,7 @@
     "company": "MAF Intelligence",
     "url": "https://www.mafint.com/",
     "shortDescription": "Implemented front-facing features and bug fixes to enhance user experience on the MAF Cloud application.",
-    "longDescription": "As part of the frontend engineering team, I worked on [MAF Cloud](https://www.mafint.com/), implementing features and fixing bugs in the various complex interactive components on the application. I also contributed feedback to the application's design to the senior engineers, as well as worked on prototypes for new features that were implemented later on.",
+    "longDescription": "As part of the frontend engineering team at [MAF Intelligence](https://www.mafint.com/), I worked on MAF Cloud, implementing features and fixing bugs in the various complex interactive components on the application. I also contributed feedback to the application's design to the senior engineers, as well as worked on prototypes for new features that were implemented later on.",
     "pointers": [
       "Enhanced the company's Angular-based web app by adding 3 major features: date standardisation, data synchronisation, and user groups.",
       "Introduced personalisation options (e.g., date formats, layout preferences) for consistent data representation throughout the application.",

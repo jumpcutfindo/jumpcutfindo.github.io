@@ -9,9 +9,9 @@ export default function Experience() {
   const experience = experienceJson as Experience[];
 
   return (
-    <main className="flex justify-between space-x-4">
-      <div className="flex flex-col flex-grow py-32 space-y-4">
-        <div className="flex mx-12">
+    <main className="flex lg:py-24 md:py-12 py-6 w-screen">
+      <div className="flex flex-col space-y-4">
+        <div className="flex md:mx-12 mx-6">
           <a
             className="text-sm font-semibold hover:cursor-pointer group transition-all"
             href="/"
@@ -27,15 +27,13 @@ export default function Experience() {
           </a>
         </div>
 
-        <div>
-          <h1 className="text-5xl font-semibold text-blue-500 mx-12">
-            Experience
-          </h1>
-          <div>
-            {experience.map((exp, index) => {
-              return <ExperienceComponent key={index} experience={exp} />;
-            })}
-          </div>
+        <div className="md:mx-12 mx-6">
+          <h1 className="text-5xl font-semibold text-blue-500">Experience</h1>
+        </div>
+        <div className="space-y-8">
+          {experience.map((exp, index) => {
+            return <ExperienceComponent key={index} experience={exp} />;
+          })}
         </div>
       </div>
     </main>

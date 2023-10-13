@@ -50,7 +50,7 @@ export default function Home() {
       </div>
       <div className="flex flex-col xl:min-w-[70%] lg:min-w-[70%] space-y-8 lg:py-24">
         <section className="flex flex-col">
-          <div className="sticky top-0 lg:relative py-4 min-w-max bg-inherit md:px-12 px-6 backdrop-blur-lg">
+          <div className="sticky top-0 lg:relative py-4 mb-4 min-w-max bg-inherit md:px-12 px-6 backdrop-blur-lg">
             <p className="text-sm font-semibold text-gray-400">ABOUT ME</p>
           </div>
           <div className="text-lg space-y-4 text-gray-300 text-base md:px-12 px-6">

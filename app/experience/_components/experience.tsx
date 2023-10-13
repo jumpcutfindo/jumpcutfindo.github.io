@@ -19,18 +19,26 @@ export default function ExperienceComponent(props: ExperienceComponentProps) {
     : undefined;
 
   return (
-    <section className="flex flex-row p-8 mx-4">
-      <div className="flex flex-col min-w-[25%]">
-        <p className="text-gray-400 text-sm">
+    <section className="flex flex-col lg:flex-row">
+      <div className="flex flex-col min-w-[25%] space-y-1">
+        <p className="text-gray-400 text-sm  md:px-12 px-6">
           {startFormatted} {endFormatted ? `- ${endFormatted}` : "- PRESENT"}
         </p>
+        <div className="lg:flex hidden lg:flex-col flex-row md:px-12 px-6">
+          <h6 className="font-semibold lg:text-xl text-xl">{title}</h6>
+          <p className="font-light lg:text-lg text-xl">{company}</p>
+        </div>
       </div>
-      <div className="flex flex-col min-w-[75%] -mt-1">
+      <div className="lg:hidden flex flex-row md:px-12 px-6 py-2 sticky top-0 backdrop-blur-lg">
+        <p className="text-xl">
+          <span className="font-semibold">{title}</span>
+          <span className="text-xl mx-2">·</span>
+          <span className="font-light lg:text-lg text-xl">{company}</span>
+        </p>
+      </div>
+      <div className="flex flex-col min-w-[75%] -mt-1 md:px-12 px-6">
         <div className="flex flex-col space-y-6">
           <div className="space-y-2">
-            <h6 className="font-medium text-2xl">
-              {title} · {company}
-            </h6>
             <StyledMarkdown>{longDescription}</StyledMarkdown>
           </div>
           <ul className="space-y-2 text-gray-300">
@@ -46,12 +54,12 @@ export default function ExperienceComponent(props: ExperienceComponentProps) {
             })}
           </ul>
 
-          <div className="flex flex-row space-x-4">
+          <div className="flex flex-wrap">
             {tags.map((tag, index) => {
               return (
                 <span
                   key={index}
-                  className="bg-blue-600/70 py-1 px-2 text-sm text-blue-100"
+                  className="bg-blue-600/70 py-1 px-2 mb-3 me-3 text-sm text-blue-100"
                 >
                   {tag}
                 </span>
