@@ -90,7 +90,7 @@ export default function Home() {
         </section>
 
         <section className="flex flex-col">
-          <div className="sticky top-0 lg:relative py-4 min-w-max bg-inherit md:px-12 px-6 backdrop-blur-lg bg-[#24272e]">
+          <div className="sticky top-0 lg:relative py-4 min-w-max md:px-12 px-6 bg-[#24272e]">
             <p className="text-sm font-semibold text-gray-400">EXPERIENCES</p>
           </div>
           <div className="flex flex-col">
@@ -115,7 +115,7 @@ export default function Home() {
         </section>
 
         <section className="flex flex-col">
-          <div className="sticky top-0 lg:relative py-4 min-w-max bg-inherit md:px-12 px-6 backdrop-blur-lg bg-[#24272e]">
+          <div className="sticky top-0 lg:relative py-4 min-w-max md:px-12 px-6 bg-[#24272e]">
             <p className="text-sm font-semibold text-gray-400">
               FEATURED PROJECTS
             </p>
