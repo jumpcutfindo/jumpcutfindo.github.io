@@ -14,6 +14,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Project from "./types/project";
 import HomeExperienceComponent from "./_components/home-experience";
 import HomeProjectComponent from "./_components/home-project";
+import StyledMarkdown from "./shared-components/styled-markdown";
 
 export default function Home() {
   const experience = experienceJson as Experience[];
@@ -24,7 +25,7 @@ export default function Home() {
       <div className="flex flex-col xl:min-w-[30%] lg:min-w-[30%] lg:min-h-screen lg:sticky top-0 h-fit space-y-6 lg:py-24 mx-6 md:mx-12 lg:mx-0">
         <div className="flex flex-col space-y-1">
           <h1 className="text-5xl font-semibold text-blue-500">Daniel Hoe</h1>
-          <p className="text-lg font-medium text-gray-200">@jumpcutfindo</p>
+          <p className="text-lg font-light text-gray-200">@jumpcutfindo</p>
           <p className="text-lg font-medium text-gray-200">
             Software Engineer at Visa
           </p>
@@ -61,31 +62,35 @@ export default function Home() {
       </div>
       <div className="flex flex-col xl:min-w-[70%] lg:min-w-[70%] space-y-8 lg:py-24">
         <section className="flex flex-col">
-          <div className="sticky top-0 lg:relative py-4 mb-4 min-w-max bg-inherit md:px-12 px-6 backdrop-blur-lg">
+          <div className="sticky top-0 lg:relative py-4 mb-4 min-w-max md:px-12 px-6 bg-[#24272e]">
             <p className="text-sm font-semibold text-gray-400">ABOUT ME</p>
           </div>
           <div className="text-lg space-y-4 text-gray-300 text-base md:px-12 px-6">
-            <p>
+            <StyledMarkdown>
               Hi there! Welcome to my portfolio site, which documents my various
               work experiences and projects I&apos;ve undertaken over the past
               few years.
-            </p>
-            <p>
+            </StyledMarkdown>
+            <StyledMarkdown>
               I started exploring the world of application development back in
               2010, creating scripts for games and joining my school&apos;s
               computing club for app design competitions in secondary school.
-            </p>
-            <p>
-              Since then, I&apos;ve built a website for my choir, created an app
-              for listening to music with friends, as well as created game
-              modifications for Minecraft.
-            </p>
+            </StyledMarkdown>
+            <StyledMarkdown>
+              Since then, I&apos;ve built a [website for my
+              choir](https://vjchoir.github.io/), created [an app for listening
+              to music with
+              friends](https://github.com/jumpcutfindo/sync-along), as well as
+              created [game modifications for
+              Minecraft](https://www.curseforge.com/minecraft/mc-mods/happy-holidays).
+            </StyledMarkdown>
+
             <p></p>
           </div>
         </section>
 
         <section className="flex flex-col">
-          <div className="sticky top-0 lg:relative py-4 min-w-max bg-inherit md:px-12 px-6 backdrop-blur-lg">
+          <div className="sticky top-0 lg:relative py-4 min-w-max bg-inherit md:px-12 px-6 backdrop-blur-lg bg-[#24272e]">
             <p className="text-sm font-semibold text-gray-400">EXPERIENCES</p>
           </div>
           <div className="flex flex-col">
@@ -110,8 +115,10 @@ export default function Home() {
         </section>
 
         <section className="flex flex-col">
-          <div className="sticky top-0 lg:relative py-4 min-w-max bg-inherit md:px-12 px-6 backdrop-blur-lg">
-            <p className="text-sm font-semibold text-gray-400">PROJECTS</p>
+          <div className="sticky top-0 lg:relative py-4 min-w-max bg-inherit md:px-12 px-6 backdrop-blur-lg bg-[#24272e]">
+            <p className="text-sm font-semibold text-gray-400">
+              FEATURED PROJECTS
+            </p>
           </div>
           <div className="flex flex-col">
             {projects

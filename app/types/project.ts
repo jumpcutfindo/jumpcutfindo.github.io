@@ -6,6 +6,7 @@ interface ProjectLink {
 export default interface Project {
     id: string;
     title: string;
+    url?: string;
     year: number;
     shortDescription: string;
     longDescription: string;

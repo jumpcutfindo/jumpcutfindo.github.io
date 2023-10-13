@@ -2,6 +2,7 @@
   {
     "id": "la-biblioteca",
     "title": "La Biblioteca",
+    "url": "https://github.com/jumpcutfindo/la-biblioteca",
     "year": 2023,
     "shortDescription": "La Biblioteca (\"The Library\" in English) is a backend server that exposes APIs simulating a typical library.",
     "longDescription": "La Biblioteca, also known as \"The Library\" in English, is a personal project that was aimed to do two things: teach myself how to develop a Rust application, as well as experimenting on how to implement a REST API after reading [API Design Patterns by JJ Geewax](https://www.goodreads.com/en/book/show/51192053).",
@@ -23,6 +24,7 @@
   {
     "id": "happy-holidays",
     "title": "Happy Holidays",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/happy-holidays",
     "year": 2021,
     "shortDescription": "Introduces Christmas related gameplay, interactions, characters, items and music to Minecraft.",
     "longDescription": "Happy Holidays is a [Minecraft](https://www.minecraft.net/) expansion that aims to introduce elements of Christmas into Minecraft. It adds new blocks, items, entities, interactions and gameplay elements to enhance the vanilla Minecraft gameplay.",
@@ -42,7 +44,7 @@
         "url": "https://www.youtube.com/watch?v=Q2WoBHShIXo"
       },
       {
-        "icon": "fas link",
+        "icon": "fas arrow-up-right-from-square",
         "url": "https://www.curseforge.com/minecraft/mc-mods/happy-holidays"
       }
     ],
@@ -60,6 +62,7 @@
   {
     "id": "microchip",
     "title": "Microchip",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/microchip",
     "year": 2022,
     "shortDescription": "A quality of life upgrade to Minecraft that allows players to track their pets and other entities throughout the world.",
     "longDescription": "Microchip is a quality of life addition to [Minecraft](https://www.minecraft.net/) that allows players to keep track of the many different monsters and characters present in Minecraft. The mod provides an interface that can be toggled by the player, with various interactions and useful information displayed to them on the window.",
@@ -74,7 +77,7 @@
         "url": "https://github.com/jumpcutfindo/microchip"
       },
       {
-        "icon": "fas link",
+        "icon": "fas arrow-up-right-from-square",
         "url": "https://www.curseforge.com/minecraft/mc-mods/microchip"
       }
     ],
@@ -106,7 +109,7 @@
         "url": "https://github.com/jumpcutfindo/vjchoir-archives"
       },
       {
-        "icon": "fas link",
+        "icon": "fas arrow-up-right-from-square",
         "url": "https://vjchoir.github.io"
       }
     ],

@@ -29,11 +29,11 @@ export default function ExperienceComponent(props: ExperienceComponentProps) {
           <p className="font-light lg:text-lg text-xl">{company}</p>
         </div>
       </div>
-      <div className="lg:hidden flex flex-row md:px-12 px-6 py-2 sticky top-0 backdrop-blur-lg">
-        <p className="text-xl">
-          <span className="font-semibold">{title}</span>
-          <span className="text-xl mx-2">·</span>
-          <span className="font-light lg:text-lg text-xl">{company}</span>
+      <div className="lg:hidden flex flex-row md:px-12 px-6 py-4 sticky top-0 bg-[#24272e]">
+        <p className="text-base">
+          <span className="font-semibold">{title.toUpperCase()}</span>
+          <span className="mx-2">·</span>
+          <span className="font-light">{company.toUpperCase()}</span>
         </p>
       </div>
       <div className="flex flex-col min-w-[75%] -mt-1 md:px-12 px-6">
