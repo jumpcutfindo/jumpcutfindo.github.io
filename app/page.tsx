@@ -67,17 +67,17 @@ export default function Home() {
           <div className="text-lg space-y-4 text-gray-300 text-base md:px-12 px-6">
             <p>
               Hi there! Welcome to my portfolio site, which documents my various
-              work experiences and projects I have undertaken over the past few
-              years.
+              work experiences and projects I&apos;ve undertaken over the past
+              few years.
             </p>
             <p>
               I started exploring the world of application development back in
-              2010, creating scripts for games and joining my school's computing
-              club for app design competitions in secondary school.
+              2010, creating scripts for games and joining my school&apos;s
+              computing club for app design competitions in secondary school.
             </p>
             <p>
-              Since then, I've built a website for my choir, created an app for
-              listening to music with friends, as well as created game
+              Since then, I&apos;ve built a website for my choir, created an app
+              for listening to music with friends, as well as created game
               modifications for Minecraft.
             </p>
             <p></p>

@@ -2,6 +2,7 @@ import StyledMarkdown from "@/app/shared-components/styled-markdown";
 import Project from "@/app/types/project";
 import { IconPrefix, IconName } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
 
 interface ProjectComponentProps {
   project: Project;
@@ -14,7 +15,13 @@ export default function ProjectComponent(props: ProjectComponentProps) {
   return (
     <section className="flex lg:flex-row flex-col md:p-8 md:mx-4 px-6">
       <div className="flex flex-col min-w-[25%]">
-        <img src={image} className="object-cover lg:max-w-[75%] lg:mb-0 mb-4" />
+        <Image
+          src={image}
+          className="object-cover lg:max-w-[75%] lg:mb-0 mb-4"
+          alt={`${title} main image`}
+          width={500}
+          height={250}
+        />
       </div>
       <div className="flex flex-col min-w-[75%] -mt-1">
         <div className="flex flex-col space-y-6">
