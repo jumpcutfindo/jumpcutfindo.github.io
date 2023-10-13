@@ -1,61 +1,173 @@
 [
-    {
-        "id": "la-biblioteca",
-        "title": "La Biblioteca",
-        "shortDescription": "La Biblioteca (\"The Library\" in English) is a backend server that exposes APIs simulating a typical library.",
-        "longDescription": "This is a long description",
-        "image": "/projects/la-biblioteca/main.jpg",
-        "featured": 2,
-        "tags": ["Rust", "API Design", "Integration Testing"]
-    },
-    {
-        "id": "happy-holidays",
-        "title": "Happy Holidays",
-        "shortDescription": "Introduces Christmas related gameplay, interactions, characters, items and music to Minecraft.",
-        "longDescription": "Long description",
-        "image": "/projects/happy-holidays/main.png",
-        "featured": 1,
-        "tags": ["Java", "Gradle", "Minecraft", "Forge", "3D Modelling"]
-    },
-    {
-        "id": "microchip",
-        "title": "Microchip",
-        "shortDescription": "A quality of life upgrade to Minecraft that allows players to track their pets and other entities throughout the world.",
-        "longDescription": "Long description",
-        "image": "/projects/microchip/main.png",
-        "featured": 3,
-        "tags": ["Java", "Gradle", "Minecraft", "Fabric"]
-    },
-    {
-        "id": "vjchoir-archives",
-        "title": "VJChoir Archives",
-        "shortDescription": "An archival website for the Victoria Junior College Choir, with an integrated music player and playlist curation system.",
-        "longDescription": "Long description",
-        "image": "/projects/vjchoir-archives/logo.svg",
-        "tags": ["HTML", "SCSS", "Angular", "UI/UX Design"]
-    },
-    {
-        "id": "sync-along",
-        "title": "Sync Along",
-        "shortDescription": "A room-based, music syncing application that allows friends to listen to music together from anywhere.",
-        "longDescription": "Long description",
-        "image": "/projects/sync-along/main.png",
-        "tags": ["React", "Node", "TypeScript", "Redis", "MongoDB"]
-    },
-    {
-        "id": "lumbridge-guide",
-        "title": "Lumbridge Guide",
-        "shortDescription": "An Android application, made to look up information and high scores for the game Old School RuneScape.",
-        "longDescription": "Long description",
-        "image": "/projects/lumbridge-guide/main.png",
-        "tags": ["Android", "Java", "Gradle"]
-    },
-    {
-        "id": "jordan",
-        "title": "joRdan",
-        "shortDescription": "An implementation of the R programming language, written in TypeScript.",
-        "longDescription": "Long description",
-        "image": "/projects/jordan/main.png",
-        "tags": ["R", "TypeScript"]
-    }
+  {
+    "id": "la-biblioteca",
+    "title": "La Biblioteca",
+    "year": 2023,
+    "shortDescription": "La Biblioteca (\"The Library\" in English) is a backend server that exposes APIs simulating a typical library.",
+    "longDescription": "La Biblioteca, also known as \"The Library\" in English, is a personal project that was aimed to do two things: teach myself how to develop a Rust application, as well as experimenting on how to implement a REST API after reading [API Design Patterns by JJ Geewax](https://www.goodreads.com/en/book/show/51192053).",
+    "pointers": [
+      "Implemented in Rust with the [Axum](https://github.com/tokio-rs/axum) framework",
+      "Exposes APIs for interaction with a library-like system, providing features such as borrowing and returning books",
+      "Contains integration tests that test API functionality, with continuous integration implemented via GitHub Actions"
+    ],
+    "links": [
+      {
+        "icon": "fab github",
+        "url": "https://github.com/jumpcutfindo/la-biblioteca"
+      }
+    ],
+    "image": "/projects/la-biblioteca/main.jpg",
+    "featured": 2,
+    "tags": ["Rust", "API Design", "Integration Testing"]
+  },
+  {
+    "id": "happy-holidays",
+    "title": "Happy Holidays",
+    "year": 2021,
+    "shortDescription": "Introduces Christmas related gameplay, interactions, characters, items and music to Minecraft.",
+    "longDescription": "Happy Holidays is a [Minecraft](https://www.minecraft.net/) expansion that aims to introduce elements of Christmas into Minecraft. It adds new blocks, items, entities, interactions and gameplay elements to enhance the vanilla Minecraft gameplay.",
+    "pointers": [
+      "Implemented in Java using the [Minecraft Forge](https://files.minecraftforge.net/) framework",
+      "Adds ornaments for players to build with (Christmas baubles, tinsels, Christmas lights)",
+      "Adds new in-game characters and monster: the Grinch, Santa's Elf, Santa, Gingerbread Men, the Nutcracker",
+      "Introduces new gameplay elements such as boss fights and Christmas themed quests"
+    ],
+    "links": [
+      {
+        "icon": "fab github",
+        "url": "https://github.com/jumpcutfindo/happy-holidays"
+      },
+      {
+        "icon": "fab youtube",
+        "url": "https://www.youtube.com/watch?v=Q2WoBHShIXo"
+      },
+      {
+        "icon": "fas link",
+        "url": "https://www.curseforge.com/minecraft/mc-mods/happy-holidays"
+      }
+    ],
+    "image": "/projects/happy-holidays/main.png",
+    "featured": 1,
+    "tags": [
+      "Java",
+      "Gradle",
+      "Minecraft",
+      "Forge",
+      "Pixel Art",
+      "3D Modelling"
+    ]
+  },
+  {
+    "id": "microchip",
+    "title": "Microchip",
+    "year": 2022,
+    "shortDescription": "A quality of life upgrade to Minecraft that allows players to track their pets and other entities throughout the world.",
+    "longDescription": "Microchip is a quality of life addition to [Minecraft](https://www.minecraft.net/) that allows players to keep track of the many different monsters and characters present in Minecraft. The mod provides an interface that can be toggled by the player, with various interactions and useful information displayed to them on the window.",
+    "pointers": [
+      "Implemented in Java on top of the [Minecraft Fabric](https://fabricmc.net/) development toolchain",
+      "Provides players an interface to view the current status (e.g. health, position) of Minecraft monsters and characters",
+      "Supplements players with ways to organise their tracked characters with grouping and categorising features"
+    ],
+    "links": [
+      {
+        "icon": "fab github",
+        "url": "https://github.com/jumpcutfindo/microchip"
+      },
+      {
+        "icon": "fas link",
+        "url": "https://www.curseforge.com/minecraft/mc-mods/microchip"
+      }
+    ],
+    "image": "/projects/microchip/main.png",
+    "featured": 3,
+    "tags": [
+      "Java",
+      "Gradle",
+      "Minecraft",
+      "Fabric",
+      "UI/UX Design",
+      "Pixel Art"
+    ]
+  },
+  {
+    "id": "vjchoir-archives",
+    "title": "VJChoir Archives",
+    "year": 2018,
+    "shortDescription": "An archival website for the Victoria Junior College Choir, with an integrated music player and playlist curation system.",
+    "longDescription": "The VJChoir Archives is an archival website that aims to document the past performances, batches and information of the [Victoria Junior College](https://en.wikipedia.org/wiki/Victoria_Junior_College) Choir. It provides features such as static displays of different batches and performance information, as well as interactive elements such as music playback and playlist control features.",
+    "pointers": [
+      "Static website implemented using Angular and deployed via GitHub pages",
+      "Displays information on past batches and performances",
+      "Provides interactive music playback features and playlist controls for users to relisten to old performances"
+    ],
+    "links": [
+      {
+        "icon": "fab github",
+        "url": "https://github.com/jumpcutfindo/vjchoir-archives"
+      },
+      {
+        "icon": "fas link",
+        "url": "https://vjchoir.github.io"
+      }
+    ],
+    "image": "/projects/vjchoir-archives/logo.svg",
+    "tags": ["HTML", "SCSS", "Angular", "UI/UX Design"]
+  },
+  {
+    "id": "sync-along",
+    "title": "Sync Along",
+    "year": 2021,
+    "shortDescription": "A room-based, music syncing application that allows friends to listen to music together from anywhere.",
+    "longDescription": "Sync Along is a web application that I developed alongside my group mates as part of [CS3219 Software Engineering Patterns](https://nusmods.com/courses/CS3219/software-engineering-principles-and-patterns) in the National University of Singapore. The application allows users to control a shared playlist that plays music via YouTube video links, synchronising the player's actions and timing across multiple devices.",
+    "pointers": [
+      "Fullstack application developed with React as the frontend and TypeScript / Express on the backend",
+      "Provides user registration and authentication services",
+      "Provides chat room hosting features for users to join and listen to music together",
+      "Implements a music playback system that allows users to synchronise actions and timings",
+      "Introduces playlist controls for users to modify and choose what songs they wish to listen to with their friends"
+    ],
+    "links": [
+      {
+        "icon": "fab github",
+        "url": "https://github.com/jumpcutfindo/sync-along"
+      }
+    ],
+    "image": "/projects/sync-along/main.png",
+    "tags": ["React", "Node", "TypeScript", "Redis", "MongoDB"]
+  },
+  {
+    "id": "lumbridge-guide",
+    "title": "Lumbridge Guide",
+    "year": 2017,
+    "shortDescription": "An Android application, made to look up information and high scores for the game Old School RuneScape.",
+    "longDescription": "Lumbridge Guide is an application that I worked on as part of my initial foray into the world of application development and computer science. It is an Android application that provided information regarding the player's statistics in the game [Old School RuneScape](https://oldschool.runescape.com/).",
+    "pointers": [
+      "Developed in Java for the Android operating system",
+      "Implemented high score lookup features for users to see their own player statistics",
+      "Provided displays of data using the Old School RuneScape APIs (e.g. in-game stock market valuation displays)"
+    ],
+    "links": [],
+    "image": "/projects/lumbridge-guide/main.png",
+    "tags": ["Android", "Java", "Gradle"]
+  },
+  {
+    "id": "jordan",
+    "title": "joRdan",
+    "year": 2020,
+    "shortDescription": "An implementation of the R programming language, written in TypeScript.",
+    "longDescription": "joRdan (a combination of Joash, R and Daniel) is an implementation of the R programming language in TypeScript, developed for a project as part of [CS4215 Programming Language Implementation](https://nusmods.com/courses/CS4215/programming-language-implementation) in the National University of Singapore. The system allows users to write valid R programs and executes them, using TypeScript to compile the written application.",
+    "pointers": [
+      "Implemented with TypeScript, with heavy reference to the [R language specifications](https://svn.r-project.org/R/trunk/src/)",
+      "Parses valid R programs into TypeScript, which then compiles into functioning programs",
+      "Provides a user interface for Read-Eval-Print-Loop (REPL) features"
+    ],
+    "links": [
+      {
+        "icon": "fab github",
+        "url": "https://github.com/jumpcutfindo/cs4215-R-project"
+      }
+    ],
+    "image": "/projects/jordan/main.png",
+    "tags": ["R", "TypeScript"]
+  }
 ]

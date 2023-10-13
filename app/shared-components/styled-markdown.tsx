@@ -18,7 +18,7 @@ export default function StyledMarkdown(props: Readonly<Options>) {
               <span className="group-hover:text-blue-400 transition-all">
                 {children}
               </span>
-              <span className="text-xs my-auto mx-1">
+              <span className="text-xs my-auto ms-1">
                 <FontAwesomeIcon
                   icon={faArrowUpRightFromSquare}
                   size="sm"
