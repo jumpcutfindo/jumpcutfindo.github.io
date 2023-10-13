@@ -1,6 +1,10 @@
 "use client";
 
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import {
+  faGithub,
+  faLinkedin,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import experienceJson from "./experience/api/experience.json";
@@ -46,6 +50,13 @@ export default function Home() {
           >
             <FontAwesomeIcon icon={faLinkedin} size="2x" />
           </a>
+          <a
+            href="https://www.youtube.com/@jumpcutfindo"
+            target="_blank"
+            className="hover:text-blue-500"
+          >
+            <FontAwesomeIcon icon={faYoutube} size="2x" />
+          </a>
         </div>
       </div>
       <div className="flex flex-col xl:min-w-[70%] lg:min-w-[70%] space-y-8 lg:py-24">
@@ -82,7 +93,7 @@ export default function Home() {
               return <HomeExperienceComponent key={index} experience={exp} />;
             })}
           </div>
-          <div className="flex md:mx-12 mx-6">
+          <div className="flex md:mx-12 mx-6 mt-4">
             <a
               className="text-sm font-semibold hover:cursor-pointer group"
               href="/experience"
@@ -112,7 +123,7 @@ export default function Home() {
           </div>
           <div className="flex md:mx-12 mx-6">
             <a
-              className="text-sm font-semibold hover:cursor-pointer group"
+              className="text-sm font-semibold hover:cursor-pointer group mt-4"
               href="/projects"
             >
               <span className="group-hover:text-blue-400 transition-all">
