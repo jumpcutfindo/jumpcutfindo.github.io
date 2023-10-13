@@ -17,9 +17,9 @@ export default function Projects() {
   });
 
   return (
-    <main className="flex justify-between space-x-4">
-      <div className="flex flex-col flex-grow py-32 space-y-4">
-        <div className="flex mx-12">
+    <main className="flex lg:py-24 md:py-12 py-6 w-screen">
+      <div className="flex flex-col">
+        <div className="flex md:mx-12 mx-6 mb-4">
           <a
             className="text-sm font-semibold hover:cursor-pointer group transition-all"
             href="/"
@@ -35,8 +35,8 @@ export default function Projects() {
           </a>
         </div>
 
-        <div className="space-y-4">
-          <h1 className="text-5xl font-semibold text-blue-500 mx-12">
+        <div>
+          <h1 className="text-5xl font-semibold text-blue-500 md:mx-12 mx-6">
             Projects
           </h1>
           <div className="space-y-8">
@@ -45,7 +45,7 @@ export default function Projects() {
               .map((year, index) => {
                 return (
                   <div key={index}>
-                    <p className="mx-12 text-gray-400 text-sm font-medium">
+                    <p className="md:px-12 px-6 md:pt-4 md:pb-0 py-4 text-gray-400 text-sm font-medium lg:relative sticky top-0 backdrop-blur-lg">
                       {year}
                     </p>
                     {projectsByYear[year].map(

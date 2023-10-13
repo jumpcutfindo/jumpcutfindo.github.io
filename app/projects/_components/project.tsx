@@ -12,9 +12,9 @@ export default function ProjectComponent(props: ProjectComponentProps) {
     props.project;
 
   return (
-    <section className="flex flex-row p-8 mx-4">
+    <section className="flex lg:flex-row flex-col md:p-8 md:mx-4 px-6">
       <div className="flex flex-col min-w-[25%]">
-        <img src={image} className="object-cover max-w-[75%]" />
+        <img src={image} className="object-cover lg:max-w-[75%] lg:mb-0 mb-4" />
       </div>
       <div className="flex flex-col min-w-[75%] -mt-1">
         <div className="flex flex-col space-y-6">
@@ -52,12 +52,12 @@ export default function ProjectComponent(props: ProjectComponentProps) {
               );
             })}
           </ul>
-          <div className="flex flex-row space-x-4">
+          <div className="flex flex-wrap">
             {tags.map((tag, index) => {
               return (
                 <span
                   key={index}
-                  className="bg-blue-600/70 py-1 px-2 text-sm text-blue-100"
+                  className="bg-blue-600/70 py-1 px-2 text-sm me-3 mb-3 text-blue-100"
                 >
                   {tag}
                 </span>
