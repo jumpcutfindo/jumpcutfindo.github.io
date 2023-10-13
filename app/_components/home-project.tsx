@@ -8,8 +8,8 @@ export default function HomeProjectComponent(props: HomeProjectComponentProps) {
   const { title, shortDescription, tags, image } = props.project;
 
   return (
-    <div className="flex flex-row hover:cursor-pointer group p-6 ms-6 hover:bg-white/5 transition-all">
-      <div className="min-w-[30%] pe-12">
+    <div className="flex md:flex-row flex-col hover:cursor-pointer group md:p-6 md:mx-6 p-6 hover:bg-white/5 transition-all">
+      <div className="min-w-[30%] md:pe-12 md:pb-0 pb-4">
         <img
           src={image}
           alt={`${title} thumbnail`}
@@ -23,7 +23,7 @@ export default function HomeProjectComponent(props: HomeProjectComponentProps) {
           </h6>
         </div>
 
-        <p className="text-gray-300 group-hover:text-white transition-all">
+        <p className="text-gray-300 group-hover:text-white transition-all text-base">
           {shortDescription}
         </p>
         <div className="flex flex-wrap">

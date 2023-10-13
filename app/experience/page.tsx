@@ -9,7 +9,7 @@ export default function Experience() {
   const experience = experienceJson as Experience[];
 
   return (
-    <main className="flex justify-between space-x-4 ps-72 pe-64">
+    <main className="flex justify-between space-x-4">
       <div className="flex flex-col flex-grow py-32 space-y-4">
         <div className="flex mx-12">
           <a

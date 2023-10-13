@@ -16,8 +16,8 @@ export default function Home() {
   const projects = projectsJson as Project[];
 
   return (
-    <main className="flex justify-between space-x-4 ps-96 pe-80">
-      <div className="flex flex-col min-w-[40%] max-w-[40%] py-32 sticky top-0 h-fit space-y-6">
+    <main className="flex lg:flex-row flex-col justify-between xl:space-x-12 lg:space-x-0 xl:mx-24 lg:mx-16 lg:py-0 md:py-16 py-6 lg:space-y-0 space-y-12">
+      <div className="flex flex-col xl:min-w-[30%] lg:min-w-[30%] lg:min-h-screen lg:sticky top-0 h-fit space-y-6 lg:py-24 mx-6 md:mx-12 lg:mx-0">
         <div className="flex flex-col space-y-1">
           <h1 className="text-5xl font-semibold text-blue-500">Daniel Hoe</h1>
           <p className="text-lg font-medium text-gray-200">@jumpcutfindo</p>
@@ -26,7 +26,7 @@ export default function Home() {
           </p>
         </div>
         <div className="flex flex-col space-y-4">
-          <p className="text-lg me-32 text-gray-300 font-light">
+          <p className="text-lg text-gray-300 font-light">
             I develop applications and other interactive experiences for users
             worldwide.
           </p>
@@ -48,10 +48,12 @@ export default function Home() {
           </a>
         </div>
       </div>
-      <div className="flex flex-col min-w-[60%] space-y-12 py-32">
-        <section className="flex flex-col px-12">
-          <p className="text-sm font-semibold text-gray-500 mb-4">ABOUT ME</p>
-          <div className="text-lg space-y-4 text-gray-300">
+      <div className="flex flex-col xl:min-w-[70%] lg:min-w-[70%] space-y-8 lg:py-24">
+        <section className="flex flex-col">
+          <div className="sticky top-0 lg:relative py-4 min-w-max bg-inherit md:px-12 px-6 backdrop-blur-lg">
+            <p className="text-sm font-semibold text-gray-400">ABOUT ME</p>
+          </div>
+          <div className="text-lg space-y-4 text-gray-300 text-base md:px-12 px-6">
             <p>
               Hi there! Welcome to my portfolio site, which documents my various
               work experiences and projects I have undertaken over the past few
@@ -72,15 +74,15 @@ export default function Home() {
         </section>
 
         <section className="flex flex-col">
-          <p className="text-sm font-semibold text-gray-500 px-12">
-            EXPERIENCE
-          </p>
+          <div className="sticky top-0 lg:relative py-4 min-w-max bg-inherit md:px-12 px-6 backdrop-blur-lg">
+            <p className="text-sm font-semibold text-gray-400">EXPERIENCES</p>
+          </div>
           <div className="flex flex-col">
             {experience.map((exp, index) => {
               return <HomeExperienceComponent key={index} experience={exp} />;
             })}
           </div>
-          <div className="flex mx-12">
+          <div className="flex md:mx-12 mx-6">
             <a
               className="text-sm font-semibold hover:cursor-pointer group"
               href="/experience"
@@ -97,7 +99,9 @@ export default function Home() {
         </section>
 
         <section className="flex flex-col">
-          <p className="text-sm font-semibold text-gray-500 px-12">PROJECTS</p>
+          <div className="sticky top-0 lg:relative py-4 min-w-max bg-inherit md:px-12 px-6 backdrop-blur-lg">
+            <p className="text-sm font-semibold text-gray-400">PROJECTS</p>
+          </div>
           <div className="flex flex-col">
             {projects
               .filter((proj) => proj.featured)
@@ -106,7 +110,7 @@ export default function Home() {
                 return <HomeProjectComponent key={index} project={proj} />;
               })}
           </div>
-          <div className="flex mx-12">
+          <div className="flex md:mx-12 mx-6">
             <a
               className="text-sm font-semibold hover:cursor-pointer group"
               href="/projects"
@@ -120,6 +124,30 @@ export default function Home() {
               />
             </a>
           </div>
+        </section>
+
+        <section className="flex flex-col text-center text-gray-500 space-y-2">
+          <p className="text-sm md:px-32 px-8">
+            This site was built with{" "}
+            <a href="https://nextjs.org/" target="_blank">
+              <b>Next.js</b>
+            </a>{" "}
+            and{" "}
+            <a href="https://tailwindcss.com/" target="_blank">
+              <b>TailwindCSS</b>
+            </a>
+            , deployed on{" "}
+            <a href="https://pages.github.com/" target="_blank">
+              <b>GitHub Pages</b>
+            </a>{" "}
+            using GitHub Actions.
+          </p>
+          <a
+            href="https://github.com/jumpcutfindo/jumpcutfindo.github.io"
+            target="_blank"
+          >
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
         </section>
       </div>
     </main>
