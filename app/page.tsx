@@ -76,8 +76,8 @@ export default function Home() {
             EXPERIENCE
           </p>
           <div className="flex flex-col">
-            {experience.map((exp) => {
-              return <HomeExperienceComponent experience={exp} />;
+            {experience.map((exp, index) => {
+              return <HomeExperienceComponent key={index} experience={exp} />;
             })}
           </div>
           <div className="flex mx-12">
@@ -102,8 +102,8 @@ export default function Home() {
             {projects
               .filter((proj) => proj.featured)
               .sort((a, b) => (a.featured as number) - (b.featured as number))
-              .map((proj) => {
-                return <HomeProjectComponent project={proj} />;
+              .map((proj, index) => {
+                return <HomeProjectComponent key={index} project={proj} />;
               })}
           </div>
           <div className="flex mx-12">

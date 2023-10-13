@@ -27,9 +27,12 @@ export default function HomeProjectComponent(props: HomeProjectComponentProps) {
           {shortDescription}
         </p>
         <div className="flex flex-wrap">
-          {tags.map((tag) => {
+          {tags.map((tag, index) => {
             return (
-              <span className="bg-blue-600/70 py-1 px-2 text-sm text-blue-100 me-3 mb-3">
+              <span
+                key={index}
+                className="bg-blue-600/70 py-1 px-2 text-sm text-blue-100 me-3 mb-3"
+              >
                 {tag}
               </span>
             );
