@@ -45,7 +45,7 @@ export default function Projects() {
               .map((year, index) => {
                 return (
                   <div key={index}>
-                    <p className="md:px-12 px-6 md:pt-4 md:pb-0 py-4 text-gray-400 text-sm font-medium lg:relative sticky top-0 backdrop-blur-lg">
+                    <p className="md:px-12 px-6 py-4 text-gray-400 text-sm font-medium lg:relative sticky top-0 bg-[#24272e]">
                       {year}
                     </p>
                     {projectsByYear[year].map(

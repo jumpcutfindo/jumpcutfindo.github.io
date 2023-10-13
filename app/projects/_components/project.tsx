@@ -13,7 +13,7 @@ export default function ProjectComponent(props: ProjectComponentProps) {
     props.project;
 
   return (
-    <section className="flex lg:flex-row flex-col md:p-8 md:mx-4 px-6">
+    <section className="flex lg:flex-row flex-col md:px-8 md:mx-4 px-6">
       <div className="flex flex-col min-w-[25%]">
         <Image
           src={image}
