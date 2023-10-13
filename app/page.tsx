@@ -1,113 +1,166 @@
-import Image from 'next/image'
+"use client";
+
+import {
+  faGithub,
+  faLinkedin,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import experienceJson from "./experience/api/experience.json";
+import projectsJson from "./projects/api/projects.json";
+import Experience from "./types/experience";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import Project from "./types/project";
+import HomeExperienceComponent from "./_components/home-experience";
+import HomeProjectComponent from "./_components/home-project";
 
 export default function Home() {
+  const experience = experienceJson as Experience[];
+  const projects = projectsJson as Project[];
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
+    <main className="flex lg:flex-row flex-col justify-between xl:space-x-12 lg:space-x-0 xl:mx-24 lg:mx-16 lg:py-0 md:py-16 py-6 lg:space-y-0 space-y-12">
+      <div className="flex flex-col xl:min-w-[30%] lg:min-w-[30%] lg:min-h-screen lg:sticky top-0 h-fit space-y-6 lg:py-24 mx-6 md:mx-12 lg:mx-0">
+        <div className="flex flex-col space-y-1">
+          <h1 className="text-5xl font-semibold text-blue-500">Daniel Hoe</h1>
+          <p className="text-lg font-medium text-gray-200">@jumpcutfindo</p>
+          <p className="text-lg font-medium text-gray-200">
+            Software Engineer at Visa
+          </p>
+        </div>
+        <div className="flex flex-col space-y-4">
+          <p className="text-lg text-gray-300 font-light">
+            I develop applications and other interactive experiences for users
+            worldwide.
+          </p>
+        </div>
+        <div className="flex flex-row space-x-6">
           <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            href="https://github.com/jumpcutfindo/"
             target="_blank"
-            rel="noopener noreferrer"
+            className="hover:text-blue-500"
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
+            <FontAwesomeIcon icon={faGithub} size="2x" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/daniel-h-8892a3199"
+            target="_blank"
+            className="hover:text-blue-500"
+          >
+            <FontAwesomeIcon icon={faLinkedin} size="2x" />
+          </a>
+          <a
+            href="https://www.youtube.com/@jumpcutfindo"
+            target="_blank"
+            className="hover:text-blue-500"
+          >
+            <FontAwesomeIcon icon={faYoutube} size="2x" />
           </a>
         </div>
       </div>
+      <div className="flex flex-col xl:min-w-[70%] lg:min-w-[70%] space-y-8 lg:py-24">
+        <section className="flex flex-col">
+          <div className="sticky top-0 lg:relative py-4 mb-4 min-w-max bg-inherit md:px-12 px-6 backdrop-blur-lg">
+            <p className="text-sm font-semibold text-gray-400">ABOUT ME</p>
+          </div>
+          <div className="text-lg space-y-4 text-gray-300 text-base md:px-12 px-6">
+            <p>
+              Hi there! Welcome to my portfolio site, which documents my various
+              work experiences and projects I&apos;ve undertaken over the past
+              few years.
+            </p>
+            <p>
+              I started exploring the world of application development back in
+              2010, creating scripts for games and joining my school&apos;s
+              computing club for app design competitions in secondary school.
+            </p>
+            <p>
+              Since then, I&apos;ve built a website for my choir, created an app
+              for listening to music with friends, as well as created game
+              modifications for Minecraft.
+            </p>
+            <p></p>
+          </div>
+        </section>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        <section className="flex flex-col">
+          <div className="sticky top-0 lg:relative py-4 min-w-max bg-inherit md:px-12 px-6 backdrop-blur-lg">
+            <p className="text-sm font-semibold text-gray-400">EXPERIENCES</p>
+          </div>
+          <div className="flex flex-col">
+            {experience.map((exp, index) => {
+              return <HomeExperienceComponent key={index} experience={exp} />;
+            })}
+          </div>
+          <div className="flex md:mx-12 mx-6 mt-4">
+            <a
+              className="text-sm font-semibold hover:cursor-pointer group"
+              href="/experience"
+            >
+              <span className="group-hover:text-blue-400 transition-all">
+                See more
+              </span>
+              <FontAwesomeIcon
+                icon={faArrowRight}
+                className="mx-2 group-hover:translate-x-1/2 group-hover:text-blue-400 transition-all"
+              />
+            </a>
+          </div>
+        </section>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
+        <section className="flex flex-col">
+          <div className="sticky top-0 lg:relative py-4 min-w-max bg-inherit md:px-12 px-6 backdrop-blur-lg">
+            <p className="text-sm font-semibold text-gray-400">PROJECTS</p>
+          </div>
+          <div className="flex flex-col">
+            {projects
+              .filter((proj) => proj.featured)
+              .sort((a, b) => (a.featured as number) - (b.featured as number))
+              .map((proj, index) => {
+                return <HomeProjectComponent key={index} project={proj} />;
+              })}
+          </div>
+          <div className="flex md:mx-12 mx-6">
+            <a
+              className="text-sm font-semibold hover:cursor-pointer group mt-4"
+              href="/projects"
+            >
+              <span className="group-hover:text-blue-400 transition-all">
+                See more
+              </span>
+              <FontAwesomeIcon
+                icon={faArrowRight}
+                className="mx-2 group-hover:translate-x-1/2 group-hover:text-blue-400 transition-all"
+              />
+            </a>
+          </div>
+        </section>
+
+        <section className="flex flex-col text-center text-gray-500 space-y-2">
+          <p className="text-sm md:px-32 px-8">
+            This site was built with{" "}
+            <a href="https://nextjs.org/" target="_blank">
+              <b>Next.js</b>
+            </a>{" "}
+            and{" "}
+            <a href="https://tailwindcss.com/" target="_blank">
+              <b>TailwindCSS</b>
+            </a>
+            , deployed on{" "}
+            <a href="https://pages.github.com/" target="_blank">
+              <b>GitHub Pages</b>
+            </a>{" "}
+            using GitHub Actions.
           </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+          <a
+            href="https://github.com/jumpcutfindo/jumpcutfindo.github.io"
+            target="_blank"
+          >
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
+        </section>
       </div>
     </main>
-  )
+  );
 }
