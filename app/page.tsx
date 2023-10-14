@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import experienceJson from "./experience/api/experience.json";
 import projectsJson from "./projects/api/projects.json";
 import Experience from "./types/experience";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight, faFileLines } from "@fortawesome/free-solid-svg-icons";
 import Project from "./types/project";
 import HomeExperienceComponent from "./_components/home-experience";
 import HomeProjectComponent from "./_components/home-project";
@@ -35,6 +35,10 @@ export default function Home() {
             I develop applications and other interactive experiences for users
             worldwide.
           </p>
+          <a className="hover:text-blue-500 transition-all" href="/resume.pdf">
+            <FontAwesomeIcon icon={faFileLines} className="me-2" />
+            View résumé
+          </a>
         </div>
         <div className="flex flex-row space-x-6">
           <a

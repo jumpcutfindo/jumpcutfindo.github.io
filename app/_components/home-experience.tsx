@@ -2,6 +2,7 @@ import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import dayjs from "dayjs";
 import Experience from "../types/experience";
+import TagList from "../shared-components/tag-list";
 
 interface HomeExperienceComponentProps {
   experience: Experience;
@@ -47,18 +48,7 @@ export default function HomeExperienceComponent(
         <p className="text-gray-300 group-hover:text-white transition-all text-base">
           {shortDescription}
         </p>
-        <div className="flex flex-wrap">
-          {tags.map((tag, index) => {
-            return (
-              <span
-                key={index}
-                className="bg-blue-600/70 py-1 px-2 text-sm text-blue-100 me-3 mb-3"
-              >
-                {tag}
-              </span>
-            );
-          })}
-        </div>
+        <TagList tags={tags} />
       </div>
     </div>
   );
