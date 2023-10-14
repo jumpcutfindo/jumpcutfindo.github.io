@@ -40,21 +40,21 @@ export default function Home() {
           <a
             href="https://github.com/jumpcutfindo/"
             target="_blank"
-            className="hover:text-blue-500"
+            className="hover:text-blue-500 transition-all"
           >
             <FontAwesomeIcon icon={faGithub} size="2x" />
           </a>
           <a
             href="https://www.linkedin.com/in/daniel-h-8892a3199"
             target="_blank"
-            className="hover:text-blue-500"
+            className="hover:text-blue-500 transition-all"
           >
             <FontAwesomeIcon icon={faLinkedin} size="2x" />
           </a>
           <a
             href="https://www.youtube.com/@jumpcutfindo"
             target="_blank"
-            className="hover:text-blue-500"
+            className="hover:text-blue-500 transition-all"
           >
             <FontAwesomeIcon icon={faYoutube} size="2x" />
           </a>
