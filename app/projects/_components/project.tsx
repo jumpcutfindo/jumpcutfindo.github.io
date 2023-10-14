@@ -1,4 +1,5 @@
 import StyledMarkdown from "@/app/shared-components/styled-markdown";
+import TagList from "@/app/shared-components/tag-list";
 import Project from "@/app/types/project";
 import { IconPrefix, IconName } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -58,18 +59,7 @@ export default function ProjectComponent(props: ProjectComponentProps) {
               );
             })}
           </ul>
-          <div className="flex flex-wrap">
-            {tags.map((tag, index) => {
-              return (
-                <span
-                  key={index}
-                  className="bg-blue-600/70 py-1 px-2 text-sm me-3 mb-3 text-blue-100"
-                >
-                  {tag}
-                </span>
-              );
-            })}
-          </div>
+          <TagList tags={tags} />
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import StyledMarkdown from "@/app/shared-components/styled-markdown";
+import TagList from "@/app/shared-components/tag-list";
 import Experience from "@/app/types/experience";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -54,18 +55,7 @@ export default function ExperienceComponent(props: ExperienceComponentProps) {
             })}
           </ul>
 
-          <div className="flex flex-wrap">
-            {tags.map((tag, index) => {
-              return (
-                <span
-                  key={index}
-                  className="bg-blue-600/70 py-1 px-2 mb-3 me-3 text-sm text-blue-100"
-                >
-                  {tag}
-                </span>
-              );
-            })}
-          </div>
+          <TagList tags={tags} />
         </div>
       </div>
     </section>
