@@ -33,8 +33,8 @@ export default function HomeProjectComponent(props: HomeProjectComponentProps) {
         <div className="flex flex-row">
           <h6 className="font-medium text-xl group-hover:text-blue-400 transition-all">
             <span>{title}</span>
-            <span className="text-sm mx-2 my-auto group-hover:text-blue-400 group-hover:text-lg transition-all">
-              <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="xs" />
+            <span className="text-sm mx-2 my-auto">
+              <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="sm" />
             </span>
           </h6>
         </div>

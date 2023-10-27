@@ -39,8 +39,12 @@ export default function HomeExperienceComponent(
             <span>
               {title} · {company}
             </span>
-            <span className="text-sm mx-2 my-auto group-hover:text-blue-400 group-hover:text-lg transition-all">
-              <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="xs" />
+            <span className="text-sm mx-2 my-auto">
+              <FontAwesomeIcon
+                icon={faArrowUpRightFromSquare}
+                size="sm"
+                className="my-auto"
+              />
             </span>
           </h6>
         </div>
