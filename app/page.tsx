@@ -10,7 +10,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import experienceJson from "./experience/api/experience.json";
 import projectsJson from "./projects/api/projects.json";
 import Experience from "./types/experience";
-import { faArrowRight, faFileLines } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowRight,
+  faCamera,
+  faFileLines,
+} from "@fortawesome/free-solid-svg-icons";
 import Project from "./types/project";
 import HomeExperienceComponent from "./_components/home-experience";
 import HomeProjectComponent from "./_components/home-project";
@@ -164,12 +168,21 @@ export default function Home() {
             </a>{" "}
             using GitHub Actions.
           </p>
-          <a
-            href="https://github.com/jumpcutfindo/jumpcutfindo.github.io"
-            target="_blank"
-          >
-            <FontAwesomeIcon icon={faGithub} />
-          </a>
+
+          <div className="flex flex-row flex-grow justify-center space-x-4">
+            <a
+              href="https://github.com/jumpcutfindo/jumpcutfindo.github.io"
+              target="_blank"
+            >
+              <FontAwesomeIcon icon={faGithub} />
+            </a>
+            <a
+              href="/photography"
+              className="hover:text-blue-500 hover:scale-125 hover: transition"
+            >
+              <FontAwesomeIcon icon={faCamera} />
+            </a>
+          </div>
         </section>
       </div>
     </main>
