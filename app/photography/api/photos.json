@@ -1,0 +1,373 @@
+[
+  {
+    "location": "Barcelona",
+    "country": "Spain",
+    "year": 2012,
+    "image": "/photography/20120602-18_01_44-001.jpg",
+    "description": "A yellowish building from the shade"
+  },
+  {
+    "location": "Pisa",
+    "country": "Italy",
+    "year": 2012,
+    "image": "/photography/20121230-11_46_46-002.jpg",
+    "description": "The Leaning Tower of Pisa against an azure blue sky"
+  },
+  {
+    "location": "Tokyo",
+    "country": "Japan",
+    "year": 2014,
+    "image": "/photography/20141205-07_35_56-003.jpg",
+    "description": "Tokyo's cityscape from atop a skyscraper"
+  },
+  {
+    "location": "Tokyo",
+    "country": "Japan",
+    "year": 2014,
+    "image": "/photography/20141205-15_00_09-004.jpg",
+    "description": "A sign pointing towards the Ghbili Museum in Mitaka"
+  },
+  {
+    "location": "Tokyo",
+    "country": "Japan",
+    "year": 2014,
+    "image": "/photography/20141209-10_11_33-005.jpg",
+    "description": "A set of trees with the colours green, yellow and red"
+  },
+  {
+    "location": "Hoi An",
+    "country": "Vietnam",
+    "year": 2015,
+    "image": "/photography/20150502-19_57_27-006.jpg",
+    "description": "Floating lanterns on the river set against the illumination of the city's lights"
+  },
+  {
+    "location": "Hoi An",
+    "country": "Vietnam",
+    "year": 2015,
+    "image": "/photography/20150502-20_35_21-007.jpg",
+    "description": "Hanging lanterns against a dark building"
+  },
+  {
+    "location": "Munich",
+    "country": "Germany",
+    "year": 2015,
+    "image": "/photography/20151215-14_48_59-008.jpg",
+    "description": "Dawn breaking against Munich's cityscape"
+  },
+  {
+    "location": "Neuschwanstein",
+    "country": "Germany",
+    "year": 2015,
+    "image": "/photography/20151215-17_37_38-009.jpg",
+    "description": "A lone farmhouse against the Bavarian mountains"
+  },
+  {
+    "location": "Neuschwanstein",
+    "country": "Germany",
+    "year": 2015,
+    "image": "/photography/20151215-19_21_32-010.jpg",
+    "description": "A landscape view of the Bavarian mountains with a small village and castle in the foreground"
+  },
+  {
+    "location": "Prague",
+    "country": "Czech Republic",
+    "year": 2015,
+    "image": "/photography/20151219-19_07_20-011.jpg",
+    "description": "Buildings in Prague city centre"
+  },
+  {
+    "location": "Prague",
+    "country": "Czech Republic",
+    "year": 2015,
+    "image": "/photography/20151220-21_06_11-012.jpg",
+    "description": "A white bench in a park"
+  },
+  {
+    "location": "Vienna",
+    "country": "Austria",
+    "year": 2015,
+    "image": "/photography/20151225-19_42_55-013.jpg",
+    "description": "People walking in a park"
+  },
+  {
+    "location": "Deception Pass State Park",
+    "country": "Washington, USA",
+    "year": 2015,
+    "image": "/photography/20160312-04_33_26-014.jpg",
+    "description": "Water washing up a shoreline"
+  },
+  {
+    "location": "Seattle",
+    "country": "Washington, USA",
+    "year": 2016,
+    "image": "/photography/20160314-10_44_34-015.jpg",
+    "description": "Seattle at night"
+  },
+  {
+    "location": "Singapore Zoo",
+    "country": "Singapore",
+    "year": 2017,
+    "image": "/photography/20170717-14_02_44-016.jpg",
+    "description": "A meerkat in the zoo"
+  },
+  {
+    "location": "Mandalay",
+    "country": "Myanmar",
+    "year": 2017,
+    "image": "/photography/20170930-18_05_51-017.jpg",
+    "description": "A mother and her child"
+  },
+  {
+    "location": "Mandalay",
+    "country": "Myanmar",
+    "year": 2017,
+    "image": "/photography/20171001-12_19_00-018.jpg",
+    "description": "A boat and a tree in a lake"
+  },
+  {
+    "location": "Mt. Omuro",
+    "country": "Shizuoka, Japan",
+    "year": 2017,
+    "image": "/photography/20171219-12_33_04-019.jpg",
+    "description": "A couple walking down the mountain"
+  },
+  {
+    "location": "Mt. Omuro",
+    "country": "Shizuoka, Japan",
+    "year": 2017,
+    "image": "/photography/20171219-12_49_57-020.jpg",
+    "description": "A man walking along the mountain"
+  },
+  {
+    "location": "Mt. Omoru",
+    "country": "Shizuoka, Japan",
+    "year": 2017,
+    "image": "/photography/20171219-13_26_31-021.jpg",
+    "description": "A family of capybaras"
+  },
+  {
+    "location": "Yuzama",
+    "country": "Niigata, Japan",
+    "year": 2017,
+    "image": "/photography/20171221-14_35_25-022.jpg",
+    "description": "A snow covered town"
+  },
+  {
+    "location": "Victoria",
+    "country": "British Columbia, Canada",
+    "year": 2018,
+    "image": "/photography/20180322-06_40_22-023.jpg",
+    "description": "A lighthouse"
+  },
+  {
+    "location": "Victoria",
+    "country": "British Columbia, Canada",
+    "year": 2018,
+    "image": "/photography/20180322-07_53_44-024.jpg",
+    "description": "A set of suburban houses"
+  },
+  {
+    "location": "Athens",
+    "country": "Greece",
+    "year": 2018,
+    "image": "/photography/20180419-21_34_49-025.jpg",
+    "description": "A random set of ancient bricks"
+  },
+  {
+    "location": "Athens",
+    "country": "Greece",
+    "year": 2018,
+    "image": "/photography/20180419-22_22_46-026.jpg",
+    "description": "The Parthenon"
+  },
+  {
+    "location": "London",
+    "country": "England, United Kingdom",
+    "year": 2018,
+    "image": "/photography/20180628-01_39_25-027.jpg",
+    "description": "A path in the park"
+  },
+  {
+    "location": "Paris",
+    "country": "France",
+    "year": 2018,
+    "image": "/photography/20180629-02_56_15-028.jpg",
+    "description": "A view from under the Eiffel Tower"
+  },
+  {
+    "location": "Paris",
+    "country": "France",
+    "year": 2018,
+    "image": "/photography/20180701-21_32_26-029.jpg",
+    "description": "A tall hedge maze in Versailles"
+  },
+  {
+    "location": "Maui",
+    "country": "Hawaii, USA",
+    "year": 2018,
+    "image": "/photography/20181217-08_52_33-030.jpg",
+    "description": "A hidden cove with a waterfall"
+  },
+  {
+    "location": "Maui",
+    "country": "Hawaii, USA",
+    "year": 2018,
+    "image": "/photography/20181217-08_53_18-031.jpg",
+    "description": "A small house on the hill top, surrounded by trees"
+  },
+  {
+    "location": "Maui",
+    "country": "Hawaii, USA",
+    "year": 2018,
+    "image": "/photography/20181218-12_41_57-032.jpg",
+    "description": "A couple on the beach at sunset"
+  },
+  {
+    "location": "Honolulu",
+    "country": "Hawaii, USA",
+    "year": 2018,
+    "image": "/photography/20181220-08_09_00-033.jpg",
+    "description": "A lighthouse against the ocean"
+  },
+  {
+    "location": "Honolulu",
+    "country": "Hawaii, USA",
+    "year": 2018,
+    "image": "/photography/20191228-12_39_47-034.jpg",
+    "description": "A random abandoned bench"
+  },
+  {
+    "location": "Okinawa",
+    "country": "Japan",
+    "year": 2020,
+    "image": "/photography/20191231-16_38_04-035.jpg",
+    "description": "A fruit"
+  },
+  {
+    "location": "Okinawa",
+    "country": "Japan",
+    "year": 2020,
+    "image": "/photography/20200101-19_55_43-036.jpg",
+    "description": "A dark alley"
+  },
+  {
+    "location": "Okinawa",
+    "country": "Japan",
+    "year": 2020,
+    "image": "/photography/20200102-14_54_38-037.jpg",
+    "description": "A sandy cove encompassed by greenery"
+  },
+  {
+    "location": "Okinawa",
+    "country": "Japan",
+    "year": 2020,
+    "image": "/photography/20200102-15_13_34-038.jpg",
+    "description": "The bottom of some cliffs with waves washing over rocks"
+  },
+  {
+    "location": "Zion National Park",
+    "country": "Utah, USA",
+    "year": 2022,
+    "image": "/photography/20220523-06_52_52-039.jpg",
+    "description": "A view of the park's red hills and a road"
+  },
+  {
+    "location": "Bryce Canyon National Park",
+    "country": "Utah, USA",
+    "year": 2022,
+    "image": "/photography/20220524-02_54_59-040.jpg",
+    "description": "A rocky path down into the park"
+  },
+  {
+    "location": "Grand Teton National Park",
+    "country": "Wyoming, USA",
+    "year": 2022,
+    "image": "/photography/20220526-05_27_19-041.jpg",
+    "description": "A lone tree"
+  },
+  {
+    "location": "Yellowstone National Park",
+    "country": "Wyoming, USA",
+    "year": 2022,
+    "image": "/photography/20220526-10_00_25-042.jpg",
+    "description": "Bison in the sunset in the park"
+  },
+  {
+    "location": "Yellowstone National Park",
+    "country": "Wyoming, USA",
+    "year": 2022,
+    "image": "/photography/20220528-03_50_41-043.jpg",
+    "description": "The Grand Canyon of the Yellowstone"
+  },
+  {
+    "location": "Yellowstone National Park",
+    "country": "Wyoming, USA",
+    "year": 2022,
+    "image": "/photography/20220529-04_10_55-044.jpg",
+    "description": "A bison in misty conditions"
+  },
+  {
+    "location": "Copenhagen",
+    "country": "Denmark",
+    "year": 2023,
+    "image": "/photography/20230904-10_09_29-045.jpg",
+    "description": "Ladybugs on a flower"
+  },
+  {
+    "location": "Copenhagen",
+    "country": "Denmark",
+    "year": 2023,
+    "image": "/photography/20230904-10_55_10-046.jpg",
+    "description": "Three prairie dogs"
+  },
+  {
+    "location": "Copenhagen",
+    "country": "Denmark",
+    "year": 2023,
+    "image": "/photography/20230905-11_05_13-047.jpg",
+    "description": "A bunch of fruit"
+  },
+  {
+    "location": "Helsingor",
+    "country": "Denmark",
+    "year": 2023,
+    "image": "/photography/20230906-18_18_13-048.jpg",
+    "description": "A set of houses"
+  },
+  {
+    "location": "Stevns Klint",
+    "country": "Denmark",
+    "year": 2023,
+    "image": "/photography/20230908-12_06_52-049.jpg",
+    "description": "A plant"
+  },
+  {
+    "location": "Stevns Klint",
+    "country": "Denmark",
+    "year": 2023,
+    "image": "/photography/20230908-12_51_12-050.jpg",
+    "description": "A snail on a plant"
+  },
+  {
+    "location": "Stevns Klint",
+    "country": "Denmark",
+    "year": 2023,
+    "image": "/photography/20230908-12_58_42-051.jpg",
+    "description": "A singular tree draped by mist"
+  },
+  {
+    "location": "Stevns Klint",
+    "country": "Denmark",
+    "year": 2023,
+    "image": "/photography/20230908-13_20_14-052.jpg",
+    "description": "A singular tree along the cliffside"
+  },
+  {
+    "location": "Stevns Klint",
+    "country": "Denmark",
+    "year": 2023,
+    "image": "/photography/20230908-13_35_48-053.jpg",
+    "description": "An old-looking farmhouse against the mist"
+  }
+]
