@@ -47,6 +47,10 @@ interface PhotoProps {
 function Photo(props: PhotoProps) {
   const { index, photo, onOpen } = props;
 
+  const onLoad = () => {
+    console.log("loaded", photo.image);
+  };
+
   return (
     <div
       key={index}
@@ -55,11 +59,11 @@ function Photo(props: PhotoProps) {
     >
       <Image
         src={photo.image}
-        width="0"
-        height="0"
-        sizes="100vw"
-        className="w-full"
+        className="w-full bg-black/10"
+        width={photo.width}
+        height={photo.height}
         alt={photo.description}
+        onLoad={onLoad}
       />
       <p className="text-xs italic text-gray-400 group-hover:text-white transition">
         {photo.location}, {photo.country} ({photo.year})

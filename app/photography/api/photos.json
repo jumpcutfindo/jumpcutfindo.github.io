@@ -4,370 +4,476 @@
     "country": "Spain",
     "year": 2012,
     "image": "/photography/20120602-18_01_44-001.jpg",
-    "description": "A yellowish building from the shade"
+    "description": "A yellowish building from the shade",
+    "width": 778,
+    "height": 466
   },
   {
     "location": "Pisa",
     "country": "Italy",
     "year": 2012,
     "image": "/photography/20121230-11_46_46-002.jpg",
-    "description": "The Leaning Tower of Pisa against an azure blue sky"
+    "description": "The Leaning Tower of Pisa against an azure blue sky",
+    "width": 466,
+    "height": 778
   },
   {
     "location": "Tokyo",
     "country": "Japan",
     "year": 2014,
     "image": "/photography/20141205-07_35_56-003.jpg",
-    "description": "Tokyo's cityscape from atop a skyscraper"
+    "description": "Tokyo's cityscape from atop a skyscraper",
+    "width": 1478,
+    "height": 979
   },
   {
     "location": "Tokyo",
     "country": "Japan",
     "year": 2014,
     "image": "/photography/20141205-15_00_09-004.jpg",
-    "description": "A sign pointing towards the Ghbili Museum in Mitaka"
+    "description": "A sign pointing towards the Ghbili Museum in Mitaka",
+    "width": 1478,
+    "height": 979
   },
   {
     "location": "Tokyo",
     "country": "Japan",
     "year": 2014,
     "image": "/photography/20141209-10_11_33-005.jpg",
-    "description": "A set of trees with the colours green, yellow and red"
+    "description": "A set of trees with the colours green, yellow and red",
+    "width": 1478,
+    "height": 979
   },
   {
     "location": "Hoi An",
     "country": "Vietnam",
     "year": 2015,
     "image": "/photography/20150502-19_57_27-006.jpg",
-    "description": "Floating lanterns on the river set against the illumination of the city's lights"
+    "description": "Floating lanterns on the river set against the illumination of the city's lights",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Hoi An",
     "country": "Vietnam",
     "year": 2015,
     "image": "/photography/20150502-20_35_21-007.jpg",
-    "description": "Hanging lanterns against a dark building"
+    "description": "Hanging lanterns against a dark building",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Munich",
     "country": "Germany",
     "year": 2015,
     "image": "/photography/20151215-14_48_59-008.jpg",
-    "description": "Dawn breaking against Munich's cityscape"
+    "description": "Dawn breaking against Munich's cityscape",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Neuschwanstein",
     "country": "Germany",
     "year": 2015,
     "image": "/photography/20151215-17_37_38-009.jpg",
-    "description": "A lone farmhouse against the Bavarian mountains"
+    "description": "A lone farmhouse against the Bavarian mountains",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Neuschwanstein",
     "country": "Germany",
     "year": 2015,
     "image": "/photography/20151215-19_21_32-010.jpg",
-    "description": "A landscape view of the Bavarian mountains with a small village and castle in the foreground"
+    "description": "A landscape view of the Bavarian mountains with a small village and castle in the foreground",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Prague",
     "country": "Czech Republic",
     "year": 2015,
     "image": "/photography/20151219-19_07_20-011.jpg",
-    "description": "Buildings in Prague city centre"
+    "description": "Buildings in Prague city centre",
+    "width": 1797,
+    "height": 939
   },
   {
     "location": "Prague",
     "country": "Czech Republic",
     "year": 2015,
     "image": "/photography/20151220-21_06_11-012.jpg",
-    "description": "A white bench in a park"
+    "description": "A white bench in a park",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Vienna",
     "country": "Austria",
     "year": 2015,
     "image": "/photography/20151225-19_42_55-013.jpg",
-    "description": "People walking in a park"
+    "description": "People walking in a park",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Deception Pass State Park",
     "country": "Washington, USA",
     "year": 2015,
     "image": "/photography/20160312-04_33_26-014.jpg",
-    "description": "Water washing up a shoreline"
+    "description": "Water washing up a shoreline",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Seattle",
     "country": "Washington, USA",
     "year": 2016,
     "image": "/photography/20160314-10_44_34-015.jpg",
-    "description": "Seattle at night"
+    "description": "Seattle at night",
+    "width": 1720,
+    "height": 968
   },
   {
     "location": "Singapore Zoo",
     "country": "Singapore",
     "year": 2017,
     "image": "/photography/20170717-14_02_44-016.jpg",
-    "description": "A meerkat in the zoo"
+    "description": "A meerkat in the zoo",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Mandalay",
     "country": "Myanmar",
     "year": 2017,
     "image": "/photography/20170930-18_05_51-017.jpg",
-    "description": "A mother and her child"
+    "description": "A mother and her child",
+    "width": 1669,
+    "height": 1013
   },
   {
     "location": "Mandalay",
     "country": "Myanmar",
     "year": 2017,
     "image": "/photography/20171001-12_19_00-018.jpg",
-    "description": "A boat and a tree in a lake"
+    "description": "A boat and a tree in a lake",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Mt. Omuro",
     "country": "Shizuoka, Japan",
     "year": 2017,
     "image": "/photography/20171219-12_33_04-019.jpg",
-    "description": "A couple walking down the mountain"
+    "description": "A couple walking down the mountain",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Mt. Omuro",
     "country": "Shizuoka, Japan",
     "year": 2017,
     "image": "/photography/20171219-12_49_57-020.jpg",
-    "description": "A man walking along the mountain"
+    "description": "A man walking along the mountain",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Mt. Omoru",
     "country": "Shizuoka, Japan",
     "year": 2017,
     "image": "/photography/20171219-13_26_31-021.jpg",
-    "description": "A family of capybaras"
+    "description": "A family of capybaras",
+    "width": 1716,
+    "height": 1013
   },
   {
     "location": "Yuzama",
     "country": "Niigata, Japan",
     "year": 2017,
     "image": "/photography/20171221-14_35_25-022.jpg",
-    "description": "A snow covered town"
+    "description": "A snow covered town",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Victoria",
     "country": "British Columbia, Canada",
     "year": 2018,
     "image": "/photography/20180322-06_40_22-023.jpg",
-    "description": "A lighthouse"
+    "description": "A lighthouse",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Victoria",
     "country": "British Columbia, Canada",
     "year": 2018,
     "image": "/photography/20180322-07_53_44-024.jpg",
-    "description": "A set of suburban houses"
+    "description": "A set of suburban houses",
+    "width": 1673,
+    "height": 885
   },
   {
     "location": "Athens",
     "country": "Greece",
     "year": 2018,
     "image": "/photography/20180419-21_34_49-025.jpg",
-    "description": "A random set of ancient bricks"
+    "description": "A random set of ancient bricks",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Athens",
     "country": "Greece",
     "year": 2018,
     "image": "/photography/20180419-22_22_46-026.jpg",
-    "description": "The Parthenon"
+    "description": "The Parthenon",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "London",
     "country": "England, United Kingdom",
     "year": 2018,
     "image": "/photography/20180628-01_39_25-027.jpg",
-    "description": "A path in the park"
+    "description": "A path in the park",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Paris",
     "country": "France",
     "year": 2018,
     "image": "/photography/20180629-02_56_15-028.jpg",
-    "description": "A view from under the Eiffel Tower"
+    "description": "A view from under the Eiffel Tower",
+    "width": 1738,
+    "height": 978
   },
   {
     "location": "Paris",
     "country": "France",
     "year": 2018,
     "image": "/photography/20180701-21_32_26-029.jpg",
-    "description": "A tall hedge maze in Versailles"
+    "description": "A tall hedge maze in Versailles",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Maui",
     "country": "Hawaii, USA",
     "year": 2018,
     "image": "/photography/20181217-08_52_33-030.jpg",
-    "description": "A hidden cove with a waterfall"
+    "description": "A hidden cove with a waterfall",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Maui",
     "country": "Hawaii, USA",
     "year": 2018,
     "image": "/photography/20181217-08_53_18-031.jpg",
-    "description": "A small house on the hill top, surrounded by trees"
+    "description": "A small house on the hill top, surrounded by trees",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Maui",
     "country": "Hawaii, USA",
     "year": 2018,
     "image": "/photography/20181218-12_41_57-032.jpg",
-    "description": "A couple on the beach at sunset"
+    "description": "A couple on the beach at sunset",
+    "width": 1662,
+    "height": 935
   },
   {
     "location": "Honolulu",
     "country": "Hawaii, USA",
     "year": 2018,
     "image": "/photography/20181220-08_09_00-033.jpg",
-    "description": "A lighthouse against the ocean"
+    "description": "A lighthouse against the ocean",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Honolulu",
     "country": "Hawaii, USA",
     "year": 2018,
     "image": "/photography/20191228-12_39_47-034.jpg",
-    "description": "A random abandoned bench"
+    "description": "A random abandoned bench",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Okinawa",
     "country": "Japan",
     "year": 2020,
     "image": "/photography/20191231-16_38_04-035.jpg",
-    "description": "A fruit"
+    "description": "A fruit",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Okinawa",
     "country": "Japan",
     "year": 2020,
     "image": "/photography/20200101-19_55_43-036.jpg",
-    "description": "A dark alley"
+    "description": "A dark alley",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Okinawa",
     "country": "Japan",
     "year": 2020,
     "image": "/photography/20200102-14_54_38-037.jpg",
-    "description": "A sandy cove encompassed by greenery"
+    "description": "A sandy cove encompassed by greenery",
+    "width": 1706,
+    "height": 960
   },
   {
     "location": "Okinawa",
     "country": "Japan",
     "year": 2020,
     "image": "/photography/20200102-15_13_34-038.jpg",
-    "description": "The bottom of some cliffs with waves washing over rocks"
+    "description": "The bottom of some cliffs with waves washing over rocks",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Zion National Park",
     "country": "Utah, USA",
     "year": 2022,
     "image": "/photography/20220523-06_52_52-039.jpg",
-    "description": "A view of the park's red hills and a road"
+    "description": "A view of the park's red hills and a road",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Bryce Canyon National Park",
     "country": "Utah, USA",
     "year": 2022,
     "image": "/photography/20220524-02_54_59-040.jpg",
-    "description": "A rocky path down into the park"
+    "description": "A rocky path down into the park",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Grand Teton National Park",
     "country": "Wyoming, USA",
     "year": 2022,
     "image": "/photography/20220526-05_27_19-041.jpg",
-    "description": "A lone tree"
+    "description": "A lone tree",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Yellowstone National Park",
     "country": "Wyoming, USA",
     "year": 2022,
     "image": "/photography/20220526-10_00_25-042.jpg",
-    "description": "Bison in the sunset in the park"
+    "description": "Bison in the sunset in the park",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Yellowstone National Park",
     "country": "Wyoming, USA",
     "year": 2022,
     "image": "/photography/20220528-03_50_41-043.jpg",
-    "description": "The Grand Canyon of the Yellowstone"
+    "description": "The Grand Canyon of the Yellowstone",
+    "width": 1710,
+    "height": 962
   },
   {
     "location": "Yellowstone National Park",
     "country": "Wyoming, USA",
     "year": 2022,
     "image": "/photography/20220529-04_10_55-044.jpg",
-    "description": "A bison in misty conditions"
+    "description": "A bison in misty conditions",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Copenhagen",
     "country": "Denmark",
     "year": 2023,
     "image": "/photography/20230904-10_09_29-045.jpg",
-    "description": "Ladybugs on a flower"
+    "description": "Ladybugs on a flower",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Copenhagen",
     "country": "Denmark",
     "year": 2023,
     "image": "/photography/20230904-10_55_10-046.jpg",
-    "description": "Three prairie dogs"
+    "description": "Three prairie dogs",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Copenhagen",
     "country": "Denmark",
     "year": 2023,
     "image": "/photography/20230905-11_05_13-047.jpg",
-    "description": "A bunch of fruit"
+    "description": "A bunch of fruit",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Helsingor",
     "country": "Denmark",
     "year": 2023,
     "image": "/photography/20230906-18_18_13-048.jpg",
-    "description": "A set of houses"
+    "description": "A set of houses",
+    "width": 1772,
+    "height": 997
   },
   {
     "location": "Stevns Klint",
     "country": "Denmark",
     "year": 2023,
     "image": "/photography/20230908-12_06_52-049.jpg",
-    "description": "A plant"
+    "description": "A plant",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Stevns Klint",
     "country": "Denmark",
     "year": 2023,
     "image": "/photography/20230908-12_51_12-050.jpg",
-    "description": "A snail on a plant"
+    "description": "A snail on a plant",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Stevns Klint",
     "country": "Denmark",
     "year": 2023,
     "image": "/photography/20230908-12_58_42-051.jpg",
-    "description": "A singular tree draped by mist"
+    "description": "A singular tree draped by mist",
+    "width": 1730,
+    "height": 1013
   },
   {
     "location": "Stevns Klint",
     "country": "Denmark",
     "year": 2023,
     "image": "/photography/20230908-13_20_14-052.jpg",
-    "description": "A singular tree along the cliffside"
+    "description": "A singular tree along the cliffside",
+    "width": 1800,
+    "height": 1013
   },
   {
     "location": "Stevns Klint",
     "country": "Denmark",
     "year": 2023,
     "image": "/photography/20230908-13_35_48-053.jpg",
-    "description": "An old-looking farmhouse against the mist"
+    "description": "An old-looking farmhouse against the mist",
+    "width": 1784,
+    "height": 1004
   }
 ]
