@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { MouseEvent, useState } from "react";
 import Image from "next/image";
 
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
@@ -17,13 +17,19 @@ interface PhotoModalProps {
 
 function PhotoModal(props: PhotoModalProps) {
   const { photo, isOpen, setIsOpen } = props;
+
+  const onClick = (event: MouseEvent<HTMLDivElement>) => {
+    setIsOpen(false);
+  };
+
   return (
     <Dialog
       open={isOpen}
-      onClose={() => setIsOpen(false)}
+      onClick={onClick}
+      onClose={() => {}}
       className="fixed inset-0 z-10 overflow-y-auto flex justify-center items-center bg-black/60"
     >
-      <Dialog.Panel className="max-w-screen-xl">
+      <Dialog.Panel className="max-w-screen-xl" onClick={onClick}>
         {photo && (
           <Image
             src={photo.image}
