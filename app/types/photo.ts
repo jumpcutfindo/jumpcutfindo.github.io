@@ -4,4 +4,6 @@ export default interface Photo {
     year: number;
     image: string;
     description: string;
+    width: number;
+    height: number;
 }
