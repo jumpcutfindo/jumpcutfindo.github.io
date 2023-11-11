@@ -38,6 +38,36 @@ function PhotoModal(props: PhotoModalProps) {
   );
 }
 
+interface PhotoProps {
+  index: number;
+  photo: Photo;
+  onOpen: (photo: Photo) => void;
+}
+
+function Photo(props: PhotoProps) {
+  const { index, photo, onOpen } = props;
+
+  return (
+    <div
+      key={index}
+      className="flex flex-col space-y-2 w-full break-inside-avoid-column hover:cursor-pointer group"
+      onClick={() => onOpen(photo)}
+    >
+      <Image
+        src={photo.image}
+        width="0"
+        height="0"
+        sizes="100vw"
+        className="w-full"
+        alt={photo.description}
+      />
+      <p className="text-xs italic text-gray-400 group-hover:text-white transition">
+        {photo.location}, {photo.country} ({photo.year})
+      </p>
+    </div>
+  );
+}
+
 export default function Photography() {
   const photos = photosJson as Photo[];
 
@@ -46,9 +76,22 @@ export default function Photography() {
   );
   const [isModalOpen, setModalOpen] = useState(false);
 
+  const originalLoadedState: { [key: string]: boolean } = {};
+  for (const photo of photos) originalLoadedState[photo.image] = false;
+  const [isPhotoLoaded, setIsPhotoLoaded] = useState(originalLoadedState);
+
   const onOpenPhoto = (photo: Photo) => {
     setCurrentPhoto(photo);
     setModalOpen(true);
+  };
+
+  const onPhotoLoad = (photo: string) => {
+    console.log("loaded image", photo);
+    setIsPhotoLoaded((prevState) => {
+      const newState = { ...prevState };
+      newState[photo] = true;
+      return newState;
+    });
   };
 
   return (
@@ -79,23 +122,12 @@ export default function Photography() {
           <div className="columns-1 md:columns-2 lg:columns-3 md:mx-12 mx-6 gap-8 md:space-y-8 space-y-4">
             {photos.map((photo, index) => {
               return (
-                <div
+                <Photo
                   key={index}
-                  className="flex flex-col space-y-2 w-full break-inside-avoid-column hover:cursor-pointer group"
-                  onClick={() => onOpenPhoto(photo)}
-                >
-                  <Image
-                    src={photo.image}
-                    width="0"
-                    height="0"
-                    sizes="100vw"
-                    className="w-full"
-                    alt={photo.description}
-                  />
-                  <p className="text-xs italic text-gray-400 group-hover:text-white transition">
-                    {photo.location}, {photo.country} ({photo.year})
-                  </p>
-                </div>
+                  index={index}
+                  photo={photo}
+                  onOpen={onOpenPhoto}
+                />
               );
             })}
           </div>
