@@ -1,5 +1,27 @@
 [
   {
+    "id": "fanyi",
+    "title": "Fanyi",
+    "url": "https://github.com/jumpcutfindo/fanyi",
+    "year": 2024,
+    "shortDescription": "Fanyi is a simple Python application that reads Chinese on your screen and provides translations for them.",
+    "longDescription": "Fanyi (翻译) is a screen reading application that was made to complement my attempt at improving my Chinese. It reads either Simplified or Traditional Chinese within defined regions of your screen, attempts to break up these sentences into phrases and provides translations for them.",
+    "pointers": [
+      "Implemented in Python with the use of [EasyOCR](https://github.com/JaidedAI/EasyOCR) and [pkuseg](https://github.com/lancopku/pkuseg-python)",
+      "Makes use of the [CEDICT dictionary](https://en.wikipedia.org/wiki/CEDICT) for translating phrases",
+      "Preset system to define regions of the screen to be captured"
+    ],
+    "links": [
+      {
+        "icon": "fab github",
+        "url": "https://github.com/jumpcutfindo/fanyi"
+      }
+    ],
+    "featured": 4,
+    "image": "/projects/fanyi/main.png",
+    "tags": ["Python", "UI/UX Design"]
+  },
+  {
     "id": "la-biblioteca",
     "title": "La Biblioteca",
     "url": "https://github.com/jumpcutfindo/la-biblioteca",
