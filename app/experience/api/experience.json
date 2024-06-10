@@ -1,6 +1,22 @@
 [
   {
+    "start": "2024-03-01T08:00:00+08:00",
+    "title": "Frontend Engineer",
+    "company": "ASUS AICS",
+    "url": "https://aics.asus.com/home/",
+    "shortDescription": "Developing and maintaining high-performance medical web applications for ASUS AICS with Vue.",
+    "longDescription": "I am part of the frontend engineering team at ASUS AICS. As part of my role, I help to build and implement new features for the company's xHIS web application, used by medical praticioners across Taiwan. ",
+    "pointers": [
+      "Developed and maintained a complex Vue application used by medical professionals to manage patient records, schedule appointments, and streamline clinic operations.",
+      "Collaborated with cross-functional teams including backend developers, UX/UI designers and product designers to deliver high-quality software experiences.",
+      "Implemented responsive and user-friendly interfaces for use across multiple devices and browsers.",
+      "Participated in code reviews to ensure adherence to best practices, coding standards, and maintainability."
+    ],
+    "tags": ["Vue", "TypeScript", "HTML", "SCSS", "Git"]
+  },
+  {
     "start": "2022-07-01T08:00:00+08:00",
+    "end": "2024-03-01T08:00:00+08:00",
     "title": "Software Engineer",
     "company": "Visa",
     "url": "https://www.visa.com.sg/",
