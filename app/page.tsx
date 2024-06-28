@@ -31,7 +31,7 @@ export default function Home() {
           <h1 className="text-5xl font-semibold text-blue-500">Daniel Hoe</h1>
           <p className="text-lg font-light text-gray-200">@jumpcutfindo</p>
           <p className="text-lg font-medium text-gray-200">
-            Software Engineer at Visa
+            Software Engineer at AICS
           </p>
         </div>
         <div className="flex flex-col space-y-4">
