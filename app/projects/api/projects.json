@@ -17,7 +17,7 @@
         "url": "https://github.com/jumpcutfindo/fanyi"
       }
     ],
-    "featured": 4,
+    "featured": 3,
     "image": "/projects/fanyi/main.png",
     "tags": ["Python", "UI/UX Design"]
   },
@@ -40,7 +40,7 @@
       }
     ],
     "image": "/projects/la-biblioteca/main.jpg",
-    "featured": 2,
+    "featured": 4,
     "tags": ["Rust", "API Design", "Integration Testing"]
   },
   {
@@ -104,7 +104,7 @@
       }
     ],
     "image": "/projects/microchip/main.png",
-    "featured": 3,
+    "featured": 2,
     "tags": [
       "Java",
       "Gradle",
