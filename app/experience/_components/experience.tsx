@@ -11,7 +11,7 @@ interface ExperienceComponentProps {
 }
 
 export default function ExperienceComponent(props: ExperienceComponentProps) {
-  const { start, end, title, company, url, longDescription, pointers, tags } =
+  const { start, end, title, company, id, longDescription, pointers, tags } =
     props.experience;
 
   const startFormatted = dayjs(start).format("MMM YYYY").toUpperCase();
@@ -20,7 +20,7 @@ export default function ExperienceComponent(props: ExperienceComponentProps) {
     : undefined;
 
   return (
-    <section className="flex flex-col lg:flex-row">
+    <section id={id} className="flex flex-col lg:flex-row">
       <div className="flex flex-col min-w-[25%] space-y-1">
         <p className="text-gray-400 text-sm  md:px-12 px-6">
           {startFormatted} {endFormatted ? `- ${endFormatted}` : "- PRESENT"}

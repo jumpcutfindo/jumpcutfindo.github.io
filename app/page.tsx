@@ -31,7 +31,7 @@ export default function Home() {
           <h1 className="text-5xl font-semibold text-blue-500">Daniel Hoe</h1>
           <p className="text-lg font-light text-gray-200">@jumpcutfindo</p>
           <p className="text-lg font-medium text-gray-200">
-            Software Engineer at AICS
+            Software Engineer at ASUS
           </p>
         </div>
         <div className="flex flex-col space-y-4">
@@ -39,7 +39,11 @@ export default function Home() {
             I develop applications and other interactive experiences for users
             worldwide.
           </p>
-          <a className="hover:text-blue-500 transition-all" href="/resume.pdf">
+          <a
+            className="hover:text-blue-500 transition-all"
+            href="/resume.pdf"
+            target="_blank"
+          >
             <FontAwesomeIcon icon={faFileLines} className="me-2" />
             View résumé
           </a>
@@ -90,7 +94,7 @@ export default function Home() {
               to music with
               friends](https://github.com/jumpcutfindo/sync-along), as well as
               created [game modifications for
-              Minecraft](https://www.curseforge.com/minecraft/mc-mods/happy-holidays).
+              Minecraft](https://github.com/search?q=owner%3Ajumpcutfindo%20topic%3Aminecraft&type=repositories).
             </StyledMarkdown>
 
             <p></p>
@@ -102,7 +106,7 @@ export default function Home() {
             <p className="text-sm font-semibold text-gray-400">EXPERIENCES</p>
           </div>
           <div className="flex flex-col">
-            {experience.map((exp, index) => {
+            {experience.slice(0, 3).map((exp, index) => {
               return <HomeExperienceComponent key={index} experience={exp} />;
             })}
           </div>
