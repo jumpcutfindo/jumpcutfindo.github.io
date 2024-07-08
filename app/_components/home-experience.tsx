@@ -11,7 +11,7 @@ interface HomeExperienceComponentProps {
 export default function HomeExperienceComponent(
   props: HomeExperienceComponentProps
 ) {
-  const { start, end, title, company, url, shortDescription, tags } =
+  const { start, end, title, company, id, shortDescription, tags } =
     props.experience;
 
   const startFormatted = dayjs(start).format("MMM YYYY").toUpperCase();
@@ -20,7 +20,7 @@ export default function HomeExperienceComponent(
     : undefined;
 
   const onClickComponent = () => {
-    open(url, "_blank");
+    open(`/experience#${id}`, "_self");
   };
 
   return (
