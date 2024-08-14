@@ -27,16 +27,31 @@ export default function IntentionalCountdown() {
   const calculateRemaining = () => {
     const now = dayjs();
 
+    return {
+      days: launchDate.diff(now, "day"),
+      hours: launchDate.diff(now, "hour") % 24,
+      mins: launchDate.diff(now, "minute") % 60,
+      secs: launchDate.diff(now, "second") % 60,
+    };
+  };
+
+  const updateRemainingString = () => {
+    const values = calculateRemaining();
+
     setRemaining({
-      days: String(launchDate.diff(now, "day")).padStart(2, "0"),
-      hours: String(launchDate.diff(now, "hour") % 24).padStart(2, "0"),
-      mins: String(launchDate.diff(now, "minute") % 60).padStart(2, "0"),
-      secs: String(launchDate.diff(now, "second") % 60).padStart(2, "0"),
+      days: String(values.days).padStart(2, "0"),
+      hours: String(values.hours).padStart(2, "0"),
+      mins: String(values.mins).padStart(2, "0"),
+      secs: String(values.secs).padStart(2, "0"),
     });
   };
 
+  const isCompleted = () => {
+    return dayjs().isAfter(launchDate);
+  };
+
   useEffect(() => {
-    const id = setInterval(() => calculateRemaining(), 1000);
+    const id = setInterval(() => updateRemainingString(), 1000);
     return () => {
       clearInterval(id);
     };
@@ -44,7 +59,11 @@ export default function IntentionalCountdown() {
 
   return (
     <main className="flex 2xl:px-[560px] xl:px-96 lg:px-56 md:px-24 sm:px-12 px-4 w-screen">
-      <div className="flex flex-col w-screen justify-center items-center 2xl:gap-32 sm:gap-16 gap-12">
+      <div
+        className={`flex flex-col w-screen justify-center items-center 2xl:gap-32 sm:gap-16 gap-12 ${
+          isCompleted() ? "" : "translate-y-[-5%]"
+        }`}
+      >
         <div className="flex flex-row space-x-4">
           <Image
             src="/intentional/vjchoir.png"
@@ -112,20 +131,22 @@ export default function IntentionalCountdown() {
             </div>
           </div>
         </div>
-        <div className="flex flex-row gap-16">
-          {/* TODO(intentional): Update this to the trailer link */}
-          <a href="https://www.youtube.com/@jumpcutfindo" target="_blank">
-            <FontAwesomeIcon icon={faFilm} size="2x" />
-          </a>
-          {/* TODO(intentional): Update this to the playlist */}
-          <a href="https://www.youtube.com/@jumpcutfindo" target="_blank">
-            <FontAwesomeIcon icon={faYoutube} size="2x" />
-          </a>
-          {/* TODO(intentional): Update this to the website homepage */}
-          <a href="https://www.youtube.com/@jumpcutfindo" target="_blank">
-            <FontAwesomeIcon icon={faGlobe} size="2x" />
-          </a>
-        </div>
+        {isCompleted() && (
+          <div className="flex flex-row gap-16">
+            {/* TODO(intentional): Update this to the trailer link */}
+            <a href="https://www.youtube.com/@jumpcutfindo" target="_blank">
+              <FontAwesomeIcon icon={faFilm} size="2x" />
+            </a>
+            {/* TODO(intentional): Update this to the playlist */}
+            <a href="https://www.youtube.com/@jumpcutfindo" target="_blank">
+              <FontAwesomeIcon icon={faYoutube} size="2x" />
+            </a>
+            {/* TODO(intentional): Update this to the website homepage */}
+            <a href="https://www.youtube.com/@jumpcutfindo" target="_blank">
+              <FontAwesomeIcon icon={faGlobe} size="2x" />
+            </a>
+          </div>
+        )}
       </div>
     </main>
   );
