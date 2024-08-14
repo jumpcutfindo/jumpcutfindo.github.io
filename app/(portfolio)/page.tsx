@@ -18,7 +18,7 @@ import {
 import Project from "./types/project";
 import HomeExperienceComponent from "./_components/home-experience";
 import HomeProjectComponent from "./_components/home-project";
-import StyledMarkdown from "./shared-components/styled-markdown";
+import StyledMarkdown from "../shared-components/styled-markdown";
 
 export default function Home() {
   const experience = experienceJson as Experience[];
