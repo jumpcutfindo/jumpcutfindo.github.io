@@ -8,7 +8,7 @@ import { Signika } from "next/font/google";
 import styles from "./countdown.module.css";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faFilm, faGlobe } from "@fortawesome/free-solid-svg-icons";
 
 const signika = Signika({ subsets: ["latin"] });
@@ -60,7 +60,7 @@ export default function IntentionalCountdown() {
   return (
     <main className="flex 2xl:px-[560px] xl:px-96 lg:px-56 md:px-24 sm:px-12 px-4 w-screen">
       <div
-        className={`flex flex-col w-screen justify-center items-center 2xl:gap-32 sm:gap-16 gap-12 ${
+        className={`flex flex-col w-screen justify-center items-center 2xl:gap-32 gap-16 ${
           isCompleted() ? "" : "translate-y-[-5%]"
         }`}
       >
@@ -135,17 +135,21 @@ export default function IntentionalCountdown() {
         </div>
         {isCompleted() && (
           <div className="flex flex-row gap-16">
+            {/* TODO(intentional): Update this to the website homepage */}
+            <a href="https://www.youtube.com/@jumpcutfindo" target="_blank">
+              <FontAwesomeIcon icon={faGlobe} size="2x" />
+            </a>
             {/* TODO(intentional): Update this to the trailer link */}
             <a href="https://www.youtube.com/@jumpcutfindo" target="_blank">
               <FontAwesomeIcon icon={faFilm} size="2x" />
             </a>
-            {/* TODO(intentional): Update this to the playlist */}
+            {/* TODO(intentional): Update this to the playlist link */}
             <a href="https://www.youtube.com/@jumpcutfindo" target="_blank">
               <FontAwesomeIcon icon={faYoutube} size="2x" />
             </a>
-            {/* TODO(intentional): Update this to the website homepage */}
+            {/* TODO(intentional): Update this to the Instagram*/}
             <a href="https://www.youtube.com/@jumpcutfindo" target="_blank">
-              <FontAwesomeIcon icon={faGlobe} size="2x" />
+              <FontAwesomeIcon icon={faInstagram} size="2x" />
             </a>
           </div>
         )}
