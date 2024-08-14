@@ -15,23 +15,23 @@ const signika = Signika({ subsets: ["latin"] });
 
 export default function IntentionalCountdown() {
   // TODO(intentional): Update to correct date and time
-  const launchDate = dayjs("2025-01-01");
+  const launchDate = dayjs("2024-08-23");
 
   const [remaining, setRemaining] = useState({
-    days: "0",
-    hours: "0",
-    mins: "0",
-    secs: "0",
+    days: "00",
+    hours: "00",
+    mins: "00",
+    secs: "00",
   });
 
   const calculateRemaining = () => {
     const now = dayjs();
 
     return {
-      days: launchDate.diff(now, "day"),
-      hours: launchDate.diff(now, "hour") % 24,
-      mins: launchDate.diff(now, "minute") % 60,
-      secs: launchDate.diff(now, "second") % 60,
+      days: Math.max(launchDate.diff(now, "day"), 0),
+      hours: Math.max(launchDate.diff(now, "hour") % 24, 0),
+      mins: Math.max(launchDate.diff(now, "minute") % 60, 0),
+      secs: Math.max(launchDate.diff(now, "second") % 60, 0),
     };
   };
 
