@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Experience from "../types/experience";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import type Experience from "../types/experience";
 
 import experienceJson from "./api/experience.json";
 import ExperienceComponent from "./_components/experience";
