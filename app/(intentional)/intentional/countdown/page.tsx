@@ -43,19 +43,21 @@ export default function IntentionalCountdown() {
   }, []);
 
   return (
-    <main className="flex lg:px-48 md:px-24 px-12 w-screen">
-      <div className="flex flex-col w-screen justify-center items-center gap-12 translate-y-[-5%]">
-        <div className="flex flex-row">
+    <main className="flex 2xl:px-[560px] xl:px-96 lg:px-56 md:px-24 sm:px-12 px-4 w-screen">
+      <div className="flex flex-col w-screen justify-center items-center 2xl:gap-32 sm:gap-16 gap-12">
+        <div className="flex flex-row space-x-4">
           <Image
             src="/intentional/vjchoir.png"
             alt=""
             width="0"
             height="0"
-            className="w-48"
+            className="sm:w-48 w-40"
           ></Image>
-          <p className={`my-auto text-semibold text-xl`}>INTERVIEWS</p>
+          <p className={`my-auto text-semibold sm:text-xl text-xl`}>
+            INTERVIEWS
+          </p>
         </div>
-        <div className="w-full flex relative items-center translate-y-[-40%]">
+        <div className="w-full flex relative items-center">
           <div className={`absolute w-full z-0 ${styles.countdown_maroon}`}>
             <Image
               src="/intentional/countdown/countdown-bg-maroon.svg"
@@ -74,28 +76,36 @@ export default function IntentionalCountdown() {
               className="w-full"
             ></Image>
           </div>
-          <div className="w-full relative flex flex-row justify-between mx-16 text-black z-2">
+          <div className="w-full relative flex flex-row justify-between 2xl:mx-24 sm:mx-16 mx-8 text-black z-2">
             <div className="flex flex-col text-center">
-              <span className={`${signika.className} text-5xl`}>
+              <span
+                className={`${signika.className} 2xl:text-6xl sm:text-5xl text-3xl`}
+              >
                 {remaining.days}
               </span>
               <span className="text-base font-semibold">DAYS</span>
             </div>
             <div className="flex flex-col text-center">
-              <span className={`${signika.className} text-5xl`}>
+              <span
+                className={`${signika.className} 2xl:text-6xl sm:text-5xl text-3xl`}
+              >
                 {remaining.hours}
               </span>
               <span className="text-base font-semibold">HOURS</span>
             </div>
 
             <div className="flex flex-col text-center">
-              <span className={`${signika.className} text-5xl`}>
+              <span
+                className={`${signika.className} 2xl:text-6xl sm:text-5xl text-3xl`}
+              >
                 {remaining.mins}
               </span>
               <span className="text-base font-semibold">MINS</span>
             </div>
             <div className="flex flex-col text-center">
-              <span className={`${signika.className} text-5xl`}>
+              <span
+                className={`${signika.className} 2xl:text-6xl sm:text-5xl text-3xl`}
+              >
                 {remaining.secs}
               </span>
               <span className="text-base font-semibold">SECS</span>
