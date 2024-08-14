@@ -1,12 +1,12 @@
-.countdown {
-  animation: background fadeinout 3s;
+.countdown_maroon {
+  animation: fadeinout 3s ease-in-out;
   animation-iteration-count: infinite;
 }
 
 @keyframes fadeinout {
   0%,
   100% {
-    opacity: 0;
+    opacity: 0.5;
   }
   50% {
     opacity: 1;
