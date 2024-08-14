@@ -15,7 +15,7 @@ const signika = Signika({ subsets: ["latin"] });
 
 export default function IntentionalCountdown() {
   // TODO(intentional): Update to correct date and time
-  const launchDate = dayjs("2024-08-23");
+  const launchDate = dayjs("2026-08-14");
 
   const [remaining, setRemaining] = useState({
     days: "00",
@@ -77,7 +77,9 @@ export default function IntentionalCountdown() {
           </p>
         </div>
         <div className="w-full flex relative items-center">
-          <div className={`absolute w-full z-0 ${styles.countdown_maroon}`}>
+          <div
+            className={`absolute w-full z-0 ${styles.countdown_maroon} sm:rotate-0 rotate-90`}
+          >
             <Image
               src="/intentional/countdown/countdown-bg-maroon.svg"
               alt=""
@@ -86,7 +88,7 @@ export default function IntentionalCountdown() {
               className="w-full"
             ></Image>
           </div>
-          <div className="absolute w-full z-1">
+          <div className="absolute w-full z-1 sm:rotate-0 rotate-90">
             <Image
               src="/intentional/countdown/countdown-bg.svg"
               alt=""
@@ -95,7 +97,7 @@ export default function IntentionalCountdown() {
               className="w-full"
             ></Image>
           </div>
-          <div className="w-full relative flex flex-row justify-between 2xl:mx-24 sm:mx-16 mx-8 text-black z-2">
+          <div className="w-full relative flex sm:flex-row flex-col justify-between 2xl:mx-24 sm:mx-16 mx-8 text-black z-2 sm:gap-0 gap-4">
             <div className="flex flex-col text-center">
               <span
                 className={`${signika.className} 2xl:text-6xl sm:text-5xl text-3xl`}
