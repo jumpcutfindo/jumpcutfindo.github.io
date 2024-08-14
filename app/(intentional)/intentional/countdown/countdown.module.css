@@ -1,0 +1,14 @@
+.countdown {
+  animation: background fadeinout 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fadeinout {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}

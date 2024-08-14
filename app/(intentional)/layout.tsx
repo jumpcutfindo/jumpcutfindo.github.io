@@ -21,8 +21,8 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Daniel Hoe",
-  description: "Daniel Hoe's resume and project website",
+  title: "Intentional",
+  description: "The homepage of intentional intentions",
 };
 
 export default function RootLayout({
@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`flex justify-center ${inter.className}`}>
-        <div className="flex min-h-screen max-w-screen-xl justify-center">
+        <div className="bg-black flex min-h-screen justify-center">
           {children}
         </div>
       </body>
