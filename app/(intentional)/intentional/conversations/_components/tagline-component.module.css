@@ -1,0 +1,29 @@
+.tagline {
+  animation: fadeinout 5s ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.tagline_accent {
+  animation: fadeinout-accent 3s ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fadeinout-accent {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeinout {
+  0%,
+  100% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 1;
+  }
+}

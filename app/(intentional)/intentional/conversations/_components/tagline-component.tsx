@@ -1,4 +1,5 @@
 import { Signika } from "next/font/google";
+import styles from "./tagline-component.module.css";
 
 const signika = Signika({ subsets: ["latin"] });
 
@@ -22,9 +23,9 @@ export default function TaglineComponent(props: TaglineComponentProps) {
   } = props;
 
   return (
-    <section className="w-full flex relative items-center">
+    <section className="tagline w-full flex relative items-center">
       {backgroundAccentImage && (
-        <div className="absolute w-full z-0">
+        <div className={`absolute w-full z-0 ${styles.tagline_accent}`}>
           <img
             src={backgroundAccentImage}
             className="w-full object-cover lg:h-[100%] md:h-[60vh] h-[40vh]"
@@ -32,7 +33,7 @@ export default function TaglineComponent(props: TaglineComponentProps) {
         </div>
       )}
       {backgroundImage && (
-        <div className="absolute w-full z-1">
+        <div className={`absolute w-full z-1 ${styles.tagline}`}>
           <img
             src={backgroundImage}
             className="w-full object-cover lg:h-[100%] md:h-[60vh] h-[40vh]"
