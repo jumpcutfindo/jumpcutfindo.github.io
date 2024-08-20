@@ -1,20 +1,21 @@
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Signika } from "next/font/google";
-import Image from "next/image";
+
+import styles from "./conversations.module.css";
 import TaglineComponent from "./_components/tagline-component";
 import IndividualCast from "./_components/individual-cast";
+import { Nunito } from "next/font/google";
 
-const signika = Signika({ subsets: ["latin"] });
+const nunito = Nunito({ subsets: ["latin"], display: "swap" });
 
 export default function IntentionalConversations() {
   return (
     <main className="bg-black flex flex-col">
       <div className="flex flex-col 2xl:max-w-[35%] lg:max-w-[50%] sm:max-w-[75%] lg:py-16 md:py-12 sm:py-8 py-8 px-8 mx-auto space-y-4">
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8 justify-center">
           <img
             src="/intentional/conversations/intentional-conversations-logo.png"
-            className="w-full invert"
+            className={`w-full invert ${styles.intentional_conversations_logo}`}
           />
           <p className="text-center">
             A 9-episode documentary depicting the experiences of a bunch of
@@ -91,7 +92,7 @@ export default function IntentionalConversations() {
         id="cast"
         className="cast w-full flex flex-col 2xl:max-w-[35%] lg:max-w-[50%] sm:max-w-[75%] lg:py-16 md:py-12 sm:py-8 py-8 px-8 mx-auto space-y-4"
       >
-        <h1 className={`${signika.className} text-3xl text-center font-bold`}>
+        <h1 className={`${nunito.className} text-3xl text-center font-bold`}>
           STARRING
         </h1>
         <div className="flex flex-row justify-between">

@@ -1,0 +1,14 @@
+.intentional_conversations_logo {
+  animation: growandshrink 4s ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes growandshrink {
+  0%,
+  100% {
+    transform: scale(0.98);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
