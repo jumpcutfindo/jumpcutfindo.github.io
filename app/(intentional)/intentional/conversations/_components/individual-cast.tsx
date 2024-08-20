@@ -1,14 +1,13 @@
 "use client";
 
 interface IndividualCastProps {
+  id: string;
   name: string;
   tag: string;
 }
 
 export default function IndividualCast(props: IndividualCastProps) {
-  const { name, tag } = props;
-
-  const id = name.replaceAll(" ", "-").toLowerCase();
+  const { id, name, tag } = props;
 
   const playSound = () => {
     const audio = document.getElementById(
