@@ -49,6 +49,10 @@ function EpisodeItem(props: EpisodeItemProps) {
     });
   };
 
+  const getQuestionMarks = (num: number) => {
+    return "?".repeat(num);
+  };
+
   useEffect(() => {
     const id = setInterval(() => {
       updateRemainingString();
@@ -63,7 +67,7 @@ function EpisodeItem(props: EpisodeItemProps) {
       <div className="flex flex-col space-y-4 justify-center text-center">
         <div className="flex flex-col space-y-0">
           <h2 className={`${nunito.className} text-2xl font-bold`}>
-            Episode #{episodeNum}: ???
+            Episode #{episodeNum}: {getQuestionMarks(episodeNum)}
           </h2>
           <p>
             Premieres in{" "}
@@ -84,7 +88,8 @@ function EpisodeItem(props: EpisodeItemProps) {
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
-        className="h-[200px]"
+        className="md:h-[250px] h-[200px]"
+        referrerPolicy="strict-origin-when-cross-origin"
       />
       <div className="flex flex-col space-y-0">
         <h2 className={`${nunito.className} text-2xl font-bold`}>

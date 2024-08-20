@@ -17,7 +17,7 @@ export default function IntentionalConversations() {
       <div className="flex flex-col 2xl:max-w-[35%] lg:max-w-[50%] sm:max-w-[75%] lg:py-16 md:py-12 sm:py-8 py-8 px-8 mx-auto space-y-4">
         <div className="flex flex-col gap-8 justify-center">
           <img
-            src="/intentional/conversations/intentional-conversations-logo.png"
+            src="/intentional/conversations/intentional-conversations-logo.svg"
             className={`w-full invert ${styles.intentional_conversations_logo}`}
           />
           <p className="text-center">
@@ -37,9 +37,12 @@ export default function IntentionalConversations() {
             </span>
           </button>
           <button className="outline outline-white outline-1 rounded-full py-2 px-4 flex flex-row flex-grow justify-center items-center">
-            <span className="text-white text-sm font-bold my-auto">
+            <a
+              className="text-white text-sm font-bold my-auto"
+              href="#overview"
+            >
               SEE DETAILS
-            </span>
+            </a>
           </button>
         </div>
       </div>
@@ -47,14 +50,14 @@ export default function IntentionalConversations() {
         <TaglineComponent
           backgroundImage="/intentional/conversations/background-01-white.svg"
           backgroundAccentImage="/intentional/conversations/background-01-accent.svg"
-          taglineImage="/intentional/conversations/placeholder.png"
+          taglineImage="/intentional/conversations/marcus-still.png"
           tagline="You Don't Need A Villa For A Swim"
           taglineDescription="Take a deep dive into the hearts and minds of those you know as
               friends and family."
           isDark={false}
         />
         <TaglineComponent
-          taglineImage="/intentional/conversations/placeholder.png"
+          taglineImage="/intentional/conversations/gloria-still.png"
           tagline="Feed Your FOMO"
           taglineDescription="Find out what you've been missing on about your choir mates the
               past decade."
@@ -63,7 +66,7 @@ export default function IntentionalConversations() {
         <TaglineComponent
           backgroundImage="/intentional/conversations/background-02-white.svg"
           backgroundAccentImage="/intentional/conversations/background-02-accent.svg"
-          taglineImage="/intentional/conversations/placeholder.png"
+          taglineImage="/intentional/conversations/wyn-still.png"
           tagline="Perspective, Perspective"
           taglineDescription="Reminisce on better or worse days that have long since faded to
               time."
@@ -135,6 +138,18 @@ export default function IntentionalConversations() {
           Episodes
         </h1>
         <Episodes />
+      </div>
+      <div className="footer w-full flex flex-col 2xl:max-w-[35%] lg:max-w-[50%] sm:max-w-[75%] lg:py-16 md:py-12 sm:py-8 py-8 px-8 mx-auto space-y-4 opacity-50">
+        <img
+          src="/intentional/conversations/intentional-conversations-logo-head.svg"
+          className="max-w-[64px] invert mx-auto"
+        />
+        <p className="text-center text-xs">
+          <i>Intentional Conversations</i>, created by{" "}
+          <a href="/">
+            <u>jumpcutfindo</u>
+          </a>
+        </p>
       </div>
     </main>
   );

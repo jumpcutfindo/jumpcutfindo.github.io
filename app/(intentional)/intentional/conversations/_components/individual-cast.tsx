@@ -19,7 +19,7 @@ export default function IndividualCast(props: IndividualCastProps) {
 
   return (
     <div
-      className="flex flex-col text-center space-y-0 group"
+      className="flex flex-col text-center space-y-0 group hover:cursor-pointer"
       onClick={playSound}
     >
       <audio id={`${id}-soundbite`}>
