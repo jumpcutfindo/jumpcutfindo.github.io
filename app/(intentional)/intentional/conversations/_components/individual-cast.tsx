@@ -23,10 +23,7 @@ export default function IndividualCast(props: IndividualCastProps) {
       onClick={playSound}
     >
       <audio id={`${id}-soundbite`}>
-        <source
-          src={`/intentional/conversations/soundbites/${id}.mp3`}
-          type="audio/mp3"
-        />
+        <source src={`/intentional/conversations/soundbites/${id}.mp3`} />
       </audio>
       <h2 className="text-2xl font-semibold transition-all group-hover:drop-shadow-[0px_8px_8px_rgba(255,255,255,1.0)]">
         {name}
