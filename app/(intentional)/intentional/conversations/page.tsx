@@ -1,3 +1,5 @@
+"use client";
+
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -5,6 +7,7 @@ import styles from "./conversations.module.css";
 import TaglineComponent from "./_components/tagline-component";
 import IndividualCast from "./_components/individual-cast";
 import { Nunito } from "next/font/google";
+import Episodes from "./_components/episodes";
 
 const nunito = Nunito({ subsets: ["latin"], display: "swap" });
 
@@ -40,7 +43,7 @@ export default function IntentionalConversations() {
           </button>
         </div>
       </div>
-      <div className="taglines">
+      <div id="taglines">
         <TaglineComponent
           backgroundImage="/intentional/conversations/background-01-white.svg"
           backgroundAccentImage="/intentional/conversations/background-01-accent.svg"
@@ -92,8 +95,8 @@ export default function IntentionalConversations() {
         id="cast"
         className="cast w-full flex flex-col 2xl:max-w-[35%] lg:max-w-[50%] sm:max-w-[75%] lg:py-16 md:py-12 sm:py-8 py-8 px-8 mx-auto space-y-4"
       >
-        <h1 className={`${nunito.className} text-3xl text-center font-bold`}>
-          STARRING
+        <h1 className={`${nunito.className} text-4xl text-center font-bold`}>
+          Cast
         </h1>
         <div className="flex flex-row justify-between">
           <div className="flex flex-col space-y-8">
@@ -123,6 +126,15 @@ export default function IntentionalConversations() {
             <IndividualCast name="Wyn Lim" tag="Choir Treasurer" />
           </div>
         </div>
+      </div>
+      <div
+        id="episodes"
+        className="episodes flex flex-col 2xl:max-w-[35%] lg:max-w-[50%] sm:max-w-[75%] lg:py-16 md:py-12 sm:py-8 py-8 px-8 mx-auto space-y-4"
+      >
+        <h1 className={`${nunito.className} text-4xl text-center font-bold`}>
+          Episodes
+        </h1>
+        <Episodes />
       </div>
     </main>
   );
