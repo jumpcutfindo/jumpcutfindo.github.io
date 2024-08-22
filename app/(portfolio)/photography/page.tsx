@@ -6,7 +6,7 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import photosJson from "./api/photos.json";
-import Photo from "../types/photo";
+import type Photo from "../types/photo";
 import { Dialog } from "@headlessui/react";
 
 interface PhotoModalProps {

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Project from "../types/project";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
-import TagList from "../shared-components/tag-list";
+import TagList from "../../shared-components/tag-list";
 
 interface HomeProjectComponentProps {
   project: Project;
