@@ -1,10 +1,7 @@
 import StyledMarkdown from "@/app/shared-components/styled-markdown";
 import TagList from "@/app/shared-components/tag-list";
-import Experience from "@/app/types/experience";
-import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import dayjs from "dayjs";
-import Markdown from "react-markdown";
+import Experience from "../../types/experience";
 
 interface ExperienceComponentProps {
   experience: Experience;
