@@ -39,7 +39,10 @@ export default function IntentionalConversations() {
           </p>
         </div>
         <div className="flex flex-row justify-between space-x-4">
-          <button className="bg-white rounded-full py-2 px-4 flex flex-row flex-grow justify-center items-center">
+          <a
+            className="bg-white rounded-full py-2 px-4 flex flex-row flex-grow justify-center items-center cursor-pointer"
+            href="https://www.youtube.com/watch?v=E3Jjtx0ObP4"
+          >
             <FontAwesomeIcon
               icon={faPlay}
               size="sm"
@@ -48,7 +51,7 @@ export default function IntentionalConversations() {
             <span className="text-black text-sm font-bold my-auto">
               {lynnTextify("WATCH THE TRAILER")}
             </span>
-          </button>
+          </a>
           <button className="outline outline-white outline-1 rounded-full py-2 px-4 flex flex-row flex-grow justify-center items-center">
             <a
               className="text-white text-sm font-bold my-auto"
@@ -222,15 +225,6 @@ export default function IntentionalConversations() {
             />
           </div>
         </div>
-      </div>
-      <div
-        id="episodes"
-        className="episodes flex flex-col 2xl:max-w-[35%] lg:max-w-[50%] sm:max-w-[75%] lg:py-16 md:py-12 sm:py-8 py-8 px-8 mx-auto space-y-4"
-      >
-        <h1 className={`${nunito.className} text-4xl text-center font-bold`}>
-          Episodes
-        </h1>
-        <Episodes isLynnText={isLynnState} />
       </div>
       <div className="footer w-full flex flex-col 2xl:max-w-[35%] lg:max-w-[50%] sm:max-w-[75%] lg:py-16 md:py-12 sm:py-8 py-8 px-8 mx-auto space-y-4 opacity-50">
         <img

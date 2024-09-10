@@ -152,15 +152,6 @@ export default function IntentionalCountdown() {
             >
               <FontAwesomeIcon icon={faFilm} size="2x" />
             </a>
-            <a href="https://t.me/+X5Cd_oLp5XxiOWVl" target="_blank">
-              <FontAwesomeIcon icon={faTelegram} size="2x" />
-            </a>
-            <a
-              href="https://www.instagram.com/intentional.convos"
-              target="_blank"
-            >
-              <FontAwesomeIcon icon={faInstagram} size="2x" />
-            </a>
           </div>
         )}
       </div>
