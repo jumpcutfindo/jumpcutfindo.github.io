@@ -61,7 +61,7 @@ export default function IntentionalCountdown() {
   }, []);
 
   return (
-    <main className="flex 2xl:px-[560px] xl:px-96 lg:px-56 md:px-24 sm:px-12 px-4 w-screen">
+    <main className="flex 2xl:px-[560px] xl:px-96 lg:px-56 md:px-24 sm:px-12 px-4 w-screen h-screen bg-black">
       <div
         className={`flex flex-col w-screen justify-center items-center 2xl:gap-32 gap-16 ${
           isCompleted() ? "" : "translate-y-[-5%]"
@@ -151,15 +151,6 @@ export default function IntentionalCountdown() {
               target="_blank"
             >
               <FontAwesomeIcon icon={faFilm} size="2x" />
-            </a>
-            <a href="https://t.me/+X5Cd_oLp5XxiOWVl" target="_blank">
-              <FontAwesomeIcon icon={faTelegram} size="2x" />
-            </a>
-            <a
-              href="https://www.instagram.com/intentional.convos"
-              target="_blank"
-            >
-              <FontAwesomeIcon icon={faInstagram} size="2x" />
             </a>
           </div>
         )}
