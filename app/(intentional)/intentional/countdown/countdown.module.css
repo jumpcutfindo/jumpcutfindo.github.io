@@ -3,10 +3,25 @@
   animation-iteration-count: infinite;
 }
 
+.countdown_white {
+  animation: fadeinoutless 6s ease-in-out;
+  animation-iteration-count: infinite;
+}
+
 @keyframes fadeinout {
   0%,
   100% {
     opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeinoutless {
+  0%,
+  100% {
+    opacity: 0.9;
   }
   50% {
     opacity: 1;

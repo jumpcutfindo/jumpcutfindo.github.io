@@ -8,14 +8,17 @@ import { Signika } from "next/font/google";
 import styles from "./countdown.module.css";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import {
+  faInstagram,
+  faTelegram,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 import { faFilm, faGlobe } from "@fortawesome/free-solid-svg-icons";
 
 const signika = Signika({ subsets: ["latin"] });
 
 export default function IntentionalCountdown() {
-  // TODO(intentional): Update to correct date and time
-  const launchDate = dayjs("2026-08-14");
+  const launchDate = dayjs("2024-09-15T19:00:00+0800");
 
   const [remaining, setRemaining] = useState({
     days: "00",
@@ -88,7 +91,9 @@ export default function IntentionalCountdown() {
               className="w-full"
             ></Image>
           </div>
-          <div className="absolute w-full z-1 sm:rotate-0 rotate-90">
+          <div
+            className={`absolute w-full z-1 ${styles.countdown_white} sm:rotate-0 rotate-90`}
+          >
             <Image
               src="/intentional/countdown/countdown-bg.svg"
               alt=""
@@ -135,20 +140,25 @@ export default function IntentionalCountdown() {
         </div>
         {isCompleted() && (
           <div className="flex flex-row gap-16">
-            {/* TODO(intentional): Update this to the website homepage */}
-            <a href="https://www.youtube.com/@jumpcutfindo" target="_blank">
+            <a
+              href="https://jumpcutfindo.com/intentional/conversations"
+              target="_blank"
+            >
               <FontAwesomeIcon icon={faGlobe} size="2x" />
             </a>
-            {/* TODO(intentional): Update this to the trailer link */}
-            <a href="https://www.youtube.com/@jumpcutfindo" target="_blank">
+            <a
+              href="https://www.youtube.com/watch?v=E3Jjtx0ObP4"
+              target="_blank"
+            >
               <FontAwesomeIcon icon={faFilm} size="2x" />
             </a>
-            {/* TODO(intentional): Update this to the playlist link */}
-            <a href="https://www.youtube.com/@jumpcutfindo" target="_blank">
-              <FontAwesomeIcon icon={faYoutube} size="2x" />
+            <a href="https://t.me/+X5Cd_oLp5XxiOWVl" target="_blank">
+              <FontAwesomeIcon icon={faTelegram} size="2x" />
             </a>
-            {/* TODO(intentional): Update this to the Instagram*/}
-            <a href="https://www.youtube.com/@jumpcutfindo" target="_blank">
+            <a
+              href="https://www.instagram.com/intentional.convos"
+              target="_blank"
+            >
               <FontAwesomeIcon icon={faInstagram} size="2x" />
             </a>
           </div>
