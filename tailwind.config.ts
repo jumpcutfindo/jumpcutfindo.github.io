@@ -11,15 +11,6 @@ const config: Config = {
       colors: {
         "portfolio-background": "#24272e",
       },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-      outlineOffset: {
-        12: "12px",
-        16: "16px",
-      },
       fontSize: {
         sm: "0.8rem",
         base: "1rem",
