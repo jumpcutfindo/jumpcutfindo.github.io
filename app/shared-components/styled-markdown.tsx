@@ -13,7 +13,7 @@ export default function StyledMarkdown(props: Readonly<Options>) {
               target="_blank"
               className="text-blue-300 group hover:cursor-pointer"
             >
-              <span className="group-hover:text-blue-400 transition-all underline underline-offset-4">
+              <span className="group-hover:text-blue-400 underline underline-offset-4">
                 {children}
               </span>
             </a>
