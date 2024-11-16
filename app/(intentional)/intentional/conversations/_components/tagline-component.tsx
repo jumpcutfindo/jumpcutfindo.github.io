@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { Nunito } from "next/font/google";
 import styles from "./tagline-component.module.css";
 
@@ -26,16 +28,22 @@ export default function TaglineComponent(props: TaglineComponentProps) {
     <section className="tagline w-full flex relative items-center">
       {backgroundAccentImage && (
         <div className={`absolute w-full z-0 ${styles.tagline_accent}`}>
-          <img
+          <Image
+            alt="Tagline image"
             src={backgroundAccentImage}
+            width={0}
+            height={0}
             className="w-full object-cover lg:h-[100%] md:h-[60vh] h-[40vh]"
           />
         </div>
       )}
       {backgroundImage && (
         <div className={`absolute w-full z-1 ${styles.tagline}`}>
-          <img
+          <Image
+            alt="Tagline background image"
             src={backgroundImage}
+            width={0}
+            height={0}
             className="w-full object-cover lg:h-[100%] md:h-[60vh] h-[40vh]"
           />
         </div>
@@ -45,10 +53,13 @@ export default function TaglineComponent(props: TaglineComponentProps) {
           isDark ? "lg:flex-row" : "lg:flex-row-reverse"
         } flex-col z-1 my-auto 2xl:max-w-[70%] lg:max-w-[80%] max-w-[100%] 2xl:py-32 xl:py-24 lg:py-16 md:py-24 py-16 px-4 mx-auto lg:gap-8 gap-4 lg:text-left text-center`}
       >
-        <img
+        <Image
+          alt="Tagline image"
           src={taglineImage}
+          width={0}
+          height={0}
           className="w-auto lg:max-w-[50%] max-w-[80%] mx-auto"
-        ></img>
+        />
         <div className="flex flex-col my-auto">
           <h1
             className={`${nunito.className} md:text-3xl text-xl ${

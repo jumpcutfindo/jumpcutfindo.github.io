@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -7,7 +9,6 @@ import styles from "./conversations.module.css";
 import TaglineComponent from "./_components/tagline-component";
 import IndividualCast from "./_components/individual-cast";
 import { Nunito } from "next/font/google";
-import Episodes from "./_components/episodes";
 import { useState } from "react";
 import { lynnTextify as lt } from "./_utils/lynn-textify";
 
@@ -28,10 +29,13 @@ export default function IntentionalConversations() {
     <main className="bg-black flex flex-col">
       <div className="flex flex-col 2xl:max-w-[35%] lg:max-w-[50%] sm:max-w-[75%] lg:py-16 md:py-12 sm:py-8 py-8 px-8 mx-auto space-y-4">
         <div className="flex flex-col gap-8 justify-center">
-          <img
+          <Image
             src="/intentional/conversations/intentional-conversations-logo.svg"
+            alt="Intentional conversations logo"
+            width="0"
+            height="0"
             className={`w-full invert ${styles.intentional_conversations_logo}`}
-          />
+          ></Image>
           <p className="text-center">
             {lynnTextify(
               "A 9-episode documentary depicting the experiences of a bunch of choristers that crossed paths a decade ago."
@@ -227,7 +231,10 @@ export default function IntentionalConversations() {
         </div>
       </div>
       <div className="footer w-full flex flex-col 2xl:max-w-[35%] lg:max-w-[50%] sm:max-w-[75%] lg:py-16 md:py-12 sm:py-8 py-8 px-8 mx-auto space-y-4 opacity-50">
-        <img
+        <Image
+          alt="Intentional Conversations header logo"
+          width="0"
+          height="0"
           src="/intentional/conversations/intentional-conversations-logo-head.svg"
           className="max-w-[64px] invert mx-auto"
         />
