@@ -6,7 +6,7 @@ export interface MandarinExample {
 export interface MandarinDefinition {
   word: string;
   wordType: "verb" | "noun" | "adjective" | "adverb" | "idiom" | "conjunction";
-  pronunciation: string;
+  pinyin: string;
   definition: string;
   examples: MandarinExample[];
 }
