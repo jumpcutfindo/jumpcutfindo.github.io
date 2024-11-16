@@ -4,7 +4,8 @@ export interface MandarinExample {
 }
 
 export interface MandarinDefinition {
-  phrase: string;
+  word: string;
+  wordType: "verb" | "noun" | "adjective" | "adverb" | "idiom" | "conjunction";
   pronunciation: string;
   definition: string;
   examples: MandarinExample[];
