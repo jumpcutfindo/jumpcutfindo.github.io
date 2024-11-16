@@ -21,8 +21,8 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Intentional",
-  description: "The homepage of intentional intentions",
+  title: "Language",
+  description: "The language pages of jumpcutfindo",
 };
 
 export default function RootLayout({
@@ -32,7 +32,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`bg-black ${inter.className}`}>{children}</body>
+      <body className={`bg-black ${inter.className} text-slate-200`}>
+        {children}
+      </body>
     </html>
   );
 }
