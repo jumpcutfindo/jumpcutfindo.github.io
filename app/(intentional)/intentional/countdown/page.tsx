@@ -38,27 +38,27 @@ export default function IntentionalCountdown() {
     };
   };
 
-  const updateRemainingString = () => {
-    const values = calculateRemaining();
-
-    setRemaining({
-      days: String(values.days).padStart(2, "0"),
-      hours: String(values.hours).padStart(2, "0"),
-      mins: String(values.mins).padStart(2, "0"),
-      secs: String(values.secs).padStart(2, "0"),
-    });
-  };
-
   const isCompleted = () => {
     return dayjs().isAfter(launchDate);
   };
 
   useEffect(() => {
+    const updateRemainingString = () => {
+      const values = calculateRemaining();
+
+      setRemaining({
+        days: String(values.days).padStart(2, "0"),
+        hours: String(values.hours).padStart(2, "0"),
+        mins: String(values.mins).padStart(2, "0"),
+        secs: String(values.secs).padStart(2, "0"),
+      });
+    };
+
     const id = setInterval(() => updateRemainingString(), 1000);
     return () => {
       clearInterval(id);
     };
-  }, []);
+  });
 
   return (
     <main className="flex 2xl:px-[560px] xl:px-96 lg:px-56 md:px-24 sm:px-12 px-4 w-screen h-screen bg-black">

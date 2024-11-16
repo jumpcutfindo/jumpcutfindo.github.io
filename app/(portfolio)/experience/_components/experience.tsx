@@ -27,7 +27,7 @@ export default function ExperienceComponent(props: ExperienceComponentProps) {
           <p className="font-light lg:text-lg text-xl">{company}</p>
         </div>
       </div>
-      <div className="lg:hidden flex flex-row md:px-12 px-6 py-4 sticky top-0 bg-[#24272e]">
+      <div className="lg:hidden flex flex-row md:px-12 px-6 py-4 sticky top-0 bg-portfolio-background">
         <p className="text-base">
           <span className="font-semibold">{title.toUpperCase()}</span>
           <span className="mx-2">·</span>

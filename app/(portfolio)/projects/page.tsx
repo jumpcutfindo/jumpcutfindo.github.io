@@ -21,17 +21,15 @@ export default function Projects() {
       <div className="flex flex-col">
         <div className="flex md:mx-12 mx-6 mb-4">
           <a
-            className="text-sm font-semibold hover:cursor-pointer group transition-all"
+            className="text-sm font-semibold hover:cursor-pointer group"
             href="/"
           >
             <FontAwesomeIcon
               icon={faArrowLeft}
-              className="mx-2 group-hover:-translate-x-1/2 group-hover:text-blue-400 transition-all"
+              className="mx-2 group-hover:-translate-x-1/2 group-hover:text-blue-400"
             />
 
-            <span className="group-hover:text-blue-400 transition-all">
-              Daniel Hoe
-            </span>
+            <span className="group-hover:text-blue-400">Daniel Hoe</span>
           </a>
         </div>
 
@@ -45,7 +43,7 @@ export default function Projects() {
               .map((year, index) => {
                 return (
                   <div key={index}>
-                    <p className="md:px-12 px-6 py-4 text-gray-400 text-sm font-medium lg:relative sticky top-0 bg-[#24272e]">
+                    <p className="md:px-12 px-6 py-4 text-gray-400 text-sm font-medium lg:relative sticky top-0 bg-portfolio-background">
                       {year}
                     </p>
                     <div className="space-y-12">

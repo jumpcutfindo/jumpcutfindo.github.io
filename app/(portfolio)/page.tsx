@@ -39,11 +39,7 @@ export default function Home() {
             I develop applications and other interactive experiences for users
             worldwide.
           </p>
-          <a
-            className="hover:text-blue-500 transition-all"
-            href="/resume.pdf"
-            target="_blank"
-          >
+          <a className="hover:text-blue-500" href="/resume.pdf" target="_blank">
             <FontAwesomeIcon icon={faFileLines} className="me-2" />
             View résumé
           </a>
@@ -52,21 +48,21 @@ export default function Home() {
           <a
             href="https://github.com/jumpcutfindo/"
             target="_blank"
-            className="hover:text-blue-500 transition-all"
+            className="hover:text-blue-500"
           >
             <FontAwesomeIcon icon={faGithub} size="2x" />
           </a>
           <a
             href="https://www.linkedin.com/in/daniel-h-8892a3199"
             target="_blank"
-            className="hover:text-blue-500 transition-all"
+            className="hover:text-blue-500"
           >
             <FontAwesomeIcon icon={faLinkedin} size="2x" />
           </a>
           <a
             href="https://www.youtube.com/@jumpcutfindo"
             target="_blank"
-            className="hover:text-blue-500 transition-all"
+            className="hover:text-blue-500"
           >
             <FontAwesomeIcon icon={faYoutube} size="2x" />
           </a>
@@ -74,7 +70,7 @@ export default function Home() {
       </div>
       <div className="flex flex-col xl:min-w-[70%] lg:min-w-[70%] space-y-8 lg:py-24">
         <section className="flex flex-col">
-          <div className="sticky top-0 lg:relative py-4 mb-4 min-w-max md:px-12 px-6 bg-[#24272e]">
+          <div className="sticky top-0 lg:relative py-4 mb-4 min-w-max md:px-12 px-6 bg-portfolio-background">
             <p className="text-sm font-semibold text-gray-400">ABOUT ME</p>
           </div>
           <div className="text-lg space-y-4 text-gray-300 text-base md:px-12 px-6">
@@ -102,7 +98,7 @@ export default function Home() {
         </section>
 
         <section className="flex flex-col">
-          <div className="sticky top-0 lg:relative py-4 min-w-max md:px-12 px-6 bg-[#24272e]">
+          <div className="sticky top-0 lg:relative py-4 min-w-max md:px-12 px-6 bg-portfolio-background">
             <p className="text-sm font-semibold text-gray-400">EXPERIENCES</p>
           </div>
           <div className="flex flex-col">
@@ -115,19 +111,17 @@ export default function Home() {
               className="text-sm font-semibold hover:cursor-pointer group"
               href="/experience"
             >
-              <span className="group-hover:text-blue-400 transition-all">
-                See more
-              </span>
+              <span className="group-hover:text-blue-400">See more</span>
               <FontAwesomeIcon
                 icon={faArrowRight}
-                className="mx-2 group-hover:translate-x-1/2 group-hover:text-blue-400 transition-all"
+                className="mx-2 group-hover:translate-x-1/2 group-hover:text-blue-400"
               />
             </a>
           </div>
         </section>
 
         <section className="flex flex-col">
-          <div className="sticky top-0 lg:relative py-4 min-w-max md:px-12 px-6 bg-[#24272e]">
+          <div className="sticky top-0 lg:relative py-4 min-w-max md:px-12 px-6 bg-portfolio-background">
             <p className="text-sm font-semibold text-gray-400">
               FEATURED PROJECTS
             </p>
@@ -145,12 +139,10 @@ export default function Home() {
               className="text-sm font-semibold hover:cursor-pointer group mt-4"
               href="/projects"
             >
-              <span className="group-hover:text-blue-400 transition-all">
-                See more
-              </span>
+              <span className="group-hover:text-blue-400">See more</span>
               <FontAwesomeIcon
                 icon={faArrowRight}
-                className="mx-2 group-hover:translate-x-1/2 group-hover:text-blue-400 transition-all"
+                className="mx-2 group-hover:translate-x-1/2 group-hover:text-blue-400"
               />
             </a>
           </div>

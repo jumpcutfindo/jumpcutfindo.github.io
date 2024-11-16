@@ -43,29 +43,29 @@ function EpisodeItem(props: EpisodeItemProps) {
     secs: "00",
   });
 
-  const updateRemainingString = () => {
-    const values = calculateRemaining(premiereDate);
-
-    setRemaining({
-      days: String(values.days).padStart(2, "0"),
-      hours: String(values.hours).padStart(2, "0"),
-      mins: String(values.mins).padStart(2, "0"),
-      secs: String(values.secs).padStart(2, "0"),
-    });
-  };
-
   const getQuestionMarks = (num: number) => {
     return "?".repeat(num);
   };
 
   useEffect(() => {
+    const updateRemainingString = () => {
+      const values = calculateRemaining(premiereDate);
+
+      setRemaining({
+        days: String(values.days).padStart(2, "0"),
+        hours: String(values.hours).padStart(2, "0"),
+        mins: String(values.mins).padStart(2, "0"),
+        secs: String(values.secs).padStart(2, "0"),
+      });
+    };
+
     const id = setInterval(() => {
       updateRemainingString();
     }, 1000);
     return () => {
       clearInterval(id);
     };
-  }, []);
+  });
 
   if (dayjs().isBefore(premiereDate)) {
     return (

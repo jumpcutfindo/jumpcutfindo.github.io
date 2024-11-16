@@ -17,7 +17,7 @@ export default function HomeProjectComponent(props: HomeProjectComponentProps) {
 
   return (
     <div
-      className="flex md:flex-row flex-col hover:cursor-pointer group md:p-6 md:mx-6 p-6 hover:bg-white/5 transition-all"
+      className="flex md:flex-row flex-col hover:cursor-pointer group md:p-6 md:mx-6 p-6 hover:bg-white/5"
       onClick={onClickComponent}
     >
       <div className="min-w-[30%] md:pe-12 md:pb-0 pb-4">
@@ -31,7 +31,7 @@ export default function HomeProjectComponent(props: HomeProjectComponentProps) {
       </div>
       <div className="flex flex-col min-w-[70%] space-y-4 -mt-1">
         <div className="flex flex-row">
-          <h6 className="font-medium text-xl group-hover:text-blue-400 transition-all">
+          <h6 className="font-medium text-xl group-hover:text-blue-400">
             <span>{title}</span>
             <span className="text-sm mx-2 my-auto">
               <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="sm" />
@@ -39,7 +39,7 @@ export default function HomeProjectComponent(props: HomeProjectComponentProps) {
           </h6>
         </div>
 
-        <p className="text-gray-300 group-hover:text-white transition-all text-base">
+        <p className="text-gray-300 group-hover:text-white text-base">
           {shortDescription}
         </p>
         <TagList tags={tags} />

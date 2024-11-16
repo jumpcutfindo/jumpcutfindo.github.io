@@ -13,17 +13,15 @@ export default function Experience() {
       <div className="flex flex-col space-y-4">
         <div className="flex md:mx-12 mx-6">
           <a
-            className="text-sm font-semibold hover:cursor-pointer group transition-all"
+            className="text-sm font-semibold hover:cursor-pointer group"
             href="/"
           >
             <FontAwesomeIcon
               icon={faArrowLeft}
-              className="mx-2 group-hover:-translate-x-1/2 group-hover:text-blue-400 transition-all"
+              className="mx-2 group-hover:-translate-x-1/2 group-hover:text-blue-400"
             />
 
-            <span className="group-hover:text-blue-400 transition-all">
-              Daniel Hoe
-            </span>
+            <span className="group-hover:text-blue-400">Daniel Hoe</span>
           </a>
         </div>
 
