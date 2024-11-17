@@ -18,22 +18,28 @@ export default function FillBlankMandarinCard({
   options,
   example,
   blankedSentence,
+  isAnswered,
+  onAnswered,
   onCorrect,
   onIncorrect,
+  onNext,
 }: FillBlankMandarinCardProps) {
-  const [isAnswered, setIsAnswered] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
 
   const onAnswerCorrect = () => {
-    setIsAnswered(true);
+    onAnswered();
     setIsCorrect(true);
     onCorrect();
   };
 
   const onAnswerIncorrect = () => {
-    setIsAnswered(true);
+    onAnswered();
     setIsCorrect(false);
     onIncorrect();
+  };
+
+  const onAcknowledgeResult = () => {
+    onNext();
   };
 
   const renderResult = () => {
@@ -83,7 +89,10 @@ export default function FillBlankMandarinCard({
       {isAnswered && (
         <QuizCardResult isCorrect={isCorrect}>
           {renderResult()}
-          <button className="p-2 rounded-lg bg-white/20 hover:bg-white/30">
+          <button
+            className="p-2 rounded-lg bg-white/20 hover:bg-white/30"
+            onClick={onAcknowledgeResult}
+          >
             OK
           </button>
         </QuizCardResult>

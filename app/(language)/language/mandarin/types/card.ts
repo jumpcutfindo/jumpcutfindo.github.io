@@ -7,8 +7,11 @@ export enum CardType {
 }
 
 export interface MandarinCardProps {
+  isAnswered: boolean;
+  onAnswered: () => void;
   onCorrect: () => void;
   onIncorrect: () => void;
+  onNext: () => void;
 }
 
 export interface FillBlankCard {

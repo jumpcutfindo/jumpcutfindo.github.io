@@ -18,6 +18,10 @@ export default function MandarinQuiz() {
   const [fillBlankExample, setFillBlankExample] =
     useState<FillBlankCard | null>();
 
+  const onAnswered = () => {
+    setQuizState(QuizState.Review);
+  };
+
   const onCorrect = () => {
     setQuizState(QuizState.Review);
     console.log("Answer was correct");
@@ -52,8 +56,11 @@ export default function MandarinQuiz() {
               options={fillBlankExample.options}
               example={fillBlankExample.example}
               blankedSentence={fillBlankExample.blankedSentence}
+              isAnswered={quizState === QuizState.Review}
+              onAnswered={onAnswered}
               onCorrect={onCorrect}
               onIncorrect={onIncorrect}
+              onNext={onNext}
             />
           </div>
         )}
