@@ -1,16 +1,24 @@
+"use client";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Metadata } from "next";
 
 import chineseJson from "./api/chinese.json";
 import { MandarinDefinition } from "./types/mandarin";
-
-export const metadata: Metadata = {
-  title: "Mandarin Quiz",
-  description: "The mandarin quiz!",
-};
+import FillBlankMandarinCard from "./cards/fill-in-the-blank";
+import { generateFillBlank } from "./utils/generate-fill-blank";
 
 export default function MandarinQuiz() {
   const chinese = chineseJson as MandarinDefinition[];
+
+  const fillBlankExample = generateFillBlank(chinese, 4);
+
+  const onCorrect = () => {
+    console.log("Answer was correct");
+  };
+
+  const onIncorrect = () => {
+    console.log("Answer was incorrect");
+  };
 
   return (
     <div className="flex flex-col h-screen w-screen justify-center items-center">
@@ -18,6 +26,16 @@ export default function MandarinQuiz() {
         <div className="w-full flex flex-row items-start p-4 space-x-2 bg-white/5">
           <FontAwesomeIcon icon="language" size="xl" />
           <h1>中文测验</h1>
+        </div>
+        <div className="w-full flex flex-col flex-1">
+          <FillBlankMandarinCard
+            answer={fillBlankExample.answer}
+            options={fillBlankExample.options}
+            sentence={fillBlankExample.sentence}
+            blankedSentence={fillBlankExample.blankedSentence}
+            onCorrect={onCorrect}
+            onIncorrect={onIncorrect}
+          />
         </div>
       </div>
     </div>
