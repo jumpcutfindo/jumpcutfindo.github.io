@@ -47,11 +47,6 @@ export default function FillBlankMandarinCard({
   };
 
   const renderResult = () => {
-    const resultSentenceBolded = example.sentence.replace(
-      answer.word,
-      `**${answer.word}**`
-    );
-
     return (
       <div className="flex flex-col space-y-2">
         <div className="flex flex-col border rounded-lg p-4 bg-white/10">

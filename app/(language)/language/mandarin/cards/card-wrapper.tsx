@@ -47,7 +47,7 @@ function QuizCardResult({ isCorrect, children }: QuizCardResultProps) {
   return (
     <div
       className={`flex flex-col p-4 space-y-4 ${
-        isCorrect ? "bg-emerald-600" : "bg-red-600"
+        isCorrect ? "bg-emerald-700" : "bg-red-700"
       }`}
     >
       <div className="flex flex-row space-x-4">
