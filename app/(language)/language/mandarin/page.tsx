@@ -8,13 +8,12 @@ export const metadata: Metadata = {
 
 export default function MandarinQuiz() {
   return (
-    <div className="flex h-screen w-screen justify-center items-center">
-      <div className="flex flex-col justify-center items-center w-[480px] min-h-screen bg-slate-900 space-y-4">
-        <FontAwesomeIcon icon="language" size="8x" />
-        <h1 className="text-4xl">The Mandarin Quiz</h1>
-        <button className="w-64 rounded-full bg-slate-200 text-slate-900 px-1 py-2 hover:bg-slate-100 transition-all">
-          Start
-        </button>
+    <div className="flex flex-col h-screen w-screen justify-center items-center">
+      <div className="flex flex-col items-center w-[480px] flex-1 bg-slate-900">
+        <div className="w-full flex flex-row items-start p-4 space-x-2 bg-white/5">
+          <FontAwesomeIcon icon="language" size="xl" />
+          <h1>中文测验</h1>
+        </div>
       </div>
     </div>
   );
