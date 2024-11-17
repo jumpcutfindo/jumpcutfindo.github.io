@@ -1,0 +1,126 @@
+[
+  {
+    "word": "宽裕",
+    "wordType": "adj",
+    "pinyin": "kuān yù",
+    "definition": "well off; ample",
+    "examples": [
+      {
+        "sentence": "新法律会使家庭经济宽裕一些",
+        "englishTranslation": "Families will be better off financially under the new law"
+      }
+    ]
+  },
+  {
+    "word": "露馅",
+    "wordType": "verb",
+    "pinyin": "lòu xiàn",
+    "definition": "let the cat out of the bag",
+    "examples": [
+      {
+        "sentence": "我们打算在愚人节那天捉弄他一番，但山姆露馅了",
+        "englishTranslation": "We planned to play a trick on him on April Fool's Day, but Sam gave the game away"
+      }
+    ]
+  },
+  {
+    "word": "契机",
+    "wordType": "noun",
+    "pinyin": "qì jī",
+    "definition": "moment; chance",
+    "examples": [
+      {
+        "sentence": "这是一个值得努力把握的契机",
+        "englishTranslation": "This is an opportunity that bodes hard work to grasp"
+      }
+    ]
+  },
+  {
+    "word": "势头",
+    "wordType": "noun",
+    "pinyin": "shì tóu",
+    "definition": "momentum",
+    "examples": [
+      {
+        "sentence": "有一两家公司顶住了经济滑坡的势头",
+        "englishTranslation": "One or two companies have managed to buck the trend of the recession"
+      }
+    ]
+  },
+  {
+    "word": "驻扎",
+    "wordType": "verb",
+    "pinyin": "zhù zhá",
+    "definition": "stationed (usually troops)",
+    "examples": [
+      {
+        "sentence": "没人相信驻扎在边境的士兵们会真的开火",
+        "englishTranslation": "No one believed the soldiers stationed at the border would actually open fire"
+      }
+    ]
+  },
+  {
+    "word": "郑重其事",
+    "wordType": "idiom",
+    "pinyin": "zhèng zhòng qí shì",
+    "definition": "seriously; earnestly",
+    "examples": [
+      {
+        "sentence": "他郑重其事地感谢了她",
+        "englishTranslation": "He thanked her earnestly"
+      }
+    ]
+  },
+  {
+    "word": "白头偕老",
+    "wordType": "idiom",
+    "pinyin": "bái tóu xié lǎo",
+    "definition": "remain happily married to a ripe old age",
+    "examples": [
+      {
+        "sentence": "婚礼上，新娘和新郎表示要互敬互爱，白头偕老",
+        "englishTranslation": "At the wedding party, the bride and the bridegroom expressed that they would live in harmony and mutual respect and grow old together"
+      }
+    ]
+  },
+  {
+    "word": "盛极一时",
+    "wordType": "idiom",
+    "pinyin": "shèng jí yī shí",
+    "definition": "be all the rage at the moment; flourished",
+    "examples": [
+      {
+        "sentence": "这座书院在南宋的时候可是盛极一时",
+        "englishTranslation": "This academy had its heyday in the Southern Song Dynasty"
+      },
+      {
+        "sentence": "在书店稀缺时，书友会盛极一时，会员数不胜数",
+        "englishTranslation": "Book clubs thrived when book stores were scarce, and they once enjoyed huge memberships"
+      }
+    ]
+  },
+  {
+    "word": "寥寥无几",
+    "wordType": "idiom",
+    "pinyin": "liáo liáo wú jǐ",
+    "definition": "very few",
+    "examples": [
+      {
+        "sentence": "如今有太多的人在角逐寥寥无几的工作职位",
+        "englishTranslation": "Nowadays, there are too many people competing for too few jobs"
+      }
+    ]
+  },
+  {
+    "word": "狡诈",
+    "wordType": "adj",
+    "pinyin": "jiǎo zhà",
+    "definition": "crafty; cunning",
+    "examples": [
+      {
+        "sentence": "当然他们拥有强壮的心智，大胆且狡诈，并能依势获益",
+        "englishTranslation": "They had, of course, the strength of mind, as well as the audacity and cunning, to take advantage of this situation"
+      }
+    ]
+  }
+]
