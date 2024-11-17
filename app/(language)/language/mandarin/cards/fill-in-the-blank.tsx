@@ -1,7 +1,14 @@
 import { useState } from "react";
 import { FillBlankCard, MandarinCardProps } from "../types/card";
-import { CardWrapper } from "./card-wrapper";
+import {
+  QuizCard,
+  QuizCardBody,
+  QuizCardHeader,
+  QuizCardResult,
+} from "./card-wrapper";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck, faCoffee, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { render } from "react-dom";
 
 type FillBlankMandarinCardProps = MandarinCardProps & FillBlankCard;
 
@@ -14,24 +21,45 @@ export default function FillBlankMandarinCard({
   onIncorrect,
 }: FillBlankMandarinCardProps) {
   const [isAnswered, setIsAnswered] = useState(false);
+  const [isCorrect, setIsCorrect] = useState(false);
 
   const onAnswerCorrect = () => {
     setIsAnswered(true);
+    setIsCorrect(true);
     onCorrect();
   };
 
   const onAnswerIncorrect = () => {
     setIsAnswered(true);
+    setIsCorrect(false);
     onIncorrect();
   };
 
-  return (
-    <CardWrapper icon="language" title="Fill in the blank">
-      <div className="flex flex-col p-2 border rounded-lg">
-        <p className="text-2xl">{blankedSentence}</p>
-      </div>
+  const renderResult = () => {
+    if (isCorrect) {
+      return (
+        <div className="flex flex-row space-x-4">
+          <FontAwesomeIcon icon={faCheck} size="lg" className="my-auto" />
+          <p className="text-lg my-auto">{sentence}</p>
+        </div>
+      );
+    }
 
-      <div className="flex flex-col w-full flex-1">
+    return (
+      <div className="flex flex-row space-x-4">
+        <FontAwesomeIcon icon={faTimes} size="lg" className="my-auto" />
+        <p className="text-lg my-auto">{sentence}</p>
+      </div>
+    );
+  };
+
+  return (
+    <QuizCard>
+      <QuizCardHeader icon={faCoffee} title="Fill in the blanks" />
+      <QuizCardBody>
+        <div className="flex flex-col p-2 border rounded-lg">
+          <p className="text-2xl">{blankedSentence}</p>
+        </div>
         <div className="grid grid-cols-2 gap-4">
           {options.map((option) => (
             <button
@@ -45,14 +73,14 @@ export default function FillBlankMandarinCard({
             </button>
           ))}
         </div>
-      </div>
+      </QuizCardBody>
 
       {isAnswered && (
-        <div className="w-full flex flex-row items-start space-x-2 bg-white/5">
-          <FontAwesomeIcon icon="language" size="xl" />
-          <h1>中文测验</h1>
-        </div>
+        <QuizCardResult isCorrect={isCorrect}>
+          <>{renderResult()}</>
+          <button className="bg-white/50">OK</button>
+        </QuizCardResult>
       )}
-    </CardWrapper>
+    </QuizCard>
   );
 }

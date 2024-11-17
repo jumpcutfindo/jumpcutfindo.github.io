@@ -1,20 +1,58 @@
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import {
+  Icon,
+  IconDefinition,
+  IconProp,
+} from "@fortawesome/fontawesome-svg-core";
+import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-interface CardWrapperProps {
-  icon: IconProp;
-  title: string;
+interface QuizCardProps {
   children: React.ReactNode;
 }
 
-export function CardWrapper({ icon, title, children }: CardWrapperProps) {
+function QuizCard({ children }: QuizCardProps) {
+  return <div className="w-full flex flex-col flex-1">{children}</div>;
+}
+
+interface QuizCardHeaderProps {
+  icon: IconDefinition;
+  title: string;
+}
+
+function QuizCardHeader({ icon, title }: QuizCardHeaderProps) {
   return (
-    <div className="flex flex-col flex-1 rounded-lg m-2 px-2 py-2 space-y-4">
-      <div className="w-full flex flex-row items-start space-x-2">
-        <FontAwesomeIcon icon={icon} size="sm" className="my-auto" />
-        <h1 className="my-auto text-sm font-bold">{title.toUpperCase()}</h1>
-      </div>
-      <div className="w-full flex flex-col flex-1 space-y-4">{children}</div>
+    <div className="w-full flex flex-row items-start space-x-2 p-4">
+      <FontAwesomeIcon icon={icon} size="sm" className="my-auto" />
+      <h1 className="my-auto text-sm font-bold">{title.toUpperCase()}</h1>
     </div>
   );
 }
+
+interface QuizCardBodyProps {
+  children: React.ReactNode;
+}
+
+function QuizCardBody({ children }: QuizCardBodyProps) {
+  return (
+    <div className="w-full flex flex-col flex-1 px-4 space-y-4">{children}</div>
+  );
+}
+
+interface QuizCardResultProps {
+  isCorrect: boolean;
+  children: React.ReactNode;
+}
+
+function QuizCardResult({ isCorrect, children }: QuizCardResultProps) {
+  return (
+    <div
+      className={`flex flex-col space-x-4 p-4 ${
+        isCorrect ? "bg-emerald-600" : "bg-red-600"
+      }`}
+    >
+      {children}
+    </div>
+  );
+}
+
+export { QuizCard, QuizCardHeader, QuizCardBody, QuizCardResult };
