@@ -46,10 +46,20 @@ interface QuizCardResultProps {
 function QuizCardResult({ isCorrect, children }: QuizCardResultProps) {
   return (
     <div
-      className={`flex flex-col space-x-4 p-4 ${
+      className={`flex flex-col p-4 space-y-4 ${
         isCorrect ? "bg-emerald-600" : "bg-red-600"
       }`}
     >
+      <div className="flex flex-row space-x-4">
+        <FontAwesomeIcon
+          icon={isCorrect ? faCheck : faTimes}
+          size="lg"
+          className="my-auto"
+        />
+        <p className="text-lg my-auto">
+          {isCorrect ? "Correct!" : "Incorrect!"}
+        </p>
+      </div>
       {children}
     </div>
   );
