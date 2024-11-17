@@ -32,7 +32,7 @@ export default function MandarinQuiz() {
           <FillBlankMandarinCard
             answer={fillBlankExample.answer}
             options={fillBlankExample.options}
-            sentence={fillBlankExample.sentence}
+            example={fillBlankExample.example}
             blankedSentence={fillBlankExample.blankedSentence}
             onCorrect={onCorrect}
             onIncorrect={onIncorrect}

@@ -9,13 +9,14 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faCoffee, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { render } from "react-dom";
+import Markdown from "react-markdown";
 
 type FillBlankMandarinCardProps = MandarinCardProps & FillBlankCard;
 
 export default function FillBlankMandarinCard({
   answer,
   options,
-  sentence,
+  example,
   blankedSentence,
   onCorrect,
   onIncorrect,
@@ -36,19 +37,23 @@ export default function FillBlankMandarinCard({
   };
 
   const renderResult = () => {
-    if (isCorrect) {
-      return (
-        <div className="flex flex-row space-x-4">
-          <FontAwesomeIcon icon={faCheck} size="lg" className="my-auto" />
-          <p className="text-lg my-auto">{sentence}</p>
-        </div>
-      );
-    }
+    const resultSentenceBolded = example.sentence.replace(
+      answer.word,
+      `**${answer.word}**`
+    );
 
     return (
-      <div className="flex flex-row space-x-4">
-        <FontAwesomeIcon icon={faTimes} size="lg" className="my-auto" />
-        <p className="text-lg my-auto">{sentence}</p>
+      <div>
+        <Markdown
+          components={{
+            p(props) {
+              return <p className="text-xl">{props.children}</p>;
+            },
+          }}
+        >
+          {resultSentenceBolded}
+        </Markdown>
+        <p>{example.englishTranslation}</p>
       </div>
     );
   };
@@ -77,8 +82,10 @@ export default function FillBlankMandarinCard({
 
       {isAnswered && (
         <QuizCardResult isCorrect={isCorrect}>
-          <>{renderResult()}</>
-          <button className="bg-white/50">OK</button>
+          {renderResult()}
+          <button className="p-2 rounded-lg bg-white/20 hover:bg-white/30">
+            OK
+          </button>
         </QuizCardResult>
       )}
     </QuizCard>

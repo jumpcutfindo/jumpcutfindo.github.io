@@ -7,9 +7,8 @@ export function generateFillBlank(
   optionCount: number
 ): FillBlankCard {
   const answer = selectRandomDefinition(definitions);
-  const sentence =
-    answer.examples[Math.floor(Math.random() * answer.examples.length)]
-      .sentence;
+  const example =
+    answer.examples[Math.floor(Math.random() * answer.examples.length)];
 
   const options = [];
   for (let i = 0; i < optionCount - 1; i++) {
@@ -28,7 +27,7 @@ export function generateFillBlank(
   return {
     answer,
     options,
-    blankedSentence: sentence.replace(answer.word, " ____ "),
-    sentence,
+    example,
+    blankedSentence: example.sentence.replace(answer.word, " ____ "),
   };
 }

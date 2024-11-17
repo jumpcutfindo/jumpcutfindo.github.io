@@ -1,4 +1,4 @@
-import { MandarinDefinition } from "./mandarin";
+import { MandarinDefinition, MandarinExample } from "./mandarin";
 
 export enum CardType {
   FillBlank = "fill-in-the-blank",
@@ -14,8 +14,8 @@ export interface MandarinCardProps {
 export interface FillBlankCard {
   answer: MandarinDefinition;
   options: MandarinDefinition[];
+  example: MandarinExample;
   blankedSentence: string;
-  sentence: string;
 }
 
 export interface MatchDefinitionCard {
