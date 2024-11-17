@@ -28,7 +28,7 @@ export function generateFillBlank(
   return {
     answer,
     options,
-    blankedSentence: sentence.replace(answer.word, "_"),
+    blankedSentence: sentence.replace(answer.word, " ____ "),
     sentence,
   };
 }
