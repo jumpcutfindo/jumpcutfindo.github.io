@@ -11,16 +11,16 @@ export interface MandarinCardProps {
   onIncorrect: () => void;
 }
 
-export interface FillBlankCardProps extends MandarinCardProps {
+export interface FillBlankCard {
   answer: MandarinDefinition;
   options: MandarinDefinition[];
   sentence: string;
 }
 
-export interface MatchDefinitionCardProps extends MandarinCardProps {
+export interface MatchDefinitionCard {
   options: MandarinDefinition[];
 }
 
-export interface MatchPinyinCardProps extends MandarinCardProps {
+export interface MatchPinyinCard {
   options: MandarinDefinition[];
 }
