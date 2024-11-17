@@ -6,12 +6,16 @@ import {
   QuizCardHeader,
   QuizCardResult,
 } from "./card-wrapper";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck, faCoffee, faTimes } from "@fortawesome/free-solid-svg-icons";
-import { render } from "react-dom";
-import Markdown from "react-markdown";
+import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import Markdown, { Components } from "react-markdown";
 
 type FillBlankMandarinCardProps = MandarinCardProps & FillBlankCard;
+
+const MARKDOWN_STYLING: Components = {
+  p(props) {
+    return <p className="text-xl">{props.children}</p>;
+  },
+};
 
 export default function FillBlankMandarinCard({
   answer,
@@ -49,17 +53,19 @@ export default function FillBlankMandarinCard({
     );
 
     return (
-      <div>
-        <Markdown
-          components={{
-            p(props) {
-              return <p className="text-xl">{props.children}</p>;
-            },
-          }}
-        >
-          {resultSentenceBolded}
-        </Markdown>
-        <p>{example.englishTranslation}</p>
+      <div className="flex flex-col space-y-2">
+        <div className="flex flex-col border rounded-lg p-4 bg-white/10">
+          <Markdown components={MARKDOWN_STYLING}>
+            {`${answer.word} (${answer.pinyin})`}
+          </Markdown>
+          <p>{answer.definition}</p>
+        </div>
+        <div>
+          <Markdown components={MARKDOWN_STYLING}>
+            {`${example.sentence.replace(answer.word, `**${answer.word}**`)}`}
+          </Markdown>
+          <p>{example.englishTranslation}</p>
+        </div>
       </div>
     );
   };
