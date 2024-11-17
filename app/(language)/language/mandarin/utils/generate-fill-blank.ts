@@ -23,9 +23,12 @@ export function generateFillBlank(
     options.push(randomDefinition);
   }
 
+  options.push(answer);
+
   return {
     answer,
     options,
+    blankedSentence: sentence.replace(answer.word, "_"),
     sentence,
   };
 }

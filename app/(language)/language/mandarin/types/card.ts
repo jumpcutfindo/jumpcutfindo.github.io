@@ -14,6 +14,7 @@ export interface MandarinCardProps {
 export interface FillBlankCard {
   answer: MandarinDefinition;
   options: MandarinDefinition[];
+  blankedSentence: string;
   sentence: string;
 }
 
