@@ -10,19 +10,20 @@ export function generateFillBlank(
   const example =
     answer.examples[Math.floor(Math.random() * answer.examples.length)];
 
-  const options = [];
-  for (let i = 0; i < optionCount - 1; i++) {
-    let randomDefinition;
+  const options = [answer];
+  const optionWordSet = new Set();
+  optionWordSet.add(answer.word);
 
-    // Ensure that the random definition is not the same as the answer
-    while (!randomDefinition || randomDefinition.word === answer.word) {
-      randomDefinition = selectRandomDefinition(definitions);
+  for (let i = 0; i < optionCount - 1; i++) {
+    let option = selectRandomDefinition(definitions);
+
+    while (optionWordSet.has(option.word)) {
+      option = selectRandomDefinition(definitions);
     }
 
-    options.push(randomDefinition);
+    options.push(option);
+    optionWordSet.add(option.word);
   }
-
-  options.push(answer);
 
   return {
     answer,
