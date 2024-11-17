@@ -14,17 +14,21 @@ import { FillBlankCard } from "./types/card";
 export default function MandarinQuiz() {
   const chinese = chineseJson as MandarinDefinition[];
 
+  const [score, setScore] = useState(0);
+  const [maxScore, setMaxScore] = useState(0);
+
   const [quizState, setQuizState] = useState(QuizState.Question);
   const [fillBlankExample, setFillBlankExample] =
     useState<FillBlankCard | null>();
 
   const onAnswered = () => {
     setQuizState(QuizState.Review);
+    setMaxScore((score) => score + 1);
   };
 
   const onCorrect = () => {
     setQuizState(QuizState.Review);
-    console.log("Answer was correct");
+    setScore((score) => score + 1);
   };
 
   const onIncorrect = () => {
@@ -45,9 +49,12 @@ export default function MandarinQuiz() {
   return (
     <div className="flex flex-col h-screen w-screen justify-center items-center">
       <div className="flex flex-col items-center w-[480px] flex-1 bg-slate-900">
-        <div className="w-full flex flex-row items-start p-4 space-x-2 bg-white/5">
+        <div className="w-full flex flex-row p-4 bg-white/5">
           <FontAwesomeIcon icon={faLanguage} size="xl" />
-          <h1>中文测验</h1>
+          <h1 className="ms-2">中文测验</h1>
+          <p className="ms-auto">
+            Score: {score}/{maxScore}
+          </p>
         </div>
         {fillBlankExample && (
           <div className="w-full flex flex-col flex-1">
