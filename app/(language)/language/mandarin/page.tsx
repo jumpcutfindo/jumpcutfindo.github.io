@@ -1,15 +1,15 @@
 "use client";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 import chineseJson from "./api/chinese.json";
-import { MandarinDefinition } from "./types/mandarin";
+import {MandarinDefinition} from "./types/mandarin";
 import FillBlankMandarinCard from "./cards/fill-in-the-blank";
-import { generateFillBlank } from "./utils/generate-fill-blank";
-import { faLanguage } from "@fortawesome/free-solid-svg-icons";
-import { QuizState } from "./types/quiz";
-import { useEffect, useState } from "react";
-import { FillBlankCard } from "./types/card";
+import {generateFillBlank} from "./utils/generate-fill-blank";
+import {faLanguage} from "@fortawesome/free-solid-svg-icons";
+import {QuizState} from "./types/quiz";
+import {useEffect, useState} from "react";
+import {FillBlankCard} from "./types/card";
 
 export default function MandarinQuiz() {
   const chinese = chineseJson as MandarinDefinition[];
@@ -47,7 +47,7 @@ export default function MandarinQuiz() {
 
   return (
     <div className="flex flex-col h-screen w-screen justify-center items-center">
-      <div className="flex flex-col items-center w-[480px] flex-1 bg-slate-900">
+      <div className="flex flex-col items-center w-screen max-w-[480px] flex-1 bg-slate-900">
         <div className="w-full flex flex-row p-4 bg-white/5">
           <FontAwesomeIcon icon={faLanguage} size="xl" />
           <h1 className="ms-2">中文测验</h1>

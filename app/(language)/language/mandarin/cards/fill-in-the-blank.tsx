@@ -156,8 +156,8 @@ export default function FillBlankMandarinCard({
       <QuizCardResult isVisible={isAnswered} isCorrect={isCorrect}>
         {renderResult()}
         <button
-            className="p-2 rounded-lg bg-white/20 hover:bg-white/30"
-            onClick={onAcknowledgeResult}
+          className="p-2 rounded-lg bg-white/20 hover:bg-white/30"
+          onClick={onAcknowledgeResult}
         >
           OK
         </button>
