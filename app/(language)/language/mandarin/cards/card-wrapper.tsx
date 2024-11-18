@@ -1,8 +1,6 @@
-import {
-  IconDefinition,
-} from "@fortawesome/fontawesome-svg-core";
-import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {IconDefinition,} from "@fortawesome/fontawesome-svg-core";
+import {faCheck, faTimes} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 interface QuizCardProps {
   children: React.ReactNode;
@@ -45,9 +43,11 @@ interface QuizCardResultProps {
 function QuizCardResult({ isVisible, isCorrect, children }: QuizCardResultProps) {
   return (
     <div
-      className={`flex flex-col p-4 space-y-4 transform transition-transform duration-250 ease-in-out ${
-          isVisible ? "translate-y-0" : "translate-y-full"
-      } ${isCorrect ? "bg-emerald-700" : "bg-red-700"}`}
+        className={`fixed bottom-0 left-1/2 transform -translate-x-1/2 flex flex-col p-4 space-y-4 w-screen transition-all duration-250 ease-in-out z-50 ${
+            isVisible
+                ? "translate-y-0 opacity-100 visible"
+                : "translate-y-full opacity-0 invisible"
+        } ${isCorrect ? "border-t border-t-emerald-400 bg-emerald-700" : "border-t border-t-red-400 bg-red-700"}`}
     >
       <div className="flex flex-row space-x-4">
         <FontAwesomeIcon
