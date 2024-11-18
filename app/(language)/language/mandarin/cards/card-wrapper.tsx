@@ -46,22 +46,23 @@ function QuizCardResult({
   children,
 }: QuizCardResultProps) {
   const getClassName = () => {
-    let className =
-      "fixed bottom-0 left-1/2 transform -translate-x-1/2 flex flex-col p-4 space-y-4 w-screen max-w-[480px] transition-all duration-250 ease-in-out z-50";
+    let classNames = [
+      "fixed bottom-0 left-1/2 -translate-x-1/2 flex flex-col p-4 space-y-4 w-screen max-w-[480px] transform transition-transform duration-250 ease-in-out z-50",
+    ];
 
     if (isVisible) {
-      className += "translate-y-0 opacity-100 visible";
+      classNames.push("translate-y-0");
     } else {
-      className += "translate-y-full opacity-0 invisible";
+      classNames.push("translate-y-full");
     }
 
     if (isCorrect) {
-      className += "border-t border-t-emerald-400 bg-emerald-700";
+      classNames.push("border-t border-t-emerald-400 bg-emerald-700");
     } else {
-      className += "border-t border-t-red-400 bg-red-700";
+      classNames.push("border-t border-t-red-400 bg-red-700");
     }
 
-    return className;
+    return classNames.join(" ");
   };
 
   return (
