@@ -34,6 +34,8 @@ function FillBlankOption({
   const [isSelected, setIsSelected] = useState(false);
 
   const onOptionSelected = () => {
+    if (isAnswered) return;
+
     onClick();
     setIsSelected(true);
   };
@@ -84,12 +86,16 @@ export default function FillBlankMandarinCard({
   const [isCorrect, setIsCorrect] = useState(false);
 
   const onAnswerCorrect = () => {
+    if (isAnswered) return;
+
     onAnswered();
     setIsCorrect(true);
     onCorrect();
   };
 
   const onAnswerIncorrect = () => {
+    if (isAnswered) return;
+
     onAnswered();
     setIsCorrect(false);
     onIncorrect();

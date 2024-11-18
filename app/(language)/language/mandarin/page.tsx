@@ -33,7 +33,6 @@ export default function MandarinQuiz() {
 
   const onIncorrect = () => {
     setQuizState(QuizState.Review);
-    console.log("Answer was incorrect");
   };
 
   const onNext = () => {
@@ -44,7 +43,7 @@ export default function MandarinQuiz() {
     if (quizState === QuizState.Question) {
       setFillBlankExample(generateFillBlank(chinese, 4));
     }
-  }, [quizState]);
+  }, [chinese, quizState]);
 
   return (
     <div className="flex flex-col h-screen w-screen justify-center items-center">
