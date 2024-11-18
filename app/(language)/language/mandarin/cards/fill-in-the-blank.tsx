@@ -8,6 +8,7 @@ import {
 } from "./card-wrapper";
 import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 import Markdown, { Components } from "react-markdown";
+import { MandarinDefinition } from "../types/mandarin";
 
 type FillBlankMandarinCardProps = MandarinCardProps & FillBlankCard;
 
@@ -46,6 +47,49 @@ export default function FillBlankMandarinCard({
     onNext();
   };
 
+  const renderOptions = () => {
+    const getClassName = (isCorrectOption: boolean) => {
+      const baseClassName =
+        "flex justify-center items-center p-2 rounded-lg h-32";
+
+      if (isAnswered && isCorrectOption) {
+        return `${baseClassName} border border-emerald-400 bg-emerald-700`;
+      }
+
+      return `${baseClassName} border bg-transparent hover:bg-white/5`;
+    };
+
+    const renderOptionContent = (option: MandarinDefinition) => {
+      if (isAnswered) {
+        return (
+          <div className="flex flex-col">
+            <p className="text-2xl">{option.word}</p>
+            <p className="text-sm text-white/60">({option.pinyin})</p>
+            <p className="text-sm">{option.definition}</p>
+          </div>
+        );
+      }
+
+      return (
+        <div className="flex flex-col">
+          <p className="text-2xl">{option.word}</p>
+        </div>
+      );
+    };
+
+    return options.map((option) => (
+      <button
+        key={option.word}
+        className={getClassName(option === answer)}
+        onClick={() =>
+          option === answer ? onAnswerCorrect() : onAnswerIncorrect()
+        }
+      >
+        {renderOptionContent(option)}
+      </button>
+    ));
+  };
+
   const renderResult = () => {
     return (
       <div className="flex flex-col space-y-2">
@@ -72,19 +116,7 @@ export default function FillBlankMandarinCard({
         <div className="flex flex-col p-2 border rounded-lg">
           <p className="text-2xl">{blankedSentence}</p>
         </div>
-        <div className="grid grid-cols-2 gap-4">
-          {options.map((option) => (
-            <button
-              key={option.word}
-              className="flex justify-center items-center p-2 border rounded-lg hover:bg-white/5 h-32"
-              onClick={() =>
-                option === answer ? onAnswerCorrect() : onAnswerIncorrect()
-              }
-            >
-              <p className="text-2xl">{option.word}</p>
-            </button>
-          ))}
-        </div>
+        <div className="grid grid-cols-2 gap-4">{renderOptions()}</div>
       </QuizCardBody>
 
       {isAnswered && (
