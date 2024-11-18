@@ -21,7 +21,12 @@ export function generateFillBlank(
       option = selectRandomDefinition(definitions);
     }
 
-    options.push(option);
+    if (Math.random() > 0.5) {
+      options.push(option);
+    } else {
+      options.unshift(option);
+    }
+
     optionWordSet.add(option.word);
   }
 
