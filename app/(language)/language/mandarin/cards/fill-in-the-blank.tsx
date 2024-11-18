@@ -18,6 +18,58 @@ const MARKDOWN_STYLING: Components = {
   },
 };
 
+interface FillBlankOptionProps {
+  isAnswered: boolean;
+  isAnswer: boolean;
+  option: MandarinDefinition;
+  onClick: () => void;
+}
+
+function FillBlankOption({
+  isAnswered,
+  isAnswer,
+  option,
+  onClick,
+}: FillBlankOptionProps) {
+  const [isSelected, setIsSelected] = useState(false);
+
+  const onOptionSelected = () => {
+    onClick();
+    setIsSelected(true);
+  };
+
+  const getClassName = () => {
+    const baseClassName =
+      "flex flex-col justify-center items-center p-2 rounded-lg h-32";
+
+    if (isAnswered) {
+      if (isAnswer) {
+        return `${baseClassName} border border-emerald-400 bg-emerald-700`;
+      }
+
+      if (isSelected) {
+        return `${baseClassName} border border-slate-400 bg-slate-700`;
+      }
+    }
+
+    return `${baseClassName} border bg-transparent hover:bg-white/5`;
+  };
+
+  return (
+    <button className={getClassName()} onClick={onOptionSelected}>
+      <p className="text-2xl">{option.word}</p>
+      {isAnswered && (
+        <div className="flex flex-col">
+          <p className="text-sm text-white/60">{option.pinyin}</p>
+          <p className="text-sm">
+            ({option.wordType}) {option.definition}
+          </p>
+        </div>
+      )}
+    </button>
+  );
+}
+
 export default function FillBlankMandarinCard({
   answer,
   options,
@@ -48,47 +100,20 @@ export default function FillBlankMandarinCard({
   };
 
   const renderOptions = () => {
-    const getClassName = (isCorrectOption: boolean) => {
-      const baseClassName =
-        "flex justify-center items-center p-2 rounded-lg h-32";
-
-      if (isAnswered && isCorrectOption) {
-        return `${baseClassName} border border-emerald-400 bg-emerald-700`;
-      }
-
-      return `${baseClassName} border bg-transparent hover:bg-white/5`;
-    };
-
-    const renderOptionContent = (option: MandarinDefinition) => {
-      if (isAnswered) {
-        return (
-          <div className="flex flex-col">
-            <p className="text-2xl">{option.word}</p>
-            <p className="text-sm text-white/60">{option.pinyin}</p>
-            <p className="text-sm">
-              ({option.wordType}) {option.definition}
-            </p>
-          </div>
-        );
-      }
-
-      return (
-        <div className="flex flex-col">
-          <p className="text-2xl">{option.word}</p>
-        </div>
-      );
-    };
-
     return options.map((option) => (
-      <button
+      <FillBlankOption
         key={option.word}
-        className={getClassName(option === answer)}
-        onClick={() =>
-          option === answer ? onAnswerCorrect() : onAnswerIncorrect()
-        }
-      >
-        {renderOptionContent(option)}
-      </button>
+        isAnswered={isAnswered}
+        isAnswer={option.word === answer.word}
+        option={option}
+        onClick={() => {
+          if (option.word === answer.word) {
+            onAnswerCorrect();
+          } else {
+            onAnswerIncorrect();
+          }
+        }}
+      />
     ));
   };
 
