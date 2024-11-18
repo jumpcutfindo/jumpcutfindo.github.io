@@ -64,8 +64,10 @@ export default function FillBlankMandarinCard({
         return (
           <div className="flex flex-col">
             <p className="text-2xl">{option.word}</p>
-            <p className="text-sm text-white/60">({option.pinyin})</p>
-            <p className="text-sm">{option.definition}</p>
+            <p className="text-sm text-white/60">{option.pinyin}</p>
+            <p className="text-sm">
+              ({option.wordType}) {option.definition}
+            </p>
           </div>
         );
       }
@@ -94,10 +96,11 @@ export default function FillBlankMandarinCard({
     return (
       <div className="flex flex-col space-y-2">
         <div className="flex flex-col border rounded-lg p-4 bg-white/10">
-          <Markdown components={MARKDOWN_STYLING}>
-            {`${answer.word} (${answer.pinyin})`}
-          </Markdown>
-          <p>{answer.definition}</p>
+          <Markdown components={MARKDOWN_STYLING}>{`${answer.word}`}</Markdown>
+          <p className="text-white/60">{answer.pinyin}</p>
+          <p>
+            ({answer.wordType}) {answer.definition}
+          </p>
         </div>
         <div>
           <Markdown components={MARKDOWN_STYLING}>
