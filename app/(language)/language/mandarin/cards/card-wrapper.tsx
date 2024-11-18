@@ -1,7 +1,5 @@
 import {
-  Icon,
   IconDefinition,
-  IconProp,
 } from "@fortawesome/fontawesome-svg-core";
 import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -39,16 +37,17 @@ function QuizCardBody({ children }: QuizCardBodyProps) {
 }
 
 interface QuizCardResultProps {
+  isVisible: boolean;
   isCorrect: boolean;
   children: React.ReactNode;
 }
 
-function QuizCardResult({ isCorrect, children }: QuizCardResultProps) {
+function QuizCardResult({ isVisible, isCorrect, children }: QuizCardResultProps) {
   return (
     <div
-      className={`flex flex-col p-4 space-y-4 ${
-        isCorrect ? "bg-emerald-700" : "bg-red-700"
-      }`}
+      className={`flex flex-col p-4 space-y-4 transform transition-transform duration-250 ease-in-out ${
+          isVisible ? "translate-y-0" : "translate-y-full"
+      } ${isCorrect ? "bg-emerald-700" : "bg-red-700"}`}
     >
       <div className="flex flex-row space-x-4">
         <FontAwesomeIcon

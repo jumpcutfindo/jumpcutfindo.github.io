@@ -147,17 +147,15 @@ export default function FillBlankMandarinCard({
         <div className="grid grid-cols-2 gap-4">{renderOptions()}</div>
       </QuizCardBody>
 
-      {isAnswered && (
-        <QuizCardResult isCorrect={isCorrect}>
-          {renderResult()}
-          <button
+      <QuizCardResult isVisible={isAnswered} isCorrect={isCorrect}>
+        {renderResult()}
+        <button
             className="p-2 rounded-lg bg-white/20 hover:bg-white/30"
             onClick={onAcknowledgeResult}
-          >
-            OK
-          </button>
-        </QuizCardResult>
-      )}
+        >
+          OK
+        </button>
+      </QuizCardResult>
     </QuizCard>
   );
 }
