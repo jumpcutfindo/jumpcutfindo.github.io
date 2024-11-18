@@ -1,6 +1,12 @@
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCaretDown,
+  faCaretUp,
+  faCheck,
+  faTimes,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
 
 interface QuizCardProps {
   children: React.ReactNode;
@@ -45,13 +51,23 @@ function QuizCardResult({
   isCorrect,
   children,
 }: QuizCardResultProps) {
+  const [isExpanded, setExpanded] = useState(true);
+
+  const toggleExpanded = () => {
+    setExpanded((prevState) => !prevState);
+  };
+
   const getClassName = () => {
     let classNames = [
-      "fixed bottom-0 left-1/2 -translate-x-1/2 flex flex-col p-4 space-y-4 w-screen max-w-[480px] transform transition-transform duration-250 ease-in-out z-50",
+      "fixed bottom-0 left-1/2 -translate-x-1/2 flex flex-col p-4 space-y-4 w-screen max-w-[480px] transform transition-transform duration-200 ease-in-out z-50",
     ];
 
     if (isVisible) {
-      classNames.push("translate-y-0");
+      if (isExpanded) {
+        classNames.push("translate-y-0");
+      } else {
+        classNames.push("translate-y-[calc(100%-4rem)]");
+      }
     } else {
       classNames.push("translate-y-full");
     }
@@ -67,15 +83,22 @@ function QuizCardResult({
 
   return (
     <div className={getClassName()}>
-      <div className="flex flex-row space-x-4 w-full">
+      <div
+        className="flex flex-row space-x-4 w-full h-8 cursor-pointer"
+        onClick={toggleExpanded}
+      >
         <FontAwesomeIcon
           icon={isCorrect ? faCheck : faTimes}
           size="lg"
           className="my-auto"
         />
-        <p className="text-lg my-auto">
+        <p className="text-lg my-auto flex-1">
           {isCorrect ? "Correct!" : "Incorrect!"}
         </p>
+
+        <span className="my-auto px-2">
+          <FontAwesomeIcon icon={isExpanded ? faCaretDown : faCaretUp} />
+        </span>
       </div>
       {children}
     </div>
