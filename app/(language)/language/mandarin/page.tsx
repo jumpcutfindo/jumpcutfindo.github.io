@@ -47,7 +47,7 @@ export default function MandarinQuiz() {
 
   return (
     <div className="flex flex-col h-screen w-screen justify-center items-center">
-      <div className="flex flex-col items-center max-w-[480px] flex-1 bg-slate-900">
+      <div className="flex flex-col items-center w-screen max-w-[480px] flex-1 bg-slate-900">
         <div className="w-full flex flex-row p-4 bg-white/5">
           <FontAwesomeIcon icon={faLanguage} size="xl" />
           <h1 className="ms-2">中文测验</h1>
