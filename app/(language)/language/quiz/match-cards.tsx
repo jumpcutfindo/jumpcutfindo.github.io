@@ -16,8 +16,9 @@ import {
 import { QuizState } from "./types/quiz";
 import { CardProps, MatchCardParams } from "./types/card";
 import { shuffle } from "./utils/shuffle";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { on } from "events";
 
 interface MatchCardTileProps<T> {
   tileKey: string;
@@ -80,12 +81,12 @@ export function MatchCard<T>({
   options,
   renderOption,
 }: MatchCardProps<T>) {
+  const fromOptions = useMemo(() => shuffle([...options]), [options]);
+  const toOptions = useMemo(() => shuffle([...options]), [options]);
+
   const [matchedSets, setMatchedSets] = useState<Set<T>>(new Set());
 
   const [shakingTiles, setShakingTiles] = useState<Set<String>>(new Set());
-
-  const [fromOptions] = useState<T[]>(shuffle([...options]));
-  const [toOptions] = useState<T[]>(shuffle([...options]));
 
   const [selectedFrom, setSelectedFrom] = useState<T | null>(null);
   const [selectedFromKey, setSelectedFromKey] = useState<string | null>(null);
@@ -146,6 +147,11 @@ export function MatchCard<T>({
     }
 
     return tiles;
+  };
+
+  const onAcknowledgeResult = () => {
+    matchedSets.clear();
+    onNext();
   };
 
   useEffect(() => {
@@ -230,7 +236,7 @@ export function MatchCard<T>({
       <QuizCardResult
         isVisible={quizState === QuizState.Review}
         isCorrect={true} // Always true for match cards
-        onAcknowledgeResult={onNext}
+        onAcknowledgeResult={onAcknowledgeResult}
       >
         <span>Successfully matched all pairs! Good job!</span>
       </QuizCardResult>
