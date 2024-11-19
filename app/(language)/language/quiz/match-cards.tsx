@@ -1,14 +1,9 @@
 import {
   faCheck,
   faCircle,
-  faWandMagic,
+  faWandMagicSparkles,
 } from "@fortawesome/free-solid-svg-icons";
-import {
-  QuizCard,
-  QuizCardHeader,
-  QuizCardBody,
-  QuizCardResult,
-} from "./quiz-card-wrapper";
+import { QuizCard, QuizCardHeader, QuizCardBody } from "./quiz-card-wrapper";
 import { QuizState } from "./types/quiz";
 import { CardProps, MatchCardParams } from "./types/card";
 import { shuffle } from "./utils/shuffle";
@@ -206,7 +201,7 @@ export function MatchCard<T>({
   return (
     <QuizCard>
       <QuizCardHeader
-        icon={faWandMagic}
+        icon={faWandMagicSparkles}
         title={cardTitle ? cardTitle : "Match the Cards"}
       >
         <div className="flex flex-row space-x-2 items-center">
