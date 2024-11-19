@@ -10,7 +10,7 @@ import { QuizState } from "../quiz/types/quiz";
 import { useEffect, useState } from "react";
 import MandarinFillBlank from "./cards/mandarin-fill-blank";
 import { MandarinMatchPinyinCardParams } from "./types/card";
-import { generatePinyinOptions } from "./utils/generate-match-pinyin";
+import { generateMatchPinyin } from "./utils/generate-match-pinyin";
 import MandarinMatchPinyin from "./cards/mandarin-match-pinyin";
 
 export default function MandarinQuiz() {
@@ -40,9 +40,7 @@ export default function MandarinQuiz() {
 
   useEffect(() => {
     if (quizState === QuizState.Question) {
-      setMatchPinyinExample({
-        options: generatePinyinOptions(chinese, 4),
-      });
+      setMatchPinyinExample(generateMatchPinyin(chinese, 4));
     }
   }, [chinese, quizState]);
 

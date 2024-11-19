@@ -1,10 +1,11 @@
+import { MandarinMatchPinyinCardParams } from "../types/card";
 import { MandarinDefinition } from "../types/mandarin";
 import { selectRandomDefinition } from "./definition-utils";
 
-export function generatePinyinOptions(
+export function generateMatchPinyin(
   definitions: MandarinDefinition[],
   count: number
-) {
+): MandarinMatchPinyinCardParams {
   const options = [];
   const wordSet = new Set();
 
@@ -19,5 +20,5 @@ export function generatePinyinOptions(
     wordSet.add(randomDefinition.word);
   }
 
-  return options;
+  return { options };
 }
