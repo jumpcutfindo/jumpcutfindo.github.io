@@ -19,13 +19,17 @@ function QuizCard({ children }: QuizCardProps) {
 interface QuizCardHeaderProps {
   icon: IconDefinition;
   title: string;
+  children?: React.ReactNode;
 }
 
-function QuizCardHeader({ icon, title }: QuizCardHeaderProps) {
+function QuizCardHeader({ icon, title, children }: QuizCardHeaderProps) {
   return (
     <div className="w-full flex flex-row items-start space-x-2 p-4">
       <FontAwesomeIcon icon={icon} size="sm" className="my-auto" />
       <h1 className="my-auto text-sm font-bold">{title.toUpperCase()}</h1>
+      {children && (
+        <div className="flex flex-1 h-full justify-end">{children}</div>
+      )}
     </div>
   );
 }

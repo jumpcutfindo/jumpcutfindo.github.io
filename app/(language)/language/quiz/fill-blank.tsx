@@ -66,6 +66,7 @@ type FillBlankCardProps<T, U> = CardProps &
   };
 
 export function FillBlankCard<T, U>({
+  cardTitle,
   answer,
   options,
   blankedSentence,
@@ -73,35 +74,32 @@ export function FillBlankCard<T, U>({
   onAnswered,
   onCorrect,
   onIncorrect,
-  onNext,
   renderOption,
   renderResult,
+  setRenderedResult: setResult,
 }: FillBlankCardProps<T, U>) {
-  const [isCorrect, setIsCorrect] = useState(false);
-
   const onAnswerCorrect = () => {
     if (quizState === QuizState.Review) return;
 
+    setResult(renderResult());
     onAnswered();
-    setIsCorrect(true);
     onCorrect();
   };
 
   const onAnswerIncorrect = () => {
     if (quizState === QuizState.Review) return;
 
+    setResult(renderResult());
     onAnswered();
-    setIsCorrect(false);
     onIncorrect();
-  };
-
-  const onAcknowledgeResult = () => {
-    onNext();
   };
 
   return (
     <QuizCard>
-      <QuizCardHeader icon={faCoffee} title="Fill in the blanks" />
+      <QuizCardHeader
+        icon={faCoffee}
+        title={cardTitle ? cardTitle : "Fill in the blanks"}
+      />
       <QuizCardBody>
         <div className="flex flex-col p-2 border rounded-lg">
           <p className="text-2xl">{blankedSentence}</p>
@@ -123,14 +121,6 @@ export function FillBlankCard<T, U>({
           })}
         </div>
       </QuizCardBody>
-
-      <QuizCardResult
-        isVisible={quizState === QuizState.Review}
-        isCorrect={isCorrect}
-        onAcknowledgeResult={onAcknowledgeResult}
-      >
-        {renderResult()}
-      </QuizCardResult>
     </QuizCard>
   );
 }

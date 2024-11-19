@@ -1,11 +1,14 @@
 import { QuizState } from "./quiz";
 
 export interface CardProps {
+  cardTitle?: string;
   quizState: QuizState;
   onAnswered: () => void;
   onCorrect: () => void;
   onIncorrect: () => void;
   onNext: () => void;
+
+  setRenderedResult: (result: JSX.Element) => void;
 }
 
 export interface FillBlankCardParams<T, U> {
@@ -13,4 +16,8 @@ export interface FillBlankCardParams<T, U> {
   options: T[];
   example: U;
   blankedSentence: string;
+}
+
+export interface MatchCardParams<T> {
+  options: T[];
 }

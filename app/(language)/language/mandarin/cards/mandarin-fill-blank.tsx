@@ -2,6 +2,8 @@ import Markdown, { Components } from "react-markdown";
 import { FillBlankCard } from "../../quiz/fill-blank";
 import { QuizState } from "../../quiz/types/quiz";
 import { MandarinDefinition, MandarinExample } from "../types/mandarin";
+import { MandarinFillBlankCardParams } from "../types/card";
+import { CardProps } from "../../quiz/types/card";
 
 const MARKDOWN_STYLING: Components = {
   p(props) {
@@ -9,18 +11,7 @@ const MARKDOWN_STYLING: Components = {
   },
 };
 
-interface MandarinFillBlankProps {
-  quizState: QuizState;
-  answer: MandarinDefinition;
-  options: MandarinDefinition[];
-  example: MandarinExample;
-  blankedSentence: string;
-
-  onAnswered: () => void;
-  onCorrect: () => void;
-  onIncorrect: () => void;
-  onNext: () => void;
-}
+type MandarinFillBlankProps = CardProps & MandarinFillBlankCardParams;
 
 export default function MandarinFillBlank({
   quizState,
@@ -32,6 +23,7 @@ export default function MandarinFillBlank({
   onCorrect,
   onIncorrect,
   onNext,
+  setRenderedResult: setResult,
 }: MandarinFillBlankProps) {
   const renderOption = {
     [QuizState.Question]: (option: MandarinDefinition) => (
@@ -81,6 +73,7 @@ export default function MandarinFillBlank({
       onCorrect={onCorrect}
       onIncorrect={onIncorrect}
       onNext={onNext}
+      setRenderedResult={setResult}
       renderOption={renderOption}
       renderResult={renderResult}
     />
