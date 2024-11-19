@@ -195,6 +195,13 @@ export function MatchCard<T>({
     }
   }, [options, matchedSets.size]);
 
+  useEffect(() => {
+    if (quizState === QuizState.Question) {
+      // Clear when a new round starts
+      setMatchedSets(new Set());
+    }
+  }, [quizState]);
+
   return (
     <QuizCard>
       <QuizCardHeader icon={faWandMagic} title="Match the Cards">
