@@ -9,7 +9,7 @@ import {
 import { QuizState } from "./types/quiz";
 import { CardProps, MatchCardParams } from "./types/card";
 import { shuffle } from "./utils/shuffle";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface MatchCardTileProps<T> {
   option: T;
@@ -17,6 +17,7 @@ interface MatchCardTileProps<T> {
   isFrom: boolean;
   isSelected: boolean;
   onSelect: () => void;
+  isMatched: boolean;
 }
 
 function MatchCardTile<T>({
@@ -25,10 +26,11 @@ function MatchCardTile<T>({
   isFrom,
   isSelected,
   onSelect,
+  isMatched,
 }: MatchCardTileProps<T>) {
   const getClassName = () => {
     let classNames = [
-      "flex flex-col justify-center items-center p-2 rounded-lg h-32 border hover:bg-white/5",
+      "flex flex-col justify-center items-center p-2 rounded-lg h-32 border hover:bg-white/5 disabled:opacity-30",
     ];
 
     if (isSelected) {
@@ -39,7 +41,7 @@ function MatchCardTile<T>({
   };
 
   return (
-    <button className={getClassName()} onClick={onSelect}>
+    <button className={getClassName()} onClick={onSelect} disabled={isMatched}>
       {renderOption(option, isFrom)}
     </button>
   );
@@ -55,6 +57,8 @@ export function MatchCard<T>({
   options,
   renderOption,
 }: MatchCardProps<T>) {
+  const [matchedSets, setMatchedSets] = useState<Set<T>>(new Set());
+
   const [fromOptions, setFromOptions] = useState<T[]>(shuffle([...options]));
   const [toOptions, setToOptions] = useState<T[]>(shuffle([...options]));
 
@@ -81,6 +85,7 @@ export function MatchCard<T>({
           isFrom={true}
           isSelected={selectedFrom === option}
           onSelect={() => onSelectFrom(option)}
+          isMatched={matchedSets.has(option)}
         />
       );
     });
@@ -94,6 +99,7 @@ export function MatchCard<T>({
           isFrom={false}
           isSelected={selectedTo === option}
           onSelect={() => onSelectTo(option)}
+          isMatched={matchedSets.has(option)}
         />
       );
     });
@@ -105,6 +111,23 @@ export function MatchCard<T>({
 
     return tiles;
   };
+
+  useEffect(() => {
+    // Check if a "from" and a "to" are selected
+    if (selectedFrom && selectedTo) {
+      // If they are the same item, then it is correct
+      if (selectedFrom === selectedTo) {
+        setMatchedSets((prevSet) => {
+          prevSet.add(selectedFrom);
+          return prevSet;
+        });
+      }
+
+      // Reset selection
+      setSelectedFrom(null);
+      setSelectedTo(null);
+    }
+  }, [matchedSets, setMatchedSets, selectedFrom, selectedTo]);
 
   return (
     <QuizCard>
