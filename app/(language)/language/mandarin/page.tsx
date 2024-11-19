@@ -29,13 +29,10 @@ export default function MandarinQuiz() {
   };
 
   const onCorrect = () => {
-    setQuizState(QuizState.Review);
     setScore((score) => score + 1);
   };
 
-  const onIncorrect = () => {
-    setQuizState(QuizState.Review);
-  };
+  const onIncorrect = () => {};
 
   const onNext = () => {
     setQuizState(QuizState.Question);

@@ -73,6 +73,9 @@ type MatchCardProps<T> = CardProps &
   };
 
 export function MatchCard<T>({
+  onAnswered,
+  onCorrect,
+  onNext,
   quizState,
   options,
   renderOption,
@@ -186,6 +189,13 @@ export function MatchCard<T>({
     selectedToKey,
   ]);
 
+  useEffect(() => {
+    if (matchedSets.size === options.length) {
+      onAnswered();
+      onCorrect();
+    }
+  }, [options, matchedSets.size]);
+
   return (
     <QuizCard>
       <QuizCardHeader icon={faWandMagic} title="Match the Cards">
@@ -217,10 +227,10 @@ export function MatchCard<T>({
 
       <QuizCardResult
         isVisible={quizState === QuizState.Review}
-        isCorrect={true}
-        onAcknowledgeResult={() => {}}
+        isCorrect={true} // Always true for match cards
+        onAcknowledgeResult={onNext}
       >
-        Example result
+        <span>Successfully matched all pairs! Good job!</span>
       </QuizCardResult>
     </QuizCard>
   );
