@@ -20,9 +20,18 @@ export default function MandarinMatchPinyin({
   onIncorrect,
   onNext,
 }: MandarinFillBlankProps) {
+  const renderOption = (option: MandarinDefinition, isFrom: boolean) => {
+    if (isFrom) {
+      return <span className="text-2xl">{option.word}</span>;
+    } else {
+      return <span className="text-xl">{option.pinyin}</span>;
+    }
+  };
+
   return (
     <MatchCard
       options={options}
+      renderOption={renderOption}
       quizState={quizState}
       onAnswered={onAnswered}
       onCorrect={onCorrect}
