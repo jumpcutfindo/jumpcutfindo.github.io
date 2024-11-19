@@ -12,11 +12,14 @@ import MandarinFillBlank from "./cards/mandarin-fill-blank";
 import {
   MandarinCardType,
   MandarinFillBlankCardParams,
+  MandarinMatchDefinitionParams,
   MandarinMatchPinyinCardParams,
 } from "./types/card";
 import { generateMatchPinyin } from "./utils/generate-match-pinyin";
 import MandarinMatchPinyin from "./cards/mandarin-match-pinyin";
 import { QuizCardResult } from "../quiz/quiz-card-wrapper";
+import { generateMatchDefinition } from "./utils/generate-match-definition";
+import MandarinMatchDefinition from "./cards/mandarin-match-definition";
 
 export default function MandarinQuiz() {
   const chinese = chineseJson as MandarinDefinition[];
@@ -38,6 +41,8 @@ export default function MandarinQuiz() {
     useState<MandarinFillBlankCardParams | null>(null);
   const [matchPinyinParams, setMatchPinyinParams] =
     useState<MandarinMatchPinyinCardParams | null>(null);
+  const [matchDefinitionParams, setMatchDefinitionParams] =
+    useState<MandarinMatchDefinitionParams | null>(null);
 
   const onAnswered = () => {
     setQuizState(QuizState.Review);
@@ -87,6 +92,20 @@ export default function MandarinQuiz() {
             />
           )
         );
+      case MandarinCardType.MatchDefinition:
+        return (
+          matchDefinitionParams && (
+            <MandarinMatchDefinition
+              {...matchDefinitionParams}
+              quizState={quizState}
+              onAnswered={onAnswered}
+              onCorrect={onCorrect}
+              onIncorrect={onIncorrect}
+              onNext={onNext}
+              setRenderedResult={setRenderedResult}
+            />
+          )
+        );
       default:
         return null;
     }
@@ -101,10 +120,14 @@ export default function MandarinQuiz() {
         const params = generateFillBlank(chinese, 4);
         setFillBlankParams(params);
         setCardType(MandarinCardType.FillBlank);
-      } else {
+      } else if (cardType === MandarinCardType.MatchPinyin) {
         const params = generateMatchPinyin(chinese, 4);
         setMatchPinyinParams(params);
         setCardType(MandarinCardType.MatchPinyin);
+      } else {
+        const params = generateMatchDefinition(chinese, 4);
+        setMatchDefinitionParams(params);
+        setCardType(MandarinCardType.MatchDefinition);
       }
     }
   }, [chinese, quizState]);

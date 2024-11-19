@@ -4,6 +4,7 @@ import { MandarinDefinition, MandarinExample } from "./mandarin";
 export enum MandarinCardType {
   FillBlank = "fill-blank",
   MatchPinyin = "match-pinyin",
+  MatchDefinition = "match-definition",
 }
 
 export type MandarinFillBlankCardParams = FillBlankCardParams<
