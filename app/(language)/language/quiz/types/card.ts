@@ -14,3 +14,7 @@ export interface FillBlankCardParams<T, U> {
   example: U;
   blankedSentence: string;
 }
+
+export interface MatchCardParams<T> {
+  options: T[];
+}
