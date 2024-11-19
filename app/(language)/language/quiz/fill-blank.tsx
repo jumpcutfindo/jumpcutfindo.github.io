@@ -8,7 +8,7 @@ import {
 } from "./quiz-card-wrapper";
 import { CardProps, FillBlankCardParams } from "./types/card";
 import { useState } from "react";
-import { QuizState } from "../mandarin/types/quiz";
+import { QuizState } from "./types/quiz";
 
 interface FillBlankOptionProps {
   quizState: QuizState;
@@ -67,7 +67,7 @@ export function FillBlankCard({
   options,
   example,
   blankedSentence,
-  isAnswered,
+  quizState,
   onAnswered,
   onCorrect,
   onIncorrect,

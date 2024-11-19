@@ -1,15 +1,15 @@
 "use client";
 
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import chineseJson from "./api/chinese.json";
-import {MandarinDefinition} from "./types/mandarin";
+import { MandarinDefinition } from "./types/mandarin";
 import FillBlankMandarinCard from "./cards/fill-in-the-blank";
-import {generateFillBlank} from "./utils/generate-fill-blank";
-import {faLanguage} from "@fortawesome/free-solid-svg-icons";
-import {QuizState} from "./types/quiz";
-import {useEffect, useState} from "react";
-import {FillBlankCard} from "./types/card";
+import { generateFillBlank } from "./utils/generate-fill-blank";
+import { faLanguage } from "@fortawesome/free-solid-svg-icons";
+import { QuizState } from "../quiz/types/quiz";
+import { useEffect, useState } from "react";
+import { FillBlankCard } from "./types/card";
 
 export default function MandarinQuiz() {
   const chinese = chineseJson as MandarinDefinition[];
