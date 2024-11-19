@@ -78,7 +78,7 @@ export function FillBlankCard({
   const [isCorrect, setIsCorrect] = useState(false);
 
   const onAnswerCorrect = () => {
-    if (isAnswered) return;
+    if (quizState === QuizState.Review) return;
 
     onAnswered();
     setIsCorrect(true);
@@ -86,7 +86,7 @@ export function FillBlankCard({
   };
 
   const onAnswerIncorrect = () => {
-    if (isAnswered) return;
+    if (quizState === QuizState.Review) return;
 
     onAnswered();
     setIsCorrect(false);
@@ -108,7 +108,7 @@ export function FillBlankCard({
       </QuizCardBody>
 
       <QuizCardResult
-        isVisible={isAnswered}
+        isVisible={quizState === QuizState.Review}
         isCorrect={isCorrect}
         onAcknowledgeResult={onAcknowledgeResult}
       >
