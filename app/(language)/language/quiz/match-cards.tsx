@@ -1,4 +1,11 @@
-import { faWandMagic } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCheck,
+  faCheckCircle,
+  faCircle,
+  faCircleDot,
+  faDotCircle,
+  faWandMagic,
+} from "@fortawesome/free-solid-svg-icons";
 import { v4 as uuidv4 } from "uuid";
 import {
   QuizCard,
@@ -10,6 +17,7 @@ import { QuizState } from "./types/quiz";
 import { CardProps, MatchCardParams } from "./types/card";
 import { shuffle } from "./utils/shuffle";
 import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface MatchCardTileProps<T> {
   tileKey: string;
@@ -176,7 +184,29 @@ export function MatchCard<T>({
 
   return (
     <QuizCard>
-      <QuizCardHeader icon={faWandMagic} title="Match the Cards" />
+      <QuizCardHeader icon={faWandMagic} title="Match the Cards">
+        <div className="flex flex-row space-x-2 items-center">
+          {options.map((option, index) => {
+            if (index >= matchedSets.size) {
+              return (
+                <FontAwesomeIcon
+                  icon={faCircle}
+                  size="2xs"
+                  className="w-4 opacity-50"
+                />
+              );
+            } else {
+              return (
+                <FontAwesomeIcon
+                  icon={faCheck}
+                  size="sm"
+                  className="w-4 text-emerald-500"
+                />
+              );
+            }
+          })}
+        </div>
+      </QuizCardHeader>
       <QuizCardBody>
         <div className="grid grid-cols-2 gap-4">{renderOptions()}</div>
       </QuizCardBody>
