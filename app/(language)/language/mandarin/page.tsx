@@ -9,7 +9,11 @@ import { faLanguage } from "@fortawesome/free-solid-svg-icons";
 import { QuizState } from "../quiz/types/quiz";
 import { useEffect, useState } from "react";
 import MandarinFillBlank from "./cards/mandarin-fill-blank";
-import { MandarinMatchPinyinCardParams } from "./types/card";
+import {
+  MandarinCardType,
+  MandarinFillBlankCardParams,
+  MandarinMatchPinyinCardParams,
+} from "./types/card";
 import { generateMatchPinyin } from "./utils/generate-match-pinyin";
 import MandarinMatchPinyin from "./cards/mandarin-match-pinyin";
 
@@ -20,8 +24,14 @@ export default function MandarinQuiz() {
   const [maxScore, setMaxScore] = useState(0);
 
   const [quizState, setQuizState] = useState(QuizState.Question);
-  const [matchPinyinExample, setMatchPinyinExample] =
-    useState<MandarinMatchPinyinCardParams | null>();
+  const [cardType, setCardType] = useState<MandarinCardType>(
+    MandarinCardType.FillBlank
+  );
+
+  const [fillBlankParams, setFillBlankParams] =
+    useState<MandarinFillBlankCardParams | null>(null);
+  const [matchPinyinParams, setMatchPinyinParams] =
+    useState<MandarinMatchPinyinCardParams | null>(null);
 
   const onAnswered = () => {
     setQuizState(QuizState.Review);
@@ -38,9 +48,53 @@ export default function MandarinQuiz() {
     setQuizState(QuizState.Question);
   };
 
+  const renderQuizCard = () => {
+    switch (cardType) {
+      case MandarinCardType.FillBlank:
+        return (
+          fillBlankParams && (
+            <MandarinFillBlank
+              {...fillBlankParams}
+              quizState={quizState}
+              onAnswered={onAnswered}
+              onCorrect={onCorrect}
+              onIncorrect={onIncorrect}
+              onNext={onNext}
+            />
+          )
+        );
+      case MandarinCardType.MatchPinyin:
+        return (
+          matchPinyinParams && (
+            <MandarinMatchPinyin
+              {...matchPinyinParams}
+              quizState={quizState}
+              onAnswered={onAnswered}
+              onCorrect={onCorrect}
+              onIncorrect={onIncorrect}
+              onNext={onNext}
+            />
+          )
+        );
+      default:
+        return null;
+    }
+  };
+
   useEffect(() => {
     if (quizState === QuizState.Question) {
-      setMatchPinyinExample(generateMatchPinyin(chinese, 4));
+      const cardTypes = Object.values(MandarinCardType);
+      const cardType = cardTypes[Math.floor(Math.random() * cardTypes.length)];
+
+      if (cardType === MandarinCardType.FillBlank) {
+        const params = generateFillBlank(chinese, 4);
+        setFillBlankParams(params);
+        setCardType(MandarinCardType.FillBlank);
+      } else {
+        const params = generateMatchPinyin(chinese, 4);
+        setMatchPinyinParams(params);
+        setCardType(MandarinCardType.MatchPinyin);
+      }
     }
   }, [chinese, quizState]);
 
@@ -54,16 +108,7 @@ export default function MandarinQuiz() {
             Score: {score}/{maxScore}
           </p>
         </div>
-        {matchPinyinExample && (
-          <MandarinMatchPinyin
-            options={matchPinyinExample.options}
-            quizState={quizState}
-            onAnswered={onAnswered}
-            onCorrect={onCorrect}
-            onIncorrect={onIncorrect}
-            onNext={onNext}
-          />
-        )}
+        {renderQuizCard()}
       </div>
     </div>
   );
