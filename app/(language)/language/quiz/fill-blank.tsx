@@ -5,7 +5,7 @@ import {
   QuizCardHeader,
   QuizCardBody,
   QuizCardResult,
-} from "./quiz-card";
+} from "./quiz-card-wrapper";
 import { CardProps, FillBlankCardParams } from "./types/card";
 import { useState } from "react";
 import { QuizState } from "../mandarin/types/quiz";
