@@ -9,7 +9,9 @@ import { faLanguage } from "@fortawesome/free-solid-svg-icons";
 import { QuizState } from "../quiz/types/quiz";
 import { useEffect, useState } from "react";
 import MandarinFillBlank from "./cards/mandarin-fill-blank";
-import { MandarinFillBlankCardParams } from "./types/card";
+import { MandarinMatchPinyinCardParams } from "./types/card";
+import { generatePinyinOptions } from "./utils/generate-match-pinyin";
+import MandarinMatchPinyin from "./cards/mandarin-match-pinyin";
 
 export default function MandarinQuiz() {
   const chinese = chineseJson as MandarinDefinition[];
@@ -18,8 +20,8 @@ export default function MandarinQuiz() {
   const [maxScore, setMaxScore] = useState(0);
 
   const [quizState, setQuizState] = useState(QuizState.Question);
-  const [fillBlankExample, setFillBlankExample] =
-    useState<MandarinFillBlankCardParams | null>();
+  const [matchPinyinExample, setMatchPinyinExample] =
+    useState<MandarinMatchPinyinCardParams | null>();
 
   const onAnswered = () => {
     setQuizState(QuizState.Review);
@@ -41,7 +43,9 @@ export default function MandarinQuiz() {
 
   useEffect(() => {
     if (quizState === QuizState.Question) {
-      setFillBlankExample(generateFillBlank(chinese, 4));
+      setMatchPinyinExample({
+        options: generatePinyinOptions(chinese),
+      });
     }
   }, [chinese, quizState]);
 
@@ -55,20 +59,15 @@ export default function MandarinQuiz() {
             Score: {score}/{maxScore}
           </p>
         </div>
-        {fillBlankExample && (
-          <div className="w-full flex flex-col flex-1">
-            <MandarinFillBlank
-              answer={fillBlankExample.answer}
-              options={fillBlankExample.options}
-              example={fillBlankExample.example}
-              blankedSentence={fillBlankExample.blankedSentence}
-              quizState={quizState}
-              onAnswered={onAnswered}
-              onCorrect={onCorrect}
-              onIncorrect={onIncorrect}
-              onNext={onNext}
-            />
-          </div>
+        {matchPinyinExample && (
+          <MandarinMatchPinyin
+            options={matchPinyinExample.options}
+            quizState={quizState}
+            onAnswered={onAnswered}
+            onCorrect={onCorrect}
+            onIncorrect={onIncorrect}
+            onNext={onNext}
+          />
         )}
       </div>
     </div>
