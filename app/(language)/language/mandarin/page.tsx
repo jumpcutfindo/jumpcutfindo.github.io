@@ -8,8 +8,8 @@ import { generateFillBlank } from "./utils/generate-fill-blank";
 import { faLanguage } from "@fortawesome/free-solid-svg-icons";
 import { QuizState } from "../quiz/types/quiz";
 import { useEffect, useState } from "react";
-import { FillBlankCard } from "./types/card";
 import MandarinFillBlank from "./cards/mandarin-fill-blank";
+import { MandarinFillBlankCardParams } from "./types/card";
 
 export default function MandarinQuiz() {
   const chinese = chineseJson as MandarinDefinition[];
@@ -19,7 +19,7 @@ export default function MandarinQuiz() {
 
   const [quizState, setQuizState] = useState(QuizState.Question);
   const [fillBlankExample, setFillBlankExample] =
-    useState<FillBlankCard | null>();
+    useState<MandarinFillBlankCardParams | null>();
 
   const onAnswered = () => {
     setQuizState(QuizState.Review);
