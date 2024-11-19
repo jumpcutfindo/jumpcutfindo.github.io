@@ -4,12 +4,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import chineseJson from "./api/chinese.json";
 import { MandarinDefinition } from "./types/mandarin";
-import FillBlankMandarinCard from "./cards/fill-in-the-blank";
 import { generateFillBlank } from "./utils/generate-fill-blank";
 import { faLanguage } from "@fortawesome/free-solid-svg-icons";
 import { QuizState } from "../quiz/types/quiz";
 import { useEffect, useState } from "react";
 import { FillBlankCard } from "./types/card";
+import MandarinFillBlank from "./cards/mandarin-fill-blank";
 
 export default function MandarinQuiz() {
   const chinese = chineseJson as MandarinDefinition[];
@@ -57,12 +57,12 @@ export default function MandarinQuiz() {
         </div>
         {fillBlankExample && (
           <div className="w-full flex flex-col flex-1">
-            <FillBlankMandarinCard
+            <MandarinFillBlank
               answer={fillBlankExample.answer}
               options={fillBlankExample.options}
               example={fillBlankExample.example}
               blankedSentence={fillBlankExample.blankedSentence}
-              isAnswered={quizState === QuizState.Review}
+              quizState={quizState}
               onAnswered={onAnswered}
               onCorrect={onCorrect}
               onIncorrect={onIncorrect}
