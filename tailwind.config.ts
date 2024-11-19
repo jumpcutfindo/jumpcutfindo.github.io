@@ -20,6 +20,16 @@ const config: Config = {
         "4xl": "2.441rem",
         "5xl": "3.052rem",
       },
+      animation: {
+        shake: "shake 0.2s ease-in-out",
+      },
+      keyframes: {
+        shake: {
+          "0%, 100%": { transform: "translateX(0)" },
+          "25%": { transform: "translateX(-8px)" },
+          "75%": { transform: "translateX(8px)" },
+        },
+      },
     },
   },
   plugins: [],

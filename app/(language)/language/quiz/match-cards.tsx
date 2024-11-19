@@ -12,21 +12,25 @@ import { shuffle } from "./utils/shuffle";
 import { useEffect, useState } from "react";
 
 interface MatchCardTileProps<T> {
+  tileKey: string;
   option: T;
   renderOption: (option: T, isFrom: boolean) => JSX.Element;
   isFrom: boolean;
   isSelected: boolean;
   onSelect: () => void;
   isMatched: boolean;
+  isShaking: boolean;
 }
 
 function MatchCardTile<T>({
+  tileKey,
   option,
   renderOption,
   isFrom,
   isSelected,
   onSelect,
   isMatched,
+  isShaking,
 }: MatchCardTileProps<T>) {
   const getClassName = () => {
     let classNames = [
@@ -35,6 +39,10 @@ function MatchCardTile<T>({
 
     if (isSelected) {
       classNames.push("bg-white/5");
+    }
+
+    if (isShaking) {
+      classNames.push("animate-shake");
     }
 
     return classNames.join(" ");
@@ -59,47 +67,60 @@ export function MatchCard<T>({
 }: MatchCardProps<T>) {
   const [matchedSets, setMatchedSets] = useState<Set<T>>(new Set());
 
-  const [fromOptions, setFromOptions] = useState<T[]>(shuffle([...options]));
-  const [toOptions, setToOptions] = useState<T[]>(shuffle([...options]));
+  const [shakingTiles, setShakingTiles] = useState<Set<String>>(new Set());
+
+  const [fromOptions] = useState<T[]>(shuffle([...options]));
+  const [toOptions] = useState<T[]>(shuffle([...options]));
 
   const [selectedFrom, setSelectedFrom] = useState<T | null>(null);
+  const [selectedFromKey, setSelectedFromKey] = useState<string | null>(null);
   const [selectedTo, setSelectedTo] = useState<T | null>(null);
+  const [selectedToKey, setSelectedToKey] = useState<string | null>(null);
 
-  const onSelectTo = (option: T) => {
+  const onSelectTo = (key: string, option: T) => {
+    setSelectedFromKey(key);
     setSelectedTo(option);
   };
 
-  const onSelectFrom = (option: T) => {
+  const onSelectFrom = (key: string, option: T) => {
+    setSelectedToKey(key);
     setSelectedFrom(option);
   };
 
   const renderOptions = () => {
     const tiles: JSX.Element[] = [];
 
-    const fromElements = fromOptions.map((option) => {
+    const fromElements = fromOptions.map((option, index) => {
+      const tileKey = `fromTile-${index}`;
       return (
         <MatchCardTile<T>
-          key={uuidv4()}
+          key={tileKey}
+          tileKey={tileKey}
           option={option}
           renderOption={renderOption}
           isFrom={true}
           isSelected={selectedFrom === option}
-          onSelect={() => onSelectFrom(option)}
+          onSelect={() => onSelectFrom(tileKey, option)}
           isMatched={matchedSets.has(option)}
+          isShaking={shakingTiles.has(tileKey)}
         />
       );
     });
 
-    const toElements = toOptions.map((option) => {
+    const toElements = toOptions.map((option, index) => {
+      const tileKey = `toTile-${index}`;
+
       return (
         <MatchCardTile<T>
-          key={uuidv4()}
+          key={tileKey}
+          tileKey={tileKey}
           option={option}
           renderOption={renderOption}
           isFrom={false}
           isSelected={selectedTo === option}
-          onSelect={() => onSelectTo(option)}
+          onSelect={() => onSelectTo(tileKey, option)}
           isMatched={matchedSets.has(option)}
+          isShaking={shakingTiles.has(tileKey)}
         />
       );
     });
@@ -115,19 +136,43 @@ export function MatchCard<T>({
   useEffect(() => {
     // Check if a "from" and a "to" are selected
     if (selectedFrom && selectedTo) {
-      // If they are the same item, then it is correct
       if (selectedFrom === selectedTo) {
+        // If they are the same item, then it is correct
         setMatchedSets((prevSet) => {
           prevSet.add(selectedFrom);
           return prevSet;
         });
+      } else {
+        // If they are the wrong item, then it is incorrect
+        // Shake them!
+        setShakingTiles((prevSet) => {
+          prevSet.add(selectedFromKey!);
+          prevSet.add(selectedToKey!);
+          return prevSet;
+        });
+
+        // Remove them after shaking is completed
+        setTimeout(() => {
+          setShakingTiles((prevSet) => {
+            prevSet.delete(selectedFromKey!);
+            prevSet.delete(selectedToKey!);
+            return prevSet;
+          });
+        }, 200);
       }
 
       // Reset selection
       setSelectedFrom(null);
       setSelectedTo(null);
     }
-  }, [matchedSets, setMatchedSets, selectedFrom, selectedTo]);
+  }, [
+    matchedSets,
+    setMatchedSets,
+    selectedFrom,
+    selectedFromKey,
+    selectedTo,
+    selectedToKey,
+  ]);
 
   return (
     <QuizCard>
