@@ -44,7 +44,7 @@ export default function MandarinQuiz() {
   useEffect(() => {
     if (quizState === QuizState.Question) {
       setMatchPinyinExample({
-        options: generatePinyinOptions(chinese),
+        options: generatePinyinOptions(chinese, 4),
       });
     }
   }, [chinese, quizState]);
