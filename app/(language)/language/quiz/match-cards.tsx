@@ -55,11 +55,11 @@ export function MatchCard<T>({
   options,
   renderOption,
 }: MatchCardProps<T>) {
+  const [fromOptions, setFromOptions] = useState<T[]>(shuffle([...options]));
+  const [toOptions, setToOptions] = useState<T[]>(shuffle([...options]));
+
   const [selectedFrom, setSelectedFrom] = useState<T | null>(null);
   const [selectedTo, setSelectedTo] = useState<T | null>(null);
-
-  const fromOptions = shuffle([...options]);
-  const toOptions = shuffle([...options]);
 
   const onSelectTo = (option: T) => {
     setSelectedTo(option);
@@ -72,7 +72,7 @@ export function MatchCard<T>({
   const renderOptions = () => {
     const tiles: JSX.Element[] = [];
 
-    const fromElements = options.map((option) => {
+    const fromElements = fromOptions.map((option) => {
       return (
         <MatchCardTile<T>
           key={uuidv4()}
@@ -85,7 +85,7 @@ export function MatchCard<T>({
       );
     });
 
-    const toElements = options.map((option) => {
+    const toElements = toOptions.map((option) => {
       return (
         <MatchCardTile<T>
           key={uuidv4()}
@@ -98,7 +98,7 @@ export function MatchCard<T>({
       );
     });
 
-    for (let i = 0; i < fromOptions.length; i++) {
+    for (let i = 0; i < options.length; i++) {
       tiles.push(fromElements[i]);
       tiles.push(toElements[i]);
     }
