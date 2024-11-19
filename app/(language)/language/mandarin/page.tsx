@@ -20,6 +20,7 @@ import MandarinMatchPinyin from "./cards/mandarin-match-pinyin";
 import { QuizCardResult } from "../quiz/quiz-card-wrapper";
 import { generateMatchDefinition } from "./utils/generate-match-definition";
 import MandarinMatchDefinition from "./cards/mandarin-match-definition";
+import { generateCardType } from "./utils/generate-card-type";
 
 export default function MandarinQuiz() {
   const chinese = chineseJson as MandarinDefinition[];
@@ -113,8 +114,7 @@ export default function MandarinQuiz() {
 
   useEffect(() => {
     if (quizState === QuizState.Question) {
-      const cardTypes = Object.values(MandarinCardType);
-      const cardType = cardTypes[Math.floor(Math.random() * cardTypes.length)];
+      const cardType = generateCardType();
 
       if (cardType === MandarinCardType.FillBlank) {
         const params = generateFillBlank(chinese, 4);
