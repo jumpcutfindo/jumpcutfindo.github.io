@@ -9,20 +9,23 @@ import {
 import { CardProps, FillBlankCardParams } from "./types/card";
 import { useState } from "react";
 import { QuizState } from "./types/quiz";
+import { randomUUID } from "crypto";
 
-interface FillBlankOptionProps {
+interface FillBlankOptionProps<T> {
+  option: T;
   quizState: QuizState;
   isAnswer: boolean;
   onClick: () => void;
-  renderOption: { [state in QuizState]: () => JSX.Element };
+  renderOption: { [state in QuizState]: (option: any) => JSX.Element };
 }
 
-function FillBlankOption({
+function FillBlankOption<T>({
+  option,
   quizState,
   isAnswer,
   onClick,
   renderOption,
-}: FillBlankOptionProps) {
+}: FillBlankOptionProps<T>) {
   const [isSelected, setIsSelected] = useState(false);
 
   const onOptionSelected = () => {
@@ -51,18 +54,18 @@ function FillBlankOption({
 
   return (
     <button className={getClassName()} onClick={onOptionSelected}>
-      {renderOption[quizState]()}
+      {renderOption[quizState](option)}
     </button>
   );
 }
 
-type FillBlankCardProps = CardProps &
-  FillBlankCardParams & {
-    renderOption: { [state in QuizState]: () => JSX.Element };
+type FillBlankCardProps<T, U> = CardProps &
+  FillBlankCardParams<T, U> & {
+    renderOption: { [state in QuizState]: (option: T) => JSX.Element };
     renderResult: () => JSX.Element;
   };
 
-export function FillBlankCard({
+export function FillBlankCard<T, U>({
   answer,
   options,
   blankedSentence,
@@ -73,7 +76,7 @@ export function FillBlankCard({
   onNext,
   renderOption,
   renderResult,
-}: FillBlankCardProps) {
+}: FillBlankCardProps<T, U>) {
   const [isCorrect, setIsCorrect] = useState(false);
 
   const onAnswerCorrect = () => {
@@ -107,7 +110,8 @@ export function FillBlankCard({
           {options.map((option) => {
             return (
               <FillBlankOption
-                key={option}
+                key={randomUUID()}
+                option={option}
                 quizState={quizState}
                 isAnswer={option === answer}
                 onClick={() =>

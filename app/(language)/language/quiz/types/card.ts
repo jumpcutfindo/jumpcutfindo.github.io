@@ -8,9 +8,9 @@ export interface CardProps {
   onNext: () => void;
 }
 
-export interface FillBlankCardParams {
-  answer: string;
-  options: string[];
-  example: string;
+export interface FillBlankCardParams<T, U> {
+  answer: T;
+  options: T[];
+  example: U;
   blankedSentence: string;
 }
