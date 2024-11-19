@@ -44,12 +44,14 @@ interface QuizCardResultProps {
   isVisible: boolean;
   isCorrect: boolean;
   children: React.ReactNode;
+  onAcknowledgeResult: () => void;
 }
 
 function QuizCardResult({
   isVisible,
   isCorrect,
   children,
+  onAcknowledgeResult,
 }: QuizCardResultProps) {
   const [isExpanded, setExpanded] = useState(true);
 
@@ -101,6 +103,12 @@ function QuizCardResult({
         </span>
       </div>
       {children}
+      <button
+        className="p-2 rounded-lg bg-white/20 hover:bg-white/30"
+        onClick={onAcknowledgeResult}
+      >
+        OK
+      </button>
     </div>
   );
 }

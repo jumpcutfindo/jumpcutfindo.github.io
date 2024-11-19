@@ -1,15 +1,15 @@
 "use client";
 
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import chineseJson from "./api/chinese.json";
-import {MandarinDefinition} from "./types/mandarin";
-import FillBlankMandarinCard from "./cards/fill-in-the-blank";
-import {generateFillBlank} from "./utils/generate-fill-blank";
-import {faLanguage} from "@fortawesome/free-solid-svg-icons";
-import {QuizState} from "./types/quiz";
-import {useEffect, useState} from "react";
-import {FillBlankCard} from "./types/card";
+import { MandarinDefinition } from "./types/mandarin";
+import { generateFillBlank } from "./utils/generate-fill-blank";
+import { faLanguage } from "@fortawesome/free-solid-svg-icons";
+import { QuizState } from "../quiz/types/quiz";
+import { useEffect, useState } from "react";
+import MandarinFillBlank from "./cards/mandarin-fill-blank";
+import { MandarinFillBlankCardParams } from "./types/card";
 
 export default function MandarinQuiz() {
   const chinese = chineseJson as MandarinDefinition[];
@@ -19,7 +19,7 @@ export default function MandarinQuiz() {
 
   const [quizState, setQuizState] = useState(QuizState.Question);
   const [fillBlankExample, setFillBlankExample] =
-    useState<FillBlankCard | null>();
+    useState<MandarinFillBlankCardParams | null>();
 
   const onAnswered = () => {
     setQuizState(QuizState.Review);
@@ -57,12 +57,12 @@ export default function MandarinQuiz() {
         </div>
         {fillBlankExample && (
           <div className="w-full flex flex-col flex-1">
-            <FillBlankMandarinCard
+            <MandarinFillBlank
               answer={fillBlankExample.answer}
               options={fillBlankExample.options}
               example={fillBlankExample.example}
               blankedSentence={fillBlankExample.blankedSentence}
-              isAnswered={quizState === QuizState.Review}
+              quizState={quizState}
               onAnswered={onAnswered}
               onCorrect={onCorrect}
               onIncorrect={onIncorrect}
