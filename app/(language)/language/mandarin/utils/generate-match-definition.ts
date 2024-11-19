@@ -2,7 +2,7 @@ import { MandarinMatchDefinitionParams } from "../types/card";
 import { MandarinDefinition } from "../types/mandarin";
 import { selectRandomDefinition } from "./definition-utils";
 
-export function generateMatchPinyin(
+export function generateMatchDefinition(
   definitions: MandarinDefinition[],
   count: number
 ): MandarinMatchDefinitionParams {
