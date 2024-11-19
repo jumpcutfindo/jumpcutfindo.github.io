@@ -58,21 +58,20 @@ function FillBlankOption({
 
 type FillBlankCardProps = CardProps &
   FillBlankCardParams & {
-    renderOptions: () => JSX.Element;
+    renderOption: { [state in QuizState]: () => JSX.Element };
     renderResult: () => JSX.Element;
   };
 
 export function FillBlankCard({
   answer,
   options,
-  example,
   blankedSentence,
   quizState,
   onAnswered,
   onCorrect,
   onIncorrect,
   onNext,
-  renderOptions,
+  renderOption,
   renderResult,
 }: FillBlankCardProps) {
   const [isCorrect, setIsCorrect] = useState(false);
@@ -104,7 +103,21 @@ export function FillBlankCard({
         <div className="flex flex-col p-2 border rounded-lg">
           <p className="text-2xl">{blankedSentence}</p>
         </div>
-        <div className="grid grid-cols-2 gap-4">{renderOptions()}</div>
+        <div className="grid grid-cols-2 gap-4">
+          {options.map((option) => {
+            return (
+              <FillBlankOption
+                key={option}
+                quizState={quizState}
+                isAnswer={option === answer}
+                onClick={() =>
+                  option === answer ? onAnswerCorrect() : onAnswerIncorrect()
+                }
+                renderOption={renderOption}
+              />
+            );
+          })}
+        </div>
       </QuizCardBody>
 
       <QuizCardResult
