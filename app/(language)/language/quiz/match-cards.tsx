@@ -42,7 +42,7 @@ function MatchCardTile<T>({
 }: MatchCardTileProps<T>) {
   const getClassName = () => {
     let classNames = [
-      "flex flex-col justify-center items-center p-2 rounded-lg h-32 border disabled:opacity-20",
+      "flex flex-col justify-center items-center p-2 rounded-lg h-32 border disabled:opacity-20 transition-all",
     ];
 
     if (isSelected) {
@@ -204,6 +204,7 @@ export function MatchCard<T>({
             if (index >= matchedSets.size) {
               return (
                 <FontAwesomeIcon
+                  key={`completion-indicator-${index}`}
                   icon={faCircle}
                   size="2xs"
                   className="w-4 opacity-50"
@@ -212,6 +213,7 @@ export function MatchCard<T>({
             } else {
               return (
                 <FontAwesomeIcon
+                  key={`completion-indicator-${index}`}
                   icon={faCheck}
                   size="sm"
                   className="w-4 text-emerald-500"
