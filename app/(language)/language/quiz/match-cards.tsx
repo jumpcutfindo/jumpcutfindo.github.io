@@ -69,6 +69,7 @@ type MatchCardProps<T> = CardProps &
   };
 
 export function MatchCard<T>({
+  cardTitle,
   onAnswered,
   onCorrect,
   onNext,
@@ -204,7 +205,10 @@ export function MatchCard<T>({
 
   return (
     <QuizCard>
-      <QuizCardHeader icon={faWandMagic} title="Match the Cards">
+      <QuizCardHeader
+        icon={faWandMagic}
+        title={cardTitle ? cardTitle : "Match the Cards"}
+      >
         <div className="flex flex-row space-x-2 items-center">
           {options.map((option, index) => {
             if (index >= matchedSets.size) {

@@ -24,6 +24,7 @@ export default function MandarinMatchPinyin({
 
   return (
     <MatchCard
+      cardTitle="Match the Pinyin"
       options={options}
       renderOption={renderOption}
       quizState={quizState}

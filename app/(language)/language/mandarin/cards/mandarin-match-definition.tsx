@@ -33,6 +33,7 @@ export default function MandarinMatchDefinition({
 
   return (
     <MatchCard
+      cardTitle="Match the Definitions"
       options={options}
       renderOption={renderOption}
       quizState={quizState}

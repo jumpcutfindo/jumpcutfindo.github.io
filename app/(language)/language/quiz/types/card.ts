@@ -1,6 +1,7 @@
 import { QuizState } from "./quiz";
 
 export interface CardProps {
+  cardTitle?: string;
   quizState: QuizState;
   onAnswered: () => void;
   onCorrect: () => void;

@@ -66,6 +66,7 @@ type FillBlankCardProps<T, U> = CardProps &
   };
 
 export function FillBlankCard<T, U>({
+  cardTitle,
   answer,
   options,
   blankedSentence,
@@ -95,7 +96,10 @@ export function FillBlankCard<T, U>({
 
   return (
     <QuizCard>
-      <QuizCardHeader icon={faCoffee} title="Fill in the blanks" />
+      <QuizCardHeader
+        icon={faCoffee}
+        title={cardTitle ? cardTitle : "Fill in the blanks"}
+      />
       <QuizCardBody>
         <div className="flex flex-col p-2 border rounded-lg">
           <p className="text-2xl">{blankedSentence}</p>
