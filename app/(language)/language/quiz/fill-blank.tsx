@@ -1,5 +1,5 @@
 import { faCoffee } from "@fortawesome/free-solid-svg-icons";
-import renderResult from "next/dist/server/render-result";
+import { v4 as uuidv4 } from "uuid";
 import {
   QuizCard,
   QuizCardHeader,
@@ -110,7 +110,7 @@ export function FillBlankCard<T, U>({
           {options.map((option) => {
             return (
               <FillBlankOption
-                key={randomUUID()}
+                key={uuidv4()}
                 option={option}
                 quizState={quizState}
                 isAnswer={option === answer}
