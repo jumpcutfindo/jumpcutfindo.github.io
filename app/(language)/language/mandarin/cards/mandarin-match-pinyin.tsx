@@ -1,16 +1,9 @@
 import { MatchCard } from "../../quiz/match-cards";
-import { QuizState } from "../../quiz/types/quiz";
+import { CardProps } from "../../quiz/types/card";
+import { MandarinMatchPinyinCardParams } from "../types/card";
 import { MandarinDefinition } from "../types/mandarin";
 
-interface MandarinFillBlankProps {
-  quizState: QuizState;
-  options: MandarinDefinition[];
-
-  onAnswered: () => void;
-  onCorrect: () => void;
-  onIncorrect: () => void;
-  onNext: () => void;
-}
+type MandarinMatchPinyinProps = CardProps & MandarinMatchPinyinCardParams;
 
 export default function MandarinMatchPinyin({
   quizState,
@@ -19,7 +12,8 @@ export default function MandarinMatchPinyin({
   onCorrect,
   onIncorrect,
   onNext,
-}: MandarinFillBlankProps) {
+  setResult,
+}: MandarinMatchPinyinProps) {
   const renderOption = (option: MandarinDefinition, isFrom: boolean) => {
     if (isFrom) {
       return <span className="text-2xl">{option.word}</span>;
@@ -37,6 +31,7 @@ export default function MandarinMatchPinyin({
       onCorrect={onCorrect}
       onIncorrect={onIncorrect}
       onNext={onNext}
+      setResult={setResult}
     />
   );
 }

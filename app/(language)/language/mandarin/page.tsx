@@ -16,6 +16,7 @@ import {
 } from "./types/card";
 import { generateMatchPinyin } from "./utils/generate-match-pinyin";
 import MandarinMatchPinyin from "./cards/mandarin-match-pinyin";
+import { QuizCardResult } from "../quiz/quiz-card-wrapper";
 
 export default function MandarinQuiz() {
   const chinese = chineseJson as MandarinDefinition[];
@@ -26,6 +27,11 @@ export default function MandarinQuiz() {
   const [quizState, setQuizState] = useState(QuizState.Question);
   const [cardType, setCardType] = useState<MandarinCardType>(
     MandarinCardType.FillBlank
+  );
+
+  const [isResultCorrect, setResultCorrect] = useState(false);
+  const [renderedResult, setRenderedResult] = useState<JSX.Element | null>(
+    null
   );
 
   const [fillBlankParams, setFillBlankParams] =
@@ -39,10 +45,13 @@ export default function MandarinQuiz() {
   };
 
   const onCorrect = () => {
+    setResultCorrect(true);
     setScore((score) => score + 1);
   };
 
-  const onIncorrect = () => {};
+  const onIncorrect = () => {
+    setResultCorrect(false);
+  };
 
   const onNext = () => {
     setQuizState(QuizState.Question);
@@ -60,6 +69,7 @@ export default function MandarinQuiz() {
               onCorrect={onCorrect}
               onIncorrect={onIncorrect}
               onNext={onNext}
+              setResult={setRenderedResult}
             />
           )
         );
@@ -73,6 +83,7 @@ export default function MandarinQuiz() {
               onCorrect={onCorrect}
               onIncorrect={onIncorrect}
               onNext={onNext}
+              setResult={setRenderedResult}
             />
           )
         );
@@ -110,6 +121,13 @@ export default function MandarinQuiz() {
         </div>
         {renderQuizCard()}
       </div>
+      <QuizCardResult
+        isVisible={quizState === QuizState.Review}
+        isCorrect={isResultCorrect}
+        onAcknowledgeResult={onNext}
+      >
+        {renderedResult}
+      </QuizCardResult>
     </div>
   );
 }
