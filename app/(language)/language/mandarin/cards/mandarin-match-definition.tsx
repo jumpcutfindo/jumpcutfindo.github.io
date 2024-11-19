@@ -16,10 +16,15 @@ export default function MandarinMatchDefinition({
 }: MandarinMatchDefinitionProps) {
   const renderOption = (option: MandarinDefinition, isFrom: boolean) => {
     if (isFrom) {
-      return <span className="text-2xl">{option.word}</span>;
+      return (
+        <div className="flex flex-col">
+          <p className="text-2xl">{option.word}</p>
+          <p className="text-sm text-white/60">{option.pinyin}</p>
+        </div>
+      );
     } else {
       return (
-        <span className="text-sm">
+        <span>
           ({option.wordType}) {option.definition}
         </span>
       );
