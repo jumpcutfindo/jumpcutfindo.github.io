@@ -75,7 +75,7 @@ export function MatchCard<T>({
   quizState,
   options,
   renderOption,
-  setResult,
+  setRenderedResult: setResult,
 }: MatchCardProps<T>) {
   const fromOptions = useMemo(() => shuffle([...options]), [options]);
   const toOptions = useMemo(() => shuffle([...options]), [options]);

@@ -69,7 +69,7 @@ export default function MandarinQuiz() {
               onCorrect={onCorrect}
               onIncorrect={onIncorrect}
               onNext={onNext}
-              setResult={setRenderedResult}
+              setRenderedResult={setRenderedResult}
             />
           )
         );
@@ -83,7 +83,7 @@ export default function MandarinQuiz() {
               onCorrect={onCorrect}
               onIncorrect={onIncorrect}
               onNext={onNext}
-              setResult={setRenderedResult}
+              setRenderedResult={setRenderedResult}
             />
           )
         );

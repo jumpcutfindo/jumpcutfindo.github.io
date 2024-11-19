@@ -75,7 +75,7 @@ export function FillBlankCard<T, U>({
   onIncorrect,
   renderOption,
   renderResult,
-  setResult,
+  setRenderedResult: setResult,
 }: FillBlankCardProps<T, U>) {
   const onAnswerCorrect = () => {
     if (quizState === QuizState.Review) return;
