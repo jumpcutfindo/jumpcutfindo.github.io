@@ -5,7 +5,7 @@ import {
   QuizCardBody,
   QuizCardHeader,
   QuizCardResult,
-} from "./card-wrapper";
+} from "../../quiz/quiz-card";
 import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 import Markdown, { Components } from "react-markdown";
 import { MandarinDefinition } from "../types/mandarin";
