@@ -73,30 +73,24 @@ export function FillBlankCard<T, U>({
   onAnswered,
   onCorrect,
   onIncorrect,
-  onNext,
   renderOption,
   renderResult,
+  setResult,
 }: FillBlankCardProps<T, U>) {
-  const [isCorrect, setIsCorrect] = useState(false);
-
   const onAnswerCorrect = () => {
     if (quizState === QuizState.Review) return;
 
+    setResult(renderResult());
     onAnswered();
-    setIsCorrect(true);
     onCorrect();
   };
 
   const onAnswerIncorrect = () => {
     if (quizState === QuizState.Review) return;
 
+    setResult(renderResult());
     onAnswered();
-    setIsCorrect(false);
     onIncorrect();
-  };
-
-  const onAcknowledgeResult = () => {
-    onNext();
   };
 
   return (
@@ -123,14 +117,6 @@ export function FillBlankCard<T, U>({
           })}
         </div>
       </QuizCardBody>
-
-      <QuizCardResult
-        isVisible={quizState === QuizState.Review}
-        isCorrect={isCorrect}
-        onAcknowledgeResult={onAcknowledgeResult}
-      >
-        {renderResult()}
-      </QuizCardResult>
     </QuizCard>
   );
 }

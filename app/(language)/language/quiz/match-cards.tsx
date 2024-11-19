@@ -1,12 +1,8 @@
 import {
   faCheck,
-  faCheckCircle,
   faCircle,
-  faCircleDot,
-  faDotCircle,
   faWandMagic,
 } from "@fortawesome/free-solid-svg-icons";
-import { v4 as uuidv4 } from "uuid";
 import {
   QuizCard,
   QuizCardHeader,
@@ -18,7 +14,6 @@ import { CardProps, MatchCardParams } from "./types/card";
 import { shuffle } from "./utils/shuffle";
 import { useEffect, useMemo, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { on } from "events";
 
 interface MatchCardTileProps<T> {
   tileKey: string;
@@ -80,6 +75,7 @@ export function MatchCard<T>({
   quizState,
   options,
   renderOption,
+  setResult,
 }: MatchCardProps<T>) {
   const fromOptions = useMemo(() => shuffle([...options]), [options]);
   const toOptions = useMemo(() => shuffle([...options]), [options]);
@@ -149,11 +145,6 @@ export function MatchCard<T>({
     return tiles;
   };
 
-  const onAcknowledgeResult = () => {
-    matchedSets.clear();
-    onNext();
-  };
-
   useEffect(() => {
     // Check if a "from" and a "to" are selected
     if (selectedFrom && selectedTo) {
@@ -197,6 +188,8 @@ export function MatchCard<T>({
 
   useEffect(() => {
     if (matchedSets.size === options.length) {
+      // When all cards are matched
+      setResult(<span>Successfully matched all pairs! Good job!</span>);
       onAnswered();
       onCorrect();
     }
@@ -232,14 +225,6 @@ export function MatchCard<T>({
       <QuizCardBody>
         <div className="grid grid-cols-2 gap-4">{renderOptions()}</div>
       </QuizCardBody>
-
-      <QuizCardResult
-        isVisible={quizState === QuizState.Review}
-        isCorrect={true} // Always true for match cards
-        onAcknowledgeResult={onAcknowledgeResult}
-      >
-        <span>Successfully matched all pairs! Good job!</span>
-      </QuizCardResult>
     </QuizCard>
   );
 }
