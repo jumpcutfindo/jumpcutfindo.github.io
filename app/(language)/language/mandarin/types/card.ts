@@ -12,3 +12,5 @@ export type MandarinFillBlankCardParams = FillBlankCardParams<
 >;
 
 export type MandarinMatchPinyinCardParams = MatchCardParams<MandarinDefinition>;
+
+export type MandarinMatchDefinitionParams = MatchCardParams<MandarinDefinition>;
