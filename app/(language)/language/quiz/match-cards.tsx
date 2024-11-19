@@ -42,15 +42,19 @@ function MatchCardTile<T>({
 }: MatchCardTileProps<T>) {
   const getClassName = () => {
     let classNames = [
-      "flex flex-col justify-center items-center p-2 rounded-lg h-32 border hover:bg-white/5 disabled:opacity-30",
+      "flex flex-col justify-center items-center p-2 rounded-lg h-32 border disabled:opacity-20",
     ];
 
     if (isSelected) {
-      classNames.push("bg-white/5");
+      classNames.push("bg-white/30");
     }
 
     if (isShaking) {
       classNames.push("animate-shake");
+    }
+
+    if (isMatched) {
+      classNames.push("border border-emerald-400 bg-emerald-700");
     }
 
     return classNames.join(" ");
