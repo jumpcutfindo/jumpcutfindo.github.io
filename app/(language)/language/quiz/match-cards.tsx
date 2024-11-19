@@ -9,22 +9,39 @@ import {
 import { QuizState } from "./types/quiz";
 import { CardProps, MatchCardParams } from "./types/card";
 import { shuffle } from "./utils/shuffle";
+import { useState } from "react";
 
 interface MatchCardTileProps<T> {
   option: T;
   renderOption: (option: T, isFrom: boolean) => JSX.Element;
   isFrom: boolean;
+  isSelected: boolean;
+  onSelect: () => void;
 }
 
 function MatchCardTile<T>({
   option,
   renderOption,
   isFrom,
+  isSelected,
+  onSelect,
 }: MatchCardTileProps<T>) {
+  const getClassName = () => {
+    let classNames = [
+      "flex flex-col justify-center items-center p-2 rounded-lg h-32 border hover:bg-white/5",
+    ];
+
+    if (isSelected) {
+      classNames.push("bg-white/5");
+    }
+
+    return classNames.join(" ");
+  };
+
   return (
-    <div className="flex flex-col justify-center items-center p-2 rounded-lg h-32 border">
+    <button className={getClassName()} onClick={onSelect}>
       {renderOption(option, isFrom)}
-    </div>
+    </button>
   );
 }
 
@@ -38,38 +55,52 @@ export function MatchCard<T>({
   options,
   renderOption,
 }: MatchCardProps<T>) {
-  const fromOptions: JSX.Element[] = shuffle(
-    options.map((option) => {
-      return (
-        <MatchCardTile
-          key={uuidv4()}
-          option={option}
-          renderOption={renderOption}
-          isFrom={true}
-        />
-      );
-    })
-  );
+  const [selectedFrom, setSelectedFrom] = useState<T | null>(null);
+  const [selectedTo, setSelectedTo] = useState<T | null>(null);
 
-  const toOptions: JSX.Element[] = shuffle(
-    options.map((option) => {
-      return (
-        <MatchCardTile
-          key={uuidv4()}
-          option={option}
-          renderOption={renderOption}
-          isFrom={false}
-        />
-      );
-    })
-  );
+  const fromOptions = shuffle([...options]);
+  const toOptions = shuffle([...options]);
+
+  const onSelectTo = (option: T) => {
+    setSelectedTo(option);
+  };
+
+  const onSelectFrom = (option: T) => {
+    setSelectedFrom(option);
+  };
 
   const renderOptions = () => {
     const tiles: JSX.Element[] = [];
 
+    const fromElements = options.map((option) => {
+      return (
+        <MatchCardTile<T>
+          key={uuidv4()}
+          option={option}
+          renderOption={renderOption}
+          isFrom={true}
+          isSelected={selectedFrom === option}
+          onSelect={() => onSelectFrom(option)}
+        />
+      );
+    });
+
+    const toElements = options.map((option) => {
+      return (
+        <MatchCardTile<T>
+          key={uuidv4()}
+          option={option}
+          renderOption={renderOption}
+          isFrom={false}
+          isSelected={selectedTo === option}
+          onSelect={() => onSelectTo(option)}
+        />
+      );
+    });
+
     for (let i = 0; i < fromOptions.length; i++) {
-      tiles.push(fromOptions[i]);
-      tiles.push(toOptions[i]);
+      tiles.push(fromElements[i]);
+      tiles.push(toElements[i]);
     }
 
     return tiles;
