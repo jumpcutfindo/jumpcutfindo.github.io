@@ -125,14 +125,14 @@ export function MatchCard<T>({
   };
 
   const onSelectTo = (key: string, option: T) => {
-    setSelectedFromKey(key);
+    setSelectedToKey(key);
     setSelectedTo(option);
 
     checkMatch(selectedFromKey, selectedFrom, key, option);
   };
 
   const onSelectFrom = (key: string, option: T) => {
-    setSelectedToKey(key);
+    setSelectedFromKey(key);
     setSelectedFrom(option);
 
     checkMatch(key, option, selectedToKey, selectedTo);
@@ -183,6 +183,14 @@ export function MatchCard<T>({
 
     return tiles;
   };
+
+  useEffect(() => {
+    if (shakingTiles.size > 0) {
+      setTimeout(() => {
+        setShakingTiles(new Set());
+      }, 200);
+    }
+  }, [shakingTiles.size]);
 
   return (
     <QuizCard>
