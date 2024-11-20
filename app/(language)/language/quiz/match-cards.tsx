@@ -71,7 +71,7 @@ export function MatchCard<T>({
   quizState,
   options,
   renderOption,
-  setRenderedResult: setResult,
+  setRenderedResult,
 }: MatchCardProps<T>) {
   const fromOptions = useMemo(() => shuffle([...options]), [options]);
   const toOptions = useMemo(() => shuffle([...options]), [options]);
@@ -185,11 +185,11 @@ export function MatchCard<T>({
   useEffect(() => {
     if (matchedSets.size === options.length) {
       // When all cards are matched
-      setResult(<span>Successfully matched all pairs! Good job!</span>);
+      setRenderedResult(<span>Successfully matched all pairs! Good job!</span>);
       onAnswered();
       onCorrect();
     }
-  }, [options, matchedSets.size, onAnswered, onCorrect, setResult]);
+  }, [options, matchedSets.size, onAnswered, onCorrect, setRenderedResult]);
 
   useEffect(() => {
     if (quizState === QuizState.Question) {
