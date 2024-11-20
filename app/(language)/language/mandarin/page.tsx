@@ -38,6 +38,8 @@ export default function MandarinQuiz() {
     null
   );
 
+  const [onAcknowledge, setOnAcknowledge] = useState(() => () => {});
+
   const [fillBlankParams, setFillBlankParams] =
     useState<MandarinFillBlankCardParams | null>(null);
   const [matchPinyinParams, setMatchPinyinParams] =
@@ -61,6 +63,10 @@ export default function MandarinQuiz() {
 
   const onNext = () => {
     setQuizState(QuizState.Question);
+
+    if (onAcknowledge) {
+      onAcknowledge();
+    }
   };
 
   const renderQuizCard = () => {
@@ -74,8 +80,8 @@ export default function MandarinQuiz() {
               onAnswered={onAnswered}
               onCorrect={onCorrect}
               onIncorrect={onIncorrect}
-              onNext={onNext}
               setRenderedResult={setRenderedResult}
+              setOnAcknowledge={setOnAcknowledge}
             />
           )
         );
@@ -88,8 +94,8 @@ export default function MandarinQuiz() {
               onAnswered={onAnswered}
               onCorrect={onCorrect}
               onIncorrect={onIncorrect}
-              onNext={onNext}
               setRenderedResult={setRenderedResult}
+              setOnAcknowledge={setOnAcknowledge}
             />
           )
         );
@@ -102,8 +108,8 @@ export default function MandarinQuiz() {
               onAnswered={onAnswered}
               onCorrect={onCorrect}
               onIncorrect={onIncorrect}
-              onNext={onNext}
               setRenderedResult={setRenderedResult}
+              setOnAcknowledge={setOnAcknowledge}
             />
           )
         );

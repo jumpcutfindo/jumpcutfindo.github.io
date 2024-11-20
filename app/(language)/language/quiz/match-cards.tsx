@@ -67,11 +67,11 @@ export function MatchCard<T>({
   cardTitle,
   onAnswered,
   onCorrect,
-  onNext,
   quizState,
   options,
   renderOption,
-  setRenderedResult: setResult,
+  setRenderedResult,
+  setOnAcknowledge,
 }: MatchCardProps<T>) {
   const fromOptions = useMemo(() => shuffle([...options]), [options]);
   const toOptions = useMemo(() => shuffle([...options]), [options]);
@@ -85,14 +85,68 @@ export function MatchCard<T>({
   const [selectedTo, setSelectedTo] = useState<T | null>(null);
   const [selectedToKey, setSelectedToKey] = useState<string | null>(null);
 
+  const checkComplete = (matchedSetSize: number) => {
+    if (matchedSetSize === options.length) {
+      // When all cards are matched
+      setRenderedResult(<span>Successfully matched all pairs! Good job!</span>);
+      onAnswered();
+      onCorrect();
+
+      // Update on acknowledged
+      setOnAcknowledge(() => () => {
+        setMatchedSets(new Set());
+        setShakingTiles(new Set());
+        setSelectedFrom(null);
+        setSelectedFromKey(null);
+        setSelectedTo(null);
+        setSelectedToKey(null);
+      });
+    }
+  };
+
+  const checkMatch = (
+    fromKey: string | null,
+    from: T | null,
+    toKey: string | null,
+    to: T | null
+  ) => {
+    if (from && to) {
+      if (from === to) {
+        // If match, add to matched sets
+        setMatchedSets((prevSet) => {
+          prevSet.add(from);
+          return prevSet;
+        });
+
+        // Check if the game is complete
+        checkComplete(matchedSets.size + 1);
+      } else {
+        // If not match, shake them to indicate error
+        setShakingTiles((prevSet) => {
+          prevSet.add(fromKey!);
+          prevSet.add(toKey!);
+          return prevSet;
+        });
+      }
+
+      // Unselect both items
+      setSelectedFrom(null);
+      setSelectedTo(null);
+    }
+  };
+
   const onSelectTo = (key: string, option: T) => {
-    setSelectedFromKey(key);
+    setSelectedToKey(key);
     setSelectedTo(option);
+
+    checkMatch(selectedFromKey, selectedFrom, key, option);
   };
 
   const onSelectFrom = (key: string, option: T) => {
-    setSelectedToKey(key);
+    setSelectedFromKey(key);
     setSelectedFrom(option);
+
+    checkMatch(key, option, selectedToKey, selectedTo);
   };
 
   const renderOptions = () => {
@@ -142,61 +196,12 @@ export function MatchCard<T>({
   };
 
   useEffect(() => {
-    // Check if a "from" and a "to" are selected
-    if (selectedFrom && selectedTo) {
-      if (selectedFrom === selectedTo) {
-        // If they are the same item, then it is correct
-        setMatchedSets((prevSet) => {
-          prevSet.add(selectedFrom);
-          return prevSet;
-        });
-      } else {
-        // If they are the wrong item, then it is incorrect
-        // Shake them!
-        setShakingTiles((prevSet) => {
-          prevSet.add(selectedFromKey!);
-          prevSet.add(selectedToKey!);
-          return prevSet;
-        });
-
-        // Remove them after shaking is completed
-        setTimeout(() => {
-          setShakingTiles((prevSet) => {
-            prevSet.delete(selectedFromKey!);
-            prevSet.delete(selectedToKey!);
-            return prevSet;
-          });
-        }, 200);
-      }
-
-      // Reset selection
-      setSelectedFrom(null);
-      setSelectedTo(null);
+    if (shakingTiles.size > 0) {
+      setTimeout(() => {
+        setShakingTiles(new Set());
+      }, 200);
     }
-  }, [
-    matchedSets,
-    setMatchedSets,
-    selectedFrom,
-    selectedFromKey,
-    selectedTo,
-    selectedToKey,
-  ]);
-
-  useEffect(() => {
-    if (matchedSets.size === options.length) {
-      // When all cards are matched
-      setResult(<span>Successfully matched all pairs! Good job!</span>);
-      onAnswered();
-      onCorrect();
-    }
-  }, [options, matchedSets.size, onAnswered, onCorrect, setResult]);
-
-  useEffect(() => {
-    if (quizState === QuizState.Question) {
-      // Clear when a new round starts
-      setMatchedSets(new Set());
-    }
-  }, [quizState]);
+  }, [shakingTiles.size]);
 
   return (
     <QuizCard>

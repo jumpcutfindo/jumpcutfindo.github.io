@@ -6,9 +6,9 @@ export interface CardProps {
   onAnswered: () => void;
   onCorrect: () => void;
   onIncorrect: () => void;
-  onNext: () => void;
 
   setRenderedResult: (result: JSX.Element) => void;
+  setOnAcknowledge: (onNext: () => void) => void;
 }
 
 export interface FillBlankCardParams<T, U> {

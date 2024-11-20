@@ -1,15 +1,9 @@
 import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 import { v4 as uuidv4 } from "uuid";
-import {
-  QuizCard,
-  QuizCardHeader,
-  QuizCardBody,
-  QuizCardResult,
-} from "./quiz-card-wrapper";
+import { QuizCard, QuizCardHeader, QuizCardBody } from "./quiz-card-wrapper";
 import { CardProps, FillBlankCardParams } from "./types/card";
 import { useState } from "react";
 import { QuizState } from "./types/quiz";
-import { randomUUID } from "crypto";
 
 interface FillBlankOptionProps<T> {
   option: T;
@@ -76,12 +70,12 @@ export function FillBlankCard<T, U>({
   onIncorrect,
   renderOption,
   renderResult,
-  setRenderedResult: setResult,
+  setRenderedResult,
 }: FillBlankCardProps<T, U>) {
   const onAnswerCorrect = () => {
     if (quizState === QuizState.Review) return;
 
-    setResult(renderResult());
+    setRenderedResult(renderResult());
     onAnswered();
     onCorrect();
   };
@@ -89,7 +83,7 @@ export function FillBlankCard<T, U>({
   const onAnswerIncorrect = () => {
     if (quizState === QuizState.Review) return;
 
-    setResult(renderResult());
+    setRenderedResult(renderResult());
     onAnswered();
     onIncorrect();
   };
