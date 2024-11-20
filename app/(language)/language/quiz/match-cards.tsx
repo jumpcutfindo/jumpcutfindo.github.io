@@ -189,7 +189,7 @@ export function MatchCard<T>({
       onAnswered();
       onCorrect();
     }
-  }, [options, matchedSets.size, onAnswered, onCorrect, setRenderedResult]);
+  }, [options, matchedSets.size]);
 
   useEffect(() => {
     if (quizState === QuizState.Question) {
