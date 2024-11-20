@@ -11,7 +11,6 @@ export default function MandarinMatchDefinition({
   onAnswered,
   onCorrect,
   onIncorrect,
-  onNext,
   setRenderedResult: setResult,
 }: MandarinMatchDefinitionProps) {
   const renderOption = (option: MandarinDefinition, isFrom: boolean) => {
@@ -40,7 +39,6 @@ export default function MandarinMatchDefinition({
       onAnswered={onAnswered}
       onCorrect={onCorrect}
       onIncorrect={onIncorrect}
-      onNext={onNext}
       setRenderedResult={setResult}
     />
   );

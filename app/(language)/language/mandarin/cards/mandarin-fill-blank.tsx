@@ -22,7 +22,6 @@ export default function MandarinFillBlank({
   onAnswered,
   onCorrect,
   onIncorrect,
-  onNext,
   setRenderedResult: setResult,
 }: MandarinFillBlankProps) {
   const renderOption = {
@@ -72,7 +71,6 @@ export default function MandarinFillBlank({
       onAnswered={onAnswered}
       onCorrect={onCorrect}
       onIncorrect={onIncorrect}
-      onNext={onNext}
       setRenderedResult={setResult}
       renderOption={renderOption}
       renderResult={renderResult}

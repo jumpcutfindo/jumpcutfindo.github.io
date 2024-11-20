@@ -67,7 +67,6 @@ export function MatchCard<T>({
   cardTitle,
   onAnswered,
   onCorrect,
-  onNext,
   quizState,
   options,
   renderOption,
@@ -85,8 +84,8 @@ export function MatchCard<T>({
   const [selectedTo, setSelectedTo] = useState<T | null>(null);
   const [selectedToKey, setSelectedToKey] = useState<string | null>(null);
 
-  const checkComplete = () => {
-    if (matchedSets.size === options.length) {
+  const checkComplete = (matchedSetSize: number) => {
+    if (matchedSetSize === options.length) {
       // When all cards are matched
       setRenderedResult(<span>Successfully matched all pairs! Good job!</span>);
       onAnswered();
@@ -107,6 +106,9 @@ export function MatchCard<T>({
           prevSet.add(from);
           return prevSet;
         });
+
+        // Check if the game is complete
+        checkComplete(matchedSets.size + 1);
       } else {
         // If not match, shake them to indicate error
         setShakingTiles((prevSet) => {
