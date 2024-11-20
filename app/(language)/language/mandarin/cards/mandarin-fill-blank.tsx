@@ -22,7 +22,8 @@ export default function MandarinFillBlank({
   onAnswered,
   onCorrect,
   onIncorrect,
-  setRenderedResult: setResult,
+  setRenderedResult,
+  setOnAcknowledge,
 }: MandarinFillBlankProps) {
   const renderOption = {
     [QuizState.Question]: (option: MandarinDefinition) => (
@@ -71,7 +72,8 @@ export default function MandarinFillBlank({
       onAnswered={onAnswered}
       onCorrect={onCorrect}
       onIncorrect={onIncorrect}
-      setRenderedResult={setResult}
+      setRenderedResult={setRenderedResult}
+      setOnAcknowledge={setOnAcknowledge}
       renderOption={renderOption}
       renderResult={renderResult}
     />

@@ -71,6 +71,7 @@ export function MatchCard<T>({
   options,
   renderOption,
   setRenderedResult,
+  setOnAcknowledge,
 }: MatchCardProps<T>) {
   const fromOptions = useMemo(() => shuffle([...options]), [options]);
   const toOptions = useMemo(() => shuffle([...options]), [options]);
@@ -90,6 +91,16 @@ export function MatchCard<T>({
       setRenderedResult(<span>Successfully matched all pairs! Good job!</span>);
       onAnswered();
       onCorrect();
+
+      // Update on acknowledged
+      setOnAcknowledge(() => () => {
+        setMatchedSets(new Set());
+        setShakingTiles(new Set());
+        setSelectedFrom(null);
+        setSelectedFromKey(null);
+        setSelectedTo(null);
+        setSelectedToKey(null);
+      });
     }
   };
 

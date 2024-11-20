@@ -11,7 +11,8 @@ export default function MandarinMatchPinyin({
   onAnswered,
   onCorrect,
   onIncorrect,
-  setRenderedResult: setResult,
+  setRenderedResult,
+  setOnAcknowledge,
 }: MandarinMatchPinyinProps) {
   const renderOption = (option: MandarinDefinition, isFrom: boolean) => {
     if (isFrom) {
@@ -30,7 +31,8 @@ export default function MandarinMatchPinyin({
       onAnswered={onAnswered}
       onCorrect={onCorrect}
       onIncorrect={onIncorrect}
-      setRenderedResult={setResult}
+      setRenderedResult={setRenderedResult}
+      setOnAcknowledge={setOnAcknowledge}
     />
   );
 }
