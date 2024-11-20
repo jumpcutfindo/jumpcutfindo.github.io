@@ -85,14 +85,55 @@ export function MatchCard<T>({
   const [selectedTo, setSelectedTo] = useState<T | null>(null);
   const [selectedToKey, setSelectedToKey] = useState<string | null>(null);
 
+  const checkComplete = () => {
+    if (matchedSets.size === options.length) {
+      // When all cards are matched
+      setRenderedResult(<span>Successfully matched all pairs! Good job!</span>);
+      onAnswered();
+      onCorrect();
+    }
+  };
+
+  const checkMatch = (
+    fromKey: string | null,
+    from: T | null,
+    toKey: string | null,
+    to: T | null
+  ) => {
+    if (from && to) {
+      if (from === to) {
+        // If match, add to matched sets
+        setMatchedSets((prevSet) => {
+          prevSet.add(from);
+          return prevSet;
+        });
+      } else {
+        // If not match, shake them to indicate error
+        setShakingTiles((prevSet) => {
+          prevSet.add(fromKey!);
+          prevSet.add(toKey!);
+          return prevSet;
+        });
+      }
+
+      // Unselect both items
+      setSelectedFrom(null);
+      setSelectedTo(null);
+    }
+  };
+
   const onSelectTo = (key: string, option: T) => {
     setSelectedFromKey(key);
     setSelectedTo(option);
+
+    checkMatch(selectedFromKey, selectedFrom, key, option);
   };
 
   const onSelectFrom = (key: string, option: T) => {
     setSelectedToKey(key);
     setSelectedFrom(option);
+
+    checkMatch(key, option, selectedToKey, selectedTo);
   };
 
   const renderOptions = () => {
@@ -140,63 +181,6 @@ export function MatchCard<T>({
 
     return tiles;
   };
-
-  useEffect(() => {
-    // Check if a "from" and a "to" are selected
-    if (selectedFrom && selectedTo) {
-      if (selectedFrom === selectedTo) {
-        // If they are the same item, then it is correct
-        setMatchedSets((prevSet) => {
-          prevSet.add(selectedFrom);
-          return prevSet;
-        });
-      } else {
-        // If they are the wrong item, then it is incorrect
-        // Shake them!
-        setShakingTiles((prevSet) => {
-          prevSet.add(selectedFromKey!);
-          prevSet.add(selectedToKey!);
-          return prevSet;
-        });
-
-        // Remove them after shaking is completed
-        setTimeout(() => {
-          setShakingTiles((prevSet) => {
-            prevSet.delete(selectedFromKey!);
-            prevSet.delete(selectedToKey!);
-            return prevSet;
-          });
-        }, 200);
-      }
-
-      // Reset selection
-      setSelectedFrom(null);
-      setSelectedTo(null);
-    }
-  }, [
-    matchedSets,
-    setMatchedSets,
-    selectedFrom,
-    selectedFromKey,
-    selectedTo,
-    selectedToKey,
-  ]);
-
-  useEffect(() => {
-    if (matchedSets.size === options.length) {
-      // When all cards are matched
-      setRenderedResult(<span>Successfully matched all pairs! Good job!</span>);
-      onAnswered();
-      onCorrect();
-    }
-  }, [options, matchedSets.size]);
-
-  useEffect(() => {
-    if (quizState === QuizState.Question) {
-      // Clear when a new round starts
-      setMatchedSets(new Set());
-    }
-  }, [quizState]);
 
   return (
     <QuizCard>
