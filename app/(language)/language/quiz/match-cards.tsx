@@ -136,6 +136,13 @@ export function MatchCard<T>({
   };
 
   const onSelectTo = (key: string, option: T) => {
+    // Deselect if selected
+    if (selectedToKey === key) {
+      setSelectedTo(null);
+      setSelectedToKey(null);
+      return;
+    }
+
     setSelectedToKey(key);
     setSelectedTo(option);
 
@@ -143,6 +150,13 @@ export function MatchCard<T>({
   };
 
   const onSelectFrom = (key: string, option: T) => {
+    // Deselect if selected
+    if (selectedFromKey === key) {
+      setSelectedFrom(null);
+      setSelectedFromKey(null);
+      return;
+    }
+
     setSelectedFromKey(key);
     setSelectedFrom(option);
 
