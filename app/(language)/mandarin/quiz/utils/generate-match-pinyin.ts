@@ -1,5 +1,5 @@
-import { MandarinMatchPinyinCardParams } from "../types/card";
-import { MandarinDefinition } from "../types/mandarin";
+import { MandarinMatchPinyinCardParams } from "../cards/card";
+import { MandarinDefinition } from "../../api/mandarin";
 import { selectRandomDefinition } from "./definition-utils";
 
 export function generateMatchPinyin(

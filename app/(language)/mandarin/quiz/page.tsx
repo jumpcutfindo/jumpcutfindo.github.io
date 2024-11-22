@@ -3,7 +3,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import chineseJson from "../api/chinese.json";
-import { MandarinDefinition } from "./types/mandarin";
+import { MandarinDefinition } from "../api/mandarin";
 import { generateFillBlank } from "./utils/generate-fill-blank";
 import { faLanguage } from "@fortawesome/free-solid-svg-icons";
 import { QuizState } from "../../quiz/types/quiz";
@@ -14,7 +14,7 @@ import {
   MandarinFillBlankCardParams,
   MandarinMatchDefinitionParams,
   MandarinMatchPinyinCardParams,
-} from "./types/card";
+} from "./cards/card";
 import { generateMatchPinyin } from "./utils/generate-match-pinyin";
 import MandarinMatchPinyin from "./cards/mandarin-match-pinyin";
 import { QuizCardResult } from "../../quiz/quiz-card-wrapper";

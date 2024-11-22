@@ -1,4 +1,4 @@
-import { MandarinCardType } from "../types/card";
+import { MandarinCardType } from "../cards/card";
 
 export function generateCardType(): MandarinCardType {
   const p = Math.random();
