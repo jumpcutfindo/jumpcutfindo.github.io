@@ -1,9 +1,9 @@
-export function shuffle(array: any[]) {
+export function shuffle<T>(array: T[]) {
   let currentIndex = array.length;
 
   while (currentIndex != 0) {
     // Pick a remaining element
-    let randomIndex = Math.floor(Math.random() * currentIndex);
+    const randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
 
     // And swap it with the current element

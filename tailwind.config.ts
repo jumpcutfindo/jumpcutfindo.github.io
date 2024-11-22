@@ -10,6 +10,8 @@ const config: Config = {
     extend: {
       colors: {
         "portfolio-background": "#24272e",
+        "language-background": "#0f172a",
+        "language-foreground": "#e2e8f0",
       },
       fontSize: {
         sm: "0.8rem",

@@ -1,19 +1,15 @@
 "use client";
 
-import dayjs from "dayjs";
-import Image from "next/image";
+import { useEffect, useState } from "react";
 
 import { Signika } from "next/font/google";
+import Image from "next/image";
+
+import { faFilm, faGlobe } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import dayjs from "dayjs";
 
 import styles from "./countdown.module.css";
-import { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faInstagram,
-  faTelegram,
-  faYoutube,
-} from "@fortawesome/free-brands-svg-icons";
-import { faFilm, faGlobe } from "@fortawesome/free-solid-svg-icons";
 
 const signika = Signika({ subsets: ["latin"] });
 
@@ -143,12 +139,14 @@ export default function IntentionalCountdown() {
             <a
               href="https://jumpcutfindo.com/intentional/conversations"
               target="_blank"
+              rel="noreferrer"
             >
               <FontAwesomeIcon icon={faGlobe} size="2x" />
             </a>
             <a
               href="https://www.youtube.com/watch?v=E3Jjtx0ObP4"
               target="_blank"
+              rel="noreferrer"
             >
               <FontAwesomeIcon icon={faFilm} size="2x" />
             </a>

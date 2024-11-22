@@ -1,0 +1,8 @@
+/.github
+/.idea
+/.next
+/node_modules
+/out
+/public
+
+pnpm-lock.yaml

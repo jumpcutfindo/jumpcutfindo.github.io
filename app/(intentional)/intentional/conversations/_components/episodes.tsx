@@ -1,10 +1,12 @@
 "use client";
 
-import dayjs from "dayjs";
-import { Nunito } from "next/font/google";
 import { useEffect, useState } from "react";
 
-import { lynnTextify as lt, lynnTextify } from "../_utils/lynn-textify";
+import { Nunito } from "next/font/google";
+
+import dayjs from "dayjs";
+
+import { lynnTextify as lt } from "../_utils/lynn-textify";
 
 const nunito = Nunito({ subsets: ["latin"], display: "swap" });
 
@@ -73,13 +75,13 @@ function EpisodeItem(props: EpisodeItemProps) {
         <div className="flex flex-col space-y-0">
           <h2 className={`${nunito.className} text-2xl font-bold`}>
             {lynnTextify(
-              `Episode #${episodeNum}: ${getQuestionMarks(episodeNum)}`
+              `Episode #${episodeNum}: ${getQuestionMarks(episodeNum)}`,
             )}
           </h2>
           <p
             dangerouslySetInnerHTML={{
               __html: lynnTextify(
-                `Premieres in <b>${remaining.days}d ${remaining.hours}h ${remaining.mins}m ${remaining.secs}s</b>`
+                `Premieres in <b>${remaining.days}d ${remaining.hours}h ${remaining.mins}m ${remaining.secs}s</b>`,
               ),
             }}
           ></p>
@@ -126,7 +128,7 @@ export default function Episodes(props: EpisodesProps) {
         episodeNum={1}
         title={lynnTextify("Meet and Greet")}
         description={lynnTextify(
-          "The crew introduce themselves and talk a bit about where they're at."
+          "The crew introduce themselves and talk a bit about where they're at.",
         )}
         url="https://www.youtube.com/embed/ebM90xmXtlI?si=q-6bzTPpxaaaNtsu"
         startDate={date}
@@ -137,7 +139,7 @@ export default function Episodes(props: EpisodesProps) {
         episodeNum={2}
         title={lynnTextify("Good Old Times")}
         description={lynnTextify(
-          "The crew look back on their choir days and talk about happy memories."
+          "The crew look back on their choir days and talk about happy memories.",
         )}
         url="https://www.youtube.com/embed/ebM90xmXtlI?si=q-6bzTPpxaaaNtsu"
         startDate={date}
@@ -148,7 +150,7 @@ export default function Episodes(props: EpisodesProps) {
         episodeNum={3}
         title={lynnTextify("Reminiscences of Vietnam")}
         description={lynnTextify(
-          "The crew reflect on the rocky past of their last competition in VJChoir."
+          "The crew reflect on the rocky past of their last competition in VJChoir.",
         )}
         url="https://www.youtube.com/embed/ebM90xmXtlI?si=q-6bzTPpxaaaNtsu"
         startDate={date}
@@ -159,7 +161,7 @@ export default function Episodes(props: EpisodesProps) {
         episodeNum={4}
         title={lynnTextify("Sing, Sang, Sung")}
         description={lynnTextify(
-          "The crew take a trip down memory lane through all the performances they gave together."
+          "The crew take a trip down memory lane through all the performances they gave together.",
         )}
         url="https://www.youtube.com/embed/ebM90xmXtlI?si=q-6bzTPpxaaaNtsu"
         startDate={date}
@@ -170,7 +172,7 @@ export default function Episodes(props: EpisodesProps) {
         episodeNum={5}
         title={lynnTextify("After Action Review")}
         description={lynnTextify(
-          "The crew talk about their takeaways from choir and how it helped them."
+          "The crew talk about their takeaways from choir and how it helped them.",
         )}
         url="https://www.youtube.com/embed/ebM90xmXtlI?si=q-6bzTPpxaaaNtsu"
         startDate={date}
@@ -181,7 +183,7 @@ export default function Episodes(props: EpisodesProps) {
         episodeNum={6}
         title={lynnTextify("Time Passages")}
         description={lynnTextify(
-          "The crew ponder on the years past since the end of their VJChoir journey."
+          "The crew ponder on the years past since the end of their VJChoir journey.",
         )}
         url="https://www.youtube.com/embed/ebM90xmXtlI?si=q-6bzTPpxaaaNtsu"
         startDate={date}
@@ -192,7 +194,7 @@ export default function Episodes(props: EpisodesProps) {
         episodeNum={7}
         title={lynnTextify("Complimentary")}
         description={lynnTextify(
-          "The crew talk about their fellow choirmates."
+          "The crew talk about their fellow choirmates.",
         )}
         url="https://www.youtube.com/embed/ebM90xmXtlI?si=q-6bzTPpxaaaNtsu"
         startDate={date}
@@ -203,7 +205,7 @@ export default function Episodes(props: EpisodesProps) {
         episodeNum={8}
         title={lynnTextify("Complimentary")}
         description={lynnTextify(
-          "The crew consider a what-if that was posed to them."
+          "The crew consider a what-if that was posed to them.",
         )}
         url="https://www.youtube.com/embed/ebM90xmXtlI?si=q-6bzTPpxaaaNtsu"
         startDate={date}

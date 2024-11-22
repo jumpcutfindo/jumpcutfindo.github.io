@@ -1,14 +1,15 @@
+import { useEffect, useMemo, useState } from "react";
+
 import {
   faCheck,
   faCircle,
   faWandMagicSparkles,
 } from "@fortawesome/free-solid-svg-icons";
-import { QuizCard, QuizCardHeader, QuizCardBody } from "./quiz-card-wrapper";
-import { QuizState } from "./types/quiz";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { QuizCard, QuizCardBody, QuizCardHeader } from "./quiz-card-wrapper";
 import { CardProps, MatchCardParams } from "./types/card";
 import { shuffle } from "./utils/shuffle";
-import { useEffect, useMemo, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface MatchCardTileProps<T> {
   tileKey: string;
@@ -22,7 +23,6 @@ interface MatchCardTileProps<T> {
 }
 
 function MatchCardTile<T>({
-  tileKey,
   option,
   renderOption,
   isFrom,
@@ -32,7 +32,7 @@ function MatchCardTile<T>({
   isShaking,
 }: MatchCardTileProps<T>) {
   const getClassName = () => {
-    let classNames = [
+    const classNames = [
       "flex flex-col justify-center items-center p-2 rounded-lg h-32 border disabled:opacity-20 transition-all",
     ];
 
@@ -67,7 +67,6 @@ export function MatchCard<T>({
   cardTitle,
   onAnswered,
   onCorrect,
-  quizState,
   options,
   renderOption,
   setRenderedResult,
@@ -78,7 +77,7 @@ export function MatchCard<T>({
 
   const [matchedSets, setMatchedSets] = useState<Set<T>>(new Set());
 
-  const [shakingTiles, setShakingTiles] = useState<Set<String>>(new Set());
+  const [shakingTiles, setShakingTiles] = useState<Set<string>>(new Set());
 
   const [selectedFrom, setSelectedFrom] = useState<T | null>(null);
   const [selectedFromKey, setSelectedFromKey] = useState<string | null>(null);
@@ -108,7 +107,7 @@ export function MatchCard<T>({
     fromKey: string | null,
     from: T | null,
     toKey: string | null,
-    to: T | null
+    to: T | null,
   ) => {
     if (from && to) {
       if (from === to) {

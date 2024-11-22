@@ -1,26 +1,28 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
+import { faLanguage } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import chineseJson from "./api/chinese.json";
-import { MandarinDefinition } from "./types/mandarin";
-import { generateFillBlank } from "./utils/generate-fill-blank";
-import { faLanguage } from "@fortawesome/free-solid-svg-icons";
-import { QuizState } from "../quiz/types/quiz";
-import { useEffect, useState } from "react";
-import MandarinFillBlank from "./cards/mandarin-fill-blank";
+import { QuizCardResult } from "../../quiz/quiz-card-wrapper";
+import { QuizState } from "../../quiz/types/quiz";
+import chineseJson from "../api/chinese.json";
+import { MandarinDefinition } from "../api/mandarin";
+import { MandarinMetadataComponent } from "../metadata";
 import {
   MandarinCardType,
   MandarinFillBlankCardParams,
   MandarinMatchDefinitionParams,
   MandarinMatchPinyinCardParams,
-} from "./types/card";
-import { generateMatchPinyin } from "./utils/generate-match-pinyin";
-import MandarinMatchPinyin from "./cards/mandarin-match-pinyin";
-import { QuizCardResult } from "../quiz/quiz-card-wrapper";
-import { generateMatchDefinition } from "./utils/generate-match-definition";
+} from "./cards/card";
+import MandarinFillBlank from "./cards/mandarin-fill-blank";
 import MandarinMatchDefinition from "./cards/mandarin-match-definition";
+import MandarinMatchPinyin from "./cards/mandarin-match-pinyin";
 import { generateCardType } from "./utils/generate-card-type";
+import { generateFillBlank } from "./utils/generate-fill-blank";
+import { generateMatchDefinition } from "./utils/generate-match-definition";
+import { generateMatchPinyin } from "./utils/generate-match-pinyin";
 
 export default function MandarinQuiz() {
   const chinese = chineseJson as MandarinDefinition[];
@@ -30,12 +32,12 @@ export default function MandarinQuiz() {
 
   const [quizState, setQuizState] = useState(QuizState.Question);
   const [cardType, setCardType] = useState<MandarinCardType>(
-    MandarinCardType.FillBlank
+    MandarinCardType.FillBlank,
   );
 
   const [isResultCorrect, setResultCorrect] = useState(false);
   const [renderedResult, setRenderedResult] = useState<JSX.Element | null>(
-    null
+    null,
   );
 
   const [onAcknowledge, setOnAcknowledge] = useState(() => () => {});
@@ -140,13 +142,16 @@ export default function MandarinQuiz() {
 
   return (
     <div className="flex flex-col h-screen w-screen justify-center items-center">
-      <div className="flex flex-col items-center w-screen max-w-[480px] flex-1 bg-slate-900">
+      <div className="flex flex-col items-center w-screen max-w-[480px] flex-1 bg-language-background">
         <div className="w-full flex flex-row p-4 bg-white/5">
           <FontAwesomeIcon icon={faLanguage} size="xl" />
           <h1 className="ms-2">中文测验</h1>
-          <p className="ms-auto">
-            Score: {score}/{maxScore}
-          </p>
+          <div className="ms-auto flex flex-row space-x-4">
+            <span>
+              Score: {score}/{maxScore}
+            </span>
+            <MandarinMetadataComponent />
+          </div>
         </div>
         {renderQuizCard()}
       </div>

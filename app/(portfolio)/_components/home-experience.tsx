@@ -1,15 +1,16 @@
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import dayjs from "dayjs";
-import Experience from "../types/experience";
+
 import TagList from "../../shared-components/tag-list";
+import Experience from "../types/experience";
 
 interface HomeExperienceComponentProps {
   experience: Experience;
 }
 
 export default function HomeExperienceComponent(
-  props: HomeExperienceComponentProps
+  props: HomeExperienceComponentProps,
 ) {
   const { start, end, title, company, id, shortDescription, tags } =
     props.experience;

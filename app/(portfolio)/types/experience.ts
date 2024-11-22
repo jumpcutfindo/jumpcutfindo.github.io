@@ -1,16 +1,16 @@
 export default interface Experience {
-    start: string;
-    end?: string;
+  start: string;
+  end?: string;
 
-    id: string;
-    title: string;
-    company: string;
-    url: string;
-    
-    shortDescription: string;
-    longDescription: string;
+  id: string;
+  title: string;
+  company: string;
+  url: string;
 
-    pointers: string[];
+  shortDescription: string;
+  longDescription: string;
 
-    tags: string[];
+  pointers: string[];
+
+  tags: string[];
 }

@@ -1,10 +1,10 @@
-import { MandarinFillBlankCardParams } from "../types/card";
-import { MandarinDefinition } from "../types/mandarin";
+import { MandarinDefinition } from "../../api/mandarin";
+import { MandarinFillBlankCardParams } from "../cards/card";
 import { selectRandomDefinition } from "./definition-utils";
 
 export function generateFillBlank(
   definitions: MandarinDefinition[],
-  optionCount: number
+  optionCount: number,
 ): MandarinFillBlankCardParams {
   const answer = selectRandomDefinition(definitions);
   const example =

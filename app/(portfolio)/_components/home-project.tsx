@@ -1,8 +1,10 @@
 import Image from "next/image";
-import Project from "../types/project";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import TagList from "../../shared-components/tag-list";
+import Project from "../types/project";
 
 interface HomeProjectComponentProps {
   project: Project;

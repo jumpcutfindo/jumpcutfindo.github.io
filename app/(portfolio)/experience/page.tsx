@@ -1,11 +1,11 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import type Experience from "../types/experience";
-
-import experienceJson from "./api/experience.json";
 import ExperienceComponent from "./_components/experience";
+import experienceJson from "./api/experience.json";
 
-export default function Experience() {
+export default function Experiences() {
   const experience = experienceJson as Experience[];
 
   return (

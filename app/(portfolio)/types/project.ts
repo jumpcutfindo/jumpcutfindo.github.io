@@ -1,18 +1,18 @@
 interface ProjectLink {
-    icon: string;
-    url: string;
+  icon: string;
+  url: string;
 }
 
 export default interface Project {
-    id: string;
-    title: string;
-    url?: string;
-    year: number;
-    shortDescription: string;
-    longDescription: string;
-    pointers: string[];
-    links?: ProjectLink[];
-    featured?: number;
-    image: string;
-    tags: string[];
+  id: string;
+  title: string;
+  url?: string;
+  year: number;
+  shortDescription: string;
+  longDescription: string;
+  pointers: string[];
+  links?: ProjectLink[];
+  featured?: number;
+  image: string;
+  tags: string[];
 }

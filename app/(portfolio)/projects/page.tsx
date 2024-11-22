@@ -1,8 +1,9 @@
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import projectsJSON from "./api/projects.json";
+
 import Project from "../types/project";
 import ProjectComponent from "./_components/project";
+import projectsJSON from "./api/projects.json";
 
 export default function Projects() {
   const projects = projectsJSON as Project[];
@@ -11,7 +12,7 @@ export default function Projects() {
     .filter((year, index, array) => array.indexOf(year) === index)
     .sort();
 
-  const projectsByYear: any = {};
+  const projectsByYear: { [key: string]: Project[] } = {};
   years.forEach((year) => {
     projectsByYear[year] = projects.filter((proj) => proj.year === year);
   });
@@ -52,7 +53,7 @@ export default function Projects() {
                           return (
                             <ProjectComponent key={index} project={proj} />
                           );
-                        }
+                        },
                       )}
                     </div>
                   </div>
