@@ -1,9 +1,9 @@
 import Markdown, { Components } from "react-markdown";
-import { FillBlankCard } from "../../quiz/fill-blank";
-import { QuizState } from "../../quiz/types/quiz";
+import { FillBlankCard } from "../../../quiz/fill-blank";
+import { QuizState } from "../../../quiz/types/quiz";
 import { MandarinDefinition, MandarinExample } from "../types/mandarin";
 import { MandarinFillBlankCardParams } from "../types/card";
-import { CardProps } from "../../quiz/types/card";
+import { CardProps } from "../../../quiz/types/card";
 
 const MARKDOWN_STYLING: Components = {
   p(props) {

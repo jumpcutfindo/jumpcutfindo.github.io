@@ -2,11 +2,11 @@
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import chineseJson from "./api/chinese.json";
+import chineseJson from "../api/chinese.json";
 import { MandarinDefinition } from "./types/mandarin";
 import { generateFillBlank } from "./utils/generate-fill-blank";
 import { faLanguage } from "@fortawesome/free-solid-svg-icons";
-import { QuizState } from "../quiz/types/quiz";
+import { QuizState } from "../../quiz/types/quiz";
 import { useEffect, useState } from "react";
 import MandarinFillBlank from "./cards/mandarin-fill-blank";
 import {
@@ -17,7 +17,7 @@ import {
 } from "./types/card";
 import { generateMatchPinyin } from "./utils/generate-match-pinyin";
 import MandarinMatchPinyin from "./cards/mandarin-match-pinyin";
-import { QuizCardResult } from "../quiz/quiz-card-wrapper";
+import { QuizCardResult } from "../../quiz/quiz-card-wrapper";
 import { generateMatchDefinition } from "./utils/generate-match-definition";
 import MandarinMatchDefinition from "./cards/mandarin-match-definition";
 import { generateCardType } from "./utils/generate-card-type";

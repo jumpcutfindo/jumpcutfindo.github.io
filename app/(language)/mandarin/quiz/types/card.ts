@@ -1,4 +1,4 @@
-import { FillBlankCardParams, MatchCardParams } from "../../quiz/types/card";
+import { FillBlankCardParams, MatchCardParams } from "../../../quiz/types/card";
 import { MandarinDefinition, MandarinExample } from "./mandarin";
 
 export enum MandarinCardType {
