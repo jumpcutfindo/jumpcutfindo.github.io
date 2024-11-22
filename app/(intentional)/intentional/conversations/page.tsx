@@ -38,7 +38,7 @@ export default function IntentionalConversations() {
           ></Image>
           <p className="text-center">
             {lynnTextify(
-              "A 9-episode documentary depicting the experiences of a bunch of choristers that crossed paths a decade ago."
+              "A 9-episode documentary depicting the experiences of a bunch of choristers that crossed paths a decade ago.",
             )}
           </p>
         </div>
@@ -73,7 +73,7 @@ export default function IntentionalConversations() {
           taglineImage="/intentional/conversations/marcus-still.png"
           tagline={lynnTextify("You Don't Need A Villa For A Swim")}
           taglineDescription={lynnTextify(
-            "Take a deep dive into the hearts and minds of those you know as friends and family."
+            "Take a deep dive into the hearts and minds of those you know as friends and family.",
           )}
           isDark={false}
         />
@@ -81,7 +81,7 @@ export default function IntentionalConversations() {
           taglineImage="/intentional/conversations/gloria-still.png"
           tagline={lynnTextify("Feed Your FOMO")}
           taglineDescription={lynnTextify(
-            "Find out what you've been missing on about your choir mates the past decade."
+            "Find out what you've been missing on about your choir mates the past decade.",
           )}
           isDark={true}
         />
@@ -91,7 +91,7 @@ export default function IntentionalConversations() {
           taglineImage="/intentional/conversations/wyn-still.png"
           tagline={lynnTextify("Perspective, Perspective")}
           taglineDescription={lynnTextify(
-            "Reminisce on better or worse days that have long since faded to time."
+            "Reminisce on better or worse days that have long since faded to time.",
           )}
           isDark={false}
         />
@@ -103,19 +103,19 @@ export default function IntentionalConversations() {
         <div className="w-full flex flex-col relative justify-center space-y-4">
           <p className="text-center">
             {lynnTextify(
-              "10 years ago, these young individuals crossed paths in a junior college choir. Unbeknownst to them, a decade later, one of their choir mates would coax them all into a documentary on their life then and now."
+              "10 years ago, these young individuals crossed paths in a junior college choir. Unbeknownst to them, a decade later, one of their choir mates would coax them all into a documentary on their life then and now.",
             )}
           </p>
           <p className="text-center">
             {lynnTextify(
-              "Join us as we explore the minds of this group of 19 friends, and learn more about what they thought and think about times past."
+              "Join us as we explore the minds of this group of 19 friends, and learn more about what they thought and think about times past.",
             )}
           </p>
           <p
             className="text-center"
             dangerouslySetInnerHTML={{
               __html: lynnTextify(
-                "<i>Intentional Conversations</i> is a <b>9-episode</b> mini-series that airs weekly."
+                "<i>Intentional Conversations</i> is a <b>9-episode</b> mini-series that airs weekly.",
               ),
             }}
           ></p>
@@ -242,7 +242,7 @@ export default function IntentionalConversations() {
           <p
             dangerouslySetInnerHTML={{
               __html: lynnTextify(
-                "<i>Intentional Conversations</i>, created by "
+                "<i>Intentional Conversations</i>, created by ",
               ),
             }}
           ></p>

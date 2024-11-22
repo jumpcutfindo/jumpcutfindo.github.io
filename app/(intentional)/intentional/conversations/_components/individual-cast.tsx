@@ -11,7 +11,7 @@ export default function IndividualCast(props: IndividualCastProps) {
 
   const playSound = () => {
     const audio = document.getElementById(
-      `${id}-soundbite`
+      `${id}-soundbite`,
     ) as HTMLAudioElement;
     audio.play();
   };

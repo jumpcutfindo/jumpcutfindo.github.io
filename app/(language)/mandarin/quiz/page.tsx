@@ -31,12 +31,12 @@ export default function MandarinQuiz() {
 
   const [quizState, setQuizState] = useState(QuizState.Question);
   const [cardType, setCardType] = useState<MandarinCardType>(
-    MandarinCardType.FillBlank
+    MandarinCardType.FillBlank,
   );
 
   const [isResultCorrect, setResultCorrect] = useState(false);
   const [renderedResult, setRenderedResult] = useState<JSX.Element | null>(
-    null
+    null,
   );
 
   const [onAcknowledge, setOnAcknowledge] = useState(() => () => {});

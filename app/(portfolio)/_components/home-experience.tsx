@@ -9,7 +9,7 @@ interface HomeExperienceComponentProps {
 }
 
 export default function HomeExperienceComponent(
-  props: HomeExperienceComponentProps
+  props: HomeExperienceComponentProps,
 ) {
   const { start, end, title, company, id, shortDescription, tags } =
     props.experience;

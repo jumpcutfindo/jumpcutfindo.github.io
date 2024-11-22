@@ -4,7 +4,7 @@ import { selectRandomDefinition } from "./definition-utils";
 
 export function generateMatchDefinition(
   definitions: MandarinDefinition[],
-  count: number
+  count: number,
 ): MandarinMatchDefinitionParams {
   const options = [];
   const wordSet = new Set();

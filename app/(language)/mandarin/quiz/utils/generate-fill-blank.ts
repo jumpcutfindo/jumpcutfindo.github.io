@@ -4,7 +4,7 @@ import { selectRandomDefinition } from "./definition-utils";
 
 export function generateFillBlank(
   definitions: MandarinDefinition[],
-  optionCount: number
+  optionCount: number,
 ): MandarinFillBlankCardParams {
   const answer = selectRandomDefinition(definitions);
   const example =

@@ -77,7 +77,7 @@ export default function Photography() {
   const photos = photosJson as Photo[];
 
   const [currentPhoto, setCurrentPhoto] = useState<Photo | undefined>(
-    undefined
+    undefined,
   );
   const [isModalOpen, setModalOpen] = useState(false);
 

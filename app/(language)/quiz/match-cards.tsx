@@ -108,7 +108,7 @@ export function MatchCard<T>({
     fromKey: string | null,
     from: T | null,
     toKey: string | null,
-    to: T | null
+    to: T | null,
   ) => {
     if (from && to) {
       if (from === to) {

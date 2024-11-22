@@ -52,7 +52,7 @@ export default function Projects() {
                           return (
                             <ProjectComponent key={index} project={proj} />
                           );
-                        }
+                        },
                       )}
                     </div>
                   </div>

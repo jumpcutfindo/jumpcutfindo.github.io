@@ -4,7 +4,7 @@ import { selectRandomDefinition } from "./definition-utils";
 
 export function generateMatchPinyin(
   definitions: MandarinDefinition[],
-  count: number
+  count: number,
 ): MandarinMatchPinyinCardParams {
   const options = [];
   const wordSet = new Set();
