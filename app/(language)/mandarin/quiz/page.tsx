@@ -141,20 +141,19 @@ export default function MandarinQuiz() {
   }, [chinese, quizState]);
 
   return (
-    <div className="flex flex-col h-screen w-screen justify-center items-center">
-      <div className="flex flex-col items-center w-screen max-w-[480px] flex-1 bg-language-background">
-        <div className="w-full flex flex-row p-4 bg-white/5">
-          <FontAwesomeIcon icon={faLanguage} size="xl" />
-          <h1 className="ms-2">中文测验</h1>
-          <div className="ms-auto flex flex-row space-x-4">
-            <span>
-              Score: {score}/{maxScore}
-            </span>
-            <MandarinMetadataComponent />
-          </div>
+    <div className="flex flex-col flex-1 w-full">
+      <div className="w-full flex flex-row p-4 bg-white/5">
+        <FontAwesomeIcon icon={faLanguage} size="xl" />
+        <h1 className="ms-2">中文测验</h1>
+        <div className="ms-auto flex flex-row space-x-4">
+          <span>
+            Score: {score}/{maxScore}
+          </span>
+          <MandarinMetadataComponent />
         </div>
-        {renderQuizCard()}
       </div>
+      {renderQuizCard()}
+
       <QuizCardResult
         isVisible={quizState === QuizState.Review}
         isCorrect={isResultCorrect}

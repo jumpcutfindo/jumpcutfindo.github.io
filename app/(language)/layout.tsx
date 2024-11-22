@@ -35,8 +35,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`bg-black ${inter.className} text-language-foreground`}>
-        {children}
+      <body
+        className={`bg-black ${inter.className} text-language-foreground flex flex-col h-screen w-screen justify-center items-center`}
+      >
+        <div className="flex flex-col items-center w-screen max-w-[480px] flex-1 bg-language-background">
+          {children}
+        </div>
       </body>
     </html>
   );
