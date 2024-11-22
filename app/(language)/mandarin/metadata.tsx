@@ -7,7 +7,7 @@ import chineseJson from "./api/chinese.json";
 import { MandarinDefinition } from "./api/mandarin";
 import metadataJson from "./api/metadata.json";
 
-export function MandarinMetadata() {
+export function MandarinMetadataComponent() {
   const chinese: MandarinDefinition[] = chineseJson as MandarinDefinition[];
   const metadata: MandarinMetadata = {
     ...metadataJson,

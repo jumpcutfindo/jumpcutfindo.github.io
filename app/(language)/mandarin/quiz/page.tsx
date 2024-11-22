@@ -9,7 +9,7 @@ import { QuizCardResult } from "../../quiz/quiz-card-wrapper";
 import { QuizState } from "../../quiz/types/quiz";
 import chineseJson from "../api/chinese.json";
 import { MandarinDefinition } from "../api/mandarin";
-import { MandarinMetadata } from "../metadata";
+import { MandarinMetadataComponent } from "../metadata";
 import {
   MandarinCardType,
   MandarinFillBlankCardParams,
@@ -150,7 +150,7 @@ export default function MandarinQuiz() {
             <span>
               Score: {score}/{maxScore}
             </span>
-            <MandarinMetadata />
+            <MandarinMetadataComponent />
           </div>
         </div>
         {renderQuizCard()}
