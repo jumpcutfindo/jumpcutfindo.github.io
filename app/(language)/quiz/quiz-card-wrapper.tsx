@@ -65,7 +65,7 @@ function QuizCardResult({
   };
 
   const getClassName = () => {
-    let classNames = [
+    const classNames = [
       "fixed bottom-0 left-1/2 -translate-x-1/2 flex flex-col p-4 space-y-4 w-screen max-w-[480px] transform transition-transform duration-200 ease-in-out z-50",
     ];
 

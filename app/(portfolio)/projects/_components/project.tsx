@@ -39,6 +39,7 @@ export default function ProjectComponent(props: ProjectComponentProps) {
                       href={link.url}
                       target="_blank"
                       className="my-auto hover:text-blue-400"
+                      rel="noreferrer"
                     >
                       <FontAwesomeIcon
                         icon={link.icon.split(" ") as [IconPrefix, IconName]}

@@ -12,7 +12,7 @@ export default function Projects() {
     .filter((year, index, array) => array.indexOf(year) === index)
     .sort();
 
-  const projectsByYear: any = {};
+  const projectsByYear: { [key: string]: Project[] } = {};
   years.forEach((year) => {
     projectsByYear[year] = projects.filter((proj) => proj.year === year);
   });

@@ -12,7 +12,7 @@ interface FillBlankOptionProps<T> {
   quizState: QuizState;
   isAnswer: boolean;
   onClick: () => void;
-  renderOption: { [state in QuizState]: (option: any) => JSX.Element };
+  renderOption: { [state in QuizState]: (option: T) => JSX.Element };
 }
 
 function FillBlankOption<T>({

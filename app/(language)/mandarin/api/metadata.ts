@@ -1,4 +1,4 @@
-interface MandarinMetadata {
+export interface MandarinMetadata {
   title: string;
   description: string;
   version: string;

@@ -9,7 +9,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { QuizCard, QuizCardBody, QuizCardHeader } from "./quiz-card-wrapper";
 import { CardProps, MatchCardParams } from "./types/card";
-import { QuizState } from "./types/quiz";
 import { shuffle } from "./utils/shuffle";
 
 interface MatchCardTileProps<T> {
@@ -24,7 +23,6 @@ interface MatchCardTileProps<T> {
 }
 
 function MatchCardTile<T>({
-  tileKey,
   option,
   renderOption,
   isFrom,
@@ -34,7 +32,7 @@ function MatchCardTile<T>({
   isShaking,
 }: MatchCardTileProps<T>) {
   const getClassName = () => {
-    let classNames = [
+    const classNames = [
       "flex flex-col justify-center items-center p-2 rounded-lg h-32 border disabled:opacity-20 transition-all",
     ];
 
@@ -69,7 +67,6 @@ export function MatchCard<T>({
   cardTitle,
   onAnswered,
   onCorrect,
-  quizState,
   options,
   renderOption,
   setRenderedResult,
@@ -80,7 +77,7 @@ export function MatchCard<T>({
 
   const [matchedSets, setMatchedSets] = useState<Set<T>>(new Set());
 
-  const [shakingTiles, setShakingTiles] = useState<Set<String>>(new Set());
+  const [shakingTiles, setShakingTiles] = useState<Set<string>>(new Set());
 
   const [selectedFrom, setSelectedFrom] = useState<T | null>(null);
   const [selectedFromKey, setSelectedFromKey] = useState<string | null>(null);

@@ -6,7 +6,7 @@ import { Nunito } from "next/font/google";
 
 import dayjs from "dayjs";
 
-import { lynnTextify as lt, lynnTextify } from "../_utils/lynn-textify";
+import { lynnTextify as lt } from "../_utils/lynn-textify";
 
 const nunito = Nunito({ subsets: ["latin"], display: "swap" });
 

@@ -49,6 +49,7 @@ export default function Home() {
             href="https://github.com/jumpcutfindo/"
             target="_blank"
             className="hover:text-blue-500"
+            rel="noreferrer"
           >
             <FontAwesomeIcon icon={faGithub} size="2x" />
           </a>
@@ -56,6 +57,7 @@ export default function Home() {
             href="https://www.linkedin.com/in/daniel-h-8892a3199"
             target="_blank"
             className="hover:text-blue-500"
+            rel="noreferrer"
           >
             <FontAwesomeIcon icon={faLinkedin} size="2x" />
           </a>
@@ -63,6 +65,7 @@ export default function Home() {
             href="https://www.youtube.com/@jumpcutfindo"
             target="_blank"
             className="hover:text-blue-500"
+            rel="noreferrer"
           >
             <FontAwesomeIcon icon={faYoutube} size="2x" />
           </a>
@@ -151,15 +154,19 @@ export default function Home() {
         <section className="flex flex-col text-center text-gray-500 space-y-2">
           <p className="text-sm md:px-32 px-8">
             This site was built with{" "}
-            <a href="https://nextjs.org/" target="_blank">
+            <a href="https://nextjs.org/" target="_blank" rel="noreferrer">
               <b>Next.js</b>
             </a>{" "}
             and{" "}
-            <a href="https://tailwindcss.com/" target="_blank">
+            <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer">
               <b>TailwindCSS</b>
             </a>
             , deployed on{" "}
-            <a href="https://pages.github.com/" target="_blank">
+            <a
+              href="https://pages.github.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <b>GitHub Pages</b>
             </a>{" "}
             using GitHub Actions.
@@ -169,6 +176,7 @@ export default function Home() {
             <a
               href="https://github.com/jumpcutfindo/jumpcutfindo.github.io"
               target="_blank"
+              rel="noreferrer"
             >
               <FontAwesomeIcon icon={faGithub} />
             </a>
