@@ -1,7 +1,7 @@
 import { MatchCard } from "../../../quiz/match-cards";
 import { CardProps } from "../../../quiz/types/card";
-import { MandarinMatchPinyinCardParams } from "./card";
 import { MandarinDefinition } from "../../api/mandarin";
+import { MandarinMatchPinyinCardParams } from "./card";
 
 type MandarinMatchPinyinProps = CardProps & MandarinMatchPinyinCardParams;
 

@@ -1,6 +1,7 @@
 import StyledMarkdown from "@/app/shared-components/styled-markdown";
 import TagList from "@/app/shared-components/tag-list";
 import dayjs from "dayjs";
+
 import Experience from "../../types/experience";
 
 interface ExperienceComponentProps {

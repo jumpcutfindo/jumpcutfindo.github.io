@@ -1,16 +1,17 @@
 "use client";
 
+import { useState } from "react";
+
+import { Nunito } from "next/font/google";
 import Image from "next/image";
 
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import styles from "./conversations.module.css";
-import TaglineComponent from "./_components/tagline-component";
 import IndividualCast from "./_components/individual-cast";
-import { Nunito } from "next/font/google";
-import { useState } from "react";
+import TaglineComponent from "./_components/tagline-component";
 import { lynnTextify as lt } from "./_utils/lynn-textify";
+import styles from "./conversations.module.css";
 
 const nunito = Nunito({ subsets: ["latin"], display: "swap" });
 

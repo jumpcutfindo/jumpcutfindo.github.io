@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {
   faCaretDown,
@@ -6,7 +8,6 @@ import {
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
 
 interface QuizCardProps {
   children: React.ReactNode;

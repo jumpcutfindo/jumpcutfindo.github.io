@@ -5,20 +5,20 @@ import {
   faLinkedin,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-import experienceJson from "./experience/api/experience.json";
-import projectsJson from "./projects/api/projects.json";
-import Experience from "./types/experience";
 import {
   faArrowRight,
   faCamera,
   faFileLines,
 } from "@fortawesome/free-solid-svg-icons";
-import Project from "./types/project";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import StyledMarkdown from "../shared-components/styled-markdown";
 import HomeExperienceComponent from "./_components/home-experience";
 import HomeProjectComponent from "./_components/home-project";
-import StyledMarkdown from "../shared-components/styled-markdown";
+import experienceJson from "./experience/api/experience.json";
+import projectsJson from "./projects/api/projects.json";
+import Experience from "./types/experience";
+import Project from "./types/project";
 
 export default function Home() {
   const experience = experienceJson as Experience[];

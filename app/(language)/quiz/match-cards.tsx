@@ -1,14 +1,16 @@
+import { useEffect, useMemo, useState } from "react";
+
 import {
   faCheck,
   faCircle,
   faWandMagicSparkles,
 } from "@fortawesome/free-solid-svg-icons";
-import { QuizCard, QuizCardHeader, QuizCardBody } from "./quiz-card-wrapper";
-import { QuizState } from "./types/quiz";
-import { CardProps, MatchCardParams } from "./types/card";
-import { shuffle } from "./utils/shuffle";
-import { useEffect, useMemo, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { QuizCard, QuizCardBody, QuizCardHeader } from "./quiz-card-wrapper";
+import { CardProps, MatchCardParams } from "./types/card";
+import { QuizState } from "./types/quiz";
+import { shuffle } from "./utils/shuffle";
 
 interface MatchCardTileProps<T> {
   tileKey: string;

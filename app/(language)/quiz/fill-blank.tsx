@@ -1,8 +1,10 @@
+import { useState } from "react";
+
 import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 import { v4 as uuidv4 } from "uuid";
-import { QuizCard, QuizCardHeader, QuizCardBody } from "./quiz-card-wrapper";
+
+import { QuizCard, QuizCardBody, QuizCardHeader } from "./quiz-card-wrapper";
 import { CardProps, FillBlankCardParams } from "./types/card";
-import { useState } from "react";
 import { QuizState } from "./types/quiz";
 
 interface FillBlankOptionProps<T> {

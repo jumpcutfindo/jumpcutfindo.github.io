@@ -1,6 +1,6 @@
+import { Nunito } from "next/font/google";
 import Image from "next/image";
 
-import { Nunito } from "next/font/google";
 import styles from "./tagline-component.module.css";
 
 const nunito = Nunito({ subsets: ["latin"] });

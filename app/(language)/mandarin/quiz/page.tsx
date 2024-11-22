@@ -1,27 +1,28 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
+import { faLanguage } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import { QuizCardResult } from "../../quiz/quiz-card-wrapper";
+import { QuizState } from "../../quiz/types/quiz";
 import chineseJson from "../api/chinese.json";
 import { MandarinDefinition } from "../api/mandarin";
-import { generateFillBlank } from "./utils/generate-fill-blank";
-import { faLanguage } from "@fortawesome/free-solid-svg-icons";
-import { QuizState } from "../../quiz/types/quiz";
-import { useEffect, useState } from "react";
-import MandarinFillBlank from "./cards/mandarin-fill-blank";
+import { MandarinMetadata } from "../metadata";
 import {
   MandarinCardType,
   MandarinFillBlankCardParams,
   MandarinMatchDefinitionParams,
   MandarinMatchPinyinCardParams,
 } from "./cards/card";
-import { generateMatchPinyin } from "./utils/generate-match-pinyin";
-import MandarinMatchPinyin from "./cards/mandarin-match-pinyin";
-import { QuizCardResult } from "../../quiz/quiz-card-wrapper";
-import { generateMatchDefinition } from "./utils/generate-match-definition";
+import MandarinFillBlank from "./cards/mandarin-fill-blank";
 import MandarinMatchDefinition from "./cards/mandarin-match-definition";
+import MandarinMatchPinyin from "./cards/mandarin-match-pinyin";
 import { generateCardType } from "./utils/generate-card-type";
-import { MandarinMetadata } from "../metadata";
+import { generateFillBlank } from "./utils/generate-fill-blank";
+import { generateMatchDefinition } from "./utils/generate-match-definition";
+import { generateMatchPinyin } from "./utils/generate-match-pinyin";
 
 export default function MandarinQuiz() {
   const chinese = chineseJson as MandarinDefinition[];

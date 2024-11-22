@@ -1,8 +1,9 @@
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import dayjs from "dayjs";
-import Experience from "../types/experience";
+
 import TagList from "../../shared-components/tag-list";
+import Experience from "../types/experience";
 
 interface HomeExperienceComponentProps {
   experience: Experience;

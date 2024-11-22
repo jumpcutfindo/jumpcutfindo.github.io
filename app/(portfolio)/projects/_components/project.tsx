@@ -1,8 +1,10 @@
+import Image from "next/image";
+
 import StyledMarkdown from "@/app/shared-components/styled-markdown";
 import TagList from "@/app/shared-components/tag-list";
-import { IconPrefix, IconName } from "@fortawesome/fontawesome-svg-core";
+import { IconName, IconPrefix } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "next/image";
+
 import Project from "../../types/project";
 
 interface ProjectComponentProps {

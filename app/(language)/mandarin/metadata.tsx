@@ -1,9 +1,11 @@
-import chineseJson from "./api/chinese.json";
-import metadataJson from "./api/metadata.json";
-import { MandarinDefinition } from "./api/mandarin";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+
+import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import chineseJson from "./api/chinese.json";
+import { MandarinDefinition } from "./api/mandarin";
+import metadataJson from "./api/metadata.json";
 
 export function MandarinMetadata() {
   const chinese: MandarinDefinition[] = chineseJson as MandarinDefinition[];
