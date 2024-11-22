@@ -9,4 +9,20 @@ module.exports = {
   singleQuote: false,
   arrowParens: "always",
   bracketSpacing: true,
+
+  // Add plugins
+  plugins: ["@ianvs/prettier-plugin-sort-imports"],
+
+  // prettier-plugin-sort-imports
+  importOrder: [
+    "<BUILTIN_MODULES>",
+    "",
+    "^react$",
+    "",
+    "^next.*$",
+    "",
+    "<THIRD_PARTY_MODULES>",
+    "",
+    "^[.]",
+  ],
 };
