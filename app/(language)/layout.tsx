@@ -32,7 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`bg-black ${inter.className} text-slate-200`}>
+      <body className={`bg-black ${inter.className} text-language-foreground`}>
         {children}
       </body>
     </html>
