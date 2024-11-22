@@ -21,6 +21,7 @@ import { QuizCardResult } from "../../quiz/quiz-card-wrapper";
 import { generateMatchDefinition } from "./utils/generate-match-definition";
 import MandarinMatchDefinition from "./cards/mandarin-match-definition";
 import { generateCardType } from "./utils/generate-card-type";
+import { MandarinMetadata } from "../metadata";
 
 export default function MandarinQuiz() {
   const chinese = chineseJson as MandarinDefinition[];
@@ -144,9 +145,12 @@ export default function MandarinQuiz() {
         <div className="w-full flex flex-row p-4 bg-white/5">
           <FontAwesomeIcon icon={faLanguage} size="xl" />
           <h1 className="ms-2">中文测验</h1>
-          <p className="ms-auto">
-            Score: {score}/{maxScore}
-          </p>
+          <div className="ms-auto flex flex-row space-x-4">
+            <span>
+              Score: {score}/{maxScore}
+            </span>
+            <MandarinMetadata />
+          </div>
         </div>
         {renderQuizCard()}
       </div>
