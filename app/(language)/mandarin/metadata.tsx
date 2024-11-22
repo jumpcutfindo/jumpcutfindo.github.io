@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import chineseJson from "./api/chinese.json";
 import { MandarinDefinition } from "./api/mandarin";
+import { MandarinMetadata } from "./api/metadata";
 import metadataJson from "./api/metadata.json";
 
 export function MandarinMetadataComponent() {
