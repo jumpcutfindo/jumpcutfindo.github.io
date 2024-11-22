@@ -1,13 +1,15 @@
 "use client";
+
 import { MouseEvent, useState } from "react";
+
 import Image from "next/image";
 
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-import photosJson from "./api/photos.json";
-import type Photo from "../types/photo";
 import { Dialog } from "@headlessui/react";
+
+import type Photo from "../types/photo";
+import photosJson from "./api/photos.json";
 
 interface PhotoModalProps {
   isOpen: boolean;
@@ -50,7 +52,7 @@ interface PhotoProps {
   onOpen: (photo: Photo) => void;
 }
 
-function Photo(props: PhotoProps) {
+function PhotoItem(props: PhotoProps) {
   const { index, photo, onOpen } = props;
 
   return (
@@ -125,7 +127,7 @@ export default function Photography() {
           <div className="columns-1 md:columns-2 lg:columns-3 md:mx-12 mx-6 gap-8 md:space-y-8 space-y-4">
             {photos.map((photo, index) => {
               return (
-                <Photo
+                <PhotoItem
                   key={index}
                   index={index}
                   photo={photo}
