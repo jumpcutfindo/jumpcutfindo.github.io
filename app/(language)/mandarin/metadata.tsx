@@ -19,6 +19,10 @@ export function MandarinMetadata() {
     setDialogOpen(!isDialogOpen);
   };
 
+  const closeDialog = () => {
+    setDialogOpen(false);
+  };
+
   return (
     <div>
       <button onClick={toggleDialog}>
@@ -26,25 +30,27 @@ export function MandarinMetadata() {
       </button>
 
       {isDialogOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
-          <div className="p-6 bg-language-background rounded-lg shadow-lg max-w-md w-full">
-            <h2 className="text-lg font-bold mb-4">Mandarin Metadata</h2>
-            <ul className="space-y-2">
-              <li>
-                <strong>Last Updated:</strong>{" "}
-                {metadata.lastUpdated.toLocaleDateString()}
-              </li>
-              <li>
-                <strong>Word Count:</strong> {metadata.wordCount}
-              </li>
-            </ul>
-            <div className="mt-4 flex justify-end">
-              <button
-                onClick={toggleDialog}
-                className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"
-              >
-                Close
-              </button>
+        <div
+          className="fixed inset-0 flex items-center justify-center bg-black/50 z-50"
+          onClick={closeDialog}
+        >
+          <div
+            className="bg-language-background rounded-lg shadow-lg w-72 p-8 space-y-8"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex flex-col text-center space-y-2">
+              <h1 className="text-8xl font-bold">{metadata.title}</h1>
+              <p>{metadata.description}</p>
+            </div>
+            <div className="flex flex-col space-y-4">
+              <div className="flex flex-col text-center">
+                <span className="text-sm font-bold">LAST UPDATED</span>
+                <span>{metadata.lastUpdated.toLocaleDateString()}</span>
+              </div>
+              <div className="flex flex-col text-center">
+                <span className="text-sm font-bold">WORD COUNT</span>
+                <span>{metadata.wordCount} words</span>
+              </div>
             </div>
           </div>
         </div>
