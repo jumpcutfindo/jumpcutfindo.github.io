@@ -1,5 +1,6 @@
 import { Virtuoso } from "react-virtuoso";
 import { MandarinDefinition, MandarinWordType } from "../api/mandarin";
+import { useState } from "react";
 
 const WORD_TYPE_CLASS_MAP: Record<MandarinWordType, string> = {
   noun: "text-sky-400",
@@ -44,12 +45,46 @@ export interface MandarinReferenceListProps {
 }
 
 export function MandarinReferenceList({ chinese }: MandarinReferenceListProps) {
+  const [visibleChinese, setVisibleChinese] = useState(chinese);
+
+  const onSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const searchTerm = event.target.value;
+
+    if (!searchTerm || searchTerm === "") {
+      setVisibleChinese(chinese);
+      return;
+    }
+
+    setVisibleChinese(
+      chinese.filter(
+        (definition) =>
+          definition.word.toLowerCase().includes(searchTerm) ||
+          definition.definition.toLowerCase().includes(searchTerm),
+      ),
+    );
+  };
+
   return (
-    <Virtuoso
-      totalCount={chinese.length}
-      itemContent={(index) => (
-        <MandarinReferenceListItem definition={chinese[index]} />
-      )}
-    />
+    <div className="flex flex-col w-full h-full">
+      <div className="flex flex-col space-y-2 m-2">
+        <div className="flex flex-row">
+          <input
+            type="search"
+            placeholder="Search..."
+            className="bg-white bg-opacity-10 rounded-lg p-2 text-white flex-1"
+            onChange={onSearchChange}
+          />
+        </div>
+        <span className="ms-auto text-sm font-semibold">
+          {visibleChinese.length} RESULTS FOUND
+        </span>
+      </div>
+      <Virtuoso
+        totalCount={visibleChinese.length}
+        itemContent={(index) => (
+          <MandarinReferenceListItem definition={visibleChinese[index]} />
+        )}
+      />
+    </div>
   );
 }
