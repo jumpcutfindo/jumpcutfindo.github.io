@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 
 import { faLanguage } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { QuizCardResult } from "../../quiz/quiz-card-wrapper";
 import { QuizState } from "../../quiz/types/quiz";
@@ -23,6 +22,11 @@ import { generateCardType } from "./utils/generate-card-type";
 import { generateFillBlank } from "./utils/generate-fill-blank";
 import { generateMatchDefinition } from "./utils/generate-match-definition";
 import { generateMatchPinyin } from "./utils/generate-match-pinyin";
+import {
+  LanguageHeader,
+  LanguageHeaderContent,
+  LanguageLayout,
+} from "../../language-layout";
 
 export default function MandarinQuiz() {
   const chinese = chineseJson as MandarinDefinition[];
@@ -141,17 +145,15 @@ export default function MandarinQuiz() {
   }, [chinese, quizState]);
 
   return (
-    <div className="flex flex-col flex-1 w-full">
-      <div className="w-full flex flex-row p-4 bg-white/5">
-        <FontAwesomeIcon icon={faLanguage} size="xl" />
-        <h1 className="ms-2">中文测验</h1>
-        <div className="ms-auto flex flex-row space-x-4">
+    <LanguageLayout>
+      <LanguageHeader icon={faLanguage} title="中文测验">
+        <LanguageHeaderContent>
           <span>
             Score: {score}/{maxScore}
           </span>
           <MandarinMetadataComponent />
-        </div>
-      </div>
+        </LanguageHeaderContent>
+      </LanguageHeader>
       {renderQuizCard()}
 
       <QuizCardResult
@@ -161,6 +163,6 @@ export default function MandarinQuiz() {
       >
         {renderedResult}
       </QuizCardResult>
-    </div>
+    </LanguageLayout>
   );
 }
