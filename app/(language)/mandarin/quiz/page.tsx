@@ -2,8 +2,16 @@
 
 import { useEffect, useState } from "react";
 
-import { faLanguage } from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from "next/navigation";
 
+import { faBookBookmark, faLanguage } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import {
+  LanguageHeader,
+  LanguageHeaderContent,
+  LanguageLayout,
+} from "../../language-layout";
 import { QuizCardResult } from "../../quiz/quiz-card-wrapper";
 import { QuizState } from "../../quiz/types/quiz";
 import chineseJson from "../api/chinese.json";
@@ -22,13 +30,10 @@ import { generateCardType } from "./utils/generate-card-type";
 import { generateFillBlank } from "./utils/generate-fill-blank";
 import { generateMatchDefinition } from "./utils/generate-match-definition";
 import { generateMatchPinyin } from "./utils/generate-match-pinyin";
-import {
-  LanguageHeader,
-  LanguageHeaderContent,
-  LanguageLayout,
-} from "../../language-layout";
 
 export default function MandarinQuiz() {
+  const router = useRouter();
+
   const chinese = chineseJson as MandarinDefinition[];
 
   const [score, setScore] = useState(0);
@@ -151,6 +156,12 @@ export default function MandarinQuiz() {
           <span>
             Score: {score}/{maxScore}
           </span>
+          <button
+            title="词语资料库"
+            onClick={() => router.push("/mandarin/reference")}
+          >
+            <FontAwesomeIcon icon={faBookBookmark} />
+          </button>
           <MandarinMetadataComponent />
         </LanguageHeaderContent>
       </LanguageHeader>

@@ -1,6 +1,9 @@
 "use client";
 
-import { faBookBookmark } from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from "next/navigation";
+
+import { faBookBookmark, faLanguage } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import {
   LanguageBody,
@@ -14,12 +17,20 @@ import { MandarinMetadataComponent } from "../metadata";
 import { MandarinReferenceList } from "./reference-list";
 
 export default function MandarinReference() {
+  const router = useRouter();
+
   const chinese = chineseJson as MandarinDefinition[];
 
   return (
     <LanguageLayout>
       <LanguageHeader icon={faBookBookmark} title="词语资料库">
         <LanguageHeaderContent>
+          <button
+            title="中文测验"
+            onClick={() => router.push("/mandarin/quiz")}
+          >
+            <FontAwesomeIcon icon={faLanguage} />
+          </button>
           <MandarinMetadataComponent />
         </LanguageHeaderContent>
       </LanguageHeader>
