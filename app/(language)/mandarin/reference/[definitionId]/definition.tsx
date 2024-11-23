@@ -26,11 +26,12 @@ export default function MandarinDefinitionComponent({
 
   return (
     <LanguageLayout>
-      <LanguageHeader icon={faBookBookmark} title="词语资料库">
+      <LanguageHeader isDynamic icon={faBookBookmark} title="词典">
         <div className="flex flex-row flex-1">
           <button onClick={() => router.back()} className="rounded-full">
             <FontAwesomeIcon icon={faArrowLeft} />
           </button>
+          <span className="ms-2">词典：{definition.word}</span>
         </div>
         <div>
           <MandarinMetadataComponent />

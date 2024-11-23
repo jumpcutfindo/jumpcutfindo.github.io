@@ -29,7 +29,7 @@ export function MandarinReferenceListItem({
   return (
     <div className="w-full">
       <div
-        className="flex flex-col border rounded-lg p-4 mb-2 mx-2"
+        className="flex flex-col border rounded-lg p-4 mb-2 mx-2 cursor-pointer hover:bg-white/5"
         onClick={() => router.push(`/mandarin/reference/${item.itemIndex}`)}
       >
         <div className="flex flex-row items-center space-x-2">

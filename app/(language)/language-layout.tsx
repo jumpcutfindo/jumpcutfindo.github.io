@@ -18,7 +18,7 @@ function LanguageHeader({
 }: LanguageHeaderProps) {
   return (
     <div className="w-full flex flex-row p-4 bg-white/5">
-      {isDynamic && (
+      {!isDynamic && (
         <div className="flex flex-row">
           <FontAwesomeIcon icon={icon} size="xl" />
           <h1 className="ms-2">{title}</h1>
