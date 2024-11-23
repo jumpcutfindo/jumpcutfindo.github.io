@@ -1,6 +1,10 @@
-import { Virtuoso } from "react-virtuoso";
-import { MandarinDefinition, MandarinWordType } from "../api/mandarin";
 import { useState } from "react";
+
+import { useRouter } from "next/navigation";
+
+import { Virtuoso } from "react-virtuoso";
+
+import { MandarinDefinition, MandarinWordType } from "../api/mandarin";
 
 const WORD_TYPE_CLASS_MAP: Record<MandarinWordType, string> = {
   noun: "text-sky-400",
@@ -11,28 +15,35 @@ const WORD_TYPE_CLASS_MAP: Record<MandarinWordType, string> = {
   conjunction: "text-pink-400",
 };
 
+type MandarinListItem = MandarinDefinition & { itemIndex: number };
+
 interface MandarinReferenceListItemProps {
-  definition: MandarinDefinition;
+  item: MandarinListItem;
 }
 
 export function MandarinReferenceListItem({
-  definition,
+  item,
 }: MandarinReferenceListItemProps) {
+  const router = useRouter();
+
   return (
     <div className="w-full">
-      <div className="flex flex-col border rounded-lg p-4 mb-2 mx-2">
+      <div
+        className="flex flex-col border rounded-lg p-4 mb-2 mx-2"
+        onClick={() => router.push(`/mandarin/reference/${item.itemIndex}`)}
+      >
         <div className="flex flex-row items-center space-x-2">
-          <span className="text-2xl">{definition.word}</span>
-          <span className="text-lg opacity-80">{definition.pinyin}</span>
+          <span className="text-2xl">{item.word}</span>
+          <span className="text-lg opacity-80">{item.pinyin}</span>
         </div>
         <div className="flex flex-row items-baseline space-x-2">
           <p className="space-x-2">
             <span
-              className={`text-sm font-bold ${WORD_TYPE_CLASS_MAP[definition.wordType]}`}
+              className={`text-sm font-bold ${WORD_TYPE_CLASS_MAP[item.wordType]}`}
             >
-              {definition.wordType.toUpperCase()}
+              {item.wordType.toUpperCase()}
             </span>
-            <span>{definition.definition}</span>
+            <span>{item.definition}</span>
           </p>
         </div>
       </div>
@@ -41,7 +52,7 @@ export function MandarinReferenceListItem({
 }
 
 export interface MandarinReferenceListProps {
-  chinese: MandarinDefinition[];
+  chinese: MandarinListItem[];
 }
 
 export function MandarinReferenceList({ chinese }: MandarinReferenceListProps) {
@@ -82,7 +93,7 @@ export function MandarinReferenceList({ chinese }: MandarinReferenceListProps) {
       <Virtuoso
         totalCount={visibleChinese.length}
         itemContent={(index) => (
-          <MandarinReferenceListItem definition={visibleChinese[index]} />
+          <MandarinReferenceListItem item={visibleChinese[index]} />
         )}
       />
     </div>

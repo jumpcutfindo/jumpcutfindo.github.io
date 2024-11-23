@@ -1,18 +1,29 @@
+import React from "react";
+
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
 
 interface LanguageHeaderProps {
   icon: IconDefinition;
   title: string;
+  isDynamic?: boolean;
   children?: React.ReactNode;
 }
 
-function LanguageHeader({ icon, title, children }: LanguageHeaderProps) {
+function LanguageHeader({
+  icon,
+  title,
+  isDynamic,
+  children,
+}: LanguageHeaderProps) {
   return (
     <div className="w-full flex flex-row p-4 bg-white/5">
-      <FontAwesomeIcon icon={icon} size="xl" />
-      <h1 className="ms-2">{title}</h1>
+      {isDynamic && (
+        <div className="flex flex-row">
+          <FontAwesomeIcon icon={icon} size="xl" />
+          <h1 className="ms-2">{title}</h1>
+        </div>
+      )}
       {children}
     </div>
   );

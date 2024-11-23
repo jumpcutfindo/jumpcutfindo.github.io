@@ -18,5 +18,10 @@ export default function MandarinDefinitionPage({
 }) {
   const definitionId = parseInt(params.definitionId);
 
-  return <MandarinDefinitionComponent index={definitionId} />;
+  return (
+    <MandarinDefinitionComponent
+      index={definitionId}
+      definition={chineseJson[definitionId] as MandarinDefinition}
+    />
+  );
 }
