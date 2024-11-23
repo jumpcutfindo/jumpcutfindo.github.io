@@ -20,7 +20,6 @@ export default function MandarinDefinitionPage({
 
   return (
     <MandarinDefinitionComponent
-      index={definitionId}
       definition={chineseJson[definitionId] as MandarinDefinition}
     />
   );
