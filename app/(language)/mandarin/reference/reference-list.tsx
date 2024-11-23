@@ -74,7 +74,7 @@ export function MandarinReferenceList({ chinese }: MandarinReferenceListProps) {
           <input
             type="search"
             placeholder="Search..."
-            className="bg-white bg-opacity-10 rounded-lg p-2 text-white flex-1"
+            className="bg-white bg-opacity-5 rounded-lg px-4 py-2 text-white flex-1"
             onChange={onSearchChange}
           />
         </div>
