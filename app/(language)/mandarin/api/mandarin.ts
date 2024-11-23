@@ -3,9 +3,17 @@ export interface MandarinExample {
   englishTranslation: string;
 }
 
+export type MandarinWordType =
+  | "verb"
+  | "noun"
+  | "adjective"
+  | "adverb"
+  | "idiom"
+  | "conjunction";
+
 export interface MandarinDefinition {
   word: string;
-  wordType: "verb" | "noun" | "adjective" | "adverb" | "idiom" | "conjunction";
+  wordType: MandarinWordType;
   pinyin: string;
   definition: string;
   examples: MandarinExample[];

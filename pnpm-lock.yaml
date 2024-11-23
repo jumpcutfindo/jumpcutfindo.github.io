@@ -44,6 +44,9 @@ importers:
       react-markdown:
         specifier: ^9.0.0
         version: 9.0.1(@types/react@18.3.0)(react@18.3.0)
+      react-virtuoso:
+        specifier: ^4.12.1
+        version: 4.12.1(react-dom@18.3.0(react@18.3.0))(react@18.3.0)
       uuid:
         specifier: ^11.0.3
         version: 11.0.3
@@ -1800,6 +1803,13 @@ packages:
     peerDependencies:
       '@types/react': '>=18'
       react: '>=18'
+
+  react-virtuoso@4.12.1:
+    resolution: {integrity: sha512-v+jwMrF6L5q2k9n00mqdow3Kp1wxBfkrfKWP/waJmQ8BkE4xv0uY99arrmeHYxchgqqB9ttSbxkGd+i7sxALeg==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16 || >=17 || >= 18'
+      react-dom: '>=16 || >=17 || >= 18'
 
   react@18.3.0:
     resolution: {integrity: sha512-RPutkJftSAldDibyrjuku7q11d3oy6wKOyPe5K1HA/HwwrXcEqBdHsLypkC2FFYjP7bPUa6gbzSBhw4sY2JcDg==}
@@ -4188,6 +4198,11 @@ snapshots:
       vfile: 6.0.1
     transitivePeerDependencies:
       - supports-color
+
+  react-virtuoso@4.12.1(react-dom@18.3.0(react@18.3.0))(react@18.3.0):
+    dependencies:
+      react: 18.3.0
+      react-dom: 18.3.0(react@18.3.0)
 
   react@18.3.0:
     dependencies:

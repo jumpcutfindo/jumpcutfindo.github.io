@@ -2,9 +2,16 @@
 
 import { useEffect, useState } from "react";
 
-import { faLanguage } from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from "next/navigation";
+
+import { faBookBookmark, faLanguage } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import {
+  LanguageHeader,
+  LanguageHeaderContent,
+  LanguageLayout,
+} from "../../language-layout";
 import { QuizCardResult } from "../../quiz/quiz-card-wrapper";
 import { QuizState } from "../../quiz/types/quiz";
 import chineseJson from "../api/chinese.json";
@@ -25,6 +32,8 @@ import { generateMatchDefinition } from "./utils/generate-match-definition";
 import { generateMatchPinyin } from "./utils/generate-match-pinyin";
 
 export default function MandarinQuiz() {
+  const router = useRouter();
+
   const chinese = chineseJson as MandarinDefinition[];
 
   const [score, setScore] = useState(0);
@@ -141,20 +150,23 @@ export default function MandarinQuiz() {
   }, [chinese, quizState]);
 
   return (
-    <div className="flex flex-col h-screen w-screen justify-center items-center">
-      <div className="flex flex-col items-center w-screen max-w-[480px] flex-1 bg-language-background">
-        <div className="w-full flex flex-row p-4 bg-white/5">
-          <FontAwesomeIcon icon={faLanguage} size="xl" />
-          <h1 className="ms-2">中文测验</h1>
-          <div className="ms-auto flex flex-row space-x-4">
-            <span>
-              Score: {score}/{maxScore}
-            </span>
-            <MandarinMetadataComponent />
-          </div>
-        </div>
-        {renderQuizCard()}
-      </div>
+    <LanguageLayout>
+      <LanguageHeader icon={faLanguage} title="中文测验">
+        <LanguageHeaderContent>
+          <span>
+            Score: {score}/{maxScore}
+          </span>
+          <button
+            title="词语资料库"
+            onClick={() => router.push("/mandarin/reference")}
+          >
+            <FontAwesomeIcon icon={faBookBookmark} />
+          </button>
+          <MandarinMetadataComponent />
+        </LanguageHeaderContent>
+      </LanguageHeader>
+      {renderQuizCard()}
+
       <QuizCardResult
         isVisible={quizState === QuizState.Review}
         isCorrect={isResultCorrect}
@@ -162,6 +174,6 @@ export default function MandarinQuiz() {
       >
         {renderedResult}
       </QuizCardResult>
-    </div>
+    </LanguageLayout>
   );
 }
