@@ -685,7 +685,7 @@
   },
   {
     "word": "非但",
-    "wordType": "conj",
+    "wordType": "conjunction",
     "pinyin": "fēi dàn",
     "definition": "not only",
     "examples": [
@@ -961,9 +961,9 @@
   },
   {
     "word": "策略",
-    "wordType": "noun / adjective",
+    "wordType": "noun",
     "pinyin": "cè lüè",
-    "definition": "tactics / tactful",
+    "definition": "tactics",
     "examples": [
       {
         "sentence": "运用新技术是我们策略的关键。",
@@ -2316,6 +2316,10 @@
       {
         "sentence": "说别人坏话的人一定是自己图谋不轨。",
         "englishTranslation": "Anyone who speaks ill of others must have their own ulterior motives."
+      },
+      {
+        "sentence": "由于某些网站支持匿名用户ID，评论者可能图谋不轨。",
+        "englishTranslation": "Because some websites support anonymous IDs, the commenters could have their own ulterior motives."
       }
     ]
   },
@@ -2332,7 +2336,7 @@
     ]
   },
   {
-    "word": "饮鸠止渴",
+    "word": "饮鸩止渴",
     "wordType": "idiom",
     "pinyin": "yǐn jiū zhǐ kě",
     "definition": "seek temporary relief regardless of the consequences",
@@ -2640,6 +2644,166 @@
       {
         "sentence": "这次碰巧有紧急情况，如果你能通融一下将会很有帮助。",
         "englishTranslation": "There happens to be a particular urgency in this case, and it would help if you could bend the rules."
+      }
+    ]
+  },
+  {
+    "word": "冒昧",
+    "wordType": "adjective",
+    "pinyin": "mào mèi ",
+    "definition": "make bold; venture to",
+    "examples": [
+      {
+        "sentence": "恕我冒昧，他的计算有个错误...",
+        "englishTranslation": "If I may be so bold to make a guess, his calculations were probably incorrect..."
+      },
+      {
+        "sentence": "我冒昧地问一下，迪娜是谁？",
+        "englishTranslation": "If I may be so bold to ask, who is Dina?"
+      }
+    ]
+  },
+  {
+    "word": "稍纵即逝",
+    "wordType": "idiom",
+    "pinyin": "shāo zòng jí shì",
+    "definition": "fleeting; transient",
+    "examples": [
+      {
+        "sentence": "这些是稍纵即逝的真实快乐。",
+        "englishTranslation": "These are the fleeting moments of real joy."
+      },
+      {
+        "sentence": "机会稍纵即逝，犹豫就是在放弃机会。",
+        "englishTranslation": "Opportunity fleeting, hesitation is to give up the opportunity."
+      }
+    ]
+  },
+  {
+    "word": "催促",
+    "wordType": "verb",
+    "pinyin": "cuī cù",
+    "definition": "urge; press; hasten",
+    "examples": [
+      {
+        "sentence": "他们正催促我们尽快作出决定。",
+        "englishTranslation": "They are pressing us to make a quick decision."
+      },
+      {
+        "sentence": "我不会受人催促草率地做任何事情。",
+        "englishTranslation": "I'm not going to be rushed into anything."
+      }
+    ]
+  },
+  {
+    "word": "隔阂",
+    "wordType": "noun",
+    "pinyin": "gé hé",
+    "definition": "estrangement; misunderstanding",
+    "examples": [
+      {
+        "sentence": "她一直在等着西蒙来破除他们之间的隔阂。",
+        "englishTranslation": "She had been waiting for Simon to break down the barrier between them."
+      }
+    ]
+  },
+  {
+    "word": "恢弘",
+    "wordType": "adjective",
+    "pinyin": "huī hóng",
+    "definition": "grand",
+    "examples": [
+      {
+        "sentence": "这次展出折射出馆长的决定，即增加人们对博物馆永恒恢弘的收藏品的注意力。",
+        "englishTranslation": "This exhibition reflects the curator's decision, and also adds to people's impression of the everlasting and magnificent collection."
+      }
+    ]
+  },
+  {
+    "word": "芥蒂",
+    "wordType": "noun",
+    "pinyin": "jiè dì",
+    "definition": "ill-feeling; unpleasantness",
+    "examples": [
+      {
+        "sentence": "一旦爱上自己，你将能毫无芥蒂地爱上别人。",
+        "englishTranslation": "Once you love who you are, you will be totally free to love others."
+      }
+    ]
+  },
+  {
+    "word": "鲁莽",
+    "wordType": "adjective",
+    "pinyin": "lǔ mǎng",
+    "definition": "crude and rash",
+    "examples": [
+      {
+        "sentence": "很多人认为对鲁莽的司机处理得太宽大了。",
+        "englishTranslation": "Many people believe reckless drivers are treated too leniently."
+      }
+    ]
+  },
+  {
+    "word": "蔓延",
+    "wordType": "verb",
+    "pinyin": "màn yán",
+    "definition": "spread; extend",
+    "examples": [
+      {
+        "sentence": "借助高温和大风，火势迅速蔓延。",
+        "englishTranslation": "Aided by heat and strong winds, the fire quickly spread."
+      },
+      {
+        "sentence": "一股迷信的恐惧浪潮在城里人中蔓延。",
+        "englishTranslation": "A wave of superstitious fear spread among the townspeople."
+      }
+    ]
+  },
+  {
+    "word": "盘踞",
+    "wordType": "verb",
+    "pinyin": "pán jù",
+    "definition": "illegally or forcibly occupy",
+    "examples": [
+      {
+        "sentence": "不安全的细菌可能盘踞在表面，会分散到你的食物中去。",
+        "englishTranslation": "Unsafe bacteria is probably lurking on the surface and could spread to your food."
+      }
+    ]
+  },
+  {
+    "word": "遮天蔽日",
+    "wordType": "idiom",
+    "pinyin": "zhē tiān bì rì",
+    "definition": "blot out the sky and cover the sun",
+    "examples": [
+      {
+        "sentence": "沙尘暴也常常光顾郑州，漫天的黄沙就像无数只黄虫，遮天蔽日。",
+        "englishTranslation": "Sandstorms frequently plague Zhengzhou, with sand particles akin to an immeasurable number of yellow insects, blotting out the sky."
+      }
+    ]
+  },
+  {
+    "word": "勘察",
+    "wordType": "verb",
+    "pinyin": "kān chá",
+    "definition": "to recon",
+    "examples": [
+      {
+        "sentence": "两名工人在巨型挖掘机的阴影下勘察现场。",
+        "englishTranslation": "Two workmen survey the site in the shadow of a giant excavator."
+      }
+    ]
+  },
+  {
+    "word": "悬殊",
+    "wordType": "noun",
+    "pinyin": "xuán shū ",
+    "definition": "great disparity; wide gap",
+    "examples": [
+      {
+        "sentence": "过去几年经济转坏，贫富悬殊进一步拉阔。",
+        "englishTranslation": "The gap between rich and poor has widened because of the bad economy in the past few years."
       }
     ]
   }
