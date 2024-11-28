@@ -19,6 +19,7 @@ import {
 import MandarinFillBlank from "./cards/mandarin-fill-blank";
 import MandarinMatchDefinition from "./cards/mandarin-match-definition";
 import MandarinMatchPinyin from "./cards/mandarin-match-pinyin";
+import { useMandarinQuizStore } from "./store/useMandarinQuizStore";
 import { generateCardType } from "./utils/generate-card-type";
 import { generateFillBlank } from "./utils/generate-fill-blank";
 import { generateMatchDefinition } from "./utils/generate-match-definition";
@@ -27,8 +28,7 @@ import { generateMatchPinyin } from "./utils/generate-match-pinyin";
 export default function MandarinQuiz() {
   const chinese = chineseJson as MandarinDefinition[];
 
-  const [score, setScore] = useState(0);
-  const [maxScore, setMaxScore] = useState(0);
+  const { score, setScore, maxScore, setMaxScore } = useMandarinQuizStore();
 
   const [quizState, setQuizState] = useState(QuizState.Question);
   const [cardType, setCardType] = useState<MandarinCardType>(
@@ -51,12 +51,12 @@ export default function MandarinQuiz() {
 
   const onAnswered = () => {
     setQuizState(QuizState.Review);
-    setMaxScore((score) => score + 1);
+    setMaxScore(maxScore + 1);
   };
 
   const onCorrect = () => {
     setResultCorrect(true);
-    setScore((score) => score + 1);
+    setScore(score + 1);
   };
 
   const onIncorrect = () => {
