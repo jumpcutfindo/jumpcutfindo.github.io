@@ -34,8 +34,8 @@ function LanguageDropdown({
             </a>
           </MenuItem>
         ))}
+        {menuFooter}
       </MenuItems>
-      {menuFooter}
     </Menu>
   );
 }
