@@ -17,10 +17,10 @@ function LanguageHeader({
   children,
 }: LanguageHeaderProps) {
   return (
-    <div className="w-full flex flex-row p-4 bg-white/5">
+    <div className="w-full flex flex-row bg-white/5 p-2">
       {!isDynamic && (
-        <div className="flex flex-row">
-          <FontAwesomeIcon icon={icon} size="xl" />
+        <div className="flex flex-row my-auto ms-2">
+          <FontAwesomeIcon className="my-auto" icon={icon} size="lg" />
           <h1 className="ms-2">{title}</h1>
         </div>
       )}
@@ -34,7 +34,7 @@ interface LanguageHeaderContentProps {
 }
 
 function LanguageHeaderContent({ children }: LanguageHeaderContentProps) {
-  return <div className="ms-auto flex flex-row space-x-4">{children}</div>;
+  return <div className="ms-auto flex flex-row">{children}</div>;
 }
 
 function LanguageBody({ children }: { children: React.ReactNode }) {
