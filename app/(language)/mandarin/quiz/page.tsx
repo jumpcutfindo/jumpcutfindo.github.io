@@ -144,7 +144,7 @@ export default function MandarinQuiz() {
     <LanguageLayout>
       <MandarinLayoutHeader headerIcon={faLanguage} headerTitle="中文测验">
         <div className="flex items-center me-2">
-          <div className="text-sm">
+          <div className="text-base">
             Score: {score} / {maxScore}
           </div>
         </div>
