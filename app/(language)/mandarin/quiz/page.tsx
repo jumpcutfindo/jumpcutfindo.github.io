@@ -2,11 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-import {
-  faCircleNotch,
-  faLanguage,
-  faSpinner,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCircleNotch, faLanguage } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { LanguageLayout } from "../../language-layout";
