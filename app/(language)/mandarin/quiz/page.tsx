@@ -20,26 +20,7 @@ import MandarinFillBlank from "./cards/mandarin-fill-blank";
 import MandarinMatchDefinition from "./cards/mandarin-match-definition";
 import MandarinMatchPinyin from "./cards/mandarin-match-pinyin";
 import { useMandarinQuizStore } from "./store/useMandarinQuizStore";
-import { generateCardType } from "./utils/generate-card-type";
-import { generateFillBlank } from "./utils/generate-fill-blank";
-import { generateMatchDefinition } from "./utils/generate-match-definition";
-import { generateMatchPinyin } from "./utils/generate-match-pinyin";
-
-function generateCardContent(wordSet: MandarinDefinition[]) {
-  const cardType = generateCardType();
-
-  let cardContent;
-
-  if (cardType === MandarinCardType.FillBlank) {
-    cardContent = generateFillBlank(wordSet, 4);
-  } else if (cardType === MandarinCardType.MatchPinyin) {
-    cardContent = generateMatchPinyin(wordSet, 4);
-  } else {
-    cardContent = generateMatchDefinition(wordSet, 4);
-  }
-
-  return { cardType, cardContent };
-}
+import { generateCardContent } from "./utils/generate-card";
 
 export default function MandarinQuiz() {
   const chinese = chineseJson as MandarinDefinition[];
