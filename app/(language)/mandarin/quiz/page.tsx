@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { faLanguage } from "@fortawesome/free-solid-svg-icons";
 
@@ -25,15 +25,37 @@ import { generateFillBlank } from "./utils/generate-fill-blank";
 import { generateMatchDefinition } from "./utils/generate-match-definition";
 import { generateMatchPinyin } from "./utils/generate-match-pinyin";
 
+function generateCardContent(wordSet: MandarinDefinition[]) {
+  const cardType = generateCardType();
+
+  let cardContent;
+
+  if (cardType === MandarinCardType.FillBlank) {
+    cardContent = generateFillBlank(wordSet, 4);
+  } else if (cardType === MandarinCardType.MatchPinyin) {
+    cardContent = generateMatchPinyin(wordSet, 4);
+  } else {
+    cardContent = generateMatchDefinition(wordSet, 4);
+  }
+
+  return { cardType, cardContent };
+}
+
 export default function MandarinQuiz() {
   const chinese = chineseJson as MandarinDefinition[];
 
-  const { score, setScore, maxScore, setMaxScore } = useMandarinQuizStore();
+  const {
+    score,
+    setScore,
+    maxScore,
+    setMaxScore,
+    cardType,
+    setCardType,
+    cardContent,
+    setCardContent,
+  } = useMandarinQuizStore();
 
   const [quizState, setQuizState] = useState(QuizState.Question);
-  const [cardType, setCardType] = useState<MandarinCardType>(
-    MandarinCardType.FillBlank,
-  );
 
   const [isResultCorrect, setResultCorrect] = useState(false);
   const [renderedResult, setRenderedResult] = useState<JSX.Element | null>(
@@ -41,13 +63,6 @@ export default function MandarinQuiz() {
   );
 
   const [onAcknowledge, setOnAcknowledge] = useState(() => () => {});
-
-  const [fillBlankParams, setFillBlankParams] =
-    useState<MandarinFillBlankCardParams | null>(null);
-  const [matchPinyinParams, setMatchPinyinParams] =
-    useState<MandarinMatchPinyinCardParams | null>(null);
-  const [matchDefinitionParams, setMatchDefinitionParams] =
-    useState<MandarinMatchDefinitionParams | null>(null);
 
   const onAnswered = () => {
     setQuizState(QuizState.Review);
@@ -66,6 +81,11 @@ export default function MandarinQuiz() {
   const onNext = () => {
     setQuizState(QuizState.Question);
 
+    // Generate a new card type and content
+    const { cardType, cardContent } = generateCardContent(chinese);
+    setCardType(cardType);
+    setCardContent(cardContent);
+
     if (onAcknowledge) {
       onAcknowledge();
     }
@@ -75,9 +95,9 @@ export default function MandarinQuiz() {
     switch (cardType) {
       case MandarinCardType.FillBlank:
         return (
-          fillBlankParams && (
+          cardContent && (
             <MandarinFillBlank
-              {...fillBlankParams}
+              {...(cardContent as MandarinFillBlankCardParams)}
               quizState={quizState}
               onAnswered={onAnswered}
               onCorrect={onCorrect}
@@ -89,9 +109,9 @@ export default function MandarinQuiz() {
         );
       case MandarinCardType.MatchPinyin:
         return (
-          matchPinyinParams && (
+          cardContent && (
             <MandarinMatchPinyin
-              {...matchPinyinParams}
+              {...(cardContent as MandarinMatchPinyinCardParams)}
               quizState={quizState}
               onAnswered={onAnswered}
               onCorrect={onCorrect}
@@ -103,9 +123,9 @@ export default function MandarinQuiz() {
         );
       case MandarinCardType.MatchDefinition:
         return (
-          matchDefinitionParams && (
+          cardContent && (
             <MandarinMatchDefinition
-              {...matchDefinitionParams}
+              {...(cardContent as MandarinMatchDefinitionParams)}
               quizState={quizState}
               onAnswered={onAnswered}
               onCorrect={onCorrect}
@@ -119,26 +139,6 @@ export default function MandarinQuiz() {
         return null;
     }
   };
-
-  useEffect(() => {
-    if (quizState === QuizState.Question) {
-      const cardType = generateCardType();
-
-      if (cardType === MandarinCardType.FillBlank) {
-        const params = generateFillBlank(chinese, 4);
-        setFillBlankParams(params);
-        setCardType(MandarinCardType.FillBlank);
-      } else if (cardType === MandarinCardType.MatchPinyin) {
-        const params = generateMatchPinyin(chinese, 4);
-        setMatchPinyinParams(params);
-        setCardType(MandarinCardType.MatchPinyin);
-      } else {
-        const params = generateMatchDefinition(chinese, 4);
-        setMatchDefinitionParams(params);
-        setCardType(MandarinCardType.MatchDefinition);
-      }
-    }
-  }, [chinese, quizState]);
 
   return (
     <LanguageLayout>
