@@ -102,14 +102,17 @@ export function FillBlankCard<T, U>({
         </div>
         <div className="grid grid-cols-2 gap-4">
           {options.map((option) => {
+            // Check JSON to handle when loaded from storage
+            const isAnswer = JSON.stringify(answer) === JSON.stringify(option);
+
             return (
               <FillBlankOption
                 key={uuidv4()}
                 option={option}
                 quizState={quizState}
-                isAnswer={option === answer}
+                isAnswer={isAnswer}
                 onClick={() =>
-                  option === answer ? onAnswerCorrect() : onAnswerIncorrect()
+                  isAnswer ? onAnswerCorrect() : onAnswerIncorrect()
                 }
                 renderOption={renderOption}
               />
