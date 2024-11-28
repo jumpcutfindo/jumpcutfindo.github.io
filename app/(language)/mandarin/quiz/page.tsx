@@ -1,8 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-import { faLanguage } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCircleNotch,
+  faLanguage,
+  faSpinner,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { LanguageLayout } from "../../language-layout";
 import { QuizCardResult } from "../../quiz/quiz-card-wrapper";
@@ -35,6 +40,8 @@ export default function MandarinQuiz() {
     cardContent,
     setCardContent,
   } = useMandarinQuizStore();
+
+  const [isLoading, setIsLoading] = useState(true);
 
   const [quizState, setQuizState] = useState(QuizState.Question);
 
@@ -141,6 +148,27 @@ export default function MandarinQuiz() {
     }
   };
 
+  const renderLoading = () => {
+    return (
+      <div className="flex flex-col w-full h-full items-center justify-center opacity-80">
+        <FontAwesomeIcon
+          icon={faCircleNotch}
+          size="2x"
+          className="animate-spin"
+        />
+      </div>
+    );
+  };
+
+  useEffect(() => {
+    // Add artificial delay to prevent flash of unloaded content
+    const delay = setTimeout(() => {
+      setIsLoading(false);
+    }, 200);
+
+    return () => clearTimeout(delay);
+  }, []);
+
   return (
     <LanguageLayout>
       <MandarinLayoutHeader headerIcon={faLanguage} headerTitle="中文测验">
@@ -151,7 +179,7 @@ export default function MandarinQuiz() {
         </div>
       </MandarinLayoutHeader>
 
-      {renderQuizCard()}
+      {isLoading ? renderLoading() : renderQuizCard()}
 
       <QuizCardResult
         isVisible={quizState === QuizState.Review}
