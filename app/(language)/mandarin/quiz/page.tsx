@@ -2,21 +2,14 @@
 
 import { useEffect, useState } from "react";
 
-import { useRouter } from "next/navigation";
+import { faLanguage } from "@fortawesome/free-solid-svg-icons";
 
-import { faBookBookmark, faLanguage } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-import {
-  LanguageHeader,
-  LanguageHeaderContent,
-  LanguageLayout,
-} from "../../language-layout";
+import { LanguageLayout } from "../../language-layout";
 import { QuizCardResult } from "../../quiz/quiz-card-wrapper";
 import { QuizState } from "../../quiz/types/quiz";
 import chineseJson from "../api/chinese.json";
 import { MandarinDefinition } from "../api/mandarin";
-import { MandarinMetadataComponent } from "../metadata";
+import { MandarinLayoutHeader } from "../mandarin-header";
 import {
   MandarinCardType,
   MandarinFillBlankCardParams,
@@ -32,8 +25,6 @@ import { generateMatchDefinition } from "./utils/generate-match-definition";
 import { generateMatchPinyin } from "./utils/generate-match-pinyin";
 
 export default function MandarinQuiz() {
-  const router = useRouter();
-
   const chinese = chineseJson as MandarinDefinition[];
 
   const [score, setScore] = useState(0);
@@ -151,20 +142,14 @@ export default function MandarinQuiz() {
 
   return (
     <LanguageLayout>
-      <LanguageHeader icon={faLanguage} title="中文测验">
-        <LanguageHeaderContent>
-          <span>
-            Score: {score}/{maxScore}
-          </span>
-          <button
-            title="词语资料库"
-            onClick={() => router.push("/mandarin/reference")}
-          >
-            <FontAwesomeIcon icon={faBookBookmark} />
-          </button>
-          <MandarinMetadataComponent />
-        </LanguageHeaderContent>
-      </LanguageHeader>
+      <MandarinLayoutHeader headerIcon={faLanguage} headerTitle="中文测验">
+        <div className="flex items-center me-2">
+          <div className="text-sm">
+            Score: {score} / {maxScore}
+          </div>
+        </div>
+      </MandarinLayoutHeader>
+
       {renderQuizCard()}
 
       <QuizCardResult
