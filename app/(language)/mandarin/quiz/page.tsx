@@ -45,6 +45,13 @@ export default function MandarinQuiz() {
 
   const [onAcknowledge, setOnAcknowledge] = useState(() => () => {});
 
+  const generateCard = () => {
+    // Generate a new card type and content, automatically persisted
+    const { cardType, cardContent } = generateCardContent(chinese);
+    setCardType(cardType);
+    setCardContent(cardContent);
+  };
+
   const onAnswered = () => {
     setQuizState(QuizState.Review);
     setMaxScore(maxScore + 1);
@@ -62,10 +69,7 @@ export default function MandarinQuiz() {
   const onNext = () => {
     setQuizState(QuizState.Question);
 
-    // Generate a new card type and content
-    const { cardType, cardContent } = generateCardContent(chinese);
-    setCardType(cardType);
-    setCardContent(cardContent);
+    generateCard();
 
     if (onAcknowledge) {
       onAcknowledge();
@@ -117,7 +121,23 @@ export default function MandarinQuiz() {
           )
         );
       default:
-        return null;
+        return (
+          <div className="flex flex-col w-full h-full justify-center items-center">
+            <div className="w-72 flex flex-col space-y-8 text-center justify-center items-center">
+              <h1 className="text-5xl">中文测试</h1>
+              <p>
+                Welcome to the Mandarin Quiz! Are you ready to test your
+                Mandarin?
+              </p>
+              <button
+                className="text-xl p-2 outline outline-1 rounded-lg w-48 hover:bg-white/5"
+                onClick={generateCard}
+              >
+                开始
+              </button>
+            </div>
+          </div>
+        );
     }
   };
 
