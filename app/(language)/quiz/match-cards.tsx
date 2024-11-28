@@ -33,7 +33,7 @@ function MatchCardTile<T>({
 }: MatchCardTileProps<T>) {
   const getClassName = () => {
     const classNames = [
-      "flex flex-col justify-center items-center p-2 rounded-lg h-32 border disabled:opacity-20 transition-all",
+      "flex flex-col justify-center items-center p-2 rounded-lg h-32 border disabled:opacity-20 transition-all hover:bg-white/5",
     ];
 
     if (isSelected) {
