@@ -33,7 +33,7 @@ function MatchCardTile<T>({
 }: MatchCardTileProps<T>) {
   const getClassName = () => {
     const classNames = [
-      "flex flex-col justify-center items-center p-2 rounded-lg h-32 border disabled:opacity-20 transition-all hover:bg-white/5",
+      "flex flex-col justify-center items-center p-2 rounded-lg h-32 border disabled:opacity-20 transition-all",
     ];
 
     if (isSelected) {
@@ -46,6 +46,11 @@ function MatchCardTile<T>({
 
     if (isMatched) {
       classNames.push("border border-emerald-400 bg-emerald-700");
+    }
+
+    if (!isSelected && !isMatched) {
+      // To avoid hover effect overriding other styling
+      classNames.push("bg-transparent hover:bg-white/5");
     }
 
     return classNames.join(" ");
