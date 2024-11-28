@@ -48,6 +48,11 @@ function MatchCardTile<T>({
       classNames.push("border border-emerald-400 bg-emerald-700");
     }
 
+    if (!isSelected && !isMatched) {
+      // To avoid hover effect overriding other styling
+      classNames.push("bg-transparent hover:bg-white/5");
+    }
+
     return classNames.join(" ");
   };
 
