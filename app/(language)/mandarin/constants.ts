@@ -1,4 +1,8 @@
-import { faBookBookmark, faLanguage } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBookBookmark,
+  faChartColumn,
+  faLanguage,
+} from "@fortawesome/free-solid-svg-icons";
 
 import { MandarinWordType } from "./api/mandarin";
 
@@ -12,6 +16,11 @@ export const MANDARIN_MENU_ITEMS = [
     title: "中文测验",
     href: "/mandarin/quiz",
     icon: faLanguage,
+  },
+  {
+    title: "测验统计",
+    href: "/mandarin/quiz-stats",
+    icon: faChartColumn,
   },
 ];
 
