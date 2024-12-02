@@ -1,11 +1,10 @@
+import { LanguageBody, LanguageLayout } from "@/app/(language)/language-layout";
 import {
   faBookBookmark,
   faChartColumn,
 } from "@fortawesome/free-solid-svg-icons";
 
-import { LanguageBody, LanguageLayout } from "../../language-layout";
-import { MandarinLayoutHeader } from "../mandarin-header";
-import { MandarinReferenceList } from "../reference/reference-list";
+import { MandarinLayoutHeader } from "../../mandarin-header";
 
 export default function QuizStats() {
   return (
