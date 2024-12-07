@@ -19,7 +19,7 @@ export const MANDARIN_MENU_ITEMS = [
   },
   {
     title: "测验统计",
-    href: "/mandarin/quiz-stats",
+    href: "/mandarin/quiz/stats",
     icon: faChartColumn,
   },
 ];

@@ -1,8 +1,5 @@
 import { LanguageBody, LanguageLayout } from "@/app/(language)/language-layout";
-import {
-  faBookBookmark,
-  faChartColumn,
-} from "@fortawesome/free-solid-svg-icons";
+import { faChartColumn } from "@fortawesome/free-solid-svg-icons";
 
 import { MandarinLayoutHeader } from "../../mandarin-header";
 
