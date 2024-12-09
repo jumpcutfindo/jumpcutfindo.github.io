@@ -12,7 +12,8 @@ const MARKDOWN_STYLING: Components = {
   },
 };
 
-type MandarinFillBlankProps = CardProps & MandarinFillBlankCardParams;
+type MandarinFillBlankProps = CardProps<MandarinDefinition> &
+  MandarinFillBlankCardParams;
 
 export default function MandarinFillBlank({
   quizState,

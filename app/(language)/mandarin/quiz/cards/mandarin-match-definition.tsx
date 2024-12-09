@@ -3,7 +3,8 @@ import { CardProps } from "../../../quiz/types/card";
 import { MandarinDefinition } from "../../api/mandarin";
 import { MandarinMatchDefinitionParams } from "./card";
 
-type MandarinMatchDefinitionProps = CardProps & MandarinMatchDefinitionParams;
+type MandarinMatchDefinitionProps = CardProps<MandarinDefinition> &
+  MandarinMatchDefinitionParams;
 
 export default function MandarinMatchDefinition({
   quizState,

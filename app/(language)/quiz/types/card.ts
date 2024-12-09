@@ -1,11 +1,11 @@
 import { QuizState } from "./quiz";
 
-export interface CardProps {
+export interface CardProps<T> {
   cardTitle?: string;
   quizState: QuizState;
-  onAnswered: () => void;
-  onCorrect: () => void;
-  onIncorrect: () => void;
+  onAnswered: (answer: T) => void;
+  onCorrect: (answer: T) => void;
+  onIncorrect: (answer: T) => void;
 
   setRenderedResult: (result: JSX.Element) => void;
   setOnAcknowledge: (onNext: () => void) => void;
