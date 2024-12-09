@@ -3,8 +3,6 @@ import { MandarinCardType } from "../quiz/cards/card";
 // Use the word as the identifier
 type MandarinWord = string;
 
-type Pair<A, B> = [A, B];
-
 interface QuizCardStat {
   type: MandarinCardType;
   generatedTime: Date;
@@ -21,13 +19,13 @@ interface FillBlankCardStat extends QuizCardStat {
 interface MatchPinyinCardStat extends QuizCardStat {
   // Pairs of the selections in the order they were selected
   // For MatchPinyin, the first is the word, the second is the pinyin
-  userSelections: Pair<MandarinWord, MandarinWord>[];
+  userSelections: [MandarinWord, MandarinWord][];
 }
 
 interface MatchDefintionCardStat extends QuizCardStat {
   // Pairs of the selections in the order they were selected
   // For MatchDefinition, the first is the word, the second is the definition
-  userSelections: Pair<MandarinWord, MandarinWord>[];
+  userSelections: [MandarinWord, MandarinWord][];
 }
 
 export type {
