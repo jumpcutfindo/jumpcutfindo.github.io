@@ -55,7 +55,7 @@ function FillBlankOption<T>({
   );
 }
 
-type FillBlankCardProps<T, U> = CardProps &
+type FillBlankCardProps<T, U> = CardProps<T> &
   FillBlankCardParams<T, U> & {
     renderOption: { [state in QuizState]: (option: T) => JSX.Element };
     renderResult: () => JSX.Element;
@@ -74,20 +74,20 @@ export function FillBlankCard<T, U>({
   renderResult,
   setRenderedResult,
 }: FillBlankCardProps<T, U>) {
-  const onAnswerCorrect = () => {
+  const onAnswerCorrect = (option: T) => {
     if (quizState === QuizState.Review) return;
 
     setRenderedResult(renderResult());
-    onAnswered();
-    onCorrect();
+    onAnswered(option);
+    onCorrect(option);
   };
 
-  const onAnswerIncorrect = () => {
+  const onAnswerIncorrect = (option: T) => {
     if (quizState === QuizState.Review) return;
 
     setRenderedResult(renderResult());
-    onAnswered();
-    onIncorrect();
+    onAnswered(option);
+    onIncorrect(option);
   };
 
   return (
@@ -112,7 +112,7 @@ export function FillBlankCard<T, U>({
                 quizState={quizState}
                 isAnswer={isAnswer}
                 onClick={() =>
-                  isAnswer ? onAnswerCorrect() : onAnswerIncorrect()
+                  isAnswer ? onAnswerCorrect(option) : onAnswerIncorrect(option)
                 }
                 renderOption={renderOption}
               />
