@@ -7,8 +7,8 @@ type Pair<A, B> = [A, B];
 
 interface QuizCardStat {
   type: MandarinCardType;
-  startTime: Date;
-  endTime: Date;
+  generatedTime: Date;
+  answeredTime: Date;
   isCorrect: boolean;
   options: MandarinWord[];
 }
