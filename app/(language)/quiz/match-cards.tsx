@@ -75,6 +75,7 @@ export function MatchCard<T>({
   cardTitle,
   onAnswered,
   onCorrect,
+  onIncorrect,
   options,
   renderOption,
   setRenderedResult,
@@ -86,6 +87,7 @@ export function MatchCard<T>({
   const fromOptions = useMemo(() => shuffle([...options]), [options]);
   const toOptions = useMemo(() => shuffle([...options]), [options]);
 
+  const [attempts, setAttempts] = useState(0);
   const [matchedSets, setMatchedSets] = useState<Set<T>>(new Set());
 
   const [shakingTiles, setShakingTiles] = useState<Set<string>>(new Set());
@@ -95,12 +97,32 @@ export function MatchCard<T>({
   const [selectedTo, setSelectedTo] = useState<T | null>(null);
   const [selectedToKey, setSelectedToKey] = useState<string | null>(null);
 
-  const checkComplete = (matchedSetSize: number) => {
-    if (matchedSetSize === options.length) {
+  const checkComplete = (
+    updatedMatchedSets: Set<T>,
+    updatedAttempts: number,
+  ) => {
+    if (updatedMatchedSets.size === options.length) {
       // When all cards are matched
-      setRenderedResult(<span>Successfully matched all pairs! Good job!</span>);
       onAnswered();
-      onCorrect();
+
+      if (updatedAttempts === options.length) {
+        // Matched all cards on the first try
+        setRenderedResult(
+          <span>
+            Successfully matched all pairs in {options.length} tries! Good job!
+          </span>,
+        );
+        onCorrect();
+      } else {
+        setRenderedResult(
+          <span>
+            You took {updatedAttempts} tries to match everything (max{" "}
+            {options.length}
+            )! Better luck next time!
+          </span>,
+        );
+        onIncorrect();
+      }
 
       // Update on acknowledged
       setOnAcknowledge(() => () => {
@@ -110,6 +132,8 @@ export function MatchCard<T>({
         setSelectedFromKey(null);
         setSelectedTo(null);
         setSelectedToKey(null);
+
+        setAttempts(0);
       });
     }
   };
@@ -126,15 +150,17 @@ export function MatchCard<T>({
         onMatched(from, to);
       }
 
+      const updatedAttempts = attempts + 1;
+      setAttempts(updatedAttempts);
+
       if (from === to) {
         // If match, add to matched sets
-        setMatchedSets((prevSet) => {
-          prevSet.add(from);
-          return prevSet;
-        });
+        const updatedMatchedSets = new Set(matchedSets);
+        updatedMatchedSets.add(from);
+        setMatchedSets(updatedMatchedSets);
 
         // Check if the game is complete
-        checkComplete(matchedSets.size + 1);
+        checkComplete(updatedMatchedSets, updatedAttempts);
       } else {
         // If not match, shake them to indicate error
         setShakingTiles((prevSet) => {
