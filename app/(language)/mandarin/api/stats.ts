@@ -21,13 +21,13 @@ interface FillBlankCardStat extends QuizCardStat {
 interface MatchPinyinCardStat extends QuizCardStat {
   // Pairs of the selections in the order they were selected
   // For MatchPinyin, the first is the word, the second is the pinyin
-  userSelections: Pair<MandarinCardType, MandarinWord>[];
+  userSelections: Pair<MandarinWord, MandarinWord>[];
 }
 
 interface MatchDefintionCardStat extends QuizCardStat {
   // Pairs of the selections in the order they were selected
   // For MatchDefinition, the first is the word, the second is the definition
-  userSelections: Pair<MandarinCardType, MandarinWord>[];
+  userSelections: Pair<MandarinWord, MandarinWord>[];
 }
 
 export type {
