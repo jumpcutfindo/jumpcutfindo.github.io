@@ -63,7 +63,10 @@ function MatchCardTile<T>({
   );
 }
 
-type MatchCardProps<T> = CardProps &
+type MatchCardProps<T> = Omit<
+  CardProps<T>,
+  "onAnswered" | "onCorrect" | "onIncorrect"
+> &
   MatchCardParams<T> & {
     renderOption: (option: T, isFrom: boolean) => JSX.Element;
   };
@@ -76,6 +79,9 @@ export function MatchCard<T>({
   renderOption,
   setRenderedResult,
   setOnAcknowledge,
+  onMatched,
+  onFromSelected,
+  onToSelected,
 }: MatchCardProps<T>) {
   const fromOptions = useMemo(() => shuffle([...options]), [options]);
   const toOptions = useMemo(() => shuffle([...options]), [options]);
@@ -115,6 +121,11 @@ export function MatchCard<T>({
     to: T | null,
   ) => {
     if (from && to) {
+      // A pair was selected
+      if (onMatched) {
+        onMatched(from, to);
+      }
+
       if (from === to) {
         // If match, add to matched sets
         setMatchedSets((prevSet) => {
@@ -140,6 +151,10 @@ export function MatchCard<T>({
   };
 
   const onSelectTo = (key: string, option: T) => {
+    if (onToSelected) {
+      onToSelected(option);
+    }
+
     // Deselect if selected
     if (selectedToKey === key) {
       setSelectedTo(null);
@@ -154,6 +169,10 @@ export function MatchCard<T>({
   };
 
   const onSelectFrom = (key: string, option: T) => {
+    if (onFromSelected) {
+      onFromSelected(option);
+    }
+
     // Deselect if selected
     if (selectedFromKey === key) {
       setSelectedFrom(null);
@@ -228,7 +247,7 @@ export function MatchCard<T>({
         title={cardTitle ? cardTitle : "Match the Cards"}
       >
         <div className="flex flex-row space-x-2 items-center">
-          {options.map((option, index) => {
+          {options.map((option: T, index: number) => {
             if (index >= matchedSets.size) {
               return (
                 <FontAwesomeIcon
