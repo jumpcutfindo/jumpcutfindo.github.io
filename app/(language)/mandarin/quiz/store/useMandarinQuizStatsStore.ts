@@ -15,7 +15,7 @@ interface QuizCardStat {
   options: MandarinWord[];
 }
 
-interface FillInTheBlankCardStat extends QuizCardStat {
+interface FillBlankCardStat extends QuizCardStat {
   correctResult: MandarinWord;
   userResult: MandarinWord;
 }
@@ -34,20 +34,16 @@ interface MatchDefintionCardStat extends QuizCardStat {
 
 interface MandarinQuizStatsState {
   quizCardStats: QuizCardStat[];
-  addQuizCardState: (quizCardStat: QuizCardStat) => void;
+  addQuizCardStat: (quizCardStat: QuizCardStat) => void;
 }
 
 const useMandarinQuizStatsStore = create<MandarinQuizStatsState>()((set) => ({
   quizCardStats: [],
-  addQuizCardState: (quizCardStat: QuizCardStat) =>
+  addQuizCardStat: (quizCardStat: QuizCardStat) =>
     set((state) => ({
       quizCardStats: [...state.quizCardStats, quizCardStat],
     })),
 }));
 
 export { useMandarinQuizStatsStore };
-export type {
-  FillInTheBlankCardStat,
-  MatchPinyinCardStat,
-  MatchDefintionCardStat,
-};
+export type { FillBlankCardStat, MatchPinyinCardStat, MatchDefintionCardStat };
