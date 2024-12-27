@@ -51,7 +51,5 @@ export function getLongestStreak(quizCardStats: QuizCardStat[]) {
     }
   }
 
-  console.log(longestStreak);
-
   return longestStreak;
 }

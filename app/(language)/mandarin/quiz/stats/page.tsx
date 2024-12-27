@@ -34,7 +34,7 @@ function QuizStatTile(props: QuizStatTileProps) {
       <FontAwesomeIcon className="p-4 w-8 h-8" icon={icon} size="2xl" />
       <div className="flex flex-col space-y-2">
         <h2 className="text-3xl h-8">{value}</h2>
-        <p className="h-8">{title}</p>
+        <p className="h-6 text-sm">{title}</p>
       </div>
     </div>
   );
@@ -58,7 +58,7 @@ export default function QuizStats() {
       <MandarinLayoutHeader headerIcon={faChartColumn} headerTitle="测验统计" />
       <LanguageBody>
         <div className="flex flex-col w-full h-full">
-          <div className="flex flex-col w-full p-2 space-y-2">
+          <div className="flex flex-col w-full p-4 space-y-4">
             <h1 className="my-auto text-sm font-bold">OVERALL</h1>
             <div className="grid grid-cols-2 gap-2">
               <QuizStatTile

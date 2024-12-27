@@ -21,7 +21,7 @@ export function MandarinReferenceListItem({
   return (
     <div className="w-full">
       <div
-        className="flex flex-col border rounded-lg p-4 mb-2 mx-2 cursor-pointer hover:bg-white/5"
+        className="flex flex-col border rounded-lg p-4 mb-2 cursor-pointer hover:bg-white/5"
         onClick={() => router.push(`/mandarin/reference/${item.itemIndex}`)}
       >
         <div className="flex flex-row items-center space-x-2">
@@ -68,19 +68,20 @@ export function MandarinReferenceList({ chinese }: MandarinReferenceListProps) {
   };
 
   return (
-    <div className="flex flex-col w-full h-full">
-      <div className="flex flex-col space-y-2 m-2">
-        <div className="flex flex-row">
+    <div className="flex flex-col w-full h-full p-4 space-y-2">
+      <div className="flex flex-col space-y-4">
+        <h1 className="my-auto text-sm font-bold">REFERENCE</h1>
+        <div className="flex flex-col space-y-2">
           <input
             type="search"
             placeholder="Search..."
             className="bg-white bg-opacity-5 rounded-lg px-4 py-2 text-white flex-1"
             onChange={onSearchChange}
           />
+          <span className="ms-auto text-sm font-semibold">
+            {visibleChinese.length} RESULTS FOUND
+          </span>
         </div>
-        <span className="ms-auto text-sm font-semibold">
-          {visibleChinese.length} RESULTS FOUND
-        </span>
       </div>
       <Virtuoso
         totalCount={visibleChinese.length}
