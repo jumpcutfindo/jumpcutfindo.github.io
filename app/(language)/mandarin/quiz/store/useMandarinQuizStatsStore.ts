@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 import { QuizCardStat } from "../../api/stats";
 
@@ -8,11 +9,16 @@ interface MandarinQuizStatsState {
 }
 
 export const useMandarinQuizStatsStore = create<MandarinQuizStatsState>()(
-  (set) => ({
-    quizCardStats: [],
-    addQuizCardStat: (quizCardStat: QuizCardStat) =>
-      set((state) => ({
-        quizCardStats: [...state.quizCardStats, quizCardStat],
-      })),
-  }),
+  persist(
+    (set) => ({
+      quizCardStats: [],
+      addQuizCardStat: (quizCardStat: QuizCardStat) =>
+        set((state) => ({
+          quizCardStats: [...state.quizCardStats, quizCardStat],
+        })),
+    }),
+    {
+      name: "mandarin-quiz-stats",
+    },
+  ),
 );
