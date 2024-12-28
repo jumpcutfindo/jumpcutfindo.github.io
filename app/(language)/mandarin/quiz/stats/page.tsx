@@ -10,9 +10,11 @@ import {
   IconDefinition,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import dayjs from "dayjs";
 
 import { MandarinLayoutHeader } from "../../mandarin-header";
 import { useMandarinQuizStatsStore } from "../store/useMandarinQuizStatsStore";
+import { HeatMap } from "./heatmap";
 import {
   getLongestStreak,
   getNumQuestionsAnswered,
@@ -57,8 +59,8 @@ export default function QuizStats() {
     <LanguageLayout>
       <MandarinLayoutHeader headerIcon={faChartColumn} headerTitle="测验统计" />
       <LanguageBody>
-        <div className="flex flex-col w-full h-full">
-          <div className="flex flex-col w-full p-4 space-y-4">
+        <div className="flex flex-col w-full h-full p-4 space-y-4">
+          <div className="flex flex-col w-full space-y-4">
             <h1 className="my-auto text-sm font-bold">OVERALL</h1>
             <div className="grid grid-cols-2 gap-2">
               <QuizStatTile
@@ -83,6 +85,14 @@ export default function QuizStats() {
                 icon={faCalendarDays}
               />
             </div>
+          </div>
+
+          <div className="flex flex-col w-full space-y-4">
+            <h1 className="my-auto text-sm font-bold">HEATMAP</h1>
+            <HeatMap
+              startDate={dayjs("2024-01-01").toDate()}
+              questionsByDay={questionsByDay}
+            />
           </div>
         </div>
       </LanguageBody>

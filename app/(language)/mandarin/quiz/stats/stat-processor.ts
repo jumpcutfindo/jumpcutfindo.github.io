@@ -22,7 +22,7 @@ export function getQuestionsByDay(quizCardStats: QuizCardStat[]) {
   const questionsByDay: Record<string, QuizCardStat[]> = {};
 
   for (const stat of quizCardStats) {
-    const date = new Date(stat.answeredTime).toDateString();
+    const date = dayjs(stat.answeredTime).format("YYYY-MM-DD");
 
     if (!questionsByDay[date]) {
       questionsByDay[date] = [];
