@@ -15,20 +15,23 @@ function EmptyTile() {
 interface TextTileProps {
   text: string;
   align?: "start" | "end";
+  className?: string;
 }
 
 function TextTile(props: TextTileProps) {
-  const { text, align } = props;
+  const { text, align, className } = props;
 
-  let className = ["flex", "h-3", "rounded-sm", "text-xs", "font-bold"];
+  let defaultClassName = ["flex", "h-3", "rounded-sm", "text-xs", "font-bold"];
 
   if (align === "end") {
-    className.push("justify-end");
+    defaultClassName.push("justify-end");
   } else {
-    className.push("justify-start");
+    defaultClassName.push("justify-start");
   }
 
-  return <span className={className.join(" ")}>{text}</span>;
+  return (
+    <span className={`${defaultClassName.join(" ")} ${className}`}>{text}</span>
+  );
 }
 
 interface HeatMapTileProps {
@@ -41,14 +44,6 @@ function HeatMapTile(props: HeatMapTileProps) {
   const { date, index, items } = props;
 
   const [isPopoverOpen, setPopoverOpen] = useState(false);
-
-  if (index % 8 === 0) {
-    return (
-      <span className="w-3 h-3 rounded-sm text-xs font-bold">
-        {dayjs(date).format("MMM")}
-      </span>
-    );
-  }
 
   const questionCountOnDate = items.length;
   const className = ["w-3", "h-3", "rounded-sm", "cursor-pointer"];
@@ -102,6 +97,38 @@ export function HeatMap(props: HeatMapProps) {
 
   const startDate = dayjs(sd);
   const heatMapItems = getHeatMapItems(startDate.format(), dayjs().format());
+  const namedMonths = new Set();
+
+  const getTile = (item: string, index: number, array: string[]) => {
+    if (item === "MONTH-NAME") {
+      // Check if already named
+      const monthString = dayjs(array[index + 1]).format("YYYY-MM");
+
+      if (namedMonths.has(monthString)) {
+        // Month was already named, we skip
+        return <EmptyTile key={`empty-tile-${index}`} />;
+      }
+
+      namedMonths.add(monthString);
+
+      return (
+        <TextTile
+          key={index}
+          text={dayjs(array[index + 1]).format("MMM")}
+          className="w-3"
+        />
+      );
+    }
+
+    return (
+      <HeatMapTile
+        key={index}
+        date={item}
+        index={index}
+        items={questionsByDay[item] || []}
+      />
+    );
+  };
 
   return (
     <div className="flex flex-row pb-4">
@@ -112,14 +139,7 @@ export function HeatMap(props: HeatMapProps) {
         ))}
       </div>
       <div className="grid grid-rows-8 grid-flow-col gap-2 overflow-auto">
-        {heatMapItems.map((date, index) => (
-          <HeatMapTile
-            key={date}
-            date={date}
-            index={index}
-            items={questionsByDay[date] || []}
-          />
-        ))}
+        {heatMapItems.map((item, index, array) => getTile(item, index, array))}
       </div>
     </div>
   );
