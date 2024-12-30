@@ -21,7 +21,13 @@ interface TextTileProps {
 function TextTile(props: TextTileProps) {
   const { text, align, className } = props;
 
-  let defaultClassName = ["flex", "h-3", "rounded-sm", "text-xs", "font-bold"];
+  const defaultClassName = [
+    "flex",
+    "h-3",
+    "rounded-sm",
+    "text-xs",
+    "font-bold",
+  ];
 
   if (align === "end") {
     defaultClassName.push("justify-end");
@@ -36,40 +42,46 @@ function TextTile(props: TextTileProps) {
 
 interface HeatMapTileProps {
   date: string;
-  index: number;
   items: QuizCardStat[];
+
+  selected: boolean;
+  setSelected: (date: string | null) => void;
 }
 
 function HeatMapTile(props: HeatMapTileProps) {
-  const { date, index, items } = props;
-
-  const [isPopoverOpen, setPopoverOpen] = useState(false);
+  const { date, items, selected, setSelected } = props;
 
   const questionCountOnDate = items.length;
   const className = ["w-3", "h-3", "rounded-sm", "cursor-pointer"];
 
   if (!questionCountOnDate) {
-    className.push("bg-white opacity-5");
+    className.push("bg-white bg-opacity-5");
   } else {
     className.push("bg-green-500");
   }
 
   if (questionCountOnDate >= 20) {
-    className.push("opacity-100");
+    className.push("bg-opacity-100");
   } else if (questionCountOnDate >= 15) {
-    className.push("opacity-80");
+    className.push("bg-opacity-80");
   } else if (questionCountOnDate >= 10) {
-    className.push("opacity-60");
+    className.push("bg-opacity-60");
   } else if (questionCountOnDate >= 5) {
-    className.push("opacity-40");
+    className.push("bg-opacity-40");
   } else if (questionCountOnDate >= 1) {
-    className.push("opacity-20");
+    className.push("bg-opacity-20");
+  }
+
+  if (selected) {
+    className.push("border border-1");
+    className.push("border-white");
   }
 
   return (
     <Popover
-      isOpen={isPopoverOpen}
+      isOpen={selected}
       positions={["top", "bottom", "left", "right"]} // preferred positions by priority
+      padding={8}
       content={
         <div className="flex flex-col justify-left bg-language-background p-2 rounded-md border border-language-foreground/20">
           <span className="text-xs font-bold">{date}</span>
@@ -79,9 +91,9 @@ function HeatMapTile(props: HeatMapTileProps) {
     >
       <span
         className={className.join(" ")}
-        onMouseEnter={() => setPopoverOpen(true)}
-        onMouseLeave={() => setPopoverOpen(false)}
-        onClick={() => setPopoverOpen(true)}
+        onMouseEnter={() => setSelected(date)}
+        onMouseLeave={() => setSelected(null)}
+        onClick={() => setSelected(date)}
       ></span>
     </Popover>
   );
@@ -98,6 +110,9 @@ export function HeatMap(props: HeatMapProps) {
   const heatmapRef = useRef<HTMLDivElement>(null);
 
   const startDate = dayjs(sd);
+
+  const [selectedDate, setSelectedDate] = useState<string | null>(null);
+
   const heatMapItems = getHeatMapItems(startDate.format(), dayjs().format());
   const namedMonths = new Set();
 
@@ -126,8 +141,9 @@ export function HeatMap(props: HeatMapProps) {
       <HeatMapTile
         key={index}
         date={item}
-        index={index}
         items={questionsByDay[item] || []}
+        selected={selectedDate === item}
+        setSelected={setSelectedDate}
       />
     );
   };
