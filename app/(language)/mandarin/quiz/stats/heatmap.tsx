@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import dayjs from "dayjs";
 import { Popover } from "react-tiny-popover";
@@ -95,6 +95,8 @@ interface HeatMapProps {
 export function HeatMap(props: HeatMapProps) {
   const { startDate: sd, questionsByDay } = props;
 
+  const heatmapRef = useRef<HTMLDivElement>(null);
+
   const startDate = dayjs(sd);
   const heatMapItems = getHeatMapItems(startDate.format(), dayjs().format());
   const namedMonths = new Set();
@@ -130,6 +132,15 @@ export function HeatMap(props: HeatMapProps) {
     );
   };
 
+  useEffect(() => {
+    if (heatmapRef.current) {
+      heatmapRef.current.scrollTo({
+        left: heatmapRef.current.scrollWidth - heatmapRef.current.clientWidth,
+        behavior: "smooth",
+      });
+    }
+  }, []);
+
   return (
     <div className="flex flex-row pb-4">
       <div className="grid grid-rows-8 grid-flow-col gap-1 pe-2">
@@ -138,7 +149,10 @@ export function HeatMap(props: HeatMapProps) {
           <TextTile key={day} text={day} align="end" />
         ))}
       </div>
-      <div className="grid grid-rows-8 grid-flow-col gap-2 overflow-auto">
+      <div
+        ref={heatmapRef}
+        className="grid grid-rows-8 grid-flow-col gap-2 overflow-auto"
+      >
         {heatMapItems.map((item, index, array) => getTile(item, index, array))}
       </div>
     </div>
