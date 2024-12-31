@@ -22,6 +22,7 @@ import {
   getPercentageCorrect,
   getQuestionsByDay,
   getQuestionsByType,
+  getWordMistakes,
   getWordOccurences,
 } from "./stat-processor";
 
@@ -92,6 +93,7 @@ export default function QuizStats() {
   const questionsByType = getQuestionsByType(quizCardStats);
 
   const wordOccurences = getWordOccurences(quizCardStats);
+  const wordMistakes = getWordMistakes(quizCardStats);
 
   const getBreakdownTableForType = (type: MandarinCardType) => {
     return (
@@ -206,6 +208,18 @@ export default function QuizStats() {
             <h1 className="my-auto text-sm font-bold">MATCH THE DEFINITION</h1>
             {getBreakdownTableForType(MandarinCardType.MatchDefinition)}
           </div>
+
+          <div className="flex flex-col w-full space-y-2">
+            <h1 className="my-auto text-sm font-bold">MISTAKES</h1>
+
+            <QuizStatTable
+              maxHeight={360}
+              statPairs={wordMistakes.map((w) => ({
+                title: w[0] as string,
+                value: w[1].toString(),
+              }))}
+            />
+          </div>
           <div className="flex flex-col w-full space-y-2">
             <h1 className="my-auto text-sm font-bold">WORD OCCURENCES</h1>
 
@@ -217,6 +231,7 @@ export default function QuizStats() {
               }))}
             />
           </div>
+          <span className="pb-2"></span>
         </div>
       </LanguageBody>
     </LanguageLayout>

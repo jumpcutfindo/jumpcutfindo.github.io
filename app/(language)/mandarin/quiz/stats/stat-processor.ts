@@ -1,6 +1,10 @@
 import dayjs from "dayjs";
 
-import { QuizCardStat } from "../../api/stats";
+import {
+  FillBlankCardStat,
+  MatchPinyinCardStat,
+  QuizCardStat,
+} from "../../api/stats";
 import { MandarinCardType } from "../cards/card";
 
 export function getNumQuestionsAnswered(quizCardStats: QuizCardStat[]) {
@@ -89,4 +93,38 @@ export function getWordOccurences(quizCardStats: QuizCardStat[]) {
     .sort((a, b) => (b[1] as number) - (a[1] as number));
 
   return sortedWordOccurrences;
+}
+
+export function getWordMistakes(quizCardStats: QuizCardStat[]) {
+  const wordMistakes: Record<string, number> = {};
+
+  for (const stat of quizCardStats) {
+    if (!stat.isCorrect) {
+      switch (stat.type) {
+        case MandarinCardType.FillBlank:
+          const fillBlankStat = stat as FillBlankCardStat;
+          wordMistakes[fillBlankStat.correctResult] =
+            (wordMistakes[fillBlankStat.correctResult] || 0) + 1;
+          break;
+        case MandarinCardType.MatchPinyin:
+        case MandarinCardType.MatchDefinition:
+          for (const option of stat.options) {
+            const optionStat = stat as MatchPinyinCardStat;
+            optionStat.userSelections.forEach((selection) => {
+              if (selection[0] !== selection[1]) {
+                wordMistakes[option] = (wordMistakes[option] || 0) + 1;
+              }
+            });
+          }
+          break;
+      }
+    }
+  }
+
+  // Sort by number of occurences
+  const sortedWordMistakes = Object.keys(wordMistakes)
+    .map((key) => [key, wordMistakes[key]])
+    .sort((a, b) => (b[1] as number) - (a[1] as number));
+
+  return sortedWordMistakes;
 }
