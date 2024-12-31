@@ -38,11 +38,17 @@ function LanguageHeaderContent({ children }: LanguageHeaderContentProps) {
 }
 
 function LanguageBody({ children }: { children: React.ReactNode }) {
-  return <div className="w-full flex flex-col flex-1">{children}</div>;
+  return (
+    <div className="w-full flex flex-col flex-1 overflow-y-auto">
+      {children}
+    </div>
+  );
 }
 
 function LanguageLayout({ children }: { children: React.ReactNode }) {
-  return <div className="flex flex-col flex-1 w-full">{children}</div>;
+  return (
+    <div className="flex flex-col flex-1 w-full max-h-[100vh]">{children}</div>
+  );
 }
 
 export { LanguageHeader, LanguageHeaderContent, LanguageBody, LanguageLayout };

@@ -44,6 +44,32 @@ function QuizStatTile(props: QuizStatTileProps) {
   );
 }
 
+interface QuizStatTableProps {
+  statPairs: { title: string; value: string; isBold?: boolean }[];
+}
+
+function QuizStatTable(props: QuizStatTableProps) {
+  const { statPairs } = props;
+
+  return (
+    <div className="border border-language-foreground rounded-md py-1 px-2">
+      <table className="text-sm w-full">
+        <tbody>
+          {statPairs.map((statPair, idx, arr) => (
+            <tr
+              key={statPair.title}
+              className={`${idx < arr.length - 1 && "border-b border-b-language-foreground/50"} ${statPair.isBold && "font-bold"}`}
+            >
+              <td>{statPair.title}</td>
+              <td className="text-end py-1">{statPair.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
 export default function QuizStats() {
   const { quizCardStats } = useMandarinQuizStatsStore();
 
@@ -100,34 +126,36 @@ export default function QuizStats() {
           </div>
           <div className="flex flex-col w-full space-y-4">
             <h1 className="my-auto text-sm font-bold">BREAKDOWN</h1>
-            <div className="border border-language-foreground rounded-md py-1 px-2">
-              <table className="text-sm w-full">
-                <tbody>
-                  <tr className="border-b border-b-language-foreground/50">
-                    <td>Fill In The Blanks</td>
-                    <td className="text-end py-1">
-                      {questionsByType[MandarinCardType.FillBlank].length}
-                    </td>
-                  </tr>
-                  <tr className="border-b border-b-language-foreground/50">
-                    <td>Match the Pinyin</td>
-                    <td className="text-end py-1">
-                      {questionsByType[MandarinCardType.MatchPinyin].length}
-                    </td>
-                  </tr>
-                  <tr className="border-b border-b-language-foreground/50">
-                    <td>Match the Definition</td>
-                    <td className="text-end py-1">
-                      {questionsByType[MandarinCardType.MatchDefinition].length}
-                    </td>
-                  </tr>
-                  <tr className="font-bold">
-                    <td>Total Questions</td>
-                    <td className="text-end py-1">{numQuestionsAnswered}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            <QuizStatTable
+              statPairs={[
+                {
+                  title: "Fill In The Blanks",
+                  value:
+                    questionsByType[
+                      MandarinCardType.FillBlank
+                    ].length.toString(),
+                },
+                {
+                  title: "Match the Pinyin",
+                  value:
+                    questionsByType[
+                      MandarinCardType.MatchPinyin
+                    ].length.toString(),
+                },
+                {
+                  title: "Match the Definition",
+                  value:
+                    questionsByType[
+                      MandarinCardType.MatchDefinition
+                    ].length.toString(),
+                },
+                {
+                  title: "Total Questions",
+                  value: numQuestionsAnswered.toString(),
+                  isBold: true,
+                },
+              ]}
+            />
           </div>
         </div>
       </LanguageBody>
