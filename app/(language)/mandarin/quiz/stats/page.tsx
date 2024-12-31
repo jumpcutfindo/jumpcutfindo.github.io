@@ -59,8 +59,12 @@ interface QuizStatTableProps {
 function QuizStatTable(props: QuizStatTableProps) {
   const { maxHeight, statPairs } = props;
 
-  return (
-    <div className="border border-language-foreground rounded-md py-1 px-2">
+  const getTable = () => {
+    if (statPairs.length === 0) {
+      return <p className="p-2 text-sm">No stats available</p>;
+    }
+
+    return (
       <div
         className={`${maxHeight ? `h-[${maxHeight}px] max-h-[${maxHeight}px] overflow-y-auto` : ""}`}
       >
@@ -78,6 +82,12 @@ function QuizStatTable(props: QuizStatTableProps) {
           </tbody>
         </table>
       </div>
+    );
+  };
+
+  return (
+    <div className="border border-language-foreground rounded-md py-1 px-2">
+      {getTable()}
     </div>
   );
 }

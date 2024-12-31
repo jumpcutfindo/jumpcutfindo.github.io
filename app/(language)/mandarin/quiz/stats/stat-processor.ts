@@ -16,11 +16,12 @@ export function getNumQuestionsCorrect(quizCardStats: QuizCardStat[]) {
 }
 
 export function getPercentageCorrect(quizCardStats: QuizCardStat[]) {
-  return (
+  const percentage =
     (getNumQuestionsCorrect(quizCardStats) /
       getNumQuestionsAnswered(quizCardStats)) *
-    100
-  );
+    100;
+
+  return isNaN(percentage) ? 0 : percentage;
 }
 
 export function getQuestionsByDay(quizCardStats: QuizCardStat[]) {
@@ -46,8 +47,8 @@ export function getLongestStreak(quizCardStats: QuizCardStat[]) {
     dayjs(a).isAfter(b) ? 1 : -1,
   );
 
-  let longestStreak = 1;
-  let currStreak = 1;
+  let longestStreak = 0;
+  let currStreak = 0;
 
   for (let i = 1; i < dates.length; i++) {
     const date = dates[i];
