@@ -1,5 +1,4 @@
 import { MandarinDefinition } from "../../api/mandarin";
-import { MandarinFillBlankCardParams } from "../cards/card";
 import { MandarinFillBlankData } from "../data";
 import { selectRandomDefinition } from "./definition-utils";
 

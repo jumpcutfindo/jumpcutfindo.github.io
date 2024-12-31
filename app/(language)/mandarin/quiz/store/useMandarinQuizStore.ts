@@ -1,12 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-import {
-  MandarinCardType,
-  MandarinFillBlankCardParams,
-  MandarinMatchDefinitionParams,
-  MandarinMatchPinyinCardParams,
-} from "../cards/card";
+import { MandarinCardType } from "../cards/card";
 import {
   MandarinFillBlankData,
   MandarinMatchDefinitionData,
