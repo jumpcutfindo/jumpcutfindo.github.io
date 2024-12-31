@@ -186,7 +186,7 @@ export default function QuizStats() {
             />
             <QuizStatTile
               title="correct"
-              value={`${percentageCorrect}%`}
+              value={`${percentageCorrect.toFixed(2)}%`}
               icon={faCheckCircle}
             />
             <QuizStatTile
