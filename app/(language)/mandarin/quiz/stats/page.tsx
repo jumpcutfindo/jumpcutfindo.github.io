@@ -85,6 +85,35 @@ export default function QuizStats() {
 
   const questionsByType = getQuestionsByType(quizCardStats);
 
+  const getBreakdownTableForType = (type: MandarinCardType) => {
+    return (
+      <QuizStatTable
+        statPairs={[
+          {
+            title: "Total Questions",
+            value: questionsByType[type].length.toString(),
+          },
+          {
+            title: "Correct",
+            value: questionsByType[type]
+              .filter((q) => q.isCorrect)
+              .length.toString(),
+          },
+          {
+            title: "Incorrect",
+            value: questionsByType[type]
+              .filter((q) => !q.isCorrect)
+              .length.toString(),
+          },
+          {
+            title: "Percentage Correct",
+            value: `${getPercentageCorrect(questionsByType[type]).toFixed(2)}%`,
+          },
+        ]}
+      />
+    );
+  };
+
   return (
     <LanguageLayout>
       <MandarinLayoutHeader headerIcon={faChartColumn} headerTitle="测验统计" />
@@ -156,6 +185,18 @@ export default function QuizStats() {
                 },
               ]}
             />
+          </div>
+          <div className="flex flex-col w-full space-y-4">
+            <h1 className="my-auto text-sm font-bold">FILL IN THE BLANKS</h1>
+            {getBreakdownTableForType(MandarinCardType.FillBlank)}
+          </div>
+          <div className="flex flex-col w-full space-y-4">
+            <h1 className="my-auto text-sm font-bold">MATCH THE PINYIN</h1>
+            {getBreakdownTableForType(MandarinCardType.MatchPinyin)}
+          </div>
+          <div className="flex flex-col w-full space-y-4">
+            <h1 className="my-auto text-sm font-bold">MATCH THE DEFINITION</h1>
+            {getBreakdownTableForType(MandarinCardType.MatchDefinition)}
           </div>
         </div>
       </LanguageBody>
