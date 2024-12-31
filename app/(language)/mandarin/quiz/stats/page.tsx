@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useRouter } from "next/navigation";
 
@@ -9,6 +9,7 @@ import {
   faCalendarDays,
   faChartColumn,
   faCheckCircle,
+  faCircleNotch,
   faQuestionCircle,
   faSun,
   IconDefinition,
@@ -142,6 +143,7 @@ export default function QuizStats() {
     );
   };
 
+  const [isLoading, setIsLoading] = useState(true);
   const [isResetDialogOpen, setResetDialogOpen] = useState(false);
 
   const toggleDialog = () => {
@@ -159,126 +161,150 @@ export default function QuizStats() {
     router.push("/mandarin/quiz");
   };
 
+  const renderLoading = () => {
+    return (
+      <div className="flex flex-col w-full h-full items-center justify-center opacity-80">
+        <FontAwesomeIcon
+          icon={faCircleNotch}
+          size="2x"
+          className="animate-spin"
+        />
+      </div>
+    );
+  };
+
+  const renderContent = () => {
+    return (
+      <div className="flex flex-col w-full h-full p-4 space-y-4">
+        <div className="flex flex-col w-full space-y-2">
+          <h1 className="my-auto text-sm font-bold">OVERALL</h1>
+          <div className="grid grid-cols-2 gap-2">
+            <QuizStatTile
+              title="questions"
+              value={numQuestionsAnswered.toString()}
+              icon={faQuestionCircle}
+            />
+            <QuizStatTile
+              title="correct"
+              value={`${percentageCorrect}%`}
+              icon={faCheckCircle}
+            />
+            <QuizStatTile
+              title="max qns in a day"
+              value={maxQuestionsInDay.toString()}
+              icon={faSun}
+            />
+
+            <QuizStatTile
+              title="longest streak"
+              value={longestStreak.toString()}
+              icon={faCalendarDays}
+            />
+          </div>
+        </div>
+
+        <div className="flex flex-col w-full space-y-2">
+          <h1 className="my-auto text-sm font-bold">HEATMAP</h1>
+          <HeatMap
+            startDate={dayjs("2024-01-01").toDate()}
+            questionsByDay={questionsByDay}
+          />
+        </div>
+        <div className="flex flex-col w-full space-y-2">
+          <h1 className="my-auto text-sm font-bold">BREAKDOWN</h1>
+          <QuizStatTable
+            statPairs={[
+              {
+                title: "Fill In The Blanks",
+                value:
+                  questionsByType[MandarinCardType.FillBlank].length.toString(),
+              },
+              {
+                title: "Match the Pinyin",
+                value:
+                  questionsByType[
+                    MandarinCardType.MatchPinyin
+                  ].length.toString(),
+              },
+              {
+                title: "Match the Definition",
+                value:
+                  questionsByType[
+                    MandarinCardType.MatchDefinition
+                  ].length.toString(),
+              },
+              {
+                title: "Total Questions",
+                value: numQuestionsAnswered.toString(),
+                isBold: true,
+              },
+            ]}
+          />
+        </div>
+        <div className="flex flex-col w-full space-y-2">
+          <h1 className="my-auto text-sm font-bold">FILL IN THE BLANKS</h1>
+          {getBreakdownTableForType(MandarinCardType.FillBlank)}
+        </div>
+        <div className="flex flex-col w-full space-y-2">
+          <h1 className="my-auto text-sm font-bold">MATCH THE PINYIN</h1>
+          {getBreakdownTableForType(MandarinCardType.MatchPinyin)}
+        </div>
+        <div className="flex flex-col w-full space-y-2">
+          <h1 className="my-auto text-sm font-bold">MATCH THE DEFINITION</h1>
+          {getBreakdownTableForType(MandarinCardType.MatchDefinition)}
+        </div>
+
+        <div className="flex flex-col w-full space-y-2">
+          <h1 className="my-auto text-sm font-bold">MISTAKES</h1>
+
+          <QuizStatTable
+            maxHeight={360}
+            statPairs={wordMistakes.map((w) => ({
+              title: w[0] as string,
+              value: w[1].toString(),
+            }))}
+          />
+        </div>
+        <div className="flex flex-col w-full space-y-2">
+          <h1 className="my-auto text-sm font-bold">WORD OCCURENCES</h1>
+
+          <QuizStatTable
+            maxHeight={360}
+            statPairs={wordOccurences.map((w) => ({
+              title: w[0] as string,
+              value: w[1].toString(),
+            }))}
+          />
+        </div>
+
+        <div className="flex flex-col w-full space-y-2">
+          <button
+            className="w-full bg-red-600 border border-red-500 text-white p-2 rounded-md"
+            onClick={toggleDialog}
+          >
+            Reset statistics
+          </button>
+        </div>
+
+        <span className="pb-2"></span>
+      </div>
+    );
+  };
+
+  useEffect(() => {
+    // Add artificial delay to prevent flash of unloaded content
+    const delay = setTimeout(() => {
+      setIsLoading(false);
+    }, 200);
+
+    return () => clearTimeout(delay);
+  }, []);
+
   return (
     <LanguageLayout>
       <MandarinLayoutHeader headerIcon={faChartColumn} headerTitle="测验统计" />
       <LanguageBody>
-        <div className="flex flex-col w-full h-full p-4 space-y-4">
-          <div className="flex flex-col w-full space-y-2">
-            <h1 className="my-auto text-sm font-bold">OVERALL</h1>
-            <div className="grid grid-cols-2 gap-2">
-              <QuizStatTile
-                title="questions"
-                value={numQuestionsAnswered.toString()}
-                icon={faQuestionCircle}
-              />
-              <QuizStatTile
-                title="correct"
-                value={`${percentageCorrect}%`}
-                icon={faCheckCircle}
-              />
-              <QuizStatTile
-                title="max qns in a day"
-                value={maxQuestionsInDay.toString()}
-                icon={faSun}
-              />
-
-              <QuizStatTile
-                title="longest streak"
-                value={longestStreak.toString()}
-                icon={faCalendarDays}
-              />
-            </div>
-          </div>
-
-          <div className="flex flex-col w-full space-y-2">
-            <h1 className="my-auto text-sm font-bold">HEATMAP</h1>
-            <HeatMap
-              startDate={dayjs("2024-01-01").toDate()}
-              questionsByDay={questionsByDay}
-            />
-          </div>
-          <div className="flex flex-col w-full space-y-2">
-            <h1 className="my-auto text-sm font-bold">BREAKDOWN</h1>
-            <QuizStatTable
-              statPairs={[
-                {
-                  title: "Fill In The Blanks",
-                  value:
-                    questionsByType[
-                      MandarinCardType.FillBlank
-                    ].length.toString(),
-                },
-                {
-                  title: "Match the Pinyin",
-                  value:
-                    questionsByType[
-                      MandarinCardType.MatchPinyin
-                    ].length.toString(),
-                },
-                {
-                  title: "Match the Definition",
-                  value:
-                    questionsByType[
-                      MandarinCardType.MatchDefinition
-                    ].length.toString(),
-                },
-                {
-                  title: "Total Questions",
-                  value: numQuestionsAnswered.toString(),
-                  isBold: true,
-                },
-              ]}
-            />
-          </div>
-          <div className="flex flex-col w-full space-y-2">
-            <h1 className="my-auto text-sm font-bold">FILL IN THE BLANKS</h1>
-            {getBreakdownTableForType(MandarinCardType.FillBlank)}
-          </div>
-          <div className="flex flex-col w-full space-y-2">
-            <h1 className="my-auto text-sm font-bold">MATCH THE PINYIN</h1>
-            {getBreakdownTableForType(MandarinCardType.MatchPinyin)}
-          </div>
-          <div className="flex flex-col w-full space-y-2">
-            <h1 className="my-auto text-sm font-bold">MATCH THE DEFINITION</h1>
-            {getBreakdownTableForType(MandarinCardType.MatchDefinition)}
-          </div>
-
-          <div className="flex flex-col w-full space-y-2">
-            <h1 className="my-auto text-sm font-bold">MISTAKES</h1>
-
-            <QuizStatTable
-              maxHeight={360}
-              statPairs={wordMistakes.map((w) => ({
-                title: w[0] as string,
-                value: w[1].toString(),
-              }))}
-            />
-          </div>
-          <div className="flex flex-col w-full space-y-2">
-            <h1 className="my-auto text-sm font-bold">WORD OCCURENCES</h1>
-
-            <QuizStatTable
-              maxHeight={360}
-              statPairs={wordOccurences.map((w) => ({
-                title: w[0] as string,
-                value: w[1].toString(),
-              }))}
-            />
-          </div>
-
-          <div className="flex flex-col w-full space-y-2">
-            <button
-              className="w-full bg-red-600 border border-red-500 text-white p-2 rounded-md"
-              onClick={toggleDialog}
-            >
-              Reset statistics
-            </button>
-          </div>
-
-          <span className="pb-2"></span>
-        </div>
-
+        {isLoading ? renderLoading() : renderContent()}
         {isResetDialogOpen && (
           <div
             className="fixed inset-0 flex items-center justify-center bg-black/50 z-50"
