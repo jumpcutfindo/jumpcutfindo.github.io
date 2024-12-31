@@ -1,12 +1,12 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
+import { MandarinCardType } from "../cards/card";
 import {
-  MandarinCardType,
-  MandarinFillBlankCardParams,
-  MandarinMatchDefinitionParams,
-  MandarinMatchPinyinCardParams,
-} from "../cards/card";
+  MandarinFillBlankData,
+  MandarinMatchDefinitionData,
+  MandarinMatchPinyinData,
+} from "../data";
 
 interface MandarinQuizState {
   score: number;
@@ -16,17 +16,18 @@ interface MandarinQuizState {
   cardType: MandarinCardType | null;
   setCardType: (cardType: MandarinCardType) => void;
   cardContent:
-    | MandarinFillBlankCardParams
-    | MandarinMatchPinyinCardParams
-    | MandarinMatchDefinitionParams
+    | MandarinFillBlankData
+    | MandarinMatchPinyinData
+    | MandarinMatchDefinitionData
     | null;
   setCardContent: (
     content:
-      | MandarinFillBlankCardParams
-      | MandarinMatchPinyinCardParams
-      | MandarinMatchDefinitionParams
+      | MandarinFillBlankData
+      | MandarinMatchPinyinData
+      | MandarinMatchDefinitionData
       | null,
   ) => void;
+  resetQuizState: () => void;
 }
 
 export const useMandarinQuizStore = create<MandarinQuizState>()(
@@ -42,6 +43,8 @@ export const useMandarinQuizStore = create<MandarinQuizState>()(
       setCardType: (cardType) => set({ cardType }),
       cardContent: null,
       setCardContent: (content) => set({ cardContent: content }),
+      resetQuizState: () =>
+        set({ score: 0, maxScore: 0, cardType: null, cardContent: null }),
     }),
     {
       name: "mandarin-quiz-store",

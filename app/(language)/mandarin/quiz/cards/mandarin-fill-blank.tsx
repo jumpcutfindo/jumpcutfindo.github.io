@@ -1,10 +1,14 @@
+import { useState } from "react";
+
 import Markdown, { Components } from "react-markdown";
 
 import { FillBlankCard } from "../../../quiz/fill-blank";
 import { CardProps } from "../../../quiz/types/card";
 import { QuizState } from "../../../quiz/types/quiz";
 import { MandarinDefinition, MandarinExample } from "../../api/mandarin";
-import { MandarinFillBlankCardParams } from "./card";
+import { FillBlankCardStat } from "../../api/stats";
+import { useMandarinQuizStatsStore } from "../store/useMandarinQuizStatsStore";
+import { MandarinCardType, MandarinFillBlankCardParams } from "./card";
 
 const MARKDOWN_STYLING: Components = {
   p(props) {
@@ -12,7 +16,8 @@ const MARKDOWN_STYLING: Components = {
   },
 };
 
-type MandarinFillBlankProps = CardProps & MandarinFillBlankCardParams;
+type MandarinFillBlankProps = CardProps<MandarinDefinition> &
+  MandarinFillBlankCardParams;
 
 export default function MandarinFillBlank({
   quizState,
@@ -26,6 +31,10 @@ export default function MandarinFillBlank({
   setRenderedResult,
   setOnAcknowledge,
 }: MandarinFillBlankProps) {
+  const [cardGenerateTime] = useState(new Date());
+
+  const { addQuizCardStat } = useMandarinQuizStatsStore();
+
   const renderOption = {
     [QuizState.Question]: (option: MandarinDefinition) => (
       <div className="flex flex-col">
@@ -63,6 +72,23 @@ export default function MandarinFillBlank({
     );
   };
 
+  const onAnsweredFillBlank = (userAnswer: MandarinDefinition) => {
+    // Add stat
+    const fillBlankQuizStat: FillBlankCardStat = {
+      type: MandarinCardType.FillBlank,
+      correctResult: answer.word,
+      generatedTime: cardGenerateTime,
+      answeredTime: new Date(),
+      isCorrect: answer.word === userAnswer.word,
+      options: options.map((option) => option.word),
+      userResult: userAnswer.word,
+    };
+
+    addQuizCardStat(fillBlankQuizStat);
+
+    onAnswered(answer);
+  };
+
   return (
     <FillBlankCard<MandarinDefinition, MandarinExample>
       answer={answer}
@@ -70,7 +96,7 @@ export default function MandarinFillBlank({
       blankedSentence={blankedSentence}
       example={example}
       quizState={quizState}
-      onAnswered={onAnswered}
+      onAnswered={onAnsweredFillBlank}
       onCorrect={onCorrect}
       onIncorrect={onIncorrect}
       setRenderedResult={setRenderedResult}

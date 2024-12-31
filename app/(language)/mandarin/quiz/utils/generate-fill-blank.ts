@@ -1,11 +1,11 @@
 import { MandarinDefinition } from "../../api/mandarin";
-import { MandarinFillBlankCardParams } from "../cards/card";
+import { MandarinFillBlankData } from "../data";
 import { selectRandomDefinition } from "./definition-utils";
 
 export function generateFillBlank(
   definitions: MandarinDefinition[],
   optionCount: number,
-): MandarinFillBlankCardParams {
+): MandarinFillBlankData {
   const answer = selectRandomDefinition(definitions);
   const example =
     answer.examples[Math.floor(Math.random() * answer.examples.length)];

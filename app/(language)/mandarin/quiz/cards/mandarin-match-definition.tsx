@@ -1,9 +1,14 @@
+import { useState } from "react";
+
 import { MatchCard } from "../../../quiz/match-cards";
 import { CardProps } from "../../../quiz/types/card";
 import { MandarinDefinition } from "../../api/mandarin";
-import { MandarinMatchDefinitionParams } from "./card";
+import { MatchDefintionCardStat } from "../../api/stats";
+import { useMandarinQuizStatsStore } from "../store/useMandarinQuizStatsStore";
+import { MandarinCardType, MandarinMatchDefinitionParams } from "./card";
 
-type MandarinMatchDefinitionProps = CardProps & MandarinMatchDefinitionParams;
+type MandarinMatchDefinitionProps = CardProps<MandarinDefinition> &
+  MandarinMatchDefinitionParams;
 
 export default function MandarinMatchDefinition({
   quizState,
@@ -14,6 +19,12 @@ export default function MandarinMatchDefinition({
   setRenderedResult,
   setOnAcknowledge,
 }: MandarinMatchDefinitionProps) {
+  const [generatedTime] = useState(new Date());
+
+  const selectedPairs: [MandarinDefinition, MandarinDefinition][] = [];
+
+  const { addQuizCardStat } = useMandarinQuizStatsStore();
+
   const renderOption = (option: MandarinDefinition, isFrom: boolean) => {
     if (isFrom) {
       return (
@@ -31,13 +42,33 @@ export default function MandarinMatchDefinition({
     }
   };
 
+  const onMatched = (from: MandarinDefinition, to: MandarinDefinition) => {
+    selectedPairs.push([from, to]);
+  };
+
+  const onCompletedMatching = () => {
+    const stat: MatchDefintionCardStat = {
+      type: MandarinCardType.MatchDefinition,
+      generatedTime,
+      answeredTime: new Date(),
+      isCorrect: selectedPairs.length === options.length,
+      options: options.map((option) => option.word),
+      userSelections: selectedPairs.map((pair) => [pair[0].word, pair[1].word]),
+    };
+
+    addQuizCardStat(stat);
+
+    onAnswered();
+  };
+
   return (
     <MatchCard
       cardTitle="Match the Definitions"
       options={options}
       renderOption={renderOption}
       quizState={quizState}
-      onAnswered={onAnswered}
+      onMatched={onMatched}
+      onAnswered={onCompletedMatching}
       onCorrect={onCorrect}
       onIncorrect={onIncorrect}
       setRenderedResult={setRenderedResult}

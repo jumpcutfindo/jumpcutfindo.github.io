@@ -29,7 +29,7 @@ function LanguageDropdown({
         {menuItems.map(({ icon, title, href }) => (
           <MenuItem key={title}>
             <a className="block rounded-lg p-2 hover:bg-white/5" href={href}>
-              <FontAwesomeIcon icon={icon} />
+              <FontAwesomeIcon icon={icon} className="w-8 h-8" />
               <span className="ms-2">{title}</span>
             </a>
           </MenuItem>
