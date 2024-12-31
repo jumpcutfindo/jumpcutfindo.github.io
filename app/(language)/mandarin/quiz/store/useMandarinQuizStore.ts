@@ -27,6 +27,7 @@ interface MandarinQuizState {
       | MandarinMatchDefinitionParams
       | null,
   ) => void;
+  resetQuizState: () => void;
 }
 
 export const useMandarinQuizStore = create<MandarinQuizState>()(
@@ -42,6 +43,8 @@ export const useMandarinQuizStore = create<MandarinQuizState>()(
       setCardType: (cardType) => set({ cardType }),
       cardContent: null,
       setCardContent: (content) => set({ cardContent: content }),
+      resetQuizState: () =>
+        set({ score: 0, maxScore: 0, cardType: null, cardContent: null }),
     }),
     {
       name: "mandarin-quiz-store",

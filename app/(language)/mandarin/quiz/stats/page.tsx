@@ -1,5 +1,9 @@
 "use client";
 
+import { useState } from "react";
+
+import { useRouter } from "next/navigation";
+
 import { LanguageBody, LanguageLayout } from "@/app/(language)/language-layout";
 import {
   faCalendarDays,
@@ -15,6 +19,7 @@ import dayjs from "dayjs";
 import { MandarinLayoutHeader } from "../../mandarin-header";
 import { MandarinCardType } from "../cards/card";
 import { useMandarinQuizStatsStore } from "../store/useMandarinQuizStatsStore";
+import { useMandarinQuizStore } from "../store/useMandarinQuizStore";
 import { HeatMap } from "./heatmap/heatmap";
 import {
   getLongestStreak,
@@ -78,7 +83,10 @@ function QuizStatTable(props: QuizStatTableProps) {
 }
 
 export default function QuizStats() {
-  const { quizCardStats } = useMandarinQuizStatsStore();
+  const router = useRouter();
+
+  const { quizCardStats, resetQuizStats } = useMandarinQuizStatsStore();
+  const { resetQuizState } = useMandarinQuizStore();
 
   const numQuestionsAnswered = getNumQuestionsAnswered(quizCardStats);
   const percentageCorrect = getPercentageCorrect(quizCardStats);
@@ -122,6 +130,23 @@ export default function QuizStats() {
         ]}
       />
     );
+  };
+
+  const [isResetDialogOpen, setResetDialogOpen] = useState(false);
+
+  const toggleDialog = () => {
+    setResetDialogOpen(!isResetDialogOpen);
+  };
+
+  const closeDialog = () => {
+    setResetDialogOpen(false);
+  };
+
+  const onResetData = () => {
+    resetQuizState();
+    resetQuizStats();
+
+    router.push("/mandarin/quiz");
   };
 
   return (
@@ -231,8 +256,52 @@ export default function QuizStats() {
               }))}
             />
           </div>
+
+          <div className="flex flex-col w-full space-y-2">
+            <button
+              className="w-full bg-red-600 border border-red-500 text-white p-2 rounded-md"
+              onClick={toggleDialog}
+            >
+              Reset statistics
+            </button>
+          </div>
+
           <span className="pb-2"></span>
         </div>
+
+        {isResetDialogOpen && (
+          <div
+            className="fixed inset-0 flex items-center justify-center bg-black/50 z-50"
+            onClick={closeDialog}
+          >
+            <div
+              className="bg-language-background rounded-lg shadow-lg w-[384px] p-4"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex flex-col space-y-2">
+                <h1 className="font-bold">Reset statistics?</h1>
+                <p>
+                  Are you sure you want to reset? This will clear all the stats
+                  and the current state of the quiz.
+                </p>
+                <div className="flex flex-row space-x-2 justify-end">
+                  <button
+                    className="bg-red-600 text-white rounded-md p-2 w-20"
+                    onClick={onResetData}
+                  >
+                    Reset
+                  </button>
+                  <button
+                    className="bg-gray-600 text-white rounded-md p-2 w-20"
+                    onClick={closeDialog}
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </LanguageBody>
     </LanguageLayout>
   );

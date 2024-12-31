@@ -6,6 +6,7 @@ import { QuizCardStat } from "../../api/stats";
 interface MandarinQuizStatsState {
   quizCardStats: QuizCardStat[];
   addQuizCardStat: (quizCardStat: QuizCardStat) => void;
+  resetQuizStats: () => void;
 }
 
 export const useMandarinQuizStatsStore = create<MandarinQuizStatsState>()(
@@ -16,6 +17,7 @@ export const useMandarinQuizStatsStore = create<MandarinQuizStatsState>()(
         set((state) => ({
           quizCardStats: [...state.quizCardStats, quizCardStat],
         })),
+      resetQuizStats: () => set({ quizCardStats: [] }),
     }),
     {
       name: "mandarin-quiz-stats",
