@@ -97,6 +97,13 @@ export function MatchCard<T>({
   const [selectedTo, setSelectedTo] = useState<T | null>(null);
   const [selectedToKey, setSelectedToKey] = useState<string | null>(null);
 
+  const resetSelection = () => {
+    setSelectedFrom(null);
+    setSelectedFromKey(null);
+    setSelectedTo(null);
+    setSelectedToKey(null);
+  };
+
   const checkComplete = (
     updatedMatchedSets: Set<T>,
     updatedAttempts: number,
@@ -128,10 +135,8 @@ export function MatchCard<T>({
       setOnAcknowledge(() => () => {
         setMatchedSets(new Set());
         setShakingTiles(new Set());
-        setSelectedFrom(null);
-        setSelectedFromKey(null);
-        setSelectedTo(null);
-        setSelectedToKey(null);
+
+        resetSelection();
 
         setAttempts(0);
       });
@@ -170,9 +175,7 @@ export function MatchCard<T>({
         });
       }
 
-      // Unselect both items
-      setSelectedFrom(null);
-      setSelectedTo(null);
+      resetSelection();
     }
   };
 

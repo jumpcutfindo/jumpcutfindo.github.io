@@ -1071,7 +1071,7 @@
     "word": "蔚为大观",
     "wordType": "idiom",
     "pinyin": "wèi wéi dà guān",
-    "definition": "present a splendid sigh",
+    "definition": "present a splendid sight",
     "examples": [
       {
         "sentence": "狂欢节游行场面热烈，蔚为大观。",
@@ -2070,7 +2070,7 @@
     "definition": "to shelve; lay aside",
     "examples": [
       {
-        "sentence": "他们决定搁置双方的分歧(fēn qí)。",
+        "sentence": "他们决定搁置双方的分歧。",
         "englishTranslation": "They decided to put aside their differences."
       },
       {
@@ -2086,7 +2086,7 @@
     "definition": "be widely divergent; poles apart",
     "examples": [
       {
-        "sentence": "这些协会的意识形态构(gòu chéng)成如今与过去大相径庭。",
+        "sentence": "这些协会的意识形态构成如今与过去大相径庭。",
         "englishTranslation": "The ideological makeup of the unions is now radically different from what it had been."
       }
     ]
@@ -2298,7 +2298,7 @@
   {
     "word": "尘埃落定",
     "wordType": "idiom",
-    "pinyin": "chén āiluò dìng",
+    "pinyin": "chén āi luò dìng",
     "definition": "things have come to a close",
     "examples": [
       {
@@ -2804,6 +2804,486 @@
       {
         "sentence": "过去几年经济转坏，贫富悬殊进一步拉阔。",
         "englishTranslation": "The gap between rich and poor has widened because of the bad economy in the past few years."
+      }
+    ]
+  },
+  {
+    "word": "殆尽",
+    "wordType": "verb",
+    "pinyin": "dài jìn",
+    "definition": "run out; exhausted",
+    "examples": [
+      {
+        "sentence": "一个月以后他们的食物储备消耗殆尽。",
+        "englishTranslation": "After a month their food supplies gave out."
+      },
+      {
+        "sentence": "国家财政已经被旱灾和内乱消耗殆尽了。",
+        "englishTranslation": "The state's finances have been drained by drought and civil disorder."
+      }
+    ]
+  },
+  {
+    "word": "剥夺",
+    "wordType": "verb",
+    "pinyin": "bō duó",
+    "definition": "deprive",
+    "examples": [
+      {
+        "sentence": "他们遭到监禁并被剥夺了基本权利。",
+        "englishTranslation": "They were imprisoned and deprived of their basic rights."
+      }
+    ]
+  },
+  {
+    "word": "宽宥",
+    "wordType": "verb",
+    "pinyin": "kuān yòu",
+    "definition": "excuse; forgive",
+    "examples": [
+      {
+        "sentence": "我学会宽宥过去的错误，还和朋友们密切了联系。",
+        "englishTranslation": "I learned to forgive past mistakes, and connected more deeply with friends."
+      }
+    ]
+  },
+  {
+    "word": "驳倒",
+    "wordType": "verb",
+    "pinyin": "bó dǎo ",
+    "definition": "demolish; refute",
+    "examples": [
+      {
+        "sentence": "他的发言非常成功地驳倒了政府的提案。",
+        "englishTranslation": "His speech did a very effective demolition job on the government's proposals."
+      }
+    ]
+  },
+  {
+    "word": "利欲熏心",
+    "wordType": "idiom",
+    "pinyin": "lì yù xūn xīn",
+    "definition": "be blinded by greed",
+    "examples": [
+      {
+        "sentence": "人们认为核能是一项大事业，但核动力却赋予利欲熏心的人掌握生死的权利。",
+        "englishTranslation": "The general consensus is that nuclear energy is a big business, but the control over the industry is endowed upon those who are blinded by greed."
+      }
+    ]
+  },
+  {
+    "word": "颠簸",
+    "wordType": "verb",
+    "pinyin": "diān bǒ",
+    "definition": "jolt; thrash",
+    "examples": [
+      {
+        "sentence": "汽车沿车道缓慢地颠簸行进。",
+        "englishTranslation": "The car bumped its way slowly down the drive."
+      }
+    ]
+  },
+  {
+    "word": "推波助澜",
+    "wordType": "idiom",
+    "pinyin": "tuī bō zhù lán",
+    "definition": "to add fuel to the fire",
+    "examples": [
+      {
+        "sentence": "公共政策推波助澜了此一阴暗趋势。",
+        "englishTranslation": "Public policy has contributed to this dismal trend."
+      }
+    ]
+  },
+  {
+    "word": "刻意",
+    "wordType": "adjective",
+    "pinyin": "kè yì",
+    "definition": "deliberately",
+    "examples": [
+      {
+        "sentence": "之前我总是比他迟到，因而我刻意约束自己准时到达那里。",
+        "englishTranslation": "Previously, I would always be later than him, therefore I made a deliberate effort to reach the place on time."
+      }
+    ]
+  },
+  {
+    "word": "蒙蔽",
+    "wordType": "verb",
+    "pinyin": "méng bì",
+    "definition": "deceive",
+    "examples": [
+      {
+        "sentence": "不要被他那迷人的风度所蒙蔽，其实他冷酷无情。",
+        "englishTranslation": "Don't be taken in by his charm — he's actually ruthless."
+      }
+    ]
+  },
+  {
+    "word": "迄今",
+    "wordType": "adverb",
+    "pinyin": "qì jīn",
+    "definition": "up to now",
+    "examples": [
+      {
+        "sentence": "他迄今申请了十份工作都遭到拒绝。",
+        "englishTranslation": "He has been turned down for ten jobs so far."
+      },
+      {
+        "sentence": "迄今为止研究还没有任何定论。",
+        "englishTranslation": "Research has so far proved inconclusive."
+      }
+    ]
+  },
+  {
+    "word": "大放厥词",
+    "wordType": "idiom",
+    "pinyin": "dà fàng jué cí",
+    "definition": "talk a lot of nonsense",
+    "examples": [
+      {
+        "sentence": "但我持反对意见：这种形式的匿名并没有使我免于责任，或者让我可以大放厥词。",
+        "englishTranslation": "But I'd counter that this form of anonymity does not free me from accountability, or allow me to shoot off at the mouth."
+      }
+    ]
+  },
+  {
+    "word": "虚构",
+    "wordType": "noun",
+    "pinyin": "xū gòu ",
+    "definition": "fiction",
+    "examples": [
+      {
+        "sentence": "这部传记有时混淆了事实和虚构。",
+        "englishTranslation": "This biography sometimes crosses the borderline between fact and fiction."
+      }
+    ]
+  },
+  {
+    "word": "混淆",
+    "wordType": "verb",
+    "pinyin": "hùn xiáo",
+    "definition": "confuse; confound",
+    "examples": [
+      {
+        "sentence": "改名是为了避免和另一家公司混淆。",
+        "englishTranslation": "The name was changed to avoid confusion with another firm."
+      }
+    ]
+  },
+  {
+    "word": "寓意",
+    "wordType": "noun",
+    "pinyin": "yù yì ",
+    "definition": "moral",
+    "examples": [
+      {
+        "sentence": "这个故事的寓意是：一定要听母亲的话！",
+        "englishTranslation": "And the moral of the story is: always listen to your mother!"
+      }
+    ]
+  },
+  {
+    "word": "锱铢必较",
+    "wordType": "idiom",
+    "pinyin": "zī zhū bì jiào",
+    "definition": "haggle over every penny",
+    "examples": [
+      {
+        "sentence": "这间公司对职员的薪水锱铢必较，请个病假也要扣钱。",
+        "englishTranslation": "This company is very stingy when it comes to employees' salaries; they even deduct from it when you take sick leave!"
+      }
+    ]
+  },
+  {
+    "word": "恃强凌弱",
+    "wordType": "idiom",
+    "pinyin": "shì qiáng líng ruò",
+    "definition": "bully the weak",
+    "examples": [
+      {
+        "sentence": "恃强凌弱的家伙欺负更年幼的孩子。",
+        "englishTranslation": "Bullies like to pick on weaker and younger children."
+      }
+    ]
+  },
+  {
+    "word": "寻衅滋事",
+    "wordType": "idiom",
+    "pinyin": "xún xìn zī shì",
+    "definition": "try to pick a fight",
+    "examples": [
+      {
+        "sentence": "这个男人喝多了啤酒之后就变得爱寻衅滋事。",
+        "englishTranslation": "The man became belligerent when he drank too much beer."
+      }
+    ]
+  },
+  {
+    "word": "瓜葛",
+    "wordType": "noun",
+    "pinyin": "guā gé ",
+    "definition": "connection; implication",
+    "examples": [
+      {
+        "sentence": "我个人和他以及他的家庭瓜葛很深。",
+        "englishTranslation": "My personal involvement with him and his family is deep."
+      },
+      {
+        "sentence": "我不想和这一肮脏勾当有任何瓜葛。",
+        "englishTranslation": "I want no part in this sordid business."
+      }
+    ]
+  },
+  {
+    "word": "藏匿",
+    "wordType": "verb",
+    "pinyin": "cáng nì",
+    "definition": "hide; conceal",
+    "examples": [
+      {
+        "sentence": "许多动物靠藏匿自己来避害。",
+        "englishTranslation": "Many animals rely on concealment for protection."
+      },
+      {
+        "sentence": "在游艇上发现了大量藏匿的毒品。",
+        "englishTranslation": "A large stash of drugs had been found aboard the yacht."
+      }
+    ]
+  },
+  {
+    "word": "阔绰",
+    "wordType": "adjective",
+    "pinyin": "kuò chuò",
+    "definition": "ostentatious",
+    "examples": [
+      {
+        "sentence": "他尝试过用挥金如土的阔绰方式去取悦于她。",
+        "englishTranslation": "He attempts to woo her in a characteristically extravagant manner."
+      }
+    ]
+  },
+  {
+    "word": "揭秘",
+    "wordType": "verb",
+    "pinyin": "jiē mì ",
+    "definition": "expose a secret; demystify",
+    "examples": [
+      {
+        "sentence": "日语的动词放在句尾，把日语翻译成英语有时候有提前揭秘的感觉。",
+        "englishTranslation": "There is sometimes a demystifying feeling when translating Japanese to English, due to their verbs coming at the end of the sentence."
+      }
+    ]
+  },
+  {
+    "word": "褒贬",
+    "wordType": "verb",
+    "pinyin": "bāo biǎn",
+    "definition": "appraise",
+    "examples": [
+      {
+        "sentence": "对她获任命为主管一事，人们的反应褒贬不一。",
+        "englishTranslation": "There has been a mixed reaction to her appointment as director."
+      }
+    ]
+  },
+  {
+    "word": "通宵",
+    "wordType": "noun",
+    "pinyin": "tōng xiāo",
+    "definition": "throughout the night",
+    "examples": [
+      {
+        "sentence": "起草委员会徒劳地通宵工作，想按期完成工作。",
+        "englishTranslation": "The drafting committee worked through the night in a vain attempt to finish on schedule."
+      }
+    ]
+  },
+  {
+    "word": "毋庸",
+    "wordType": "adverb",
+    "pinyin": "wú yōng",
+    "definition": "needlessly; unnecessarily",
+    "examples": [
+      {
+        "sentence": "他的诚实是毋庸置疑的，你可以相信他。",
+        "englishTranslation": "His honesty is not in question, you can trust him."
+      }
+    ]
+  },
+  {
+    "word": "赘述",
+    "wordType": "verb",
+    "pinyin": "zhuì shù",
+    "definition": "give unnecessary details",
+    "examples": [
+      {
+        "sentence": "为了避免重复，这文件不再赘述。",
+        "englishTranslation": "To avoid repetition, it's not described in this document."
+      }
+    ]
+  },
+  {
+    "word": "沆瀣一气",
+    "wordType": "idiom",
+    "pinyin": "hàng xiè yī qì ",
+    "definition": "act evilly in collusion with",
+    "examples": [
+      {
+        "sentence": "这件弊案所以会发生，就是因为这两人沆瀣一气，暗中勾结，挪用了公款。",
+        "englishTranslation": "The reason why the fraud happened was because these two people colluded secretly to misappropriate public funds."
+      }
+    ]
+  },
+  {
+    "word": "稀薄",
+    "wordType": "adjective",
+    "pinyin": "xī bó",
+    "definition": "thin; rare",
+    "examples": [
+      {
+        "sentence": "他们挣扎着从烟雾稀薄的地方逃了出去。",
+        "englishTranslation": "They fought their way through where the smoke was thinner."
+      }
+    ]
+  },
+  {
+    "word": "昏厥",
+    "wordType": "verb",
+    "pinyin": "hūn jué",
+    "definition": "faint; swoon",
+    "examples": [
+      {
+        "sentence": "司机很可能在开车时昏厥了，导致意外。",
+        "englishTranslation": "The driver probably fainted while driving, leading to the accident."
+      }
+    ]
+  },
+  {
+    "word": "窥伺",
+    "wordType": "verb",
+    "pinyin": "kuī sì",
+    "definition": "lie in wait for",
+    "examples": [
+      {
+        "sentence": "她顶着他，就像猫在窥伺老鼠。",
+        "englishTranslation": "She watches him as a cat would watch a mouse."
+      },
+      {
+        "sentence": "许多年前，那时我自己还是小女孩，我总是惊奇地窥伺着母亲。",
+        "englishTranslation": "Many years ago when I was still a young child, I would always curiously observe my mother."
+      }
+    ]
+  },
+  {
+    "word": "自掏腰包",
+    "wordType": "idiom",
+    "pinyin": "zì tāo yāo bāo",
+    "definition": "pay out of one's own pocket",
+    "examples": [
+      {
+        "sentence": "学校资源不多，因此校长要求父母自掏腰包为孩子买新课本。",
+        "englishTranslation": "The school lack resources, and thus have asked parents to dip into their pockets for new school books for their kids."
+      }
+    ]
+  },
+  {
+    "word": "越俎代庖",
+    "wordType": "idiom",
+    "pinyin": "yuè zǔ dài páo ",
+    "definition": "overstep boundaries and meddle in others' affairs",
+    "examples": [
+      {
+        "sentence": "我只是过来帮点忙，可没有越俎代庖的意思，你别误会！",
+        "englishTranslation": "Please don't be mistaken, I just came over to help, without any intention of meddling."
+      }
+    ]
+  },
+  {
+    "word": "囊中羞涩",
+    "wordType": "idiom",
+    "pinyin": "náng zhōng xiū sè",
+    "definition": "with limited pockets",
+    "examples": [
+      {
+        "sentence": "这家饭馆向胃口很大但囊中羞涩的人供餐。",
+        "englishTranslation": "This restaurant catered to large appetites and modest purses."
+      },
+      {
+        "sentence": "我当时囊中羞涩，甚至连一辆二手车都买不起。",
+        "englishTranslation": "I had so little money then that I couldn't even afford a used car."
+      }
+    ]
+  },
+  {
+    "word": "矫捷",
+    "wordType": "adjective",
+    "pinyin": "jiǎo jié ",
+    "definition": "vigourous and nimble",
+    "examples": [
+      {
+        "sentence": "这警察跟踪着他，就像矫捷的猎手在追踪猎物一样。",
+        "englishTranslation": "This policeman followed him like hunter stalking his prey."
+      }
+    ]
+  },
+  {
+    "word": "潮湿",
+    "wordType": "adjective",
+    "pinyin": "cháo shī",
+    "definition": "moist; damp",
+    "examples": [
+      {
+        "sentence": "来新加坡旅游，游客们会遇到炎热潮湿的天气状况。",
+        "englishTranslation": "When coming to Singapore for holiday, visitors can expect hot and humid conditions."
+      }
+    ]
+  },
+  {
+    "word": "狂妄",
+    "wordType": "adjective",
+    "pinyin": "kuáng wàng ",
+    "definition": "wildly arrogant; presumptuous",
+    "examples": [
+      {
+        "sentence": "年轻人需知满招损，谦受益的道理，不可养成狂妄的习气。",
+        "englishTranslation": "Young people need to be modest and understand the importance of humility, instead of developing arrogant attitudes."
+      }
+    ]
+  },
+  {
+    "word": "刁钻",
+    "wordType": "adjective",
+    "pinyin": "diāo zuān ",
+    "definition": "tricky",
+    "examples": [
+      {
+        "sentence": "他的好奇心会促使他提出一些刁钻的问题。",
+        "englishTranslation": "His curiosity causes him to ask some tricky questions."
+      }
+    ]
+  },
+  {
+    "word": "勃发",
+    "wordType": "verb",
+    "pinyin": "bó fā ",
+    "definition": "break out",
+    "examples": [
+      {
+        "sentence": "她的活力勃发和她的聪明智慧征服了我。",
+        "englishTranslation": "Her burst of exuberance and her brightness overwhelmed me."
+      }
+    ]
+  },
+  {
+    "word": "一蹶不振",
+    "wordType": "idiom",
+    "pinyin": "yī jué bù zhèn",
+    "definition": "unable to recover after a setback",
+    "examples": [
+      {
+        "sentence": "我们要有愈挫愈勇的精神，千万不可一蹶不振。",
+        "englishTranslation": "We must embody a more resilient spirit, and avoid giving up no matter what."
       }
     ]
   }
