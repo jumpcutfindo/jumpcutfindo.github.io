@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import dayjs from "dayjs";
 import { Popover } from "react-tiny-popover";
 
-import { QuizCardStat } from "../../api/stats";
+import { QuizCardStat } from "../../../api/stats";
 import { getHeatMapItems } from "./heatmap-utils";
 
 const DAYS_OF_WEEK = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];

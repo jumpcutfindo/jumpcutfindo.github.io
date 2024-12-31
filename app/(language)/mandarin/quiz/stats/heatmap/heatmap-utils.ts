@@ -2,6 +2,7 @@ import dayjs from "dayjs";
 
 export function getHeatMapItems(startDate: string, endDate: string) {
   const heatMapDates = ["MONTH-NAME"];
+  const endDateObj = dayjs(endDate);
 
   // Add buffers to align dates
   for (let i = dayjs(startDate).day(); i > 0; i--) {
@@ -9,7 +10,7 @@ export function getHeatMapItems(startDate: string, endDate: string) {
   }
 
   let currDate = dayjs(startDate);
-  while (!currDate.isAfter(dayjs())) {
+  while (!currDate.isAfter(endDateObj)) {
     if (heatMapDates.length % 8 === 0) {
       heatMapDates.push("MONTH-NAME");
     }

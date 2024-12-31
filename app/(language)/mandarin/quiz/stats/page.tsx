@@ -14,7 +14,7 @@ import dayjs from "dayjs";
 
 import { MandarinLayoutHeader } from "../../mandarin-header";
 import { useMandarinQuizStatsStore } from "../store/useMandarinQuizStatsStore";
-import { HeatMap } from "./heatmap";
+import { HeatMap } from "./heatmap/heatmap";
 import {
   getLongestStreak,
   getNumQuestionsAnswered,
