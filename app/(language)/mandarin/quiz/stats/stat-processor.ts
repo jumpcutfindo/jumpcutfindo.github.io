@@ -42,8 +42,9 @@ export function getLongestStreak(quizCardStats: QuizCardStat[]) {
     dayjs(a).isAfter(b) ? 1 : -1,
   );
 
-  let longestStreak = 1,
-    currStreak = 1;
+  let longestStreak = 1;
+  let currStreak = 1;
+
   for (let i = 1; i < dates.length; i++) {
     const date = dates[i];
     if (dayjs(date).diff(dayjs(dates[i - 1]), "day") === 1) {
@@ -56,7 +57,6 @@ export function getLongestStreak(quizCardStats: QuizCardStat[]) {
 }
 
 export function getQuestionsByType(quizCardStats: QuizCardStat[]) {
-  console.log(quizCardStats);
   const questionsByType: Record<MandarinCardType, QuizCardStat[]> = {
     [MandarinCardType.FillBlank]: [],
     [MandarinCardType.MatchPinyin]: [],
@@ -68,4 +68,25 @@ export function getQuestionsByType(quizCardStats: QuizCardStat[]) {
   }
 
   return questionsByType;
+}
+
+export function getWordOccurences(quizCardStats: QuizCardStat[]) {
+  const wordOccurrences: Record<string, number> = {};
+
+  for (const stat of quizCardStats) {
+    for (const option of stat.options) {
+      if (!wordOccurrences[option]) {
+        wordOccurrences[option] = 1;
+      } else {
+        wordOccurrences[option]++;
+      }
+    }
+  }
+
+  // Sort by number of occurences
+  const sortedWordOccurrences = Object.keys(wordOccurrences)
+    .map((key) => [key, wordOccurrences[key]])
+    .sort((a, b) => (b[1] as number) - (a[1] as number));
+
+  return sortedWordOccurrences;
 }

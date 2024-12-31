@@ -22,6 +22,7 @@ import {
   getPercentageCorrect,
   getQuestionsByDay,
   getQuestionsByType,
+  getWordOccurences,
 } from "./stat-processor";
 
 interface QuizStatTileProps {
@@ -45,27 +46,32 @@ function QuizStatTile(props: QuizStatTileProps) {
 }
 
 interface QuizStatTableProps {
+  maxHeight?: number;
   statPairs: { title: string; value: string; isBold?: boolean }[];
 }
 
 function QuizStatTable(props: QuizStatTableProps) {
-  const { statPairs } = props;
+  const { maxHeight, statPairs } = props;
 
   return (
     <div className="border border-language-foreground rounded-md py-1 px-2">
-      <table className="text-sm w-full">
-        <tbody>
-          {statPairs.map((statPair, idx, arr) => (
-            <tr
-              key={statPair.title}
-              className={`${idx < arr.length - 1 && "border-b border-b-language-foreground/50"} ${statPair.isBold && "font-bold"}`}
-            >
-              <td>{statPair.title}</td>
-              <td className="text-end py-1">{statPair.value}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div
+        className={`${maxHeight ? `h-[${maxHeight}px] max-h-[${maxHeight}px] overflow-y-auto` : ""}`}
+      >
+        <table className="text-sm w-full">
+          <tbody>
+            {statPairs.map((statPair, idx, arr) => (
+              <tr
+                key={statPair.title}
+                className={`${idx < arr.length - 1 && "border-b border-b-language-foreground/50"} ${statPair.isBold && "font-bold"}`}
+              >
+                <td>{statPair.title}</td>
+                <td className="text-end py-1">{statPair.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
@@ -84,6 +90,8 @@ export default function QuizStats() {
   const longestStreak = getLongestStreak(quizCardStats);
 
   const questionsByType = getQuestionsByType(quizCardStats);
+
+  const wordOccurences = getWordOccurences(quizCardStats);
 
   const getBreakdownTableForType = (type: MandarinCardType) => {
     return (
@@ -119,7 +127,7 @@ export default function QuizStats() {
       <MandarinLayoutHeader headerIcon={faChartColumn} headerTitle="测验统计" />
       <LanguageBody>
         <div className="flex flex-col w-full h-full p-4 space-y-4">
-          <div className="flex flex-col w-full space-y-4">
+          <div className="flex flex-col w-full space-y-2">
             <h1 className="my-auto text-sm font-bold">OVERALL</h1>
             <div className="grid grid-cols-2 gap-2">
               <QuizStatTile
@@ -146,14 +154,14 @@ export default function QuizStats() {
             </div>
           </div>
 
-          <div className="flex flex-col w-full space-y-4">
+          <div className="flex flex-col w-full space-y-2">
             <h1 className="my-auto text-sm font-bold">HEATMAP</h1>
             <HeatMap
               startDate={dayjs("2024-01-01").toDate()}
               questionsByDay={questionsByDay}
             />
           </div>
-          <div className="flex flex-col w-full space-y-4">
+          <div className="flex flex-col w-full space-y-2">
             <h1 className="my-auto text-sm font-bold">BREAKDOWN</h1>
             <QuizStatTable
               statPairs={[
@@ -186,17 +194,28 @@ export default function QuizStats() {
               ]}
             />
           </div>
-          <div className="flex flex-col w-full space-y-4">
+          <div className="flex flex-col w-full space-y-2">
             <h1 className="my-auto text-sm font-bold">FILL IN THE BLANKS</h1>
             {getBreakdownTableForType(MandarinCardType.FillBlank)}
           </div>
-          <div className="flex flex-col w-full space-y-4">
+          <div className="flex flex-col w-full space-y-2">
             <h1 className="my-auto text-sm font-bold">MATCH THE PINYIN</h1>
             {getBreakdownTableForType(MandarinCardType.MatchPinyin)}
           </div>
-          <div className="flex flex-col w-full space-y-4">
+          <div className="flex flex-col w-full space-y-2">
             <h1 className="my-auto text-sm font-bold">MATCH THE DEFINITION</h1>
             {getBreakdownTableForType(MandarinCardType.MatchDefinition)}
+          </div>
+          <div className="flex flex-col w-full space-y-2">
+            <h1 className="my-auto text-sm font-bold">WORD OCCURENCES</h1>
+
+            <QuizStatTable
+              maxHeight={360}
+              statPairs={wordOccurences.map((w) => ({
+                title: w[0] as string,
+                value: w[1].toString(),
+              }))}
+            />
           </div>
         </div>
       </LanguageBody>
