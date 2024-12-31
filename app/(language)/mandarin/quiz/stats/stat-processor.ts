@@ -109,14 +109,13 @@ export function getWordMistakes(quizCardStats: QuizCardStat[]) {
           break;
         case MandarinCardType.MatchPinyin:
         case MandarinCardType.MatchDefinition:
-          for (const option of stat.options) {
-            const optionStat = stat as MatchPinyinCardStat;
-            optionStat.userSelections.forEach((selection) => {
-              if (selection[0] !== selection[1]) {
-                wordMistakes[option] = (wordMistakes[option] || 0) + 1;
-              }
-            });
-          }
+          const matchStat = stat as MatchPinyinCardStat;
+          matchStat.userSelections.forEach((selection) => {
+            if (selection[0] !== selection[1]) {
+              wordMistakes[selection[0]] = (wordMistakes[0] || 0) + 1;
+              wordMistakes[selection[1]] = (wordMistakes[1] || 0) + 1;
+            }
+          });
           break;
       }
     }
