@@ -13,6 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import dayjs from "dayjs";
 
 import { MandarinLayoutHeader } from "../../mandarin-header";
+import { MandarinCardType } from "../cards/card";
 import { useMandarinQuizStatsStore } from "../store/useMandarinQuizStatsStore";
 import { HeatMap } from "./heatmap/heatmap";
 import {
@@ -20,6 +21,7 @@ import {
   getNumQuestionsAnswered,
   getPercentageCorrect,
   getQuestionsByDay,
+  getQuestionsByType,
 } from "./stat-processor";
 
 interface QuizStatTileProps {
@@ -54,6 +56,8 @@ export default function QuizStats() {
     .reduce((a, b) => Math.max(a, b), 0);
 
   const longestStreak = getLongestStreak(quizCardStats);
+
+  const questionsByType = getQuestionsByType(quizCardStats);
 
   return (
     <LanguageLayout>
@@ -93,6 +97,37 @@ export default function QuizStats() {
               startDate={dayjs("2024-01-01").toDate()}
               questionsByDay={questionsByDay}
             />
+          </div>
+          <div className="flex flex-col w-full space-y-4">
+            <h1 className="my-auto text-sm font-bold">BREAKDOWN</h1>
+            <div className="border border-language-foreground rounded-md py-1 px-2">
+              <table className="text-sm w-full">
+                <tbody>
+                  <tr className="border-b border-b-language-foreground/50">
+                    <td>Fill In The Blanks</td>
+                    <td className="text-end py-1">
+                      {questionsByType[MandarinCardType.FillBlank].length}
+                    </td>
+                  </tr>
+                  <tr className="border-b border-b-language-foreground/50">
+                    <td>Match the Pinyin</td>
+                    <td className="text-end py-1">
+                      {questionsByType[MandarinCardType.MatchPinyin].length}
+                    </td>
+                  </tr>
+                  <tr className="border-b border-b-language-foreground/50">
+                    <td>Match the Definition</td>
+                    <td className="text-end py-1">
+                      {questionsByType[MandarinCardType.MatchDefinition].length}
+                    </td>
+                  </tr>
+                  <tr className="font-bold">
+                    <td>Total Questions</td>
+                    <td className="text-end py-1">{numQuestionsAnswered}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </LanguageBody>

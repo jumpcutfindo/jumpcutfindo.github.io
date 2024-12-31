@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 
 import { QuizCardStat } from "../../api/stats";
+import { MandarinCardType } from "../cards/card";
 
 export function getNumQuestionsAnswered(quizCardStats: QuizCardStat[]) {
   return quizCardStats.length;
@@ -52,4 +53,19 @@ export function getLongestStreak(quizCardStats: QuizCardStat[]) {
   }
 
   return longestStreak;
+}
+
+export function getQuestionsByType(quizCardStats: QuizCardStat[]) {
+  console.log(quizCardStats);
+  const questionsByType: Record<MandarinCardType, QuizCardStat[]> = {
+    [MandarinCardType.FillBlank]: [],
+    [MandarinCardType.MatchPinyin]: [],
+    [MandarinCardType.MatchDefinition]: [],
+  };
+
+  for (const stat of quizCardStats) {
+    questionsByType[stat.type].push(stat);
+  }
+
+  return questionsByType;
 }
