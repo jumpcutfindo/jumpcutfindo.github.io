@@ -7,6 +7,11 @@ import {
   MandarinMatchDefinitionParams,
   MandarinMatchPinyinCardParams,
 } from "../cards/card";
+import {
+  MandarinFillBlankData,
+  MandarinMatchDefinitionData,
+  MandarinMatchPinyinData,
+} from "../data";
 
 interface MandarinQuizState {
   score: number;
@@ -16,15 +21,15 @@ interface MandarinQuizState {
   cardType: MandarinCardType | null;
   setCardType: (cardType: MandarinCardType) => void;
   cardContent:
-    | MandarinFillBlankCardParams
-    | MandarinMatchPinyinCardParams
-    | MandarinMatchDefinitionParams
+    | MandarinFillBlankData
+    | MandarinMatchPinyinData
+    | MandarinMatchDefinitionData
     | null;
   setCardContent: (
     content:
-      | MandarinFillBlankCardParams
-      | MandarinMatchPinyinCardParams
-      | MandarinMatchDefinitionParams
+      | MandarinFillBlankData
+      | MandarinMatchPinyinData
+      | MandarinMatchDefinitionData
       | null,
   ) => void;
   resetQuizState: () => void;

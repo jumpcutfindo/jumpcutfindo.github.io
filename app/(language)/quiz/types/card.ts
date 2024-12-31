@@ -1,3 +1,4 @@
+import { FillBlankCardData, MatchCardData } from "./data";
 import { QuizState } from "./quiz";
 
 export interface CardProps<T> {
@@ -11,16 +12,9 @@ export interface CardProps<T> {
   setOnAcknowledge: (onNext: () => void) => void;
 }
 
-export interface FillBlankCardParams<T, U> {
-  answer: T;
-  options: T[];
-  example: U;
-  blankedSentence: string;
-}
+export type FillBlankCardParams<T, U> = FillBlankCardData<T, U>;
 
-export interface MatchCardParams<T> {
-  options: T[];
-
+export interface MatchCardParams<T> extends MatchCardData<T> {
   // Special case as they don't follow the one question one answer convention
   onAnswered: () => void;
   onCorrect: () => void;

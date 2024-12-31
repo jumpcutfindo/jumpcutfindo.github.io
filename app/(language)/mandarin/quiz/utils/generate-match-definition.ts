@@ -1,11 +1,11 @@
 import { MandarinDefinition } from "../../api/mandarin";
-import { MandarinMatchDefinitionParams } from "../cards/card";
+import { MandarinMatchDefinitionData } from "../data";
 import { selectRandomDefinition } from "./definition-utils";
 
 export function generateMatchDefinition(
   definitions: MandarinDefinition[],
   count: number,
-): MandarinMatchDefinitionParams {
+): MandarinMatchDefinitionData {
   const options = [];
   const wordSet = new Set();
 
