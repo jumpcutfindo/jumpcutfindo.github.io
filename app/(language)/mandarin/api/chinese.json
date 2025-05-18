@@ -3286,5 +3286,497 @@
         "englishTranslation": "We must embody a more resilient spirit, and avoid giving up no matter what."
       }
     ]
+  },
+  {
+    "word": "戳穿",
+    "wordType": "verb",
+    "pinyin": "chuō chuān",
+    "definition": "to expose",
+    "examples": [
+      {
+        "sentence": "事实不容篡改，谎言必须戳穿。",
+        "englishTranslation": "Facts cannot be changed, lies must be exposed."
+      }
+    ]
+  },
+  {
+    "word": "贪恋",
+    "wordType": "verb",
+    "pinyin": "tān liàn",
+    "definition": "cling to; be reluctant to leave",
+    "examples": [
+      {
+        "sentence": "你是否想知道我们最初贪恋钻石是出于什么原因？",
+        "englishTranslation": "Do you want to know why we started clinging onto diamonds in the first place?"
+      }
+    ]
+  },
+  {
+    "word": "充耳不闻",
+    "wordType": "idiom",
+    "pinyin": "chōng ěr bù wén",
+    "definition": "turn a deaf ear to",
+    "examples": [
+      {
+        "sentence": "那些对穷人的哭泣声充耳不闻的人有一天当他们哭泣时也无人会理会。",
+        "englishTranslation": "Those who turn a deaf ear to the poor will similarly face a day where their cries are ignored."
+      }
+    ]
+  },
+  {
+    "word": "随波逐流",
+    "wordType": "idiom",
+    "pinyin": "suí bō zhú liú",
+    "definition": "go with the stream; drift along",
+    "examples": [
+      {
+        "sentence": "你是否有过这样的感觉，你正在随波逐流，去向你并不想去的地方？",
+        "englishTranslation": "Do you ever have a feeling that you're drifting through life, and not going where you want to go?"
+      }
+    ]
+  },
+  {
+    "word": "无稽之谈",
+    "wordType": "idiom",
+    "pinyin": "wú jī zhī tán ",
+    "definition": "nonsense; groundless statement",
+    "examples": [
+      {
+        "sentence": "有关他已经辞职的报道是无稽之谈，没有必要相信它。",
+        "englishTranslation": "Reports that he has resigned are nonsense, there is no need to believe them."
+      }
+    ]
+  },
+  {
+    "word": "软肋",
+    "wordType": "noun",
+    "pinyin": "ruǎn lèi",
+    "definition": "soft spot; vulnerability",
+    "examples": [
+      {
+        "sentence": "公司电池召回事件暴露了科技产业的软肋。",
+        "englishTranslation": "The company's battery recall exposed the technology industry's vulnerabilities."
+      }
+    ]
+  },
+  {
+    "word": "初衷",
+    "wordType": "noun",
+    "pinyin": "chū zhōng",
+    "definition": "original intention",
+    "examples": [
+      {
+        "sentence": "陪读可能会无意中给孩子增加压力，这与父母的初衷相反。",
+        "englishTranslation": "Accompanying the children may unintentionally increase their stress, which is opposite of the parents' original intention."
+      }
+    ]
+  },
+  {
+    "word": "纠结",
+    "wordType": "verb",
+    "pinyin": "jiū jié",
+    "definition": "to entangle",
+    "examples": [
+      {
+        "sentence": "有些人纠结于细节，结果毫无乐趣。",
+        "englishTranslation": "Some people obsess about the details, and miss out on the fun."
+      },
+      {
+        "sentence": "这是一个我纠结多年了的难题。",
+        "englishTranslation": "This is a problem that I have struggled with for many years."
+      }
+    ]
+  },
+  {
+    "word": "蹊跷",
+    "wordType": "adjective",
+    "pinyin": "qī qiāo",
+    "definition": "odd; fishy; strange",
+    "examples": [
+      {
+        "sentence": "那个问题看起来容易，但这里面有蹊跷。",
+        "englishTranslation": "That problem looks easy, but it actually has a catch."
+      },
+      {
+        "sentence": "这所房子实在太便宜了；这里一定有蹊跷。",
+        "englishTranslation": "This house is really too cheap; there must be a catch somewhere."
+      }
+    ]
+  },
+  {
+    "word": "惦记",
+    "wordType": "verb",
+    "pinyin": "diàn jì",
+    "definition": "remember with concern; to be concerned about",
+    "examples": [
+      {
+        "sentence": "若不是因为我会惦记着花园，我本可以高兴地搬回公寓。",
+        "englishTranslation": "If not for my worries for my garden, I would have been elated to move back into my apartment."
+      }
+    ]
+  },
+  {
+    "word": "堪忧",
+    "wordType": "adjective",
+    "pinyin": "kān yōu",
+    "definition": "worrying; troubling",
+    "examples": [
+      {
+        "sentence": "英国人健康状况令人堪忧，肥胖问题严重。",
+        "englishTranslation": "England's health problem is worrying some people, especially the issue of obesity."
+      }
+    ]
+  },
+  {
+    "word": "千篇一律",
+    "wordType": "idiom",
+    "pinyin": "qiān piān yī lǜ",
+    "definition": "following the same pattern",
+    "examples": [
+      {
+        "sentence": "这是一种千篇一律的模式，所以我们大家都很熟悉。",
+        "englishTranslation": "This is a static pattern, and as a result we are all familiar with it."
+      }
+    ]
+  },
+  {
+    "word": "醍醐灌顶",
+    "wordType": "idiom",
+    "pinyin": "tí hú guàn dǐng",
+    "definition": "be filled with wisdom",
+    "examples": [
+      {
+        "sentence": "据说爱情令人盲目，而友谊却能让人醍醐灌顶。",
+        "englishTranslation": "It's said that love makes people blind, but frendship allows people to be clairvoyant."
+      }
+    ]
+  },
+  {
+    "word": "萎靡不振",
+    "wordType": "idiom",
+    "pinyin": "wěi mǐ bù zhèn",
+    "definition": "dispirited; disheartened",
+    "examples": [
+      {
+        "sentence": "自从经商失败后，他成天借酒消愁，萎靡不振。",
+        "englishTranslation": "Ever since his business failed, he just drinks all day, disheartened."
+      }
+    ]
+  },
+  {
+    "word": "瞻前顾后",
+    "wordType": "idiom",
+    "pinyin": "zhān qián gù hòu",
+    "definition": "overcautious and indecisive",
+    "examples": [
+      {
+        "sentence": "做事要瞻前顾后， 不要这样鲁莽。",
+        "englishTranslation": "You need to be cautious when doing things; don't be so reckless."
+      }
+    ]
+  },
+  {
+    "word": "反省",
+    "wordType": "verb",
+    "pinyin": "fǎn xǐng ",
+    "definition": "introspection; self-examination",
+    "examples": [
+      {
+        "sentence": "我把这一年都花在了深刻的反省上，试图找出我生活受挫的原因。",
+        "englishTranslation": "I spent this year in deep retrospection, attempting to figure out my frustration with life."
+      }
+    ]
+  },
+  {
+    "word": "刨根问底",
+    "wordType": "idiom",
+    "pinyin": "páo gēn wèn dǐ ",
+    "definition": "to get to the root of the matter",
+    "examples": [
+      {
+        "sentence": "他喜欢刨根问底，将问题从头到尾说清楚。",
+        "englishTranslation": "He really likes to get to the root of the matter, clearly explaining the problem."
+      }
+    ]
+  },
+  {
+    "word": "拨冗",
+    "wordType": "verb",
+    "pinyin": "bō rǒng",
+    "definition": "to find time in busy moments",
+    "examples": [
+      {
+        "sentence": "多谢您百忙之中拨冗参加我们的会议。",
+        "englishTranslation": "Thank you so much for finding time to join our meeting."
+      }
+    ]
+  },
+  {
+    "word": "冤屈",
+    "wordType": "verb",
+    "pinyin": "yuān qū",
+    "definition": "to treat unjustly",
+    "examples": [
+      {
+        "sentence": "为了筹划毕业旅行事宜，班长收了不少冤屈，真替他抱不平。",
+        "englishTranslation": "In order to plan the graduation trip, the class rep faced a lot of unjust criticisms; I really feel bad for him."
+      }
+    ]
+  },
+  {
+    "word": "估计",
+    "wordType": "verb",
+    "pinyin": "gū jì",
+    "definition": "estimate",
+    "examples": [
+      {
+        "sentence": "我估计温度都在十度左右吧。",
+        "englishTranslation": "I'm guessing the temperature is about plus-minus 10 degrees."
+      }
+    ]
+  },
+  {
+    "word": "苛刻",
+    "wordType": "adjective",
+    "pinyin": "kē kè",
+    "definition": "harsh; demanding",
+    "examples": [
+      {
+        "sentence": "很少有人能坚持这么苛刻的养生法，尤其是坚持这么多年。",
+        "englishTranslation": "Very few people can stick to such a harsh regimen, especially for that many years."
+      },
+      {
+        "sentence": "她恨她的妈妈对她如此苛刻。",
+        "englishTranslation": "She hates her mother for being so harsh on her."
+      }
+    ]
+  },
+  {
+    "word": "执迷不悟",
+    "wordType": "idiom",
+    "pinyin": "zhí mí bù wù ",
+    "definition": "obsessive; refuse to come to one's senses",
+    "examples": [
+      {
+        "sentence": "该国对这场战争的执迷不悟可能会令其推迟认真地审视国内需求。",
+        "englishTranslation": "The country's over-fixation on war may delay focused scrutiny of domestic issues."
+      }
+    ]
+  },
+  {
+    "word": "搁浅",
+    "wordType": "verb",
+    "pinyin": "gē qiǎn ",
+    "definition": "run aground; stranded",
+    "examples": [
+      {
+        "sentence": "那条船最终在一个松软的水下浅滩搁浅了。",
+        "englishTranslation": "That ship finally grounded on a soft, underwater bank."
+      }
+    ]
+  },
+  {
+    "word": "郁闷",
+    "wordType": "adjective",
+    "pinyin": "yù mèn ",
+    "definition": "depressed; gloomy",
+    "examples": [
+      {
+        "sentence": "办公室的低沉气氛使她感到郁闷。",
+        "englishTranslation": "The gloomy atmosphere in the office left her depressed."
+      }
+    ]
+  },
+  {
+    "word": "追溯",
+    "wordType": "verb",
+    "pinyin": "zhuī sù",
+    "definition": "retrospect",
+    "examples": [
+      {
+        "sentence": "他的家族可追溯到斯图亚特王朝。",
+        "englishTranslation": "He could trace his ancestry to the Stuart kings."
+      },
+      {
+        "sentence": "她能把本族家谱追溯到16世纪。",
+        "englishTranslation": "She could trace her family heritage to the 16th century."
+      }
+    ]
+  },
+  {
+    "word": "实惠",
+    "wordType": "adjective",
+    "pinyin": "shí huì",
+    "definition": "tangible benefits",
+    "examples": [
+      {
+        "sentence": "大批采购比少量购买更经济实惠。",
+        "englishTranslation": "Buying in bulk is more economical than shopping for small quantities."
+      }
+    ]
+  },
+  {
+    "word": "分道扬镳",
+    "wordType": "idiom",
+    "pinyin": "fēn dào yáng biāo",
+    "definition": "to part ways",
+    "examples": [
+      {
+        "sentence": "虽然我们现在要分道扬镳了，但我希望我们能珍惜在一起的快乐时光。",
+        "englishTranslation": "Although we have to go our separate ways now, I hope we can still treasure the happy times we spent together."
+      }
+    ]
+  },
+  {
+    "word": "讽刺",
+    "wordType": "noun",
+    "pinyin": "fěng cì",
+    "definition": "irony; sarcasm",
+    "examples": [
+      {
+        "sentence": "具有讽刺意味的是，那本书她觉得最糟糕，却比她的其他任何一本书卖得都好。",
+        "englishTranslation": "It is ironic that even though she thinks that book is terrible, it's still selling the best out of all the other books she has."
+      }
+    ]
+  },
+  {
+    "word": "余裕",
+    "wordType": "adjective",
+    "pinyin": "yú yù",
+    "definition": "ample",
+    "examples": [
+      {
+        "sentence": "养成储蓄的习惯，才能在日常支出外留有余裕，应付紧急的状况。",
+        "englishTranslation": "Only by adopting a habit of saving can you leave some money aside from your daily expenses to deal with emergencies."
+      }
+    ]
+  },
+  {
+    "word": "储蓄",
+    "wordType": "noun",
+    "pinyin": "chǔ xù",
+    "definition": "savings",
+    "examples": [
+      {
+        "sentence": "现代社会的主要特征是消费而不是储蓄。",
+        "englishTranslation": "Consumption rather than saving has become the central feature of contemporary societies."
+      },
+      {
+        "sentence": "大多数人都想要储蓄，但到月底的时候却发现已经一分不剩了。",
+        "englishTranslation": "A majority of people have the intention to save money, but only realise at the end of the month that they have none to spare."
+      }
+    ]
+  },
+  {
+    "word": "颠覆",
+    "wordType": "verb",
+    "pinyin": "diān fù",
+    "definition": "overthrow; subvert",
+    "examples": [
+      {
+        "sentence": "越来越多的美国人选择退休后继续工作，这一增长趋势可能会颠覆旧有的劳动力模式。",
+        "englishTranslation": "More Americans are choosing to continue working after retirement -- a growing trend that might overthrow the old workforce model."
+      },
+      {
+        "sentence": "然而，关于地震之间微妙的相互作用的最新证据可能颠覆这一假设。",
+        "englishTranslation": "New eveidence about subtle interactions between earthquakes may subvert this initial assumption."
+      }
+    ]
+  },
+  {
+    "word": "趋势",
+    "wordType": "noun",
+    "pinyin": "qū shì",
+    "definition": "tendency; trend",
+    "examples": [
+      {
+        "sentence": "现在的趋势是追求“有品位”的电子产品——人们渴望拥有那些黑色锃亮、非常炫丽的东西。",
+        "englishTranslation": "The trend now is toward \"lifestyle\" electronics -- people yearn to own sleek and shiny items."
+      }
+    ]
+  },
+  {
+    "word": "熏陶",
+    "wordType": "verb",
+    "pinyin": "xūn táo",
+    "definition": "to seep in; influence",
+    "examples": [
+      {
+        "sentence": "个性是受父母和社会熏陶的结果，还是我们生而有之？",
+        "englishTranslation": "Is a person's identity the result of their parents and society, or are they born like this?"
+      }
+    ]
+  },
+  {
+    "word": "贬低",
+    "wordType": "verb",
+    "pinyin": "biǎn dī",
+    "definition": "to belittle",
+    "examples": [
+      {
+        "sentence": "他批评那些人，贬低他们粗鲁的举止。",
+        "englishTranslation": "He criticised those people, disparaging their crude manners."
+      },
+      {
+        "sentence": "我并不想贬低他们所作贡献的重要性。",
+        "englishTranslation": "I don't intend to belittle the importance of their contributions."
+      }
+    ]
+  },
+  {
+    "word": "嘟囔",
+    "wordType": "verb",
+    "pinyin": "dū nang",
+    "definition": "mutter to oneself; mumble",
+    "examples": [
+      {
+        "sentence": "她总是嘟囔着说一切都太不公平了。",
+        "englishTranslation": "She's always muttering to herself about how everything is so unfair."
+      }
+    ]
+  },
+  {
+    "word": "晃悠",
+    "wordType": "verb",
+    "pinyin": "huàng you",
+    "definition": "shake from side to side",
+    "examples": [
+      {
+        "sentence": "这桌子腿不平， 直晃悠。",
+        "englishTranslation": "This table wobbles on its uneven legs."
+      },
+      {
+        "sentence": "不要整天闷闷不乐地在家里晃悠，你应该出去找份工作。",
+        "englishTranslation": "Don't spend the entire day moping around the house; you should go out to find a job."
+      }
+    ]
+  },
+  {
+    "word": "默契",
+    "wordType": "noun",
+    "pinyin": "mò qì",
+    "definition": "mutual understanding",
+    "examples": [
+      {
+        "sentence": "根据达成的默契，这个话题从未再提起过。",
+        "englishTranslation": "By tacit agreement , the subject was never mentioned again."
+      },
+      {
+        "sentence": "我们有个默契：吃午饭时谁也不许谈工作。",
+        "englishTranslation": "We have a mutual understanding that nobody talks about work over lunch."
+      }
+    ]
+  },
+  {
+    "word": "垂涎欲滴",
+    "wordType": "idiom",
+    "pinyin": "chuí xián yù dī ",
+    "definition": "drool with desire",
+    "examples": [
+      {
+        "sentence": "婚宴上的食物不仅看起来让人垂涎欲滴，吃起来也是美味异常。",
+        "englishTranslation": "The food at the wedding not only looked extremely appealing, it also tasted incredible."
+      }
+    ]
   }
 ]
